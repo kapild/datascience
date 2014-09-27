@@ -8,6 +8,7 @@ import foursquare
 from crawl import user_checkin_crawl
 from crawl import list_venue_crawl
 from seed import user_lists
+from seed import users_friends
 access_token = 'VXIVQI3LOIDSLIZOHH12EJXIHY5DMBQHOJA0DAAHFJKITB4Y'
 client = foursquare.Foursquare(access_token=access_token, version='20140901')
 
@@ -19,8 +20,9 @@ def run_crawl():
 #     venue_ids = Dummy_List_Crawl().get_venue_ids()
 #     user_crwal = user_checkin_crawl.UserCheckinsCrwal(api=client, counts=50)
 #     list_crawl = list_venue_crawl.ListVenueCrawl(api=client, list_id='148512/todos')
-    list_crawl = user_lists.UsersList(client)
-    id_list = list_crawl.get_all_venue_ids()
+#     list_crawl = user_lists.UsersList(client)
+    friends_list = users_friends.UsersFriends(client)
+    id_list = friends_list.get_all_venue_ids()
     print "found" + str(len(id_list))
     indx = 0
     for venue_id in id_list:

@@ -5,7 +5,6 @@ Created on Sep 21, 2014
 '''
 
 import foursquare
-from crawl import user_checkin_crawl
 from crawl import list_venue_crawl
 from seed import user_lists
 from seed import users_friends

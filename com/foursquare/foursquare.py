@@ -54,7 +54,7 @@ API_VERSION_MONTH = '04'
 API_VERSION_DAY   = '23'
 API_VERSION = '{year}{month}{day}'.format(year=API_VERSION_YEAR, month=API_VERSION_MONTH, day=API_VERSION_DAY)
 
-# Library versioning matches supported foursquare API version
+# Library versioning matches supported foursquare_2 API version
 __version__ = '{year}.{month}.{day}'.format(year=API_VERSION_YEAR, month=API_VERSION_MONTH, day=API_VERSION_DAY)
 __author__ = u'Mike Lewis'
 
@@ -72,7 +72,7 @@ MAX_MULTI_REQUESTS = 5
 VERIFY_SSL = True
 
 
-# Generic foursquare exception
+# Generic foursquare_2 exception
 class FoursquareException(Exception): pass
 # Specific exceptions
 class InvalidAuth(FoursquareException): pass
@@ -100,7 +100,7 @@ error_types = {
 
 
 class Foursquare(object):
-    """foursquare V2 API wrapper"""
+    """foursquare_2 V2 API wrapper"""
 
     def __init__(self, client_id=None, client_secret=None, access_token=None, redirect_uri=None, version=None, lang=None):
         """Sets up the api object"""
@@ -276,33 +276,33 @@ class Foursquare(object):
         endpoint = 'users'
 
         def __call__(self, USER_ID=u'self', multi=False):
-            """https://developer.foursquare.com/docs/users/users"""
+            """https://developer.foursquare_2.com/docs/users/users"""
             return self.GET('{USER_ID}'.format(USER_ID=USER_ID), multi=multi)
 
         """
         General
         """
         def leaderboard(self, params={}, multi=False):
-            """https://developer.foursquare.com/docs/users/leaderboard"""
+            """https://developer.foursquare_2.com/docs/users/leaderboard"""
             return self.GET('leaderboard', params, multi=multi)
 
         def requests(self, multi=False):
-            """https://developer.foursquare.com/docs/users/requests"""
+            """https://developer.foursquare_2.com/docs/users/requests"""
             return self.GET('requests', multi=multi)
 
         def search(self, params, multi=False):
-            """https://developer.foursquare.com/docs/users/search"""
+            """https://developer.foursquare_2.com/docs/users/search"""
             return self.GET('search', params, multi=multi)
 
         """
         Aspects
         """
         def badges(self, USER_ID=u'self', multi=False):
-            """https://developer.foursquare.com/docs/users/badges"""
+            """https://developer.foursquare_2.com/docs/users/badges"""
             return self.GET('{USER_ID}/badges'.format(USER_ID=USER_ID), multi=multi)
 
         def checkins(self, USER_ID=u'self', params={}, multi=False):
-            """https://developer.foursquare.com/docs/users/checkins"""
+            """https://developer.foursquare_2.com/docs/users/checkins"""
             return self.GET('{USER_ID}/checkins'.format(USER_ID=USER_ID), params, multi=multi)
 
         def all_checkins(self, USER_ID=u'self'):
@@ -320,50 +320,50 @@ class Foursquare(object):
                     break
 
         def friends(self, USER_ID=u'self', params={}, multi=False):
-            """https://developer.foursquare.com/docs/users/friends"""
+            """https://developer.foursquare_2.com/docs/users/friends"""
             return self.GET('{USER_ID}/friends'.format(USER_ID=USER_ID), params, multi=multi)
 
         def lists(self, USER_ID=u'self', params={}, multi=False):
-            """https://developer.foursquare.com/docs/users/lists"""
+            """https://developer.foursquare_2.com/docs/users/lists"""
             return self.GET('{USER_ID}/lists'.format(USER_ID=USER_ID), params, multi=multi)
 
         def mayorships(self, USER_ID=u'self', params={}, multi=False):
-            """https://developer.foursquare.com/docs/users/mayorships"""
+            """https://developer.foursquare_2.com/docs/users/mayorships"""
             return self.GET('{USER_ID}/mayorships'.format(USER_ID=USER_ID), params, multi=multi)
 
         def photos(self, USER_ID=u'self', params={}, multi=False):
-            """https://developer.foursquare.com/docs/users/photos"""
+            """https://developer.foursquare_2.com/docs/users/photos"""
             return self.GET('{USER_ID}/photos'.format(USER_ID=USER_ID), params, multi=multi)
 
         def venuehistory(self, USER_ID=u'self', params={}, multi=False):
-            """https://developer.foursquare.com/docs/users/venuehistory"""
+            """https://developer.foursquare_2.com/docs/users/venuehistory"""
             return self.GET('{USER_ID}/venuehistory'.format(USER_ID=USER_ID), params, multi=multi)
 
         """
         Actions
         """
         def approve(self, USER_ID):
-            """https://developer.foursquare.com/docs/users/approve"""
+            """https://developer.foursquare_2.com/docs/users/approve"""
             return self.POST('{USER_ID}/approve'.format(USER_ID=USER_ID))
 
         def deny(self, USER_ID):
-            """https://developer.foursquare.com/docs/users/deny"""
+            """https://developer.foursquare_2.com/docs/users/deny"""
             return self.POST('{USER_ID}/deny'.format(USER_ID=USER_ID))
 
         def request(self, USER_ID):
-            """https://developer.foursquare.com/docs/users/request"""
+            """https://developer.foursquare_2.com/docs/users/request"""
             return self.POST('{USER_ID}/request'.format(USER_ID=USER_ID))
 
         def setpings(self, USER_ID, params):
-            """https://developer.foursquare.com/docs/users/setpings"""
+            """https://developer.foursquare_2.com/docs/users/setpings"""
             return self.POST('{USER_ID}/setpings'.format(USER_ID=USER_ID), params)
 
         def unfriend(self, USER_ID):
-            """https://developer.foursquare.com/docs/users/unfriend"""
+            """https://developer.foursquare_2.com/docs/users/unfriend"""
             return self.POST('{USER_ID}/unfriend'.format(USER_ID=USER_ID))
 
         def update(self, params={}, photo_data=None, photo_content_type='image/jpeg'):
-            """https://developer.foursquare.com/docs/users/update"""
+            """https://developer.foursquare_2.com/docs/users/update"""
             if photo_data:
                 files = { 'photo': ('photo', photo_data, photo_content_type) }
             else:
@@ -381,110 +381,110 @@ class Foursquare(object):
         General
         """
         def __call__(self, VENUE_ID, multi=False):
-            """https://developer.foursquare.com/docs/venues/venues"""
+            """https://developer.foursquare_2.com/docs/venues/venues"""
             return self.GET('{VENUE_ID}'.format(VENUE_ID=VENUE_ID), multi=multi)
 
         def add(self, params):
-            """https://developer.foursquare.com/docs/venues/add"""
+            """https://developer.foursquare_2.com/docs/venues/add"""
             return self.POST('add', params)
 
         def categories(self, multi=False):
-            """https://developer.foursquare.com/docs/venues/categories"""
+            """https://developer.foursquare_2.com/docs/venues/categories"""
             return self.GET('categories', multi=multi)
 
         def explore(self, params, multi=False):
-            """https://developer.foursquare.com/docs/venues/explore"""
+            """https://developer.foursquare_2.com/docs/venues/explore"""
             return self.GET('explore', params, multi=multi)
 
         def managed(self, multi=False):
-            """https://developer.foursquare.com/docs/venues/managed"""
+            """https://developer.foursquare_2.com/docs/venues/managed"""
             return self.GET('managed', multi=multi)
 
         MAX_SEARCH_LIMIT = 50
         def search(self, params, multi=False):
-            """https://developer.foursquare.com/docs/venues/search"""
+            """https://developer.foursquare_2.com/docs/venues/search"""
             return self.GET('search', params, multi=multi)
 
         def suggestcompletion(self, params, multi=False):
-            """https://developer.foursquare.com/docs/venues/suggestcompletion"""
+            """https://developer.foursquare_2.com/docs/venues/suggestcompletion"""
             return self.GET('suggestcompletion', params, multi=multi)
 
         def trending(self, params, multi=False):
-            """https://developer.foursquare.com/docs/venues/trending"""
+            """https://developer.foursquare_2.com/docs/venues/trending"""
             return self.GET('trending', params, multi=multi)
 
         """
         Aspects
         """
         def events(self, VENUE_ID, multi=False):
-            """https://developer.foursquare.com/docs/venues/events"""
+            """https://developer.foursquare_2.com/docs/venues/events"""
             return self.GET('{VENUE_ID}/events'.format(VENUE_ID=VENUE_ID), multi=multi)
 
         def herenow(self, VENUE_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/venues/herenow"""
+            """https://developer.foursquare_2.com/docs/venues/herenow"""
             return self.GET('{VENUE_ID}/herenow'.format(VENUE_ID=VENUE_ID), params, multi=multi)
 
         def links(self, VENUE_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/venues/links"""
+            """https://developer.foursquare_2.com/docs/venues/links"""
             return self.GET('{VENUE_ID}/links'.format(VENUE_ID=VENUE_ID), params, multi=multi)
 
         def listed(self, VENUE_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/venues/listed"""
+            """https://developer.foursquare_2.com/docs/venues/listed"""
             return self.GET('{VENUE_ID}/listed'.format(VENUE_ID=VENUE_ID), params, multi=multi)
 
         def menu(self, VENUE_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/venues/menu"""
+            """https://developer.foursquare_2.com/docs/venues/menu"""
             return self.GET('{VENUE_ID}/menu'.format(VENUE_ID=VENUE_ID), params, multi=multi)
 
         def photos(self, VENUE_ID, params, multi=False):
-            """https://developer.foursquare.com/docs/venues/photos"""
+            """https://developer.foursquare_2.com/docs/venues/photos"""
             return self.GET('{VENUE_ID}/photos'.format(VENUE_ID=VENUE_ID), params, multi=multi)
 
         def similar(self, VENUE_ID, multi=False):
-            """https://developer.foursquare.com/docs/venues/similar"""
+            """https://developer.foursquare_2.com/docs/venues/similar"""
             return self.GET('{VENUE_ID}/similar'.format(VENUE_ID=VENUE_ID), multi=multi)
 
         def stats(self, VENUE_ID, multi=False):
-            """https://developer.foursquare.com/docs/venues/stats"""
+            """https://developer.foursquare_2.com/docs/venues/stats"""
             return self.GET('{VENUE_ID}/stats'.format(VENUE_ID=VENUE_ID), multi=multi)
 
         def tips(self, VENUE_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/venues/tips"""
+            """https://developer.foursquare_2.com/docs/venues/tips"""
             return self.GET('{VENUE_ID}/tips'.format(VENUE_ID=VENUE_ID), params, multi=multi)
 
         def nextvenues(self, VENUE_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/venues/nextvenues"""
+            """https://developer.foursquare_2.com/docs/venues/nextvenues"""
             return self.GET('{VENUE_ID}/nextvenues'.format(VENUE_ID=VENUE_ID), params, multi=multi)
 
         def likes(self, VENUE_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/venues/likes"""
+            """https://developer.foursquare_2.com/docs/venues/likes"""
             return self.GET('{VENUE_ID}/likes'.format(VENUE_ID=VENUE_ID), params, multi=multi)
 
         def hours(self, VENUE_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/venues/hours"""
+            """https://developer.foursquare_2.com/docs/venues/hours"""
             return self.GET('{VENUE_ID}/hours'.format(VENUE_ID=VENUE_ID), params, multi=multi)
 
         """
         Actions
         """
         def edit(self, VENUE_ID, params={}):
-            """https://developer.foursquare.com/docs/venues/edit"""
+            """https://developer.foursquare_2.com/docs/venues/edit"""
             return self.POST('{VENUE_ID}/edit'.format(VENUE_ID=VENUE_ID), params)
 
         def flag(self, VENUE_ID, params):
-            """https://developer.foursquare.com/docs/venues/flag"""
+            """https://developer.foursquare_2.com/docs/venues/flag"""
             return self.POST('{VENUE_ID}/flag'.format(VENUE_ID=VENUE_ID), params)
 
         def marktodo(self, VENUE_ID, params={}):
-            """https://developer.foursquare.com/docs/venues/marktodo"""
+            """https://developer.foursquare_2.com/docs/venues/marktodo"""
             return self.POST('{VENUE_ID}/marktodo'.format(VENUE_ID=VENUE_ID), params)
 
         def proposeedit(self, VENUE_ID, params):
-            """https://developer.foursquare.com/docs/venues/proposeedit"""
+            """https://developer.foursquare_2.com/docs/venues/proposeedit"""
             return self.POST('{VENUE_ID}/proposeedit'.format(VENUE_ID=VENUE_ID), params)
 
         def setrole(self, VENUE_ID, params):
-            """https://developer.foursquare.com/docs/venues/setrole"""
+            """https://developer.foursquare_2.com/docs/venues/setrole"""
             return self.POST('{VENUE_ID}/setrole'.format(VENUE_ID=VENUE_ID), params)
 
 
@@ -494,34 +494,34 @@ class Foursquare(object):
         endpoint = 'checkins'
 
         def __call__(self, CHECKIN_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/checkins/checkins"""
+            """https://developer.foursquare_2.com/docs/checkins/checkins"""
             return self.GET('{CHECKIN_ID}'.format(CHECKIN_ID=CHECKIN_ID), params, multi=multi)
 
         def add(self, params):
-            """https://developer.foursquare.com/docs/checkins/add"""
+            """https://developer.foursquare_2.com/docs/checkins/add"""
             return self.POST('add', params)
 
         def recent(self, params={}, multi=False):
-            """https://developer.foursquare.com/docs/checkins/recent"""
+            """https://developer.foursquare_2.com/docs/checkins/recent"""
             return self.GET('recent', params, multi=multi)
 
         """
         Actions
         """
         def addcomment(self, CHECKIN_ID, params):
-            """https://developer.foursquare.com/docs/checkins/addcomment"""
+            """https://developer.foursquare_2.com/docs/checkins/addcomment"""
             return self.POST('{CHECKIN_ID}/addcomment'.format(CHECKIN_ID=CHECKIN_ID), params)
 
         def addpost(self, CHECKIN_ID, params):
-            """https://developer.foursquare.com/docs/checkins/addpost"""
+            """https://developer.foursquare_2.com/docs/checkins/addpost"""
             return self.POST('{CHECKIN_ID}/addpost'.format(CHECKIN_ID=CHECKIN_ID), params)
 
         def deletecomment(self, CHECKIN_ID, params):
-            """https://developer.foursquare.com/docs/checkins/deletecomment"""
+            """https://developer.foursquare_2.com/docs/checkins/deletecomment"""
             return self.POST('{CHECKIN_ID}/deletecomment'.format(CHECKIN_ID=CHECKIN_ID), params)
 
         def reply(self, CHECKIN_ID, params):
-            """https://developer.foursquare.com/docs/checkins/reply"""
+            """https://developer.foursquare_2.com/docs/checkins/reply"""
             return self.POST('{CHECKIN_ID}/reply'.format(CHECKIN_ID=CHECKIN_ID), params)
 
 
@@ -530,41 +530,41 @@ class Foursquare(object):
         endpoint = 'tips'
 
         def __call__(self, TIP_ID, multi=False):
-            """https://developer.foursquare.com/docs/tips/tips"""
+            """https://developer.foursquare_2.com/docs/tips/tips"""
             return self.GET('{TIP_ID}'.format(TIP_ID=TIP_ID), multi=multi)
 
         def add(self, params):
-            """https://developer.foursquare.com/docs/tips/add"""
+            """https://developer.foursquare_2.com/docs/tips/add"""
             return self.POST('add', params)
 
         def search(self, params, multi=False):
-            """https://developer.foursquare.com/docs/tips/add"""
+            """https://developer.foursquare_2.com/docs/tips/add"""
             return self.GET('search', params, multi=multi)
 
         """
         Aspects
         """
         def done(self, TIP_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/tips/done"""
+            """https://developer.foursquare_2.com/docs/tips/done"""
             return self.GET('{TIP_ID}/done'.format(TIP_ID=TIP_ID), params, multi=multi)
 
         def listed(self, TIP_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/tips/listed"""
+            """https://developer.foursquare_2.com/docs/tips/listed"""
             return self.GET('{TIP_ID}/listed'.format(TIP_ID=TIP_ID), params, multi=multi)
 
         """
         Actions
         """
         def markdone(self, TIP_ID):
-            """https://developer.foursquare.com/docs/tips/markdone"""
+            """https://developer.foursquare_2.com/docs/tips/markdone"""
             return self.POST('{TIP_ID}/markdone'.format(TIP_ID=TIP_ID))
 
         def marktodo(self, TIP_ID):
-            """https://developer.foursquare.com/docs/tips/marktodo"""
+            """https://developer.foursquare_2.com/docs/tips/marktodo"""
             return self.POST('{TIP_ID}/marktodo'.format(TIP_ID=TIP_ID))
 
         def unmark(self, TIP_ID):
-            """https://developer.foursquare.com/docs/tips/unmark"""
+            """https://developer.foursquare_2.com/docs/tips/unmark"""
             return self.POST('{TIP_ID}/unmark'.format(TIP_ID=TIP_ID))
 
 
@@ -573,65 +573,65 @@ class Foursquare(object):
         endpoint = 'lists'
 
         def __call__(self, LIST_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/lists/lists"""
+            """https://developer.foursquare_2.com/docs/lists/lists"""
             return self.GET('{LIST_ID}'.format(LIST_ID=LIST_ID), params, multi=multi)
 
         def add(self, params):
-            """https://developer.foursquare.com/docs/lists/add"""
+            """https://developer.foursquare_2.com/docs/lists/add"""
             return self.POST('add', params)
 
         """
         Aspects
         """
         def followers(self, LIST_ID, multi=False):
-            """https://developer.foursquare.com/docs/lists/followers"""
+            """https://developer.foursquare_2.com/docs/lists/followers"""
             return self.GET('{LIST_ID}/followers'.format(LIST_ID=LIST_ID), multi=multi)
 
         def suggestphoto(self, LIST_ID, params, multi=False):
-            """https://developer.foursquare.com/docs/lists/suggestphoto"""
+            """https://developer.foursquare_2.com/docs/lists/suggestphoto"""
             return self.GET('{LIST_ID}/suggestphoto'.format(LIST_ID=LIST_ID), params, multi=multi)
 
         def suggesttip(self, LIST_ID, params, multi=False):
-            """https://developer.foursquare.com/docs/lists/suggesttip"""
+            """https://developer.foursquare_2.com/docs/lists/suggesttip"""
             return self.GET('{LIST_ID}/suggesttip'.format(LIST_ID=LIST_ID), params, multi=multi)
 
         def suggestvenues(self, LIST_ID, multi=False):
-            """https://developer.foursquare.com/docs/lists/suggestvenues"""
+            """https://developer.foursquare_2.com/docs/lists/suggestvenues"""
             return self.GET('{LIST_ID}/suggestvenues'.format(LIST_ID=LIST_ID), multi=multi)
 
         """
         Actions
         """
         def additem(self, LIST_ID, params):
-            """https://developer.foursquare.com/docs/lists/additem"""
+            """https://developer.foursquare_2.com/docs/lists/additem"""
             return self.POST('{LIST_ID}/additem'.format(LIST_ID=LIST_ID), params)
 
         def deleteitem(self, LIST_ID, params):
-            """https://developer.foursquare.com/docs/lists/deleteitem"""
+            """https://developer.foursquare_2.com/docs/lists/deleteitem"""
             return self.POST('{LIST_ID}/deleteitem'.format(LIST_ID=LIST_ID), params)
 
         def follow(self, LIST_ID):
-            """https://developer.foursquare.com/docs/lists/follow"""
+            """https://developer.foursquare_2.com/docs/lists/follow"""
             return self.POST('{LIST_ID}/follow'.format(LIST_ID=LIST_ID))
 
         def moveitem(self, LIST_ID, params):
-            """https://developer.foursquare.com/docs/lists/moveitem"""
+            """https://developer.foursquare_2.com/docs/lists/moveitem"""
             return self.POST('{LIST_ID}/moveitem'.format(LIST_ID=LIST_ID), params)
 
         def share(self, LIST_ID, params):
-            """https://developer.foursquare.com/docs/lists/share"""
+            """https://developer.foursquare_2.com/docs/lists/share"""
             return self.POST('{LIST_ID}/share'.format(LIST_ID=LIST_ID), params)
 
         def unfollow(self, LIST_ID):
-            """https://developer.foursquare.com/docs/tips/unfollow"""
+            """https://developer.foursquare_2.com/docs/tips/unfollow"""
             return self.POST('{LIST_ID}/unfollow'.format(LIST_ID=LIST_ID))
 
         def update(self, LIST_ID, params):
-            """https://developer.foursquare.com/docs/tips/update"""
+            """https://developer.foursquare_2.com/docs/tips/update"""
             return self.POST('{LIST_ID}/update'.format(LIST_ID=LIST_ID), params)
 
         def updateitem(self, LIST_ID, params):
-            """https://developer.foursquare.com/docs/tips/updateitem"""
+            """https://developer.foursquare_2.com/docs/tips/updateitem"""
             return self.POST('{LIST_ID}/updateitem'.format(LIST_ID=LIST_ID), params)
 
 
@@ -640,11 +640,11 @@ class Foursquare(object):
         endpoint = 'photos'
 
         def __call__(self, PHOTO_ID, multi=False):
-            """https://developer.foursquare.com/docs/photos/photos"""
+            """https://developer.foursquare_2.com/docs/photos/photos"""
             return self.GET('{PHOTO_ID}'.format(PHOTO_ID=PHOTO_ID), multi=multi)
 
         def add(self, photo_data, params, photo_content_type='image/jpeg'):
-            """https://developer.foursquare.com/docs/photos/add"""
+            """https://developer.foursquare_2.com/docs/photos/add"""
             files = { 'photo': ('photo', photo_data, photo_content_type) }
             return self.POST('add', data=params, files=files)
 
@@ -654,18 +654,18 @@ class Foursquare(object):
         endpoint = 'settings'
 
         def __call__(self, SETTING_ID, multi=False):
-            """https://developer.foursquare.com/docs/settings/settings"""
+            """https://developer.foursquare_2.com/docs/settings/settings"""
             return self.GET('{SETTING_ID}'.format(SETTING_ID=SETTING_ID), multi=multi)
 
         def all(self, multi=False):
-            """https://developer.foursquare.com/docs/settings/all"""
+            """https://developer.foursquare_2.com/docs/settings/all"""
             return self.GET('all', multi=multi)
 
         """
         Actions
         """
         def set(self, SETTING_ID, params):
-            """https://developer.foursquare.com/docs/settings/set"""
+            """https://developer.foursquare_2.com/docs/settings/set"""
             return self.POST('{SETTING_ID}/set'.format(SETTING_ID=SETTING_ID), params)
 
 
@@ -674,22 +674,22 @@ class Foursquare(object):
         endpoint = 'specials'
 
         def __call__(self, SPECIAL_ID, params, multi=False):
-            """https://developer.foursquare.com/docs/specials/specials"""
+            """https://developer.foursquare_2.com/docs/specials/specials"""
             return self.GET('{SPECIAL_ID}'.format(SPECIAL_ID=SPECIAL_ID), params, multi=multi)
 
         def search(self, params, multi=False):
-            """https://developer.foursquare.com/docs/specials/search"""
+            """https://developer.foursquare_2.com/docs/specials/search"""
             return self.GET('search', params, multi=multi)
 
         """
         Actions
         """
         def add(self, SPECIAL_ID, params):
-            """https://developer.foursquare.com/docs/specials/add"""
+            """https://developer.foursquare_2.com/docs/specials/add"""
             return self.POST('add', params)
 
         def flag(self, SPECIAL_ID, params):
-            """https://developer.foursquare.com/docs/specials/flag"""
+            """https://developer.foursquare_2.com/docs/specials/flag"""
             return self.POST('{SPECIAL_ID}/flag'.format(SPECIAL_ID=SPECIAL_ID), params)
 
 
@@ -698,15 +698,15 @@ class Foursquare(object):
         endpoint = 'events'
 
         def __call__(self, EVENT_ID, multi=False):
-            """https://developer.foursquare.com/docs/events/events"""
+            """https://developer.foursquare_2.com/docs/events/events"""
             return self.GET('{EVENT_ID}'.format(EVENT_ID=EVENT_ID), multi=multi)
 
         def categories(self, multi=False):
-            """https://developer.foursquare.com/docs/events/categories"""
+            """https://developer.foursquare_2.com/docs/events/categories"""
             return self.GET('categories', multi=multi)
 
         def search(self, params, multi=False):
-            """https://developer.foursquare.com/docs/events/search"""
+            """https://developer.foursquare_2.com/docs/events/search"""
             return self.GET('search', params, multi=multi)
 
 
@@ -715,15 +715,15 @@ class Foursquare(object):
         endpoint = 'pages'
 
         def __call__(self, USER_ID, multi=False):
-            """https://developer.foursquare.com/docs/pages/pages"""
+            """https://developer.foursquare_2.com/docs/pages/pages"""
             return self.GET('{USER_ID}'.format(USER_ID=USER_ID), multi=multi)
 
         def search(self, params, multi=False):
-            """https://developer.foursquare.com/docs/pages/search"""
+            """https://developer.foursquare_2.com/docs/pages/search"""
             return self.GET('search', params, multi=multi)
 
         def venues(self, PAGE_ID, params={}, multi=False):
-            """https://developer.foursquare.com/docs/pages/venues"""
+            """https://developer.foursquare_2.com/docs/pages/venues"""
             return self.GET('{PAGE_ID}/venues'.format(PAGE_ID=PAGE_ID), params, multi=multi)
 
 
@@ -786,7 +786,7 @@ def _get(url, headers={}, params=None):
                 response = requests.get(url, headers=headers, params=param_string, verify=VERIFY_SSL)
                 return _process_response(response)
             except requests.exceptions.RequestException, e:
-                _log_and_raise_exception('Error connecting with foursquare API', e)
+                _log_and_raise_exception('Error connecting with foursquare_2 API', e)
         except FoursquareException, e:
             # Some errors don't bear repeating
             if e.__class__ in [InvalidAuth, ParamError, EndpointError, NotAuthorized, Deprecated]: raise
@@ -800,7 +800,7 @@ def _post(url, headers={}, data=None, files=None):
         response = requests.post(url, headers=headers, data=data, files=files, verify=VERIFY_SSL)
         return _process_response(response)
     except requests.exceptions.RequestException, e:
-        _log_and_raise_exception('Error connecting with foursquare API', e)
+        _log_and_raise_exception('Error connecting with foursquare_2 API', e)
 
 def _process_response(response):
     """Make the request and handle exception processing"""
@@ -820,8 +820,8 @@ def _raise_error_from_response(data):
     # Check the meta-data for why this request failed
     meta = data.get('meta')
     if meta:
-        # Account for foursquare conflicts
-        # see: https://developer.foursquare.com/overview/responses
+        # Account for foursquare_2 conflicts
+        # see: https://developer.foursquare_2.com/overview/responses
         if meta.get('code') in (200, 409): return data
         exc = error_types.get(meta.get('errorType'))
         if exc:

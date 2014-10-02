@@ -339,6 +339,10 @@ class Foursquare(object):
             """https://developer.foursquare_2.com/docs/users/venuehistory"""
             return self.GET('{USER_ID}/venuehistory'.format(USER_ID=USER_ID), params, multi=multi)
 
+        def venuelikes(self, USER_ID=u'self', params={}, multi=False):
+            """https://developer.foursquare_2.com/docs/users/venuelikes"""
+            return self.GET('{USER_ID}/venuelikes'.format(USER_ID=USER_ID), params, multi=multi)
+
         """
         Actions
         """

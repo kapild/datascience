@@ -10,6 +10,49 @@ class FourSquareWrap():
         self.api = get_foursquare_client()
 
 
+
+    '''
+    get category location search
+    '''
+
+    def get_category_location_venue_explore(self, category="coffee", location="37.7833,-122.41",
+                                           attr=['name', 'hasMenu']):
+        logging.info("Getting venue search for category\'s: %s lat,lng:%s" % (category, location))
+        limit = 500
+        offset = 0
+        has_more_results = True
+        while has_more_results:
+            params = {
+                'll' : location,
+                'query' : category,
+                'intent' : 'browse',
+                'limit' : limit,
+                'offset' : offset,
+                'radius' : 100000
+
+            }
+            search_venues = self._get_api_venue_explore(params)
+            if 'groups' in search_venues and 'items' in search_venues['groups'][0]:
+                venues_items = search_venues['groups'][0]['items']
+                count = search_venues['totalResults']
+                logging.info("Total venues %s" % len(venues_items))
+                for venue_item in venues_items:
+                    venue = venue_item['venue']
+                    venues_dict = {}
+                    for key in attr:
+                        if key in venue:
+                            logging.debug("Getting venue attribute %s, value:%s" % (key, venue[key]))
+                            venues_dict[key] = venue[key]
+                    yield venues_dict
+                offset += len(venues_items)
+                if offset >= count:
+                    logging.info("No more venues:...")
+                    has_more_results = False
+            else:
+                has_more_results = False
+
+
+
     '''
     get users likes venues
     '''
@@ -205,3 +248,14 @@ class FourSquareWrap():
             'limit': limit,
             'offset' : offset
         })
+
+
+    def _get_api_venue_explore(self, params):
+        return self.api.venues.explore(
+            params=params
+        )
+
+    def _get_api_venue_search(self, params):
+        return self.api.venues.search(
+            params=params
+        )

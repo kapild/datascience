@@ -34,6 +34,12 @@ def test_users_venues_like():
     for friend_id in fsq_wrap.get_users_likes_venues():
         print friend_id
 
+def test_venue_search():
+    # for venues in fsq_wrap.get_category_location_venue_explore():
+    #     print venues
+
+    for venues in fsq_wrap.get_category_location_venue_explore(category="tikka", location="37.7833,-122.41"):
+        print venues
 
 if __name__ == '__main__':
-    test_users_venues_like()
+    test_venue_search()

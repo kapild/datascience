@@ -1,6 +1,4 @@
-
-import redis
-from ds.redis.Redis import FoursquareRedisStore
+from ds.backend.redis.Redis import RedisStoreImpl
 
 
 def test_redis():
@@ -16,7 +14,7 @@ def test_redis():
             "db": 0,
         }
     }
-    fsq_redis = FoursquareRedisStore(redis_dict)
+    fsq_redis = RedisStoreImpl(redis_dict)
     set_name = "kapil"
     fsq_redis.set_add(set_name, "kapil")
     print(fsq_redis.set_members("name"))

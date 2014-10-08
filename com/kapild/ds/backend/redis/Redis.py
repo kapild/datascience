@@ -4,7 +4,7 @@ import logging
 import redis
 
 _logger = logging.getLogger("FoursquareRedisStore")
-class RedisApiBase(object):
+class IRedisApiBase(object):
 
 
     def contains_key(self, key):
@@ -21,7 +21,7 @@ class RedisApiBase(object):
     def set_members(self, set_name):
         raise NotImplementedError
 
-class FoursquareRedisStore(RedisApiBase):
+class RedisStoreImpl(IRedisApiBase):
 
     def __init__(self, conn_args=None):
         conn_args = conn_args
@@ -55,3 +55,10 @@ class FoursquareRedisStore(RedisApiBase):
 
     def set_members(self, set_name):
         return self.__reader.smembers(set_name)
+
+    def get_hash_item(self, hash_name, hash_key):
+        values = self.__reader.hget(hash_name, hash_key)
+        return values
+
+    def put_hash_item(self, hash_name, hash_key, hash_value):
+        self.__reader.hset(hash_name, hash_key, hash_value)

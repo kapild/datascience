@@ -3,7 +3,6 @@
 import logging
 import redis
 
-_logger = logging.getLogger("FoursquareRedisStore")
 class IRedisApiBase(object):
 
 
@@ -24,6 +23,9 @@ class IRedisApiBase(object):
 class RedisStoreImpl(IRedisApiBase):
 
     def __init__(self, conn_args=None):
+        self._logger = logging.getLogger(__name__)
+        self._logger.setLevel(logging.INFO)
+
         conn_args = conn_args
         reader_dict = conn_args.get('read')
         self.__reader = None
@@ -31,15 +33,15 @@ class RedisStoreImpl(IRedisApiBase):
         if reader_dict:
             self.__reader = redis.Redis(**reader_dict)
         else:
-            _logger.info("No reader connection available. exit().")
+            self._logger.info("No reader connection available. exit().")
 
         writer_dict = conn_args.get('write')
         if writer_dict:
             self.__writer = redis.Redis(**writer_dict)
         else:
-            _logger.info("No writer connection available. exit().")
+            self._logger.info("No writer connection available. exit().")
 
-        _logger.info("Foursquare redis connection saved.")
+        self._logger.info("Foursquare redis connection saved.")
 
 
     def contains_key(self, key):

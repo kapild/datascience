@@ -178,7 +178,7 @@ class FourSquareWrap():
 
     def get_users_friends(self, user_id='self', limit='All', attr=['id', 'firstName']):
 
-        logging.info("Getting user\'s friends:" + user_id)
+        logging.info("Getting user %s friends:" , user_id)
         limit = 500
         offset = 0
         users_friends = self._get_api_users_friends(user_id, offset, limit)

@@ -23,6 +23,7 @@ class IRedisApiBase(object):
 class RedisStoreImpl(IRedisApiBase):
 
     def __init__(self, conn_args=None):
+        logging.basicConfig()
         self._logger = logging.getLogger(__name__)
         self._logger.setLevel(logging.INFO)
 

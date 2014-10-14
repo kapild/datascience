@@ -6,18 +6,17 @@ from utils import get_foursquare_client
 class FourSquareWrap():
 
     def __init__(self):
-        logging.info("Init Foursquare wrapper")
         self.api = get_foursquare_client()
 
-
+        self.__Logger = logging.getLogger(__name__)
+        self.__Logger.setLevel(logging.INFO)
 
     '''
     get category location search
     '''
-
     def get_category_location_venue_explore(self, category="coffee", location="37.7833,-122.41",
                                            attr=['name', 'hasMenu']):
-        logging.info("Getting venue search for category\'s: %s lat,lng:%s" % (category, location))
+        self.__Logger.info("Getting venue search for category\'s: %s lat,lng:%s" % (category, location))
         limit = 500
         offset = 0
         has_more_results = True
@@ -35,30 +34,33 @@ class FourSquareWrap():
             if 'groups' in search_venues and 'items' in search_venues['groups'][0]:
                 venues_items = search_venues['groups'][0]['items']
                 count = search_venues['totalResults']
-                logging.info("Total venues %s" % len(venues_items))
+                self.__Logger.info("Total venues %s" % len(venues_items))
                 for venue_item in venues_items:
                     venue = venue_item['venue']
                     venues_dict = {}
                     for key in attr:
                         if key in venue:
-                            logging.debug("Getting venue attribute %s, value:%s" % (key, venue[key]))
+                            self.__Logger.debug("Getting venue attribute %s, value:%s" % (key, venue[key]))
                             venues_dict[key] = venue[key]
                     yield venues_dict
                 offset += len(venues_items)
                 if offset >= count:
-                    logging.info("No more venues:...")
+                    self.__Logger.info("No more venues:...")
                     has_more_results = False
             else:
                 has_more_results = False
 
 
 
+    def get_venue_item_details(self, venue_id):
+        venue_item = self._get_api_venue_item(venue_id, 0, 300)
+        return venue_item['venue'] if 'venue' in venue_item else None
+
     '''
     get users likes venues
     '''
-
     def get_users_likes_venues(self, user_id="self", limit='All', attr=['id', 'location', 'name', 'hasMenu']):
-        logging.info("Getting user\'s: %s liked venue list:" + user_id)
+        self.__Logger.info("Getting user\'s: %s liked venue list:" + user_id)
         limit = 500
         offset = 0
         has_more_results = True
@@ -68,22 +70,21 @@ class FourSquareWrap():
             if 'venues' in liked_venues and 'items' in liked_venues['venues']:
                 liked_venue = liked_venues['venues']
                 count = liked_venue['count']
-                logging.info("Total venues %s" % count)
+                self.__Logger.info("Total venues %s" % count)
                 liked_venue_list = liked_venue['items']
-                print ("Iterating over next %s venues, offset:%s " % (len(liked_venue_list), offset))
-                logging.info("Iterating over next %s venues, offset:%s " % (
+                self.__Logger.info("Iterating over next %s venues, offset:%s " % (
                     len(liked_venue_list), offset)
                 )
                 for venue in liked_venue_list:
                     venues_dict = {}
                     for key in attr:
                         if key in venue:
-                            logging.debug("Getting venue attribute %s, value:%s" % (key, venue[key]))
+                            self.__Logger.debug("Getting venue attribute %s, value:%s" % (key, venue[key]))
                             venues_dict[key] = venue[key]
                     yield venues_dict
                 offset += len(liked_venue_list)
                 if offset >= count:
-                    logging.info("No more venues:...")
+                    self.__Logger.info("No more venues:...")
                     has_more_results = False
             else:
                 has_more_results = False
@@ -92,7 +93,7 @@ class FourSquareWrap():
     get venue ids and other attributes for a list id from anyone
     '''
     def get_lists_items(self, list_id, limit='All', attr=['id', 'location', 'name', 'categories', 'hasMenu']):
-        logging.info("Getting list\'s saved item:" + list_id)
+        self.__Logger.info("Getting list\'s saved item:" + list_id)
         limit = 500
         offset = 0
         has_more_results = True
@@ -101,10 +102,9 @@ class FourSquareWrap():
             if 'list' in lists_items and 'listItems' in lists_items['list']:
                 lists_items = lists_items['list']['listItems']
                 count = lists_items['count']
-                logging.info("Total venues %s" % count)
+                self.__Logger.debug("Total venues %s" % count)
                 lists_items_list = lists_items['items']
-                print ("Iterating over next %s venues, offset:%s " % (len(lists_items_list), offset))
-                logging.info("Iterating over next %s venues, offset:%s " % (
+                self.__Logger.info("Iterating over next %s venues, offset:%s " % (
                     len(lists_items_list), offset)
                 )
                 for venues in lists_items_list:
@@ -112,12 +112,12 @@ class FourSquareWrap():
                     venues_dict = {}
                     for key in attr:
                         if key in venue:
-                            logging.debug("Getting venue attribute %s, value:%s" % (key, venue[key]))
+                            self.__Logger.debug("Getting venue attribute %s, value:%s" % (key, venue[key]))
                             venues_dict[key] = venue[key]
                     yield venues_dict
                 offset += len(lists_items_list)
                 if offset >= count:
-                    logging.info("No more venues:...")
+                    self.__Logger.info("No more venues:...")
                     has_more_results = False
             else:
                 has_more_results = False
@@ -127,7 +127,7 @@ class FourSquareWrap():
     https://developer.foursquare.com/docs/explore#req=users/self/lists%3Fgroup%3Dcreated
     """
     def get_user_saved_list(self, user_id='self', limit='All', attr=['id', 'name', 'location', 'hasMenu']):
-        logging.info("Getting user\'s saved list:" + user_id)
+        self.__Logger.info("Getting user:%s saved list:" % user_id)
         limit = 500
         offset = 0
         has_more_results = True
@@ -139,7 +139,7 @@ class FourSquareWrap():
                         list_dict = {}
                         for key in attr:
                             if key in items:
-                                logging.debug("Getting venue attribute %s, value:%s" % (key, items[key]))
+                                self.__Logger.debug("Getting venue attribute %s, value:%s" % (key, items[key]))
                                 list_dict[key] = items[key]
                         yield list_dict
             has_more_results = False
@@ -148,7 +148,7 @@ class FourSquareWrap():
     https://developer.foursquare.com/docs/explore#req=users/self/venuehistory
     """
     def get_self_checkins(self,  limit='All', attr=['id', 'name']):
-        logging.info("Getting user\'s checkins:" + 'self')
+        self.__Logger.info("Getting user\'s checkins:" + 'self')
         limit = 500
         offset = 0
         has_more_results = True
@@ -157,28 +157,28 @@ class FourSquareWrap():
             if 'venues' in my_check_ins and 'items' in my_check_ins['venues']:
                 venues_checked = my_check_ins['venues']
                 count = venues_checked['count']
-                logging.info("Total venues %s" % count)
+                self.__Logger.info("Total venues %s" % count)
                 venues_checked_list = venues_checked['items']
-                logging.info("Iterating over next %s venues, offset " %
+                self.__Logger.info("Iterating over next %s venues, offset " %
                              (len(venues_checked_list)), offset)
                 for checkins in venues_checked_list:
                     venue = checkins['venue']
                     venues_dict = {}
                     for key in attr:
                         if key in venue:
-                            logging.debug("Getting venue attribute %s, value:%s" % (key, venue[key]))
+                            self.__Logger.debug("Getting venue attribute %s, value:%s" % (key, venue[key]))
                             venues_dict[key] = venue[key]
                     yield venues_dict
                 offset += len(venues_checked_list)
                 if offset >= count:
-                    logging.info("No more venues:...")
+                    self.__Logger.info("No more venues:...")
                     has_more_results = False
             else:
                 has_more_results = False
 
     def get_users_friends(self, user_id='self', limit='All', attr=['id', 'firstName']):
 
-        logging.info("Getting user %s friends:" , user_id)
+        self.__Logger.info("Getting user %s friends:" , user_id)
         limit = 500
         offset = 0
         users_friends = self._get_api_users_friends(user_id, offset, limit)
@@ -188,13 +188,13 @@ class FourSquareWrap():
                 and 'count' in users_friends['friends']:
             friends = users_friends['friends']
             counts = friends['count']
-            logging.debug("Found %s: friends" % counts)
+            self.__Logger.debug("Found %s: friends" % counts)
             friends_list = friends['items']
             for friend in friends_list:
                 friend_dict = {}
                 for key in attr:
                     if key in friend:
-                        logging.debug("Getting attribute %s, value:%s" % (key, friend[key]))
+                        self.__Logger.debug("Getting attribute %s, value:%s" % (key, friend[key]))
                         friend_dict[key] = friend[key]
                 yield friend_dict
 
@@ -206,6 +206,10 @@ class FourSquareWrap():
             'limit': limit,
             'offset' : offset,
         })
+
+    def _get_api_venue_item(self, venue_id, offset, limit):
+        return self.api.venues(
+            venue_id)
 
     def _get_api_lists_venues(self, list_id, offset, limit):
         return self.api.lists(

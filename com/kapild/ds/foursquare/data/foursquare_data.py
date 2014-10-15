@@ -104,3 +104,13 @@ class Foursquare:
 
         self.__Logger.debug("Returning venue_id:%s details" % (venue_id))
         yield venue_item
+
+
+    def get_venue_keys(self, **kwargs):
+        venue_keys = self.fsq_redis.get_venue_keys()
+        if venue_keys is not None:
+            for venue_key in venue_keys:
+                yield venue_key
+        else:
+            yield None
+

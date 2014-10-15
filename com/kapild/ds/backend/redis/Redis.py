@@ -13,6 +13,8 @@ class IRedisApiBase(object):
     def get(self, key):
         raise NotImplementedError
 
+    def get_hash_keys(self, hash_name):
+        raise NotImplementedError
 
     def set_add(self, set_name, value):
         raise NotImplementedError
@@ -65,3 +67,6 @@ class RedisStoreImpl(IRedisApiBase):
 
     def put_hash_item(self, hash_name, hash_key, hash_value):
         self.__reader.hset(hash_name, hash_key, hash_value)
+
+    def get_hash_keys(self, hash_key):
+        return self.__reader.hkeys(hash_key)

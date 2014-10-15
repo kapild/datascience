@@ -13,5 +13,10 @@ def get_users_saved_list(user_id):
 def get_lists_saved_list(list_id):
     return "lists_items",  list_id
 
+def get_venue_hash():
+    return "fsq_venue"
+
 def get_venue_details(list_id):
-    return "fsq_venue",  list_id
+    return get_venue_hash(),  list_id
+
+

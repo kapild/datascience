@@ -1,3 +1,5 @@
+from ds.backend.redis.Redis import RedisStoreImpl
+
 __author__ = 'kdalwani'
 
 import foursquare
@@ -18,6 +20,8 @@ redis_dict = {
 }
 
 fs = Foursquare(redis_dict)
+redis = RedisStoreImpl(redis_dict)
+
 
 def test_get_user_like_venue(user_id='self'):
 
@@ -85,13 +89,18 @@ def run():
             print "error"
             time.sleep(60 * 60)
 
+def get_venue_keys():
+    for venue_key in fs.get_venue_keys():
+        for venue in fs.get_venue_details(venue_key):
+            print venue
+
 
 if __name__ == "__main__":
     # test_get_users_saved_list(40083285) #4e4be62f18a808fd11036118
     # test_get_lists_items('4e4be62f18a808fd11036118')
  #   test_get_venue_details('4b7591a7f964a520dc142ee3')
 
-    run()
+    get_venue_keys()
 
 
 

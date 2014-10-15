@@ -7,6 +7,7 @@ from ds.backend.redis.utils import (
     get_users_saved_list,
     get_lists_saved_list,
     get_venue_details,
+    get_venue_hash,
 )
 import json
 
@@ -128,3 +129,12 @@ class FoursquareRedisBackend:
         status_code = self.fsq_redis.put_hash_item(venue_item_tuple[0], venue_item_tuple[1], venue_detail)
         if status_code:
             self.__Logger.info("Added venue details, status:", status_code )
+
+    def get_venue_keys(self):
+        self.__Logger.info("Getting all foursquare venue keys")
+        venue_keys = self.fsq_redis.get_hash_keys(get_venue_hash())
+        if venue_keys is not None and len(venue_keys) > 0:
+            self.__Logger.info("Found %s keys for venues" % len(venue_keys))
+            return venue_keys
+        else:
+            return None

@@ -1,5 +1,6 @@
 __author__ = 'kdalwani'
 
+import foursquare
 
 from ds.foursquare.data.foursquare_data import Foursquare
 import time
@@ -45,47 +46,52 @@ def test_get_venue_details(venue_id, **kwargs):
 
 def run():
 
-    kwargs = {'is_fresh' : False}
-
     venue_set = set()
     user_stack = []
     user_set = set()
     user_stack.append('self')
-    index = 0
+    kwargs = {'is_fresh' : False}
+
     while len(user_stack) > 0:
-        user_id = user_stack.pop()
-        print("Starting processing for user:%s" % user_id)
+        try:
+            user_id = user_stack.pop()
+            print("Starting processing for user:%s" % user_id)
 
-        user_liked_venues = fs.get_users_liked_venue(user_id, **kwargs)
-        for user_liked_venue in user_liked_venues:
-            for venue in fs.get_venue_details(user_liked_venue['id']):
-                venue_set.add(venue['id'])
-
-        print("Done user liked venues for user:%s" % user_id)
-        time.sleep(0.1)
-        user_saved_lists = fs.get_users_saved_list(user_id, **kwargs)
-        for user_saved_list in user_saved_lists:
-            user_list = fs.get_lists_items(user_saved_list['id'], **kwargs)
-            print("Getting venues for user saved list is:%s" % user_saved_list['id'])
-            for list_venue in user_list:
-                for venue in fs.get_venue_details(list_venue['id'], **kwargs):
+            user_liked_venues = fs.get_users_liked_venue(user_id, **kwargs)
+            for user_liked_venue in user_liked_venues:
+                for venue in fs.get_venue_details(user_liked_venue['id']):
                     venue_set.add(venue['id'])
 
-        print("Getting users friends:%s" % user_id)
-        time.sleep(0.1)
-        for friends in fs.get_users_friend(user_id, **kwargs):
-            friend_id = friends['id']
-            if friend_id not in user_set:
-                user_stack.append(friend_id)
-                user_set.add(friend_id)
+            print("Done user liked venues for user:%s" % user_id)
+            user_saved_lists = fs.get_users_saved_list(user_id, **kwargs)
+            for user_saved_list in user_saved_lists:
+                user_list = fs.get_lists_items(user_saved_list['id'], **kwargs)
+                print("Getting venues for user_id:%s, saved list is:%s" % (user_id, user_saved_list['id']))
+                for list_venue in user_list:
+                    for venue in fs.get_venue_details(list_venue['id'], **kwargs):
+                        venue_set.add(venue['id'])
 
-        print("Done processing for user:%s" % user_id)
+            print("Getting users friends:%s" % user_id)
+            for friends in fs.get_users_friend(user_id, **kwargs):
+                friend_id = friends['id']
+                if friend_id not in user_set:
+                    user_stack.append(friend_id)
+                    user_set.add(friend_id)
+
+            print("Done processing for user:%s" % user_id)
+        except foursquare.RateLimitExceeded:
+            print "len(user_set):" + str(len(user_set))
+            print "len(venue_set):" + str(len(venue_set))
+            print "error"
+            time.sleep(60 * 60)
 
 
 if __name__ == "__main__":
     # test_get_users_saved_list(40083285) #4e4be62f18a808fd11036118
     # test_get_lists_items('4e4be62f18a808fd11036118')
  #   test_get_venue_details('4b7591a7f964a520dc142ee3')
+
     run()
+
 
 

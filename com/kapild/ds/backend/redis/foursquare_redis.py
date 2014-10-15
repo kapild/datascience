@@ -25,7 +25,7 @@ class FoursquareRedisBackend:
     def get_users_likes_venues(self, user_id="self", limit='All', attr=['id', 'location', 'name', 'hasMenu']):
         self.__Logger.debug("Getting users liked venues from redis")
         liked_venue_tuple = get_user_liked_key(user_id)
-        self.__Logger.info("Checking hash: %s with user_id: %s" % (liked_venue_tuple[0], liked_venue_tuple[1]))
+        self.__Logger.debug("Checking hash: %s with user_id: %s" % (liked_venue_tuple[0], liked_venue_tuple[1]))
         liked_venues = self.fsq_redis.get_hash_item(liked_venue_tuple[0], liked_venue_tuple[1])
         if liked_venues is not None:
             liked_venues_list = json.loads(liked_venues)
@@ -62,7 +62,7 @@ class FoursquareRedisBackend:
     def get_users_friends(self, user_id='self', limit='All', attr=['id', 'location', 'name', 'hasMenu']):
         self.__Logger.debug("Getting users friend from redis: %s" % user_id)
         user_friend_tuple = get_users_friends_key(user_id)
-        self.__Logger.info("Checking hash: %s with user_id: %s" % (user_friend_tuple[0], user_friend_tuple[1]))
+        self.__Logger.debug("Checking hash: %s with user_id: %s" % (user_friend_tuple[0], user_friend_tuple[1]))
         user_friends = self.fsq_redis.get_hash_item(user_friend_tuple[0], user_friend_tuple[1])
         if user_friends is not None:
             user_friends_list = json.loads(user_friends)
@@ -75,7 +75,7 @@ class FoursquareRedisBackend:
     def get_users_saved_list(self, user_id='self', limit='All', attr=['id', 'location', 'name', 'hasMenu']):
         self.__Logger.debug("Getting users saved list from redis: %s" % user_id)
         user_friend_tuple = get_users_saved_list(user_id)
-        self.__Logger.info("Checking hash: %s with user_id: %s" % (user_friend_tuple[0], user_friend_tuple[1]))
+        self.__Logger.debug("Checking hash: %s with user_id: %s" % (user_friend_tuple[0], user_friend_tuple[1]))
         user_save_list = self.fsq_redis.get_hash_item(user_friend_tuple[0], user_friend_tuple[1])
         if user_save_list is not None:
             user_save_list_lists = json.loads(user_save_list)
@@ -89,7 +89,7 @@ class FoursquareRedisBackend:
     def get_lists_items(self, list_id, imit='All', attr=['id', 'location', 'name', 'hasMenu']):
         self.__Logger.debug("Getting Lists saved list from redis: %s" % list_id)
         lists_item_tuple = get_lists_saved_list(list_id)
-        self.__Logger.info("Checking hash: %s with list_id: %s" % (lists_item_tuple[0], lists_item_tuple[1]))
+        self.__Logger.debug("Checking hash: %s with list_id: %s" % (lists_item_tuple[0], lists_item_tuple[1]))
         lists_saved_items = self.fsq_redis.get_hash_item(lists_item_tuple[0], lists_item_tuple[1])
         if lists_saved_items is not None:
             lists_saved_items_lists = json.loads(lists_saved_items)
@@ -111,11 +111,11 @@ class FoursquareRedisBackend:
     def get_venue_detail(self, venue_id,  attr=['id', 'location', 'name', 'hasMenu']):
         self.__Logger.debug("Getting details for Venue id:%s from redis" % venue_id)
         venue_details_tuple = get_venue_details(venue_id)
-        self.__Logger.info("Checking hash: %s with venue_id: %s" % (venue_details_tuple[0], venue_details_tuple[1]))
+        self.__Logger.debug("Checking hash: %s with venue_id: %s" % (venue_details_tuple[0], venue_details_tuple[1]))
         venue_details = self.fsq_redis.get_hash_item(venue_details_tuple[0], venue_details_tuple[1])
         if venue_details is not None and venue_details != 'null':
             venue_details = json.loads(venue_details)
-            self.__Logger.info("Found details for venue id:%s:", venue_id)
+            self.__Logger.debug("Found details for venue id:%s:", venue_id)
             return venue_details
         else:
             self.__Logger.debug("No venue details found for venue id:%s in Redis", venue_id)

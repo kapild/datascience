@@ -94,13 +94,27 @@ def get_venue_keys():
         for venue in fs.get_venue_details(venue_key):
             print venue
 
+def filter_category(name="Food"):
+    cat = None
+    for category in get_fsq_categories():
+        if category['name'] == name:
+            cat = category
+
+    list_a = []
+    fs.get_child_category_first(cat, list_a)
+    print str(len(list_a))
+    for z1 in list_a:
+        print z1['name']
+
+
+
+def get_fsq_categories():
+    kwargs = {'is_fresh' : False}
+    for categroies in fs.get_venue_categories_lists(**kwargs):
+        yield categroies
 
 if __name__ == "__main__":
     # test_get_users_saved_list(40083285) #4e4be62f18a808fd11036118
     # test_get_lists_items('4e4be62f18a808fd11036118')
  #   test_get_venue_details('4b7591a7f964a520dc142ee3')
-
-    get_venue_keys()
-
-
-
+    run()

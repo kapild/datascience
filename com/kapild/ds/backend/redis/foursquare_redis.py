@@ -8,6 +8,8 @@ from ds.backend.redis.utils import (
     get_lists_saved_list,
     get_venue_details,
     get_venue_hash,
+    get_fsq_categories,
+    get_venue_location_categories
 )
 import json
 
@@ -109,6 +111,28 @@ class FoursquareRedisBackend:
             self.__Logger.debug("Added users liked venue total status:", status_code )
 
 
+    def get_venue_search(self, category_id, city_name, attr=['id', 'location', 'name', 'hasMenu']):
+
+        self.__Logger.debug("Getting venue details for category_id:%s, city: from redis" % category_id, city_name)
+        city_category_tuple = get_venue_location_categories(city_name, category_id)
+        self.__Logger.debug("Checking hash: %s with category_id: %s" % (city_category_tuple[0], city_category_tuple[1]))
+        venue_details = self.fsq_redis.get_hash_item(city_category_tuple[0], city_category_tuple[1])
+        if venue_details is not None and venue_details != 'null':
+            venue_details_list = json.loads(venue_details)
+            self.__Logger.debug("Found %s: details for city name:%s:" % (len(venue_details), city_name))
+            return venue_details_list
+        else:
+            self.__Logger.debug("No venue details found for city name:%s in Redis", city_name)
+            return None
+
+    def add_venue_search(self, city_name, category_id, venue_lists):
+        self.__Logger.debug("Adding city_name id:%s category_id:%s, to redis", city_name, category_id)
+        city_category_tuple = get_venue_location_categories(city_name, category_id)
+        self.__Logger.info("Adding key: %s with category_id: %s" % (city_category_tuple[0], city_category_tuple[1]))
+        status_code = self.fsq_redis.put_hash_item(city_category_tuple[0], city_category_tuple[1], venue_lists)
+        if status_code:
+            self.__Logger.info("Added venue details, status:", status_code )
+
     def get_venue_detail(self, venue_id,  attr=['id', 'location', 'name', 'hasMenu']):
         self.__Logger.debug("Getting details for Venue id:%s from redis" % venue_id)
         venue_details_tuple = get_venue_details(venue_id)
@@ -138,3 +162,21 @@ class FoursquareRedisBackend:
             return venue_keys
         else:
             return None
+
+    def get_all_categories_list(self):
+        self.__Logger.info("Getting all venue categories")
+        fsq_category_tuple = get_fsq_categories()
+        categories_json = self.fsq_redis.get_hash_item(fsq_category_tuple[0], fsq_category_tuple[1])
+        categories = json.loads(categories_json)
+        if categories is not None and len(categories) > 0:
+            self.__Logger.info("Found %s categories in fsq" % len(categories))
+            return categories
+        else:
+            return None
+
+    def add_all_categories_list(self, categories_list):
+        self.__Logger.info("Adding all venue categories")
+        fsq_category_tuple = get_fsq_categories()
+        status_code = self.fsq_redis.put_hash_item(fsq_category_tuple[0], fsq_category_tuple[1], json.dumps(
+            categories_list))
+        self.__Logger.debug("Adding all venue categories status code %s" % status_code)

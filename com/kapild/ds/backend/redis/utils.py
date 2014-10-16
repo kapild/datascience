@@ -16,6 +16,12 @@ def get_lists_saved_list(list_id):
 def get_venue_hash():
     return "fsq_venue"
 
+def get_fsq_categories():
+    return "fsq", "categories"
+
+def get_venue_location_categories(city_nane, category_id):
+    return city_nane, category_id
+
 def get_venue_details(list_id):
     return get_venue_hash(),  list_id
 

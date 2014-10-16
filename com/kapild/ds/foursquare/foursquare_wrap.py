@@ -38,7 +38,6 @@ class FourSquareWrap():
     ):
         self.__Logger.info("Getting venue search for category_id: %s lat,lng:%s" % (category_id, ll))
         limit = 50
-        offset = 0
         has_more_results = True
         params = {
             'll' : ll,

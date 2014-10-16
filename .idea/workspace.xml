@@ -26,33 +26,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test_redis_api.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_redis_api.py">
+      <file leaf-file-name="foursquare_data.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/data/foursquare_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="1650">
-              <caret line="96" column="19" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1290">
+              <caret line="156" column="16" selection-start-line="156" selection-start-column="16" selection-end-line="156" selection-end-column="16" />
               <folding>
-                <element signature="e#477#544#0" expanded="false" />
-                <element signature="e#598#679#0" expanded="false" />
-                <element signature="e#718#830#0" expanded="false" />
-                <element signature="e#883#1008#0" expanded="false" />
-                <element signature="e#1062#1184#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_friends.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_friends.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-              <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-              <folding>
-                <element signature="e#138#200#0" expanded="false" />
-                <element signature="e#226#495#0" expanded="false" />
-                <element signature="e#524#824#0" expanded="false" />
-                <element signature="e#855#939#0" expanded="false" />
-                <element signature="e#975#1050#0" expanded="false" />
+                <element signature="e#1#69#0" expanded="true" />
+                <element signature="e#520#1372#0" expanded="false" />
+                <element signature="e#1445#2277#0" expanded="false" />
+                <element signature="e#2345#3266#0" expanded="false" />
+                <element signature="e#3326#4236#0" expanded="false" />
+                <element signature="e#4299#5002#0" expanded="false" />
+                <element signature="e#5064#5887#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -61,8 +47,8 @@
       <file leaf-file-name="test_get_city_categories_venues.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-              <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="825">
+              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -73,8 +59,8 @@
       <file leaf-file-name="cities.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/cities/cities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.098684214" vertical-offset="0" max-vertical-offset="1125">
-              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.083798885" vertical-offset="0" max-vertical-offset="1155">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -120,10 +106,10 @@
         <option value="$PROJECT_DIR$/com/kapild/ds/backend/redis/Redis.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/test/dump_all_venues.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/test/test_redis_api.py" />
-        <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/utils.py" />
-        <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/foursquare_wrap.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/backend/redis/utils.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py" />
+        <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/utils.py" />
+        <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/foursquare_wrap.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/data/foursquare_data.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/cities/cities.py" />
@@ -133,7 +119,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="979" />
+    <option name="height" value="1189" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -568,7 +554,9 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
@@ -722,18 +710,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="979" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1189" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24954791" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2760699" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45556805" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5320585" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28683916" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32302094" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -823,30 +811,35 @@
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/com/kapild/ds/foursquare/utils.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/com/kapild/ds/foursquare/foursquare_wrap.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/com/kapild/ds/foursquare/data/foursquare_data.py</url>
-          <line>161</line>
-          <option name="timeStamp" value="131" />
+          <line>152</line>
+          <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="134" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="136" />
+          <url>file://$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py</url>
+          <line>122</line>
+          <option name="timeStamp" value="149" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="137" />
+      <option name="time" value="150" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -884,17 +877,17 @@
           <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
           <folding>
             <element signature="e#352#874#0" expanded="false" />
-            <element signature="e#2253#2378#0" expanded="false" />
-            <element signature="e#2542#3854#0" expanded="false" />
-            <element signature="e#4056#5410#0" expanded="false" />
-            <element signature="e#5634#6471#0" expanded="false" />
-            <element signature="e#6643#7998#0" expanded="false" />
-            <element signature="e#8097#8998#0" expanded="false" />
-            <element signature="e#9076#9221#0" expanded="false" />
-            <element signature="e#9291#9336#0" expanded="false" />
-            <element signature="e#9407#9541#0" expanded="false" />
-            <element signature="e#9623#9796#0" expanded="false" />
-            <element signature="e#10195#10336#0" expanded="false" />
+            <element signature="e#2234#2359#0" expanded="false" />
+            <element signature="e#2523#3835#0" expanded="false" />
+            <element signature="e#4037#5391#0" expanded="false" />
+            <element signature="e#5615#6452#0" expanded="false" />
+            <element signature="e#6624#7979#0" expanded="false" />
+            <element signature="e#8078#8979#0" expanded="false" />
+            <element signature="e#9057#9202#0" expanded="false" />
+            <element signature="e#9272#9317#0" expanded="false" />
+            <element signature="e#9388#9522#0" expanded="false" />
+            <element signature="e#9604#9777#0" expanded="false" />
+            <element signature="e#10176#10317#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -926,17 +919,17 @@
           <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
           <folding>
             <element signature="e#352#874#0" expanded="false" />
-            <element signature="e#2253#2378#0" expanded="false" />
-            <element signature="e#2542#3854#0" expanded="false" />
-            <element signature="e#4056#5410#0" expanded="false" />
-            <element signature="e#5634#6471#0" expanded="false" />
-            <element signature="e#6643#7998#0" expanded="false" />
-            <element signature="e#8097#8998#0" expanded="false" />
-            <element signature="e#9076#9221#0" expanded="false" />
-            <element signature="e#9291#9336#0" expanded="false" />
-            <element signature="e#9407#9541#0" expanded="false" />
-            <element signature="e#9623#9796#0" expanded="false" />
-            <element signature="e#10195#10336#0" expanded="false" />
+            <element signature="e#2234#2359#0" expanded="false" />
+            <element signature="e#2523#3835#0" expanded="false" />
+            <element signature="e#4037#5391#0" expanded="false" />
+            <element signature="e#5615#6452#0" expanded="false" />
+            <element signature="e#6624#7979#0" expanded="false" />
+            <element signature="e#8078#8979#0" expanded="false" />
+            <element signature="e#9057#9202#0" expanded="false" />
+            <element signature="e#9272#9317#0" expanded="false" />
+            <element signature="e#9388#9522#0" expanded="false" />
+            <element signature="e#9604#9777#0" expanded="false" />
+            <element signature="e#10176#10317#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1168,16 +1161,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47029704" vertical-offset="0" max-vertical-offset="606">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="e#25#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/backend/redis/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.519802" vertical-offset="0" max-vertical-offset="606">
@@ -1196,38 +1179,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/foursquare_wrap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="98" max-vertical-offset="1890">
+        <state vertical-scroll-proportion="0.09508716" vertical-offset="270" max-vertical-offset="1905">
           <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
           <folding>
+            <element signature="e#25#39#0" expanded="true" />
             <element signature="e#352#874#0" expanded="false" />
-            <element signature="e#2253#2378#0" expanded="false" />
-            <element signature="e#2542#3854#0" expanded="false" />
-            <element signature="e#4056#5410#0" expanded="false" />
-            <element signature="e#5634#6471#0" expanded="false" />
-            <element signature="e#6643#7998#0" expanded="false" />
-            <element signature="e#8097#8998#0" expanded="false" />
-            <element signature="e#9076#9221#0" expanded="false" />
-            <element signature="e#9291#9336#0" expanded="false" />
-            <element signature="e#9407#9541#0" expanded="false" />
-            <element signature="e#9623#9796#0" expanded="false" />
-            <element signature="e#10195#10336#0" expanded="false" />
+            <element signature="e#2234#2359#0" expanded="false" />
+            <element signature="e#2523#3835#0" expanded="false" />
+            <element signature="e#4037#5391#0" expanded="false" />
+            <element signature="e#5615#6452#0" expanded="false" />
+            <element signature="e#6624#7979#0" expanded="false" />
+            <element signature="e#8078#8979#0" expanded="false" />
+            <element signature="e#9057#9202#0" expanded="false" />
+            <element signature="e#9272#9317#0" expanded="false" />
+            <element signature="e#9388#9522#0" expanded="false" />
+            <element signature="e#9604#9777#0" expanded="false" />
+            <element signature="e#10176#10317#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py">
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43234324" vertical-offset="1703" max-vertical-offset="2820">
-          <caret line="131" column="110" selection-start-line="131" selection-start-column="110" selection-end-line="131" selection-end-column="110" />
+        <state vertical-scroll-proportion="0.28526148" vertical-offset="0" max-vertical-offset="631">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="e#1#15#0" expanded="true" />
+            <element signature="e#25#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_friends.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+        <state vertical-scroll-proportion="0.73692554" vertical-offset="0" max-vertical-offset="631">
           <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
           <folding>
             <element signature="e#138#200#0" expanded="false" />
@@ -1239,10 +1223,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2044374" vertical-offset="1596" max-vertical-offset="2820">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_redis_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1584786" vertical-offset="469" max-vertical-offset="1650">
+          <caret line="96" column="19" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="19" />
+          <folding>
+            <element signature="e#477#544#0" expanded="false" />
+            <element signature="e#598#679#0" expanded="false" />
+            <element signature="e#718#830#0" expanded="false" />
+            <element signature="e#883#1008#0" expanded="false" />
+            <element signature="e#1062#1184#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/data/foursquare_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="383" max-vertical-offset="1275">
-          <caret line="137" column="8" selection-start-line="137" selection-start-column="8" selection-end-line="137" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1290">
+          <caret line="156" column="16" selection-start-line="156" selection-start-column="16" selection-end-line="156" selection-end-column="16" />
           <folding>
             <element signature="e#1#69#0" expanded="true" />
             <element signature="e#520#1372#0" expanded="false" />
@@ -1255,24 +1263,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_redis_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="1650">
-          <caret line="96" column="19" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="19" />
-          <folding>
-            <element signature="e#477#544#0" expanded="false" />
-            <element signature="e#598#679#0" expanded="false" />
-            <element signature="e#718#830#0" expanded="false" />
-            <element signature="e#883#1008#0" expanded="false" />
-            <element signature="e#1062#1184#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="825">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
@@ -1281,8 +1275,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/cities/cities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.098684214" vertical-offset="0" max-vertical-offset="1125">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.083798885" vertical-offset="0" max-vertical-offset="1155">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>

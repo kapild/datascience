@@ -135,7 +135,7 @@ class Foursquare:
         else:
             yield None
 
-    def get_venues_search(self, **kwargs):
+    def get_venues_search(self, kwargs):
         my_log(self.__Logger, logging.INFO, kwargs)
         is_fresh = kwargs.get("is_fresh", False)
         venues_search = []
@@ -151,8 +151,9 @@ class Foursquare:
             self.__Logger.info("Getting venues search data from Foursquare API.")
             for venue in self.fsq_api.get_category_location_venue_search(category_id, ll):
                 venues_search.append(venue)
-            self.__Logger.debug("Redis Venue search adding data.")
-            self.fsq_redis.add_venue_search(city_name, category_id, json.dumps(venues_search))
+            if len(venues_search) > 0:
+                self.__Logger.debug("Redis Venue search adding data.")
+                self.fsq_redis.add_venue_search(city_name, category_id, json.dumps(venues_search))
         self.__Logger.debug("Returning venue search for category_id:%s, city_name=%s" %(category_id, city_name))
         for venue in venues_search:
             yield venue

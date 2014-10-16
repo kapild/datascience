@@ -30,16 +30,16 @@ def filter_category(name="Food"):
 
     list_a = []
     fs.get_child_category_first(cat, list_a)
-    location_list = get_top_cities_ll()[0:2]
-    category_list = list_a[0:2]
+    location_list = get_top_cities_ll()[3:5]
+    category_list = list_a[0:20]
 
     for category in category_list:
         for location in location_list:
             params = {}
-            params['category_id'] = category['category_id']
+            params['category_id'] = category['id']
             params['loc'] = location
-            venue = fs.get_venues_search(params)
-            print venue
+            for venue in fs.get_venues_search(params):
+                print venue
 def get_fsq_categories():
     kwargs = {'is_fresh' : False}
     for categroies in fs.get_venue_categories_lists(**kwargs):

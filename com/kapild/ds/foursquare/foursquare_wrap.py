@@ -36,15 +36,17 @@ class FourSquareWrap():
         ll,
         attr=['name', 'hasMenu', 'id', 'location', 'categories', 'menu']
     ):
+
+        intent = ["checkin", "browse"]
         self.__Logger.info("Getting venue search for category_id: %s lat,lng:%s" % (category_id, ll))
         limit = 50
         has_more_results = True
         params = {
             'll' : ll,
-            'query': category_id,
-            'intent': 'browse',
+            'categoryId': category_id,
+            'intent': 'checkin',
             'limit': limit,
-            'radius': 100000
+            'radius': 10000
         }
 
         while has_more_results:

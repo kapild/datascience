@@ -19,8 +19,11 @@ def get_venue_hash():
 def get_fsq_categories():
     return "fsq", "categories"
 
+def get_fsq_city_name(city_name):
+    return "fsq_city_" + city_name
+
 def get_venue_location_categories(city_nane, category_id):
-    return city_nane, category_id
+    return get_fsq_city_name(city_nane), category_id
 
 def get_venue_details(list_id):
     return get_venue_hash(),  list_id

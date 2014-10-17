@@ -1,71 +1,96 @@
 __author__ = 'kdalwani'
 
-famous_cities = []
 
-famous_cities.append({
+class City():
+    def __init__(self, params):
+        self.name = params["name"]
+        self.ll = params["ll"]
+
+
+sf = City({
     "name" : "San Francisco",
     "ll" : "37.7751,-122.41"
 })
 
 
-famous_cities.append({
+ny = City({
         "name" : "New York",
         "ll" : "40.66,-73.93"
 })
-famous_cities.append({
+
+la = City({
     "name" : "Los Angeles",
     "ll" : "34.019,-118.4"
 })
-famous_cities.append({
+
+chicago = City({
     "name" : "Chicago",
     "ll" : "41.8376,-87.6818"
 })
 
-famous_cities.append({
+houston = City({
     "name" : "Houston",
     "ll" : "29.780,-95.386"
 })
 
-famous_cities.append({
+philadephia = City({
     "name" : "Philadelphia",
     "ll" : "40.0094,-75.13"
 })
 
-famous_cities.append({
+san_dieogo = City({
     "name" : "San Diego",
     "ll" : "32.8153,-117.1350"
 })
 
-famous_cities.append({
+austin = City({
     "name" : "Austin",
     "ll" : "30.3072,97.7560"
 })
 
-famous_cities.append({
+seattle = City({
     "name" : "Seattle",
     "ll" : "47.6205,-122.350"
 })
 
-famous_cities.append({
+denver = City({
     "name" : "Denver",
     "ll" : "39.7618,-104.880"
 })
 
-famous_cities.append({
+boston = City({
     "name" : "Boston",
     "ll" : "42.3320,-71.02"
 })
 
-famous_cities.append({
+atlanta = City({
     "name" : "Atlanta",
     "ll" : "33.7629,-84.4"
 })
 
-famous_cities.append({
+miami = City({
     "name" : "Miami",
     "ll" : "25.7752,-80.208"
 })
 
 def get_top_cities_ll():
+    famous_cities = []
+
+
+    famous_cities.append(
+        sf,
+        ny,
+        la,
+        chicago,
+        houston,
+        philadephia,
+        san_dieogo,
+        austin,
+        seattle,
+        denver,
+        boston,
+        atlanta,
+        miami
+    )
     return famous_cities
 

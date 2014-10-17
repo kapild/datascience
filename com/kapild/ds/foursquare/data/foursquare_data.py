@@ -1,5 +1,6 @@
 
 from ds.backend.redis.foursquare_redis import FoursquareRedisBackend
+from ds.backend.redis.utils import get_fsq_city_name, get_venue_location_categories
 from ds.foursquare.foursquare_wrap import FourSquareWrap
 
 import json
@@ -135,10 +136,29 @@ class Foursquare:
         else:
             yield None
 
+    def get_cities_all_cat_venues_list(self, city):
+        city_name = city.name
+        self.__Logger.info("Getting venues for city:%s" % city_name)
+        fsq_city_hash_name = get_fsq_city_name(city_name)
+        city_category_keys = self.fsq_redis.get_all_hash_keys(fsq_city_hash_name)
+
+        venue_id_hash = set()
+        if city_category_keys is not None and len(city_category_keys) > 0:
+            self.__Logger.info("found %s keys for hash:%s" % (len(city_category_keys), fsq_city_hash_name))
+            for category_key in city_category_keys:
+                city_category_tuple = get_venue_location_categories(city_name, category_key)
+                list_venue_json = self.fsq_redis.get_hash_item(city_category_tuple[0], category_key)
+                list_venue = json.loads(list_venue_json)
+                for venue in list_venue:
+                    venue_id = venue["id"]
+                    if venue_id not in  venue_id_hash:
+                        venue_id_hash.add(venue_id)
+                        yield venue
+
     def get_venues_search(self, kwargs):
         my_log(self.__Logger, logging.INFO, kwargs)
         is_fresh = kwargs.get("is_fresh", False)
-        venues_search = []
+        venues_search = None
         category_id = kwargs.get("category_id")
         loc = kwargs.get("loc")
         ll = loc["ll"]

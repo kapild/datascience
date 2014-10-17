@@ -163,6 +163,16 @@ class FoursquareRedisBackend:
         else:
             return None
 
+    def get_all_hash_keys(self, hash_name):
+        hash_keys = self.fsq_redis.get_hash_keys(hash_name)
+        if hash_keys is not None and len(hash_keys) > 0:
+            self.__Logger.info("found %s keys for hash:%s" % (len(hash_keys), hash_name))
+            return hash_keys
+        else:
+            return None
+    def get_hash_item(self, hash_name, hash_key):
+        return self.fsq_redis.get_hash_item(hash_name, hash_key)
+
     def get_all_categories_list(self):
         self.__Logger.info("Getting all venue categories")
         fsq_category_tuple = get_fsq_categories()

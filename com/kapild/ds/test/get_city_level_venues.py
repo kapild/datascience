@@ -27,12 +27,21 @@ redis = RedisStoreImpl(redis_dict)
 
 def get_city_level_venue(city):
     indx = 0
+    all_venues_list = {}
     for venue in fs.get_cities_all_cat_venues_list(city):
+        venue_prop = []
         indx = indx + 1
         address = ""
         if "address" in venue["location"]:
             address = venue["location"]["address"]
-        print venue["name"] + "     by           " + (address)
+        name = venue["name"]
+        lat_lng = []
+        lat_lng.append(venue["location"]["lng"])
+        lat_lng.append(venue["location"]["lat"])
+        all_venues_list[name[0:5]] = lat_lng
+    print json.dumps(all_venues_list)
+
+        # print venue["name"] + "     by           " + (address)
     print str(indx)
 
 

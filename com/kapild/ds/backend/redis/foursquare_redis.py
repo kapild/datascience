@@ -173,6 +173,12 @@ class FoursquareRedisBackend:
     def get_hash_item(self, hash_name, hash_key):
         return self.fsq_redis.get_hash_item(hash_name, hash_key)
 
+    def put_hash_item(self, hash_name, hash_key, hash_item):
+        self.__Logger.debug("Adding value in hash id:%s with key:%s to redis" % (hash_name, hash_key))
+        status_code = self.fsq_redis.put_hash_item(hash_name, hash_key, hash_item)
+        if status_code:
+            self.__Logger.info("Added hash item status:", status_code )
+
     def get_all_categories_list(self):
         self.__Logger.info("Getting all venue categories")
         fsq_category_tuple = get_fsq_categories()

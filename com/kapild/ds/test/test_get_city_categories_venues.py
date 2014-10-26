@@ -18,6 +18,7 @@ redis_dict = {
     }
 }
 
+import json
 fs = Foursquare(redis_dict)
 redis = RedisStoreImpl(redis_dict)
 
@@ -32,15 +33,15 @@ def filter_category(name="Food"):
 
     list_a = []
     fs.get_child_category_first(cat, list_a)
-    location_list = get_top_cities_ll()[1:2]
+    location_list = get_top_cities_ll()[0:1]
     category_list = list_a
 
     try:
         for location in location_list:
             for category in category_list:
-                print location["name"] + ", " + (category["name"])
+                print location.name + ", " + (category["name"])
                 params = {}
-                params['is_fresh']  = False
+                params['is_fresh']  = True
                 params['category_id'] = category['id']
                 params['loc'] = location
                 for venue in fs.get_venues_search(params):

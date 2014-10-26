@@ -1,6 +1,6 @@
 
 from ds.backend.redis.foursquare_redis import FoursquareRedisBackend
-from ds.backend.redis.utils import get_fsq_city_name, get_venue_location_categories
+from ds.backend.redis.utils import get_fsq_city_name, get_venue_location_categories, get_venue_menu
 from ds.foursquare.foursquare_wrap import FourSquareWrap
 
 import json
@@ -155,28 +155,58 @@ class Foursquare:
                         venue_id_hash.add(venue_id)
                         yield venue
 
+    def get_menu_for_venue(self, venue, kwargs):
+        venue_name = venue["name"]
+        venue_id = venue["id"]
+        is_fresh = kwargs.get("is_fresh", False)
+
+        fsq_venue_menu_tuple = get_venue_menu(venue_id)
+        menu_details = None
+        if not is_fresh:
+            self.__Logger.info("Getting menu for venue:%s" % venue_name)
+            menu_details = self.fsq_redis.get_hash_item(fsq_venue_menu_tuple[0], fsq_venue_menu_tuple[1])
+
+        if menu_details is not None:
+            yield menu_details
+        else:
+            self.__Logger.info("No Menu found in Redis %s keys for hash:%s" % (fsq_venue_menu_tuple, fsq_venue_menu_tuple))
+            menu_list = []
+            for menu in self.fsq_api.get_menu_details(venue_id, kwargs):
+                menu_list.append(menu)
+            if len(menu_list) > 0:
+                self.__Logger.debug("Redis Venue search adding data.")
+                self.fsq_redis.put_hash_item(fsq_venue_menu_tuple[0], fsq_venue_menu_tuple[1], json.dumps(menu_list))
+            for menu in menu_list:
+                yield  menu
+
     def get_venues_search(self, kwargs):
         my_log(self.__Logger, logging.INFO, kwargs)
         is_fresh = kwargs.get("is_fresh", False)
         venues_search = None
-        category_id = kwargs.get("category_id")
-        loc = kwargs.get("loc")
-        ll = loc["ll"]
-        city_name = loc["name"]
+        category_id = kwargs.get("categoryId")
+        city_name = kwargs.get("name")
+        category_key = category_id + "_" + kwargs["num"]
         if not is_fresh:
-            venues_search = self.fsq_redis.get_venue_search(category_id, city_name)
+            venues_search = self.fsq_redis.get_venue_search(category_key, city_name)
         if venues_search is None:
             self.__Logger.info("No venues search from Redis")
             venues_search = []
             self.__Logger.info("Getting venues search data from Foursquare API.")
-            for venue in self.fsq_api.get_category_location_venue_search(category_id, ll):
+            for venue in self.fsq_api.get_category_location_venue_search(kwargs):
                 venues_search.append(venue)
-            if len(venues_search) > 0:
-                self.__Logger.debug("Redis Venue search adding data.")
-                self.fsq_redis.add_venue_search(city_name, category_id, json.dumps(venues_search))
-        self.__Logger.debug("Returning venue search for category_id:%s, city_name=%s" %(category_id, city_name))
+            self.__Logger.debug("Redis Venue search adding data.")
+            self.fsq_redis.add_venue_search(city_name, category_key, json.dumps(venues_search))
+        self.__Logger.debug("Returning venue search for category_id:%s, city_name=%s" %(category_key, city_name))
         for venue in venues_search:
             yield venue
+
+
+    def get_city_bb_hash_keys(self, city):
+        city_name = city.name
+        city_hash_name = get_fsq_city_name(city_name)
+        city_hash_keys = self.fsq_redis.get_all_hash_keys(city_hash_name)
+        for hash_key in city_hash_keys:
+            yield hash_key
 
     def get_child_category_first(self, category_tree, cat_list):
 

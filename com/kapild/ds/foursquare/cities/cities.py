@@ -77,8 +77,7 @@ def get_top_cities_ll():
     famous_cities = []
 
 
-    famous_cities.append(
-        sf,
+    famous_cities = [sf,
         ny,
         la,
         chicago,
@@ -90,7 +89,7 @@ def get_top_cities_ll():
         denver,
         boston,
         atlanta,
-        miami
-    )
+        miami]
+
     return famous_cities
 

@@ -27,26 +27,81 @@ class FourSquareWrap():
 
 
 
+    def get_menu_details(self, venue_id, kwargs):
+
+        self.__Logger.info("Getting menu details for venue_id: %s" % venue_id)
+        limit = 50
+        has_more_results = True
+        params = {
+            'limit': limit,
+        }
+
+        while has_more_results:
+            menu = self._get_api_menu_details(venue_id, params)
+            if 'menu' in menu and 'menus' in menu['menu']:
+                len_menu = menu['menu']['menus']
+                menu_items = menu["menu"]["menus"]["items"]
+                self.__Logger.info("Total menus %s" % len_menu)
+                for menu_item in menu_items:
+                    venues_dict = {}
+                    name = menu_item["name"]
+                    if "entries" not in menu_item:
+                        continue
+                    sub_sec = menu_item["entries"]
+                    if "items" not in sub_sec:
+                        continue
+                    sub_sec_items_list = sub_sec["items"]
+                    for sub_sec_items in sub_sec_items_list:
+                        name = sub_sec_items["name"]
+                        if "entries" not in sub_sec_items or "items" not in sub_sec_items["entries"]:
+                            continue
+                        menu_items_sub = sub_sec_items["entries"]["items"]
+                        for menu_sub in menu_items_sub:
+                            print_str = ""
+                            if "name" in menu_sub:
+                                print_str+=menu_sub["name"]
+                            if "price" in menu_sub:
+                                print_str+=menu_sub["price"]
+                            print print_str
+                            yield  menu_sub
+                    # yield venues_dict
+                has_more_results = False
+            else:
+                has_more_results = False
 
     '''
     get category location search
     '''
     def get_category_location_venue_search(self,
-        category_id,
-        ll,
+        params,
         attr=['name', 'hasMenu', 'id', 'location', 'categories', 'menu']
     ):
 
-        intent = ["checkin", "browse"]
-        self.__Logger.info("Getting venue search for category_id: %s lat,lng:%s" % (category_id, ll))
+        # intents = ["checkin", "browse"]
+        intents = ["browse"]
+
+        for intent in intents:
+            for venue in self._get_category_location_venue_search_intent(
+                params, intent
+            ):
+                yield venue
+
+    def _get_category_location_venue_search_intent(self,
+        params,
+        intent,
+        attr=['name', 'hasMenu', 'id', 'location', 'categories', 'menu']
+    ):
+
+        self.__Logger.info("Getting venue search for category_id: %s" % (params["categoryId"]))
         limit = 50
         has_more_results = True
         params = {
-            'll' : ll,
-            'categoryId': category_id,
-            'intent': 'checkin',
+            'ne' :params["ne"],
+            'sw' :params["sw"],
+            'categoryId': params["categoryId"],
+            'intent': intent,
             'limit': limit,
-            'radius': 10000
+            # 'radius': 10000
         }
 
         while has_more_results:
@@ -65,6 +120,9 @@ class FourSquareWrap():
                 has_more_results = False
             else:
                 has_more_results = False
+
+
+
 
     def get_venue_item_details(self, venue_id):
         venue_item = self._get_api_venue_item(venue_id, 0, 300)
@@ -275,6 +333,12 @@ class FourSquareWrap():
 
     def _get_api_venue_search(self, params):
         return self.api.venues.search(
+            params=params
+        )
+
+    def _get_api_menu_details(self, venue_id, params):
+        return self.api.venues.menu(
+            venue_id,
             params=params
         )
 

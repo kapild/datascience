@@ -11,8 +11,8 @@ def get_foursquare_client():
 
 def my_log(_logger, level, kwargs):
     log_message = "Following key/values:"
-    for key in kwargs:
-        log_message += " " + str(key) + ":" + json.dumps(kwargs[key]) + " "
+    # for key in kwargs:
+    #     log_message += " " + str(key) + ":" + json.dumps(kwargs[key]) + " "
 
     if level == logging.INFO:
         _logger.info(log_message)

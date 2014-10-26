@@ -29,21 +29,25 @@ def get_city_level_venue(city):
     indx = 0
     all_venues_list = {}
     for venue in fs.get_cities_all_cat_venues_list(city):
-        venue_prop = []
         indx = indx + 1
-        address = ""
-        if "address" in venue["location"]:
-            address = venue["location"]["address"]
         name = venue["name"]
         lat_lng = []
         lat_lng.append(venue["location"]["lng"])
         lat_lng.append(venue["location"]["lat"])
-        all_venues_list[name[0:5]] = lat_lng
+        all_venues_list[name[0:10]] = lat_lng
+        # get_menu_for_venue(venue)
     print json.dumps(all_venues_list)
 
         # print venue["name"] + "     by           " + (address)
     print str(indx)
 
+
+def get_menu_for_venue(venue):
+    params = {}
+    params['is_fresh'] = False
+
+    for menu in fs.get_menu_for_venue(venue, params):
+        print menu
 
 if __name__ == "__main__":
     get_city_level_venue(cities.sf)

@@ -28,4 +28,6 @@ def get_venue_location_categories(city_nane, category_id):
 def get_venue_details(list_id):
     return get_venue_hash(),  list_id
 
+def get_venue_menu(venue_id):
+    return "menu_details", venue_id
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<meta charset="utf-8" title="kapil">
+<style>
+
+.subunit.Bernal { fill: #ddc; }
+.subunit.Chinatown { fill: #cdd; }
+.subunit.Mission { fill: #cad; }
+.subunit.South { fill: #ddd; }
+
+.subunit.Castro { fill: #cdc; }
+.subunit.Bayview { fill: #dcd; }
+.subunit.IRL { display: none; }
+
+
+.place-label {
+  fill: #777;
+  fill-opacity: .5;
+  font-size: 20px;
+  font-weight: 300;
+  text-anchor: middle;
+}
+
+/* CSS goes here. */
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script>
+var width = 960,
+    height = 1160;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+d3.json("sf_bb_fsq_venues.json", function(error, uk) {
+  if (error) return console.error(error);
+  console.log(uk);
+var projection = d3.geo.albers()
+    .rotate([122.483, 0])
+    .center([0, 37.7750])
+    .parallels([50, 60])
+    .scale(300000)
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var color = d3.scale.quantize()
+    .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,44)"]);
+
+//Set input domain for color scale
+color.domain([
+    d3.min(uk, function(d) { return len(uk.features.venues); }),
+    d3.max(uk, function(d) { return len(uk.features.venues); })
+]);
+
+svg.selectAll(".subunit")
+.data(uk.features)
+.enter().append("path")
+.attr("class", function(d) { return "subunit " + d.properties.NAME; })
+.attr("d", path)
+.style("fill", function(d) {
+    //Get data value
+    var value = len(d.venues);
+
+    if (value) {
+        //If value exists…
+        return color(value);
+    } else {
+        //If value is undefined…
+        return "#ccc";
+    }
+});
+
+	
+svg.selectAll(".place-label")
+.data(uk.features)
+.enter().append("text")
+.attr("class", "place-label")
+.attr("transform", function(d) { return " translate(" + path.centroid(d) + ")"; })
+.attr("dy", ".35em")
+.text(function(d) { return d.properties.NAME; });
+
+
+});
+</script>

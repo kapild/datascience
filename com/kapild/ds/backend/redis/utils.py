@@ -20,7 +20,7 @@ def get_fsq_categories():
     return "fsq", "categories"
 
 def get_fsq_city_name(city_name):
-    return "fsq_city_" + city_name
+    return "fsq_city_bb_" + city_name
 
 def get_venue_location_categories(city_nane, category_id):
     return get_fsq_city_name(city_nane), category_id

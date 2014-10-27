@@ -13,11 +13,10 @@ sf_bb = CityBB({
     "bb" : ["37.8324,-122.3553", "37.6040,-123.0137"]
 })
 
-
-# ny = City({
-#         "name" : "New York",
-#         "ll" : "40.66,-73.93"
-# })
+ny_bb = CityBB({
+        "name" : "New York",
+        "bb" : [ "40.9176,-73.7004", "40.4766,-74.2589"]
+})
 #
 # la = City({
 #     "name" : "Los Angeles",
@@ -79,7 +78,7 @@ def get_top_cities_bb():
 
 
     famous_cities = [sf_bb,
-        # ny,
+        ny_bb,
         # la,
         # chicago,
         # houston,

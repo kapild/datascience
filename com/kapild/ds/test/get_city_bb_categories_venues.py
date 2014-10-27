@@ -36,7 +36,7 @@ def get_save_cities_with_bb(name="Food"):
 
     list_a = []
     fs.get_child_category_first(cat, list_a)
-    location_list = get_top_cities_bb()[0:1]
+    location_list = get_top_cities_bb()[1:]
     category_list = list_a
     cat_length = len(category_list)
 

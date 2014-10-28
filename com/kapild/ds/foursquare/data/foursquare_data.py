@@ -186,7 +186,7 @@ class Foursquare:
                 menu_list = json.loads(menu_list_str)
 
         if menu_list is None:
-            self.__Logger.info("No Menu found in Redis %s keys for hash:%s" % (fsq_venue_menu_tuple, fsq_venue_menu_tuple))
+            self.__Logger.debug("No Menu found in Redis %s keys for hash:%s" % (fsq_venue_menu_tuple, fsq_venue_menu_tuple))
             menu_list = []
             for menu in self.fsq_api.get_menu_details(venue_id, kwargs):
                 menu_list.append(menu)

@@ -9,7 +9,7 @@ class FourSquareWrap():
         self.api = get_foursquare_client()
 
         self.__Logger = logging.getLogger(__name__)
-        self.__Logger.setLevel(logging.INFO)
+        self.__Logger.setLevel(logging.ERROR)
 
 
     def get_venue_categories(self, attr=['name', 'id', 'categories']):
@@ -38,7 +38,7 @@ class FourSquareWrap():
 
         while has_more_results:
             menu = self._get_api_menu_details(venue_id, params)
-            if 'menu' in menu and 'menus' in menu['menu']:
+            if 'menu' in menu and 'menus' in menu['menu'] and "items" in menu["menu"]["menus"]:
                 len_menu = menu['menu']['menus']
                 menu_items = menu["menu"]["menus"]["items"]
                 self.__Logger.info("Total menus %s" % len_menu)
@@ -57,12 +57,12 @@ class FourSquareWrap():
                             continue
                         menu_items_sub = sub_sec_items["entries"]["items"]
                         for menu_sub in menu_items_sub:
-                            print_str = ""
-                            if "name" in menu_sub:
-                                print_str+=menu_sub["name"]
-                            if "price" in menu_sub:
-                                print_str+=menu_sub["price"]
-                            print print_str
+                            # print_str = ""
+                            # if "name" in menu_sub:
+                            #     print_str+=menu_sub["name"]
+                            # if "price" in menu_sub:
+                            #     print_str+=menu_sub["price"]
+                            # print print_str
                             yield  menu_sub
                     # yield venues_dict
                 has_more_results = False

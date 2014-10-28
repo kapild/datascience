@@ -22,6 +22,9 @@ def get_fsq_categories():
 def get_fsq_city_name(city_name):
     return "fsq_city_bb_" + city_name
 
+def get_fsq_city_bb_name(city_name):
+    return "fsq_city_bb_" + city_name
+
 def get_venue_location_categories(city_nane, category_id):
     return get_fsq_city_name(city_nane), category_id
 
@@ -31,3 +34,6 @@ def get_venue_details(list_id):
 def get_venue_menu(venue_id):
     return "menu_details", venue_id
 
+
+def get_city_menu_hash_name(city_name):
+    return "fsq_city_menu_" + city_name

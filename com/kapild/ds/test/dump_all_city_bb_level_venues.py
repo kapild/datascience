@@ -37,7 +37,7 @@ def join_sf_shape_sf_venue_data(bb_city, city_shp_json):
 
     hood_venue_map = {}
     all_venues_list = {}
-    for venue_hash_key in fs.get_city_bb_hash_keys(bb_city):
+    for venue_hash_key in fs.get_city_bb_level_venue_hash_keys(bb_city):
         hash_name = get_fsq_city_name(bb_city.name)
         venue_items_json = redis.get_hash_item(hash_name, venue_hash_key)
         venue_items = json.loads(venue_items_json)
@@ -80,7 +80,7 @@ def dump_city_bb_level_venues(bb_city):
 
 
     all_venues_list = {}
-    for venue_hash_key in fs.get_city_bb_hash_keys(bb_city):
+    for venue_hash_key in fs.get_city_bb_level_venue_hash_keys(bb_city):
         hash_name = get_fsq_city_name(bb_city.name)
         venue_items_json = redis.get_hash_item(hash_name, venue_hash_key)
         venue_items = json.loads(venue_items_json)

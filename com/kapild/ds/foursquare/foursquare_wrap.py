@@ -1,7 +1,7 @@
 __author__ = 'kdalwani'
 
 import logging
-
+import foursquare
 from utils import get_foursquare_client
 class FourSquareWrap():
 
@@ -337,6 +337,13 @@ class FourSquareWrap():
         )
 
     def _get_api_menu_details(self, venue_id, params):
+        return self.api.venues.menu(
+            venue_id,
+            params=params
+        )
+
+
+    def _get_rate_limit(self, venue_id, params):
         return self.api.venues.menu(
             venue_id,
             params=params

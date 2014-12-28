@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<script src="../js/d3/d3.js"></script>
+<script src="../js/d3/d3.layout.cloud.js"></script>
+<script>
+  var fill = d3.scale.category20();
+
+  d3.layout.cloud().size([900, 800])
+      .words(
+[["chicken", 0.47125427233437356], ["salad", 0.26087290075652825], ["crispy", 0.23562713616718678], ["premium", 0.23141950873562989], ["wrap", 0.21879662644095915], ["snack", 0.21458899900940226], ["snack wrap", 0.21038137157784534], ["grilled", 0.20617374414628845], ["sandwich", 0.18092797955694701], ["fish", 0.15147458753604864], ["fillet", 0.14305933267293483], ["ranch", 0.13885170524137794], ["crispy chicken", 0.11781356808359339], ["grilled chicken", 0.10939831322047958], ["cheese", 0.10098305835736576], ["sandwich premium", 0.096775430925808856], ["bacon", 0.092567803494251949], ["shrimp", 0.084152548631138135], ["crab", 0.079944921199581229], ["angus", 0.075737293768024322], ["caesar", 0.075737293768024322], ["white", 0.071529666336467415], ["wrap grilled", 0.071529666336467415], ["wrap crispy", 0.071529666336467415], ["bbq", 0.067322038904910508], ["honey", 0.067322038904910508], ["caesar salad", 0.067322038904910508], ["fries", 0.067322038904910508], ["burger", 0.058906784041796695], ["salmon", 0.058906784041796695], ["chicken premium", 0.058906784041796695], ["wings", 0.058906784041796695], ["honey mustard", 0.054699156610239788], ["mustard", 0.054699156610239788], ["sundae", 0.054699156610239788], ["apple", 0.054699156610239788], ["premium grilled", 0.054699156610239788], ["red", 0.050491529178682881], ["double", 0.050491529178682881], ["ranch snack", 0.050491529178682881]]
+.map(function(d) {
+        return {text: d[0], size: 10  + d[1] * 100};
+        
+//        return {text: d[0], size: 10 + Math.random() * 50};
+      }))
+      .padding(5)
+      .rotate(function() { return ~~(Math.random() * 0) * 90; })
+      .font("Impact")
+      .fontSize(function(d) { return d.size; })
+      .on("end", draw)
+      .start();
+
+  function draw(words) {
+    d3.select("body").append("svg")
+        .attr("width", 900)
+        .attr("height", 800)
+      .append("g")
+        .attr("transform", "translate(450,400)")
+      .selectAll("text")
+        .data(words)
+      .enter().append("text")
+        .style("font-size", function(d) { return d.size + "px"; })
+        .style("font-family", "Impact")
+        .style("fill", function(d, i) { return fill(i); })
+        .attr("text-anchor", "middle")
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function(d) { return d.text; });
+  }
+</script>

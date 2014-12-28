@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<script src="../js/d3/d3.js"></script>
+<script src="../js/d3/d3.layout.cloud.js"></script>
+<script>
+  var fill = d3.scale.category20();
+
+  d3.layout.cloud().size([900, 800])
+      .words(
+[["chicken", 0.28620255104828402], ["salad", 0.28490641393476807], ["cheese", 0.17446593865272109], ["shrimp", 0.17287651401938131], ["crab", 0.16946384351187208], ["spa", 0.13987816575798476], ["grilled", 0.13538106194063448], ["sandwich", 0.12497097398991419], ["fried", 0.10950348595963547], ["burger", 0.10735635878395633], ["snack wrap", 0.10252642553389935], ["snack", 0.10223325964438583], ["premium", 0.098165134598392892], ["steak", 0.097893929625432793], ["cake", 0.09698941750970827], ["chocolate", 0.092948191780137093], ["375ml", 0.089998457194014447], ["12oz", 0.085286769153911493], ["dungeness", 0.0851901894135111], ["california", 0.08253998220077631], ["dungeness crab", 0.082147682648742837], ["beef", 0.080824514591423563], ["fries", 0.074982584393948518], ["caesar", 0.07289973482744995], ["wrap", 0.072367499972514265], ["12", 0.071157850427983102], ["salmon", 0.070816885260951382], ["crispy", 0.0687340356944528], ["cream", 0.068700837402710033], ["soup", 0.068700837402710033]]
+.map(function(d) {
+        return {text: d[0], size: 30  + d[1] * 100};
+        
+//        return {text: d[0], size: 10 + Math.random() * 50};
+      }))
+      .padding(5)
+      .rotate(function() { return ~~(Math.random() * 0) * 90; })
+      .font("Impact")
+      .fontSize(function(d) { return d.size; })
+      .on("end", draw)
+      .start();
+
+  function draw(words) {
+    d3.select("body").append("svg")
+        .attr("width", 900)
+        .attr("height", 800)
+      .append("g")
+        .attr("transform", "translate(450,400)")
+      .selectAll("text")
+        .data(words)
+      .enter().append("text")
+        .style("font-size", function(d) { return d.size + "px"; })
+        .style("font-family", "Impact")
+        .style("fill", function(d, i) { return fill(i); })
+        .attr("text-anchor", "middle")
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function(d) { return d.text; });
+  }
+</script>

@@ -108,6 +108,8 @@ def dump_city_bb_level_venues(bb_city):
 
 if __name__ == "__main__":
     # dump_city_bb_level_venues(ny_bb)
-    join_sf_shape_sf_venue_data(ny_bb, "/Users/kdalwani/code/workspace/FourquarePyCharmCrawl/com/kapild/ds/GeoJson/ny_manhattan_hood.json")
+    join_sf_shape_sf_venue_data(ny_bb,
+                            "/Users/kdalwani/code/workspace/FourquarePyCharmCrawl/com/kapild/ds/GeoJson/ny_manhattan_hood.json"
+    )
 #
 

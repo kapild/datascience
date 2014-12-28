@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<script src="../js/d3/d3.js"></script>
+<script src="../js/d3/d3.layout.cloud.js"></script>
+<script>
+  var fill = d3.scale.category20();
+
+  d3.layout.cloud().size([900, 800])
+      .words(
+[["chicken", 0.32608984375946065], ["rice", 0.29491061730319745], ["beef", 0.27958952294299555], ["soup", 0.24361292991724243], ["fried", 0.23920527847926012], ["pork", 0.18399457576028014], ["chow", 0.1549299799059343], ["sauce", 0.13986231446576824], ["noodle", 0.13584604980418671], ["fried rice", 0.13214115753679981], ["mein", 0.12017933020740697], ["bean", 0.11577972383014418], ["congee", 0.10855447333207065], ["prawns", 0.107041631465605], ["salad", 0.10690187641938065], ["chow mein", 0.095782278488747291], ["fish", 0.095360668953932914], ["shrimp", 0.095360668953932914], ["fresh", 0.088959430244903853], ["empress", 0.083742022284740217], ["di", 0.081290085797300182], ["egg", 0.079148504656656821], ["steamed", 0.077550569735285249], ["curry", 0.073037057152534474], ["green", 0.072050283209638202], ["black", 0.069816261711190361], ["sauteed", 0.06781203125613007], ["sicilia", 0.066217780085137443], ["soup noodle", 0.066217780085137443], ["seafood", 0.064185918024804042]]
+.map(function(d) {
+        return {text: d[0], size: 30  + d[1] * 100};
+        
+//        return {text: d[0], size: 10 + Math.random() * 50};
+      }))
+      .padding(5)
+      .rotate(function() { return ~~(Math.random() * 0) * 90; })
+      .font("Impact")
+      .fontSize(function(d) { return d.size; })
+      .on("end", draw)
+      .start();
+
+  function draw(words) {
+    d3.select("body").append("svg")
+        .attr("width", 900)
+        .attr("height", 800)
+      .append("g")
+        .attr("transform", "translate(450,400)")
+      .selectAll("text")
+        .data(words)
+      .enter().append("text")
+        .style("font-size", function(d) { return d.size + "px"; })
+        .style("font-family", "Impact")
+        .style("fill", function(d, i) { return fill(i); })
+        .attr("text-anchor", "middle")
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function(d) { return d.text; });
+  }
+</script>

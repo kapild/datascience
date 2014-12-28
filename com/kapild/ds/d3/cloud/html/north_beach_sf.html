@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<script src="../js/d3/d3.js"></script>
+<script src="../js/d3/d3.layout.cloud.js"></script>
+<script>
+  var fill = d3.scale.category20();
+
+  d3.layout.cloud().size([900, 800])
+      .words(
+[["chicken", 0.36621855960188654], ["salad", 0.35367682810867124], ["cheese", 0.2232428205792322], ["shrimp", 0.20819274278737385], ["crab", 0.18060093350230022], ["grilled", 0.16805920200908492], ["sandwich", 0.15050077791858352], ["fried", 0.12792566123079599], ["burger", 0.12541731493215291], ["cake", 0.12040062233486681], ["steak", 0.11789227603622375], ["chocolate", 0.11538392973758069], ["beef", 0.10033385194572234], ["fries", 0.09030046675115011], ["caesar", 0.087792120452507047], ["bacon", 0.087792120452507047], ["california", 0.085283774153863984], ["cream", 0.085283774153863984], ["salmon", 0.085283774153863984], ["soup", 0.085283774153863984], ["crispy", 0.082775427855220934], ["garlic", 0.080267081556577871], ["fish", 0.072742042660648695], ["coffee", 0.072742042660648695], ["dungeness", 0.070233696362005632], ["premium", 0.070233696362005632], ["calamari", 0.070233696362005632], ["wrap", 0.070233696362005632], ["snack", 0.067725350063362583], ["cocktail", 0.067725350063362583]]
+.map(function(d) {
+        return {text: d[0], size: 30  + d[1] * 100};
+        
+//        return {text: d[0], size: 10 + Math.random() * 50};
+      }))
+      .padding(5)
+      .rotate(function() { return ~~(Math.random() * 0) * 90; })
+      .font("Impact")
+      .fontSize(function(d) { return d.size; })
+      .on("end", draw)
+      .start();
+
+  function draw(words) {
+    d3.select("body").append("svg")
+        .attr("width", 900)
+        .attr("height", 800)
+      .append("g")
+        .attr("transform", "translate(450,400)")
+      .selectAll("text")
+        .data(words)
+      .enter().append("text")
+        .style("font-size", function(d) { return d.size + "px"; })
+        .style("font-family", "Impact")
+        .style("fill", function(d, i) { return fill(i); })
+        .attr("text-anchor", "middle")
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function(d) { return d.text; });
+  }
+</script>

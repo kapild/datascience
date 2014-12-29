@@ -17,7 +17,7 @@ def test_redis():
     fsq_redis = RedisStoreImpl(redis_dict)
     set_name = "kapil"
     fsq_redis.set_add(set_name, "kapil")
-    print(fsq_redis.set_members("name"))
+    print(fsq_redis.set_members(set_name))
 
 
 if __name__ == "__main__":

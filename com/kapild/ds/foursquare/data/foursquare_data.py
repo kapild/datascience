@@ -205,7 +205,7 @@ class Foursquare:
         if not is_fresh:
             venues_search = self.fsq_redis.get_venue_search(category_key, city_name)
         if venues_search is None:
-            self.__Logger.debug("No venues search from Redis")
+            self.__Logger.debug("No venues search from Redis.")
             venues_search = []
             self.__Logger.debug("Getting venues search data from Foursquare API.")
             for venue in self.fsq_api.get_category_location_venue_search(kwargs):

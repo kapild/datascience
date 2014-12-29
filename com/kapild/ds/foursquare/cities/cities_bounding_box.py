@@ -74,10 +74,9 @@ ny_bb = CityBB({
 # })
 
 def get_top_cities_bb():
-    famous_cities = []
 
-
-    famous_cities = [sf_bb,
+    famous_cities = [
+        sf_bb,
         ny_bb,
         # la,
         # chicago,
@@ -91,6 +90,8 @@ def get_top_cities_bb():
         # atlanta,
         # miami
     ]
-
     return famous_cities
 
+
+def get_sf():
+    return get_top_cities_bb()[0]

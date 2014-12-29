@@ -78,7 +78,6 @@ def dump_city_bb_level_venues(bb_city):
     total_venue = 0
     venue_id_set = set()
 
-
     all_venues_list = {}
     for venue_hash_key in fs.get_city_bb_level_venue_hash_keys(bb_city):
         hash_name = get_fsq_city_name(bb_city.name)

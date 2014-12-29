@@ -118,7 +118,9 @@ def get_fsq_categories():
         yield categroies
 
 if __name__ == "__main__":
-    # get_city_level_menu_api(sf_bb)
+
+    # fetches menus for all the venues in a city
+    get_city_level_menu_api(sf_bb)
 
     # params = {'is_fresh': False}
     # venue = {"id" : "49baae38f964a52094531fe3", "name": "kk"}
@@ -126,9 +128,11 @@ if __name__ == "__main__":
     #     print menu
 
     city_bb = sf_bb
-    # dump_city_neighborhood_level_menu_data(
-    #      "/Users/kdalwani/code/workspace/FourquarePyCharmCrawl/com/kapild/ds/GeoJson/sf_geojson.json",
-    #      city_bb.name + "_menu.json"
-    # )
+
+    # dump the menus for the city into a file.
+    dump_city_neighborhood_level_menu_data(
+         "/Users/kdalwani/code/workspace/FourquarePyCharmCrawl/com/kapild/ds/GeoJson/sf_geojson.json",
+         city_bb.name + "_menu.json"
+    )
 
     get_top_tfid_menu_words_per_hood(city_bb.name + "_menu.json" + "_hood")

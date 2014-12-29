@@ -182,13 +182,14 @@ class FoursquareRedisBackend:
     def get_all_categories_list(self):
         self.__Logger.info("Getting all venue categories")
         fsq_category_tuple = get_fsq_categories()
-        categories_json = self.fsq_redis.get_hash_item(fsq_category_tuple[0], fsq_category_tuple[1])
-        categories = json.loads(categories_json)
-        if categories is not None and len(categories) > 0:
-            self.__Logger.info("Found %s categories in fsq" % len(categories))
-            return categories
-        else:
-            return None
+        categories_str = self.fsq_redis.get_hash_item(fsq_category_tuple[0], fsq_category_tuple[1])
+        if categories_str is not None:
+            categories = json.loads(categories_str)
+            if categories is not None and len(categories) > 0:
+                self.__Logger.info("Found %s categories in fsq" % len(categories))
+                return categories
+
+        return None
 
     def add_all_categories_list(self, categories_list):
         self.__Logger.info("Adding all venue categories")

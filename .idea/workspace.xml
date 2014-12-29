@@ -26,29 +26,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="foursquare_data.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/data/foursquare_data.py">
+      <file leaf-file-name="test_get_city_categories_venues.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1290">
-              <caret line="156" column="16" selection-start-line="156" selection-start-column="16" selection-end-line="156" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="885">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
-                <element signature="e#1#69#0" expanded="true" />
-                <element signature="e#520#1372#0" expanded="false" />
-                <element signature="e#1445#2277#0" expanded="false" />
-                <element signature="e#2345#3266#0" expanded="false" />
-                <element signature="e#3326#4236#0" expanded="false" />
-                <element signature="e#4299#5002#0" expanded="false" />
-                <element signature="e#5064#5887#0" expanded="false" />
+                <element signature="e#25#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_get_city_categories_venues.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py">
+      <file leaf-file-name="cities_bounding_box.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/cities/cities_bounding_box.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="825">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="817" max-vertical-offset="1545">
+              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fetch_cities_venues_all_categories.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/com/kapild/ds/run/scripts/fetch_cities_venues_all_categories.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.2286283" vertical-offset="237" max-vertical-offset="1380">
+              <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -56,12 +70,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cities.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/cities/cities.py">
+      <file leaf-file-name="foursquare_redis.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.083798885" vertical-offset="0" max-vertical-offset="1155">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2370" max-vertical-offset="3075">
+              <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+              <folding>
+                <element signature="e#1#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_foursquare_user_level_functions.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/kapild/ds/run/test/test_foursquare_user_level_functions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="931" max-vertical-offset="1650">
+              <caret line="77" column="48" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
+              <folding>
+                <element signature="e#477#544#0" expanded="false" />
+                <element signature="e#598#679#0" expanded="false" />
+                <element signature="e#718#830#0" expanded="false" />
+                <element signature="e#883#1008#0" expanded="false" />
+                <element signature="e#1062#1184#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get_city_level_venues.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/get_city_level_venues.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="885">
+              <caret line="52" column="24" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fetch_city_level_venue_menus.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/kapild/ds/run/scripts/fetch_city_level_venue_menus.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2160">
+              <caret line="131" column="46" selection-start-line="131" selection-start-column="46" selection-end-line="131" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dump_all_city_bb_level_venues.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/dump_all_city_bb_level_venues.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1017" max-vertical-offset="1800">
+              <caret line="39" column="62" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#56#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,28 +166,34 @@
         <option value="$PROJECT_DIR$/com/foursquare/foursquare.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/cities/venue_search_cities.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/foursquare_2/crawl/crawl_type.py" />
-        <option value="$PROJECT_DIR$/com/kapild/ds/test/test_friends.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/redis/Redis.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/foursquare_data.py" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/com/kapild/ds/test/test_redis.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/backend/redis/Redis.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/test/dump_all_venues.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/test/test_redis_api.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/backend/redis/utils.py" />
-        <option value="$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/utils.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/foursquare_wrap.py" />
-        <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/data/foursquare_data.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py" />
         <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/cities/cities.py" />
+        <option value="$PROJECT_DIR$/com/kapild/ds/test/test_redis.py" />
+        <option value="$PROJECT_DIR$/com/kapild/ds/test/test_friends.py" />
+        <option value="$PROJECT_DIR$/com/kapild/ds/test/dump_all_city_bb_level_venues.py" />
+        <option value="$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py" />
+        <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/cities/cities_bounding_box.py" />
+        <option value="$PROJECT_DIR$/com/kapild/ds/run/scripts/get_city_bb_categories_venues.py" />
+        <option value="$PROJECT_DIR$/com/kapild/ds/run/scripts/fetch_city_level_venue_menus.py" />
+        <option value="$PROJECT_DIR$/com/kapild/ds/foursquare/data/foursquare_data.py" />
+        <option value="$PROJECT_DIR$/com/kapild/ds/run/scripts/fetch_cities_venues_all_categories.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="1189" />
+    <option name="x" value="300" />
+    <option name="y" value="102" />
+    <option name="width" value="1779" />
+    <option name="height" value="1286" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -190,7 +264,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FourquarePyCharmCrawl" />
+              <option name="myItemId" value="datascience" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -200,7 +274,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FourquarePyCharmCrawl" />
+              <option name="myItemId" value="datascience" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -222,7 +296,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FourquarePyCharmCrawl" />
+              <option name="myItemId" value="datascience" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -248,7 +322,93 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="datascience" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kapild" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="run" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="FourquarePyCharmCrawl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datascience" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kapild" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="run" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FourquarePyCharmCrawl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datascience" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kapild" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="run" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FourquarePyCharmCrawl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datascience" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -274,37 +434,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FourquarePyCharmCrawl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kapild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="foursquare_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crawl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FourquarePyCharmCrawl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FourquarePyCharmCrawl" />
+              <option name="myItemId" value="datascience" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -330,7 +460,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="datascience" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kapild" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="foursquare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="FourquarePyCharmCrawl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datascience" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -360,63 +520,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FourquarePyCharmCrawl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kapild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FourquarePyCharmCrawl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FourquarePyCharmCrawl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kapild" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="redis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FourquarePyCharmCrawl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FourquarePyCharmCrawl" />
+              <option name="myItemId" value="datascience" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -455,12 +559,14 @@
       <recent name="$PROJECT_DIR$/com/kapild/ds/foursquare/crawl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/com/kapild/ds/run/scripts" />
+      <recent name="$PROJECT_DIR$/com/kapild/ds/run/test" />
+      <recent name="$PROJECT_DIR$/com/kapild/ds/test" />
+      <recent name="$PROJECT_DIR$/com/kapild/ds/run" />
       <recent name="$PROJECT_DIR$/com/kapild/ds/foursquare/data" />
-      <recent name="$PROJECT_DIR$/com/kapild/ds/backend" />
-      <recent name="$PROJECT_DIR$/com/kapild/ds/foursquare/crawl" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_get_city_categories_venues">
+  <component name="RunManager" selected="Python.get_city_bb_categories_venues">
     <configuration default="false" name="test_redis_api" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -473,27 +579,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FourquarePyCharmCrawl" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kapild/ds/test/test_redis_api.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="foursquare_redis" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/kapild/ds/backend/redis" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="FourquarePyCharmCrawl" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kapild/ds/run/test/test_foursquare_user_level_functions.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
@@ -513,7 +599,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FourquarePyCharmCrawl" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kapild/ds/test/test_friends.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kapild/ds/run/test/test_foursquare_wrap.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
@@ -533,10 +619,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FourquarePyCharmCrawl" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kapild/ds/test/test_redis.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kapild/ds/run/test/test_redis.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
     <configuration default="false" name="test_get_city_categories_venues" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -552,6 +640,26 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FourquarePyCharmCrawl" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="get_city_bb_categories_venues" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/com/kapild/ds/run/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FourquarePyCharmCrawl" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/com/kapild/ds/run/scripts/fetch_cities_venues_all_categories.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
@@ -682,18 +790,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.test_redis_api" />
-      <item index="1" class="java.lang.String" itemvalue="Python.foursquare_redis" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test_friends" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test_redis" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test_get_city_categories_venues" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test_friends" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test_redis" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test_get_city_categories_venues" />
+      <item index="4" class="java.lang.String" itemvalue="Python.get_city_bb_categories_venues" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test_get_city_categories_venues" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test_redis_api" />
-        <item index="2" class="java.lang.String" itemvalue="Python.foursquare_redis" />
+        <item index="0" class="java.lang.String" itemvalue="Python.get_city_bb_categories_venues" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test_get_city_categories_venues" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test_friends" />
         <item index="3" class="java.lang.String" itemvalue="Python.test_redis" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test_friends" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test_redis_api" />
       </list>
     </recent_temporary>
   </component>
@@ -710,22 +818,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1189" extended-state="0" />
+    <frame x="300" y="102" width="1779" height="1286" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2001675" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24954791" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2760699" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5320585" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2480091" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36683416" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32302094" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5360134" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -746,9 +854,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24970461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3761302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42615557" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -771,17 +879,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/com/kapild/ds/test/test_redis_api.py</url>
+          <url>file://$PROJECT_DIR$/com/kapild/ds/run/test/test_foursquare_user_level_functions.py</url>
           <line>47</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/com/kapild/ds/test/test_redis_api.py</url>
+          <url>file://$PROJECT_DIR$/com/kapild/ds/run/test/test_foursquare_user_level_functions.py</url>
           <line>86</line>
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/com/kapild/ds/test/test_redis_api.py</url>
+          <url>file://$PROJECT_DIR$/com/kapild/ds/run/test/test_foursquare_user_level_functions.py</url>
           <line>87</line>
           <option name="timeStamp" value="90" />
         </line-breakpoint>
@@ -806,16 +914,6 @@
           <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py</url>
-          <line>181</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/com/kapild/ds/foursquare/utils.py</url>
-          <line>2</line>
-          <option name="timeStamp" value="142" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/com/kapild/ds/foursquare/foursquare_wrap.py</url>
           <line>57</line>
           <option name="timeStamp" value="145" />
@@ -831,67 +929,28 @@
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py</url>
-          <line>122</line>
-          <option name="timeStamp" value="149" />
+          <url>file://$PROJECT_DIR$/com/kapild/ds/foursquare/foursquare_wrap.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/com/kapild/ds/foursquare/foursquare_wrap.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/com/kapild/ds/run/scripts/fetch_cities_venues_all_categories.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="155" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="150" />
+      <option name="time" value="156" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/com/foursquare/foursquare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4752" max-vertical-offset="13530">
-          <caret line="341" column="22" selection-start-line="341" selection-start-column="12" selection-end-line="341" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_friends.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="660">
-          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/cities/categories.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="120">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/foursquare_wrap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="3180">
-          <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
-          <folding>
-            <element signature="e#352#874#0" expanded="false" />
-            <element signature="e#2234#2359#0" expanded="false" />
-            <element signature="e#2523#3835#0" expanded="false" />
-            <element signature="e#4037#5391#0" expanded="false" />
-            <element signature="e#5615#6452#0" expanded="false" />
-            <element signature="e#6624#7979#0" expanded="false" />
-            <element signature="e#8078#8979#0" expanded="false" />
-            <element signature="e#9057#9202#0" expanded="false" />
-            <element signature="e#9272#9317#0" expanded="false" />
-            <element signature="e#9388#9522#0" expanded="false" />
-            <element signature="e#9604#9777#0" expanded="false" />
-            <element signature="e#10176#10317#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare_2/crawl/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
@@ -918,18 +977,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="825">
           <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
           <folding>
-            <element signature="e#352#874#0" expanded="false" />
-            <element signature="e#2234#2359#0" expanded="false" />
-            <element signature="e#2523#3835#0" expanded="false" />
-            <element signature="e#4037#5391#0" expanded="false" />
-            <element signature="e#5615#6452#0" expanded="false" />
-            <element signature="e#6624#7979#0" expanded="false" />
-            <element signature="e#8078#8979#0" expanded="false" />
-            <element signature="e#9057#9202#0" expanded="false" />
-            <element signature="e#9272#9317#0" expanded="false" />
-            <element signature="e#9388#9522#0" expanded="false" />
-            <element signature="e#9604#9777#0" expanded="false" />
-            <element signature="e#10176#10317#0" expanded="false" />
+            <element signature="e#25#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -990,13 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1251">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare_2/crawl/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
@@ -1022,13 +1063,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.017462166" vertical-offset="0" max-vertical-offset="859">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/redis/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6296" max-vertical-offset="15225">
-          <caret line="435" column="0" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1137,106 +1171,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/dump_all_venues.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07826087" vertical-offset="0" max-vertical-offset="1150">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_redis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27874565" vertical-offset="0" max-vertical-offset="861">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/backend/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03456221" vertical-offset="0" max-vertical-offset="434">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/cities/cities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16806723" vertical-offset="60" max-vertical-offset="1515">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/backend/redis/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.519802" vertical-offset="0" max-vertical-offset="606">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.31281033" vertical-offset="0" max-vertical-offset="1007">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/run/test/test_redis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33495146" vertical-offset="0" max-vertical-offset="1030">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/run/test/test_foursquare_wrap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11615044" vertical-offset="0" max-vertical-offset="904">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/cities/geo_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04977876" vertical-offset="0" max-vertical-offset="904">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/dump_all_venues.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59870553" vertical-offset="0" max-vertical-offset="927">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/backend/redis/Redis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75247526" vertical-offset="534" max-vertical-offset="1140">
-          <caret line="67" column="8" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
-          <folding />
+        <state vertical-scroll-proportion="0.6045198" vertical-offset="624" max-vertical-offset="1155">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+          <folding>
+            <element signature="e#2#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/foursquare_wrap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09508716" vertical-offset="270" max-vertical-offset="1905">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-          <folding>
-            <element signature="e#25#39#0" expanded="true" />
-            <element signature="e#352#874#0" expanded="false" />
-            <element signature="e#2234#2359#0" expanded="false" />
-            <element signature="e#2523#3835#0" expanded="false" />
-            <element signature="e#4037#5391#0" expanded="false" />
-            <element signature="e#5615#6452#0" expanded="false" />
-            <element signature="e#6624#7979#0" expanded="false" />
-            <element signature="e#8078#8979#0" expanded="false" />
-            <element signature="e#9057#9202#0" expanded="false" />
-            <element signature="e#9272#9317#0" expanded="false" />
-            <element signature="e#9388#9522#0" expanded="false" />
-            <element signature="e#9604#9777#0" expanded="false" />
-            <element signature="e#10176#10317#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28526148" vertical-offset="0" max-vertical-offset="631">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="168" max-vertical-offset="5385">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#25#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_friends.py">
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/cities/cities_bounding_box.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73692554" vertical-offset="0" max-vertical-offset="631">
-          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-          <folding>
-            <element signature="e#138#200#0" expanded="false" />
-            <element signature="e#226#495#0" expanded="false" />
-            <element signature="e#524#824#0" expanded="false" />
-            <element signature="e#855#939#0" expanded="false" />
-            <element signature="e#975#1050#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="817" max-vertical-offset="1545">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py">
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/run/test/test_foursquare_user_level_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2044374" vertical-offset="1596" max-vertical-offset="2820">
-          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_redis_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1584786" vertical-offset="469" max-vertical-offset="1650">
-          <caret line="96" column="19" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="931" max-vertical-offset="1650">
+          <caret line="77" column="48" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
           <folding>
             <element signature="e#477#544#0" expanded="false" />
             <element signature="e#598#679#0" expanded="false" />
@@ -1247,37 +1276,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/data/foursquare_data.py">
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/get_city_level_venues.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1290">
-          <caret line="156" column="16" selection-start-line="156" selection-start-column="16" selection-end-line="156" selection-end-column="16" />
-          <folding>
-            <element signature="e#1#69#0" expanded="true" />
-            <element signature="e#520#1372#0" expanded="false" />
-            <element signature="e#1445#2277#0" expanded="false" />
-            <element signature="e#2345#3266#0" expanded="false" />
-            <element signature="e#3326#4236#0" expanded="false" />
-            <element signature="e#4299#5002#0" expanded="false" />
-            <element signature="e#5064#5887#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="109" max-vertical-offset="825">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="885">
+          <caret line="52" column="24" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="24" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/cities/cities.py">
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.083798885" vertical-offset="0" max-vertical-offset="1155">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/dump_all_city_bb_level_venues.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1017" max-vertical-offset="1800">
+          <caret line="39" column="62" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/run/scripts/fetch_city_level_venue_menus.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2160">
+          <caret line="131" column="46" selection-start-line="131" selection-start-column="46" selection-end-line="131" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/foursquare/data/foursquare_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5114046" vertical-offset="2724" max-vertical-offset="3750">
+          <caret line="210" column="79" selection-start-line="210" selection-start-column="73" selection-end-line="210" selection-end-column="79" />
+          <folding>
+            <element signature="e#1#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/test/test_get_city_categories_venues.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="885">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/backend/redis/foursquare_redis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2370" max-vertical-offset="3075">
+          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/kapild/ds/run/scripts/fetch_cities_venues_all_categories.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2286283" vertical-offset="237" max-vertical-offset="1380">
+          <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

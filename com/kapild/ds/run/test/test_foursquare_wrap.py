@@ -42,7 +42,7 @@ def test_venue_search():
         print venues
 
 if __name__ == '__main__':
-    test_venue_search()
+    test_users_venues_like()
 
     '''//venues/search?ll=37.7751,-122.41&radius=100000&categoryId= 4bf58dd8d48988d10f941735
     https://developer.foursquare.com/docs/explore#req=venues/search%3Fll%3D37.7751,-122.41%26radius%3D100000%26categoryId%3D+4bf58dd8d48988d10f941735

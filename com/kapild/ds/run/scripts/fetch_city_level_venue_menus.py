@@ -2,7 +2,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from ds.GeoJson.shapely_utils import get_contained_shape
 from ds.backend.redis.Redis import RedisStoreImpl
 from shapely.geometry import shape, Point
-from ds.foursquare.cities.cities_bounding_box import sf_bb
+from ds.foursquare.cities.cities_bounding_box import sf_bb, ny_bb
 import foursquare
 from ds.foursquare.data.foursquare_data import Foursquare
 import time
@@ -45,7 +45,9 @@ def dump_city_neighborhood_level_menu_data(city_shp_json, city_venue_menu_file, 
         hood_shape['menu'].append(venue["menus_list"])
         print "Adding venue %s to neighborhood:%s" %(venue["name"], hood_shape["properties"]["NAME"])
 
-    f_write.write(json.dumps(city_shp, sort_keys=True, indent=4, separators=(',', ': ') ))
+    print "writing to file:" + city_venue_menu_hood_output_file
+
+    f_write.write(json.dumps(city_shp, sort_keys=False, indent=4, separators=(',', ': ') ))
     f_write.close()
 
 
@@ -76,7 +78,7 @@ def get_top_tfid_menu_words_per_hood(file_json):
     top_features = [features[i] for i in indices[:top_n]]
     print top_features
 
-def get_city_level_menu_api(city_bb, city_menu_file_output, dump_attr=["name", "location", "menus_list"]):
+def get_city_level_menu_api(city_bb, city_menu_file_output, dump_attr=["name", "location", "menus_list", "categories"]):
 
     index = 0
     is_complete = False
@@ -87,30 +89,27 @@ def get_city_level_menu_api(city_bb, city_menu_file_output, dump_attr=["name", "
     while not is_complete:
         for venue in fs.get_city_level_venues(city_bb):
             venue_menu_list = []
+            for venue_menu in fs.get_menu_for_venue(venue, params):
+                venue_menu_list.append(venue_menu)
+            if len(venue_menu_list) == 0:
+                continue
             print "%s:Getting menu for:%s" % (index, venue["name"])
-            try:
-                for venue_menu in fs.get_menu_for_venue(venue, params):
-                    venue_menu_list.append(venue_menu)
-                if len(venue_menu_list) == 0:
-                    continue
-                venue["menus_list"] = venue_menu_list
-                is_complete = True
-                venue_dict = {}
-                for key in dump_attr:
-                    if key in venue:
-                        venue_dict[key] = venue[key]
-                index += 1
-                city_venues_menu.append(venue_dict)
-            except foursquare.RateLimitExceeded:
-                print "Sleeping due to rate"
-                print "done:" + str(index)
-                f_write.write(json.dumps(city_venues_menu, sort_keys=True, indent=4, separators=(',', ': ')))
-                f_write.close()
-                print "done dumping"
-                time.sleep(60 * 10)
+            index += 1
+            venue["menus_list"] = venue_menu_list
+            is_complete = True
+            venue_dict = {}
+            for key in dump_attr:
+                if key in venue:
+                    venue_dict[key] = venue[key]
+            city_venues_menu.append(venue_dict)
 
-    # f_write.write(json.dumps(venue))
-    # f_write.close()
+    print "writing to file:" + city_menu_file_output
+
+    f_write.write(json.dumps(city_venues_menu))
+    # f_write.write(json.dumps(city_venues_menu, sort_keys=False, indent=4, separators=(',', ': ')))
+    f_write.close()
+
+
 
 def get_fsq_categories():
     kwargs = {'is_fresh' : False}
@@ -124,15 +123,15 @@ if __name__ == "__main__":
     data_directory = "/Users/kdalwani/code/workspace/datascience/data/"
     # fetches and dumps menus for all the venues in a city from foursquare
     city_menu_file_output = data_directory + city_bb.name + "_menu" + file_ext
-    get_city_level_menu_api(city_bb, city_menu_file_output)
+    # get_city_level_menu_api(city_bb, city_menu_file_output)
 
 
     # dump the menus for the city into a file.
-    # city_venue_menu_hood_output_file =  city_bb.name
-    # dump_city_neighborhood_level_menu_data(
-    #      "/Users/kdalwani/code/workspace/FourquarePyCharmCrawl/com/kapild/ds/GeoJson/sf_geojson.json",
-    #      city_menu_file_output,
-    #      city_venue_menu_hood_output_file
-    # )
+    city_venue_menu_hood_output_file =  data_directory + city_bb.name + "_hood" + file_ext
+    dump_city_neighborhood_level_menu_data(
+         "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/sf_geojson.json",
+         city_menu_file_output,
+         city_venue_menu_hood_output_file
+    )
     #
-    # get_top_tfid_menu_words_per_hood(city_bb.name + "_menu.json" + "_hood")
+    get_top_tfid_menu_words_per_hood(city_venue_menu_hood_output_file)

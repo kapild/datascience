@@ -1,0 +1,5 @@
+# get data from http://www.zillow.com/howto/api/neighborhood-boundaries.htm
+
+ogr2ogr -f GeoJSON sf_county.json  -where "COUNTY IN ('San Francisco')" ZillowNeighborhoods-CA.shp
+
+topojson -o sf_county.json -p -- sf_topojson.json

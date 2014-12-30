@@ -2,6 +2,7 @@ __author__ = 'kdalwani'
 
 import logging
 import foursquare
+import time
 from utils import get_foursquare_client
 class FourSquareWrap():
 
@@ -337,17 +338,35 @@ class FourSquareWrap():
         )
 
     def _get_api_menu_details(self, venue_id, params):
-        return self.api.venues.menu(
-            venue_id,
-            params=params
-        )
+
+        return_menus = None
+        while return_menus is None or self.api is None:
+            try:
+                return_menus = self.api.venues.menu(
+                    venue_id,
+                    params=params
+                )
+            except AttributeError:
+                self.api = self.get_new_api_client_or_sleep()
+            except foursquare.RateLimitExceeded:
+                self.api = self.get_new_api_client_or_sleep()
+            except Exception:
+                self.api = self.get_new_api_client_or_sleep()
+
+        return return_menus
 
 
-    def _get_rate_limit(self, venue_id, params):
-        return self.api.venues.menu(
-            venue_id,
-            params=params
-        )
+    def get_new_api_client_or_sleep(self):
+        loop_true = True
+        while loop_true:
+            api_new = get_foursquare_client()
+            if api_new is None:
+                print "Sleeping due to rate."
+                time.sleep(10 * 60)
+                print "Trying again."
+            else:
+                loop_true = False
+        return api_new
 
     def _get_api_venue_categories(self):
         return self.api.venues.categories()

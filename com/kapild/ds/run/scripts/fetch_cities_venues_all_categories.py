@@ -1,6 +1,6 @@
 from ds.backend.redis.Redis import RedisStoreImpl
 from ds.foursquare.cities.cities import get_top_cities_ll
-from ds.foursquare.cities.cities_bounding_box import get_top_cities_bb, get_sf
+from ds.foursquare.cities.cities_bounding_box import get_top_cities_bb, get_sf, get_ny
 from ds.foursquare.cities.geo_utils import get_bb_grid
 
 import foursquare
@@ -83,4 +83,5 @@ if __name__ == "__main__":
 
 
     # gets the data from foursquare for a given a bounding box of a city and list of all categories.
-    get_save_cities_with_bb(location_sf, category_list)
+    # get_save_cities_with_bb(location_sf, category_list)
+    get_save_cities_with_bb(get_ny(), category_list)

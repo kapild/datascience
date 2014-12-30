@@ -196,7 +196,7 @@ class Foursquare:
             yield menu
 
     def get_venues_search(self, kwargs):
-        my_log(self.__Logger, logging.INFO, kwargs)
+        # my_log(self.__Logger, logging.INFO, kwargs)
         is_fresh = kwargs.get("is_fresh", False)
         venues_search = None
         category_id = kwargs.get("categoryId")

@@ -94,4 +94,8 @@ def get_top_cities_bb():
 
 
 def get_sf():
-    return get_top_cities_bb()[0]
+    return sf_bb
+
+
+def get_ny():
+    return ny_bb

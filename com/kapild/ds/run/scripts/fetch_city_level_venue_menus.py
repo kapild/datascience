@@ -28,11 +28,11 @@ redis = RedisStoreImpl(redis_dict)
     # params['loc'] = {"ll" : "37.7751,-122.41", "name": "SF"}
 
 
-def dump_city_neighborhood_level_menu_data(city_shp_json, city_venue_menu_file):
+def dump_city_neighborhood_level_menu_data(city_shp_json, city_venue_menu_file, city_venue_menu_hood_output_file):
     city_shp = json.load(open(city_shp_json))
     city_venues_menu = json.load(open(city_venue_menu_file))
 
-    f_write = open(city_venue_menu_file + "_hood", "w")
+    f_write = open(city_venue_menu_hood_output_file, "w")
     for venue in city_venues_menu:
         lng = venue["location"]["lng"]
         lat = venue["location"]["lat"]
@@ -76,11 +76,11 @@ def get_top_tfid_menu_words_per_hood(file_json):
     top_features = [features[i] for i in indices[:top_n]]
     print top_features
 
-def get_city_level_menu_api(city_bb=sf_bb, dump_attr=["name", "location", "menus_list"]):
+def get_city_level_menu_api(city_bb, city_menu_file_output, dump_attr=["name", "location", "menus_list"]):
 
     index = 0
     is_complete = False
-    f_write = open(sf_bb.name + "_menu.json", mode='w')
+    f_write = open(city_menu_file_output, mode='w')
 
     params = {'is_fresh': False}
     city_venues_menu = []
@@ -119,20 +119,20 @@ def get_fsq_categories():
 
 if __name__ == "__main__":
 
-    # fetches menus for all the venues in a city
-    get_city_level_menu_api(sf_bb)
-
-    # params = {'is_fresh': False}
-    # venue = {"id" : "49baae38f964a52094531fe3", "name": "kk"}
-    # for menu in fs.get_menu_for_venue(venue, params):
-    #     print menu
-
     city_bb = sf_bb
+    file_ext = ".json"
+    data_directory = "/Users/kdalwani/code/workspace/datascience/data/"
+    # fetches and dumps menus for all the venues in a city from foursquare
+    city_menu_file_output = data_directory + city_bb.name + "_menu" + file_ext
+    get_city_level_menu_api(city_bb, city_menu_file_output)
+
 
     # dump the menus for the city into a file.
-    dump_city_neighborhood_level_menu_data(
-         "/Users/kdalwani/code/workspace/FourquarePyCharmCrawl/com/kapild/ds/GeoJson/sf_geojson.json",
-         city_bb.name + "_menu.json"
-    )
-
-    get_top_tfid_menu_words_per_hood(city_bb.name + "_menu.json" + "_hood")
+    # city_venue_menu_hood_output_file =  city_bb.name
+    # dump_city_neighborhood_level_menu_data(
+    #      "/Users/kdalwani/code/workspace/FourquarePyCharmCrawl/com/kapild/ds/GeoJson/sf_geojson.json",
+    #      city_menu_file_output,
+    #      city_venue_menu_hood_output_file
+    # )
+    #
+    # get_top_tfid_menu_words_per_hood(city_bb.name + "_menu.json" + "_hood")

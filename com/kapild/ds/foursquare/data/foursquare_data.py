@@ -180,7 +180,7 @@ class Foursquare:
         fsq_venue_menu_tuple = get_venue_menu(venue_id)
         menu_list = None
         if not is_fresh:
-            self.__Logger.info("Getting menu for venue:%s" % venue_name)
+            self.__Logger.info("Getting menu for venue:%s, %s" % (venue_name, venue_id))
             menu_list_str = self.fsq_redis.get_hash_item(fsq_venue_menu_tuple[0], fsq_venue_menu_tuple[1])
             if menu_list_str is not None:
                 menu_list = json.loads(menu_list_str)
@@ -205,7 +205,7 @@ class Foursquare:
         if not is_fresh:
             venues_search = self.fsq_redis.get_venue_search(category_key, city_name)
         if venues_search is None:
-            self.__Logger.debug("No venues search from Redis.")
+            self.__Logger.debug("No venues search from Redis for: " + category_key + "," + city_name)
             venues_search = []
             self.__Logger.debug("Getting venues search data from Foursquare API.")
             for venue in self.fsq_api.get_category_location_venue_search(kwargs):

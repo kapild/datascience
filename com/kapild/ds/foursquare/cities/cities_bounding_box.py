@@ -13,9 +13,31 @@ sf_bb = CityBB({
     "bb" : ["37.8324,-122.3553", "37.6040,-123.0137"]
 })
 
-ny_bb = CityBB({
-        "name" : "New York",
-        "bb" : [ "40.9176,-73.7004", "40.4766,-74.2589"]
+# ny_bb = CityBB({
+#         "name" : "New York",
+#         "bb" : [ "40.856252,-73.928973", "40.696209,-74.017416"]
+#
+# })
+
+manhattan_bb = CityBB({
+        "name" : "manhattan",
+        "bb" : [ "40.856252,-73.928973", "40.696209,-74.017416"]
+
+})
+
+chicago_bb = CityBB({
+    "name" : "chicago",
+    "bb" : [ "42.023131,-87.524044", "41.644335,-87.940267"]
+})
+
+austin_bb = CityBB({
+    "name" : "austin",
+    "bb" : [ "30.549983,-97.527908", "30.114697,-97.928427"]
+})
+
+atlanta_bb = CityBB({
+    "name" : "Atlanta",
+    "bb" : [ "33.885338,-84.289389", "33.647808,-84.551819"]
 })
 #
 # la = City({
@@ -23,10 +45,6 @@ ny_bb = CityBB({
 #     "ll" : "34.019,-118.4"
 # })
 #
-# chicago = City({
-#     "name" : "Chicago",
-#     "ll" : "41.8376,-87.6818"
-# })
 #
 # houston = City({
 #     "name" : "Houston",
@@ -43,15 +61,7 @@ ny_bb = CityBB({
 #     "ll" : "32.8153,-117.1350"
 # })
 #
-# austin = City({
-#     "name" : "Austin",
-#     "ll" : "30.3072,97.7560"
-# })
 #
-# seattle = City({
-#     "name" : "Seattle",
-#     "ll" : "47.6205,-122.350"
-# })
 #
 # denver = City({
 #     "name" : "Denver",
@@ -63,10 +73,6 @@ ny_bb = CityBB({
 #     "ll" : "42.3320,-71.02"
 # })
 #
-# atlanta = City({
-#     "name" : "Atlanta",
-#     "ll" : "33.7629,-84.4"
-# })
 #
 # miami = City({
 #     "name" : "Miami",
@@ -91,11 +97,3 @@ def get_top_cities_bb():
         # miami
     ]
     return famous_cities
-
-
-def get_sf():
-    return sf_bb
-
-
-def get_ny():
-    return ny_bb

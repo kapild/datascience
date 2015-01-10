@@ -2,7 +2,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from ds.GeoJson.shapely_utils import get_contained_shape
 from ds.backend.redis.Redis import RedisStoreImpl
 from shapely.geometry import shape, Point
-from ds.foursquare.cities.cities_bounding_box import sf_bb, ny_bb
+from ds.foursquare.cities.cities_bounding_box import sf_bb, chicago_bb, manhattan_bb, atlanta_bb, austin_bb
 import foursquare
 from ds.foursquare.data.foursquare_data import Foursquare
 import time
@@ -50,34 +50,6 @@ def dump_city_neighborhood_level_menu_data(city_shp_json, city_venue_menu_file, 
     f_write.write(json.dumps(city_shp, sort_keys=False, indent=4, separators=(',', ': ') ))
     f_write.close()
 
-
-def get_top_tfid_menu_words_per_hood(file_json):
-    hood_menu_file = json.load(open(file_json))["features"]
-
-    menu_hood_list = []
-    for menu_hood in hood_menu_file:
-        menu_str = ""
-        if "menu" not in menu_hood:
-            continue
-        menu_lists_list = menu_hood["menu"]
-        for menus_list in menu_lists_list:
-            for menu in menus_list:
-                menu_name = menu["name"]
-                menu_str = menu_str + " " + menu_name
-        menu_hood_list.append(menu_str)
-
-    print menu_hood_list[0][0:100]
-    print menu_hood_list[1][0:100]
-
-    vectorizer = TfidfVectorizer(min_df=2, stop_words = 'english',  strip_accents = 'unicode', lowercase=True,
-                        ngram_range=(1,2), norm='l2', smooth_idf=True, sublinear_tf=False, use_idf=True)
-    menu_tfidf = vectorizer.fit_transform(menu_hood_list)
-    indices = np.argsort(vectorizer.idf_)[::1]
-    features = vectorizer.get_feature_names()
-    top_n = 20
-    top_features = [features[i] for i in indices[:top_n]]
-    print top_features
-
 def get_city_level_menu_api(city_bb, city_menu_file_output, dump_attr=["name", "location", "menus_list", "categories"]):
 
     index = 0
@@ -116,22 +88,54 @@ def get_fsq_categories():
     for categroies in fs.get_venue_categories_lists(**kwargs):
         yield categroies
 
-if __name__ == "__main__":
 
-    city_bb = sf_bb
-    file_ext = ".json"
-    data_directory = "/Users/kdalwani/code/workspace/datascience/data/"
-    # fetches and dumps menus for all the venues in a city from foursquare
-    city_menu_file_output = data_directory + city_bb.name + "_menu" + file_ext
-    # get_city_level_menu_api(city_bb, city_menu_file_output)
+data_directory = "/Users/kdalwani/code/workspace/datascience/data/"
 
-
-    # dump the menus for the city into a file.
-    city_venue_menu_hood_output_file =  data_directory + city_bb.name + "_hood" + file_ext
-    dump_city_neighborhood_level_menu_data(
-         "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/sf_geojson.json",
-         city_menu_file_output,
-         city_venue_menu_hood_output_file
+def run_chicago():
+    run_city(
+        chicago_bb,
+         "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/chicago_county.json"
     )
-    #
-    get_top_tfid_menu_words_per_hood(city_venue_menu_hood_output_file)
+
+def run_manhattan():
+    run_city(
+        manhattan_bb,
+        "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/manhattan_county.json"
+    )
+
+def run_sf():
+    run_city(
+        sf_bb,
+         "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/sf_geojson.json"
+    )
+
+def run_austin():
+    run_city(
+        austin_bb,
+         "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/sf_geojson.json"
+    )
+
+def run_atlanta():
+    run_city(
+        atlanta_bb,
+         "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/sf_geojson.json"
+    )
+
+def run_city(city_bb, city_geojson_file):
+    file_ext = ".json"
+    city_menu_file_output = data_directory + city_bb.name + "_menu" + file_ext
+
+    # fetches and dumps menus for all the venues in a city from foursquare
+    get_city_level_menu_api(city_bb, city_menu_file_output)
+
+    city_venue_menu_hood_output_file = data_directory + city_bb.name + "_hood" + file_ext
+    # dump_city_neighborhood_level_menu_data(
+    #      city_geojson_file,
+    #      city_menu_file_output,
+    #      city_venue_menu_hood_output_file
+    # )
+
+if __name__ == "__main__":
+    run_atlanta()
+    run_austin()
+

@@ -333,9 +333,22 @@ class FourSquareWrap():
         )
 
     def _get_api_venue_search(self, params):
-        return self.api.venues.search(
-            params=params
-        )
+        venue = None
+        while venue is None or self.api is None:
+            try:
+               venue = self.api.venues.search(
+                    params=params
+                )
+            except AttributeError:
+                self.api = self.get_new_api_client_or_sleep()
+            except foursquare.RateLimitExceeded:
+                self.api = self.get_new_api_client_or_sleep()
+            except foursquare.ServerError:
+                self.api = self.get_new_api_client_or_sleep()
+            except Exception:
+                self.api = self.get_new_api_client_or_sleep()
+        return venue
+
 
     def _get_api_menu_details(self, venue_id, params):
 
@@ -350,7 +363,12 @@ class FourSquareWrap():
                 self.api = self.get_new_api_client_or_sleep()
             except foursquare.RateLimitExceeded:
                 self.api = self.get_new_api_client_or_sleep()
-            except Exception:
+            except foursquare.ServerError:
+                self.api = self.get_new_api_client_or_sleep()
+            except foursquare.Other:
+                return_menus = []
+            except Exception as e:
+                print e
                 self.api = self.get_new_api_client_or_sleep()
 
         return return_menus
@@ -358,14 +376,18 @@ class FourSquareWrap():
 
     def get_new_api_client_or_sleep(self):
         loop_true = True
+        time_start = time.time()
         while loop_true:
             api_new = get_foursquare_client()
             if api_new is None:
                 print "Sleeping due to rate."
                 time.sleep(10 * 60)
-                print "Trying again."
+                print "Trying again, time elapse  sec."
+
+                # print "Trying again, time elapsed:" + str(time.time() - time_start)/60 + " sec."
             else:
                 loop_true = False
+        # print "Total  time elapsed:" + str((time.time() - time_start)/60) + " sec."
         return api_new
 
     def _get_api_venue_categories(self):

@@ -1,8 +1,8 @@
-client = foursquare.Foursquare(client_id='HWFFS52D3FXRP2YMXTKYHAB0ZMUS55WGCXEAL1KWVJK54VEK',client_secret='JEFNSREL20L3U2TRIT451I0IUXSVDQAZISCMC31EDXPOJLFY', redirect_uri='www.cs.jhu.edu')
+client = foursquare.Foursquare(client_id='HG0QUOUHHWXCUFJCJ5Y1J42LZVFG5M2E1EXJAW1L0RXDTG2Y',client_secret='BV0YM0GVRHAZVYRV4E4KD00AYLDBW0Q1YCEPFKHHUFARHR14', redirect_uri='http://www.cs.jhu.edu/~kapild')
 
 uri = client.oauth.auth_url()
 
-access_token = client.oauth.get_token('RTVHUZQSZCTU14ZPMWH1SC2ENLHROBAJCB55U14WOZLXQQD1')
+access_token = client.oauth.get_token('ZAYYZVTGY4WKYP1SUEPB3SFT1JEX2REDKILKW00XGFSVQHZY')
 
 
 ogr2ogr -f GeoJSON sf_county.json  -where "COUNTY IN ('San Francisco')" ZillowNeighborhoods-CA.shp

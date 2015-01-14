@@ -112,13 +112,13 @@ def run_sf():
 def run_austin():
     run_city(
         austin_bb,
-         "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/sf_geojson.json"
+         "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/austin.json"
     )
 
 def run_atlanta():
     run_city(
         atlanta_bb,
-         "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/sf_geojson.json"
+         "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/atlanta.json"
     )
 
 def run_city(city_bb, city_geojson_file):
@@ -129,13 +129,14 @@ def run_city(city_bb, city_geojson_file):
     get_city_level_menu_api(city_bb, city_menu_file_output)
 
     city_venue_menu_hood_output_file = data_directory + city_bb.name + "_hood" + file_ext
-    # dump_city_neighborhood_level_menu_data(
-    #      city_geojson_file,
-    #      city_menu_file_output,
-    #      city_venue_menu_hood_output_file
-    # )
+    dump_city_neighborhood_level_menu_data(
+         city_geojson_file,
+         city_menu_file_output,
+         city_venue_menu_hood_output_file
+    )
 
 if __name__ == "__main__":
-    run_atlanta()
-    run_austin()
+    # run_atlanta()
+    # run_austin()
+    run_sf()
 

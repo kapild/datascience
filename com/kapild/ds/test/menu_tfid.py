@@ -1,4 +1,5 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 from ds.GeoJson.shapely_utils import get_contained_shape
 from shapely.geometry import shape, Point
 from sklearn.feature_extraction.text import CountVectorizer
@@ -8,7 +9,7 @@ import string
 import numpy as np
 from sklearn import preprocessing
 import os
-from ds.foursquare.cities.cities_bounding_box import sf_bb, manhattan_bb, chicago_bb
+from ds.foursquare.cities.cities_bounding_box import sf_bb, manhattan_bb, chicago_bb, austin_bb
 
 base_dir = os.path.dirname(os.path.realpath(__file__))
 import json
@@ -92,8 +93,13 @@ def _run_tfid_vectorizer(menu_hood_list):
                         ngram_range=(1,2), norm='l2', smooth_idf=True, sublinear_tf=False, use_idf=True)
 
     menu_tfidf_list = vectorizer.fit_transform(menu_text_examples)
-    hood_sim_matrix = (menu_tfidf_list * menu_tfidf_list.T).todense()
-    print_similar_hood(hood_sim_matrix, menu_hood_list)
+    cosine = cosine_similarity(menu_tfidf_list, menu_tfidf_list)
+
+    print cosine
+    print_similar_hood(cosine, menu_hood_list)
+
+    # hood_sim_matrix = (menu_tfidf_list * menu_tfidf_list.T).todense()
+    # print_similar_hood(hood_sim_matrix, menu_hood_list)
 
     # indices_increasing_sorted = []
     # idf_ = []
@@ -224,7 +230,7 @@ def print_top_n_features(vectorizer, indices, top_n = 20):
 
 
 if __name__ == "__main__":
-    city_bb = chicago_bb
+    city_bb = sf_bb
     file_ext = ".json"
     data_directory = "/Users/kdalwani/code/workspace/datascience/data/"
 

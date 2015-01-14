@@ -6,3 +6,8 @@ topojson -o sf_county.json -p -- sf_topojson.json
 
 
 kdalwani@KapilMac ~/code/workspace/zillow neighborhood data/Ny $ ogr2ogr -f GeoJSON manhattan_county.json  -where "CITY in ('New York City-Manhattan')" ZillowNeighborhoods-NY.shp
+
+
+ogr2ogr -f GeoJSON sf_county.json  -where "CITY IN ('Atlanta')" ZillowNeighborhoods-CA.shp
+
+Atlanta

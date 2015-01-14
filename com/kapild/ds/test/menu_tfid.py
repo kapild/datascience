@@ -96,7 +96,8 @@ def _run_tfid_vectorizer(menu_hood_list):
     cosine = cosine_similarity(menu_tfidf_list, menu_tfidf_list)
 
     print cosine
-    print_similar_hood(cosine, menu_hood_list)
+
+    print_similar_hood_cosine(cosine, menu_hood_list)
 
     # hood_sim_matrix = (menu_tfidf_list * menu_tfidf_list.T).todense()
     # print_similar_hood(hood_sim_matrix, menu_hood_list)
@@ -139,6 +140,7 @@ def print_similar_hood(hood_sim_matrix, menu_hood_list, top_match = 3):
         hood_name = hood_dict["name"]
         print "Printing similar hood for: %s" % hood_name
         hood_similary = hood_sim_matrix[hood_index]
+        sorted(range(len(hood_similary)), key = hood_similary.__getitem__, reverse=True)
         sorted_indix = get_decreasing_sort_index(hood_similary[0], top_match)
         hood_similar_items = []
         for top_index in range(2, 5):
@@ -146,6 +148,25 @@ def print_similar_hood(hood_sim_matrix, menu_hood_list, top_match = 3):
             sim_index = sorted_indix.tolist()[0][-top_index]
             similar_hood = menu_hood_list[sim_index]["name"]
             sim_val = hood_similary[0].tolist()[0][sim_index]
+            hood_sim["name"] = similar_hood
+            hood_sim["value"] = sim_val
+            hood_similar_items.append(hood_sim)
+            print "\t" + similar_hood + ":" + str(sim_val )
+        hood_dict["similar_hood"] = hood_similar_items
+
+def print_similar_hood_cosine(hood_cosine_matrix, menu_hood_list, top_match = 3):
+    for hood_index in range(0, len(menu_hood_list)):
+        hood_dict = menu_hood_list[hood_index]
+        hood_name = hood_dict["name"]
+        print "Printing similar hood for: %s" % hood_name
+        hood_similary = hood_cosine_matrix[hood_index]
+        argsort = sorted(range(len(hood_similary)), key = hood_similary.__getitem__, reverse=True)
+        hood_similar_items = []
+        for top_index in range(0, 5):
+            hood_sim = dict()
+            sim_index = argsort[top_index]
+            similar_hood = menu_hood_list[sim_index]["name"]
+            sim_val = hood_similary[sim_index]
             hood_sim["name"] = similar_hood
             hood_sim["value"] = sim_val
             hood_similar_items.append(hood_sim)

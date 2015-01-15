@@ -67,11 +67,31 @@ def get_city_level_menu_tfid_and_similarities(city_hood_level_menu_file):
                 menu_text += get_menu_str(menu)
         hood_dict["menu"] = menu_text
         hood_dict["name"] = get_hood_name(menu_hood)
+        hood_dict["REGIONID"] = menu_hood["properties"]["REGIONID"]
         menu_hood_list.append(hood_dict)
         # menu_hood_list.append([menu_hood, menu_name])
     print "Total hoods %s:, total loaded:%s" % (len(menu_hood_list), len(hood_menu_data))
 
     _run_tfid_vectorizer(menu_hood_list)
+
+    menu_hood_region_id_dict = {}
+    for menu_hood in menu_hood_list:
+        menu_hood.pop("menu", None)
+        menu_hood_region_id_dict[menu_hood["REGIONID"]] = menu_hood
+
+    for menu_hood_geo in hood_menu_data:
+        menu_hood_geo.pop("menu", None)
+        region_id = menu_hood_geo["properties"]["REGIONID"]
+        if region_id in menu_hood_region_id_dict:
+            menu_hood_geo["sim"] = menu_hood_region_id_dict[region_id]
+
+
+    f_write = open(city_hood_level_menu_file + "_sim", "w")
+
+    f_write.write(json.dumps(hood_menu_dict, sort_keys=False, indent=4, separators=(',', ': ')))
+    f_write.close()
+
+    type(menu_hood_list)
     # top_features = [features[i] for i in indices[:top_n]]
     # print top_features
 
@@ -99,6 +119,7 @@ def _run_tfid_vectorizer(menu_hood_list):
 
     print_similar_hood_cosine(cosine, menu_hood_list)
 
+    print type(menu_hood_list)
     # hood_sim_matrix = (menu_tfidf_list * menu_tfidf_list.T).todense()
     # print_similar_hood(hood_sim_matrix, menu_hood_list)
 
@@ -166,9 +187,11 @@ def print_similar_hood_cosine(hood_cosine_matrix, menu_hood_list, top_match = 3)
             hood_sim = dict()
             sim_index = argsort[top_index]
             similar_hood = menu_hood_list[sim_index]["name"]
+            similar_hood_region_id = menu_hood_list[sim_index]["REGIONID"]
             sim_val = hood_similary[sim_index]
             hood_sim["name"] = similar_hood
             hood_sim["value"] = sim_val
+            hood_sim["REGIONID"] = similar_hood_region_id
             hood_similar_items.append(hood_sim)
             print "\t" + similar_hood + ":" + str(sim_val )
         hood_dict["similar_hood"] = hood_similar_items

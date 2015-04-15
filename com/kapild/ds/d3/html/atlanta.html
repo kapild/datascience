@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+  <title> Atlanta neighborhood similarity by Menu data</title>
+  <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+ <script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script>
+ <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+ </head>
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.bar rect {
+  fill: steelblue;
+}
+
+.bar text.value {
+  fill: white;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.axis path {
+  fill: none;
+}
+
+.x.axis text {
+  font: 20px sans-serif;
+  fill: none;
+}
+
+.y.axis text {
+  font: 10px sans-serif;
+}
+
+.x.axis line {
+  stroke: #fff;
+  stroke-opacity: .8;
+}
+
+.y.axis path {
+  stroke: black;
+} 
+
+path {
+ stroke:white;
+ stroke-width: 1px;
+}
+.categories {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+
+.categories-choropleth {
+  fill: #ccc;
+}
+
+#tooltip-container {
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  border: 1px solid;
+  display: none;
+}
+
+#canvas svg {
+  border: 0px;
+}
+
+.tooltip_key {
+  font-weight: bold;
+}
+
+.tooltip_value {
+  margin-left: 20px;
+  float: right;
+}
+
+.x-axis {
+  fill: #000;
+}
+
+.chart {
+  background: #fff;
+  margin: 5px;
+}
+ 
+.chart .category-bar {
+  stroke: white;
+  fill: steelblue;
+}
+ 
+.chart .score {
+  fill: white;
+}
+ 
+.chart text.name {
+  fill: #000;
+  font: 10px sans-serif;
+}
+ 
+.chart line {
+  stroke: #c1c1c1;
+}
+ 
+.chart .rule {
+  fill: #000;
+}
+
+.main-category-text {
+  fill: #FF4A4A;
+}
+
+.main-category-bar {
+  stroke: #FF4A4A;
+  stroke-width: 2px;
+} 
+body {
+ font-family: Arial, sans-serif;
+}
+ 
+.city {
+ font: 10px sans-serif;
+ font-weight: bold;
+}
+ 
+.legend {
+ font-size: 12px;
+}
+ 
+.place-label {
+  fill: #777;
+  fill-opacity: .5;
+  font-size: 20px;
+  font-weight: 300;
+  text-anchor: middle;
+}
+
+div.tooltip {
+ position: absolute;
+ text-align: center;
+ width: 150px;
+ height: 25px;
+ padding: 2px;
+ font-size: 10px;
+ background: #FFFFE0;
+ border: 1px;
+ border-radius: 8px;
+ pointer-events: none;
+}
+</style>
+<body>
+<h1>Atlanta neighborhood similarity by Menu data</h1>
+<div id="tooltip-container"></div>
+
+<div>
+  <div style="float: left;" id="canvas-svg"></div>
+  <div style="float: right;"  id="canvas-bar-svg"></div>
+</div>
+
+<script type="text/javascript">
+
+var WIDTH = 1000, HEIGHT = 800;
+var COLOR_COUNTS = 9;
+var SCALE = 0.7;
+var MAIN_CATEGORY = "Washington";
+var AVG_CATEGORY = "Nation Average";
+
+function Interpolate(start, end, steps, count) {
+    var s = start,
+        e = end,
+        final = s + (((e - s) / steps) * count);
+    return Math.floor(final);
+}
+
+function Color(_r, _g, _b) {
+    var r, g, b;
+    var setColors = function(_r, _g, _b) {
+        r = _r;
+        g = _g;
+        b = _b;
+    };
+    setColors(_r, _g, _b);
+    this.getColors = function() {
+        var colors = {
+            r: r,
+            g: g,
+            b: b
+        };
+        return colors;
+    };
+}
+
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+var COLOR_FIRST = "c3e2ff", COLOR_LAST = "08306B";
+var rgb = hexToRgb(COLOR_FIRST);
+var COLOR_START = new Color(rgb.r, rgb.g, rgb.b);
+rgb = hexToRgb(COLOR_LAST);
+var COLOR_END = new Color(rgb.r, rgb.g, rgb.b);
+var width = WIDTH,
+    height = HEIGHT;
+var valueById = d3.map();
+var startColors = COLOR_START.getColors(),
+    endColors = COLOR_END.getColors();
+var colors = [];
+
+for (var i = 0; i < COLOR_COUNTS; i++) {
+  var r = Interpolate(startColors.r, endColors.r, COLOR_COUNTS, i);
+  var g = Interpolate(startColors.g, endColors.g, COLOR_COUNTS, i);
+  var b = Interpolate(startColors.b, endColors.b, COLOR_COUNTS, i);
+  colors.push(new Color(r, g, b));
+}
+
+var quantize = d3.scale.quantize()
+    .domain([0, 1.0])
+    .range(d3.range(COLOR_COUNTS).map(function(i) { return i }));
+
+var path = d3.geo.path();
+
+
+function makeMap(uk) {
+
+var svg = d3.select("#canvas-svg").append("svg")
+    .attr("width", width)
+    .attr("height", height); 
+
+var projection = d3.geo.albers()
+    .rotate([84.390, 0])
+    .center([0, 33.7750])
+    .parallels([50, 60])
+    .scale(270000)
+    .translate([width, height/1.6 ]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var color = d3.scale.quantize()
+    .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,44)"]);
+
+
+// svg.selectAll(".place-label")
+//   .data(uk.features)
+//   .enter().append("text")
+//   .attr("class", "place-label")
+//   .attr("transform", function(d) { return " translate(" + path.centroid(d) + ")"; })
+//   .attr("dy", ".35em")
+//   .text(function(d) { return d.properties.NAME; });
+
+
+
+ svg
+ 	// .append("path")
+  //     .datum(uk.features)
+    .append("g")
+      .attr("class", "categories-choropleth")
+    .selectAll("path")
+      .data(uk.features)
+    .enter().append("path")
+
+      .attr("transform", "scale(" + SCALE + ")")      
+      .style("fill", function(d) {
+          var i = 1;
+          var color = colors[i].getColors();
+          return "rgb(" + color.r + "," + color.g +
+              "," + color.b + ")";
+      })
+      .attr("d", path)
+
+      .on("mousemove", function(d) {
+          var html = "";
+
+          html += "<div class=\"tooltip_kv\">";
+          html += "<span class=\"tooltip_key\">";
+          html += id_name_map[d.properties.REGIONID];
+          html += "</span>";
+          html += "<span class=\"tooltip_value\">";
+          html += (valueById.get(d.properties.REGIONID) ? valueById.get(d.properties.REGIONID) : "");
+          html += "";
+          html += "</span>";
+          html += "</div>";
+          
+          $("#tooltip-container").html(html);
+          $(this).attr("fill-opacity", "0.8");
+          $("#tooltip-container").show();
+          
+          var coordinates = d3.mouse(this);
+          
+          var map_width = $('.categories-choropleth')[0].getBoundingClientRect().width;
+          
+          if (d3.event.pageX < map_width / 2) {
+            d3.select("#tooltip-container")
+              .style("top", (d3.event.pageY + 15) + "px")
+              .style("left", (d3.event.pageX + 15) + "px");
+          } else {
+            var tooltip_width = $("#tooltip-container").width();
+            d3.select("#tooltip-container")
+              .style("top", (d3.event.pageY + 15) + "px")
+              .style("left", (d3.event.pageX - tooltip_width - 30) + "px");
+          }
+          makeBarCharts(d);
+      })
+      .on("mouseout", function() {
+              $(this).attr("fill-opacity", "1.0");
+              $("#tooltip-container").hide();
+
+          });
+
+ //  svg.append("path")
+ //      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+ //      .attr("class", "categories")
+ //      .attr("transform", "scale(" + SCALE + ")")
+ //      .attr("d", path);
+}
+
+
+function makeBarCharts(dataX){
+
+  var similar_hood  = dataX["sim"]["similar_hood"];
+  var data = [];
+  for (var i = 0 ; i < similar_hood.length ; i++) {
+      var dataU = {};
+      dataU["name"] = similar_hood[i].name;
+      dataU["value"] = similar_hood[i].value;
+      data.push(dataU);
+
+  };
+
+  var m = [30, 10, 10, 30],
+      w = 560 - m[1] - m[3],
+      h = 270 - m[0] - m[2];
+
+  var format = d3.format(",.3f");
+
+  var x = d3.scale.linear().range([0, w]),
+      y = d3.scale.ordinal().rangeRoundBands([0, h], .1);
+
+  var xAxis = d3.svg.axis().scale(x).orient("top").tickSize(-h),
+      yAxis = d3.svg.axis().scale(y).orient("right").tickSize(0);
+
+  d3.select("#canvas-bar-svg").html("");
+  var svg = d3.select("#canvas-bar-svg").append("svg")
+      .attr("width", w + m[1] + m[3])
+      .attr("height", h + m[0] + m[2])
+    .append("g")
+      .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+  // Parse numbers, and sort by value.
+  data.forEach(function(d) { d.value = +d.value; });
+  data.sort(function(a, b) { return b.value - a.value; });
+
+  // Set the scale domain.
+  x.domain([0, d3.max(data, function(d) { return d.value; })]);
+  y.domain(data.map(function(d) { return d.name; }));
+
+  var bar = svg.selectAll("g.bar")
+      .data(data)
+      .enter().append("g")
+      .attr("class", "bar")
+      .attr("transform", function(d) { return "translate(0," + y(d.name) + ")"; });
+
+  bar.append("rect")
+      .attr("width", function(d) { return x(d.value); })
+      .attr("height", y.rangeBand());
+
+  bar.append("text")
+      .attr("class", "value")
+      .attr("x", function(d) { return x(d.value); })
+      .attr("y", y.rangeBand()/2)
+      .attr("dx", -3)
+      .attr("dy", ".31em")
+      .attr("text-anchor", "end")
+      .text(function(d) { return format(d.value); });
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+
+}
+
+queue()
+ .defer(d3.json, "./data/atlanta.sim")
+
+ .await(ready);
+ 
+function ready(error, us) {
+ var pairRateWithId = {};
+ var pairNameWithId = {};
+
+  
+name_id_map = {};
+id_name_map = {};
+
+for (var i = 0; i < us.features.length; i++) {
+  var hood = us.features[i];
+  name_id_map[hood["properties"]["NAME"]] = hood["properties"]["REGIONID"];
+  id_name_map[hood["properties"]["REGIONID"]] = hood["properties"]["NAME"];
+}
+
+makeMap(us);
+var dataX  = us.features[0];
+makeBarCharts(dataX);
+};
+
+</script>
+</body>
+</html>

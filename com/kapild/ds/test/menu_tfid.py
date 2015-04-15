@@ -9,7 +9,7 @@ import string
 import numpy as np
 from sklearn import preprocessing
 import os
-from ds.foursquare.cities.cities_bounding_box import sf_bb, manhattan_bb, chicago_bb, austin_bb
+from ds.foursquare.cities.cities_bounding_box import sf_bb, manhattan_bb, chicago_bb, austin_bb, atlanta_bb
 
 base_dir = os.path.dirname(os.path.realpath(__file__))
 import json
@@ -92,6 +92,7 @@ def get_city_level_menu_tfid_and_similarities(city_hood_level_menu_file):
     f_write.close()
 
     type(menu_hood_list)
+    print city_hood_level_menu_file + "_sim"
     # top_features = [features[i] for i in indices[:top_n]]
     # print top_features
 
@@ -183,7 +184,7 @@ def print_similar_hood_cosine(hood_cosine_matrix, menu_hood_list, top_match = 3)
         hood_similary = hood_cosine_matrix[hood_index]
         argsort = sorted(range(len(hood_similary)), key = hood_similary.__getitem__, reverse=True)
         hood_similar_items = []
-        for top_index in range(0, 5):
+        for top_index in range(0, 10):
             hood_sim = dict()
             sim_index = argsort[top_index]
             similar_hood = menu_hood_list[sim_index]["name"]
@@ -274,7 +275,9 @@ def print_top_n_features(vectorizer, indices, top_n = 20):
 
 
 if __name__ == "__main__":
-    city_bb = sf_bb
+    city_bb = austin_bb
+    city_bb = atlanta_bb
+
     file_ext = ".json"
     data_directory = "/Users/kdalwani/code/workspace/datascience/data/"
 

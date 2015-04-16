@@ -159,18 +159,22 @@ div.tooltip {
 }
 </style>
 <body>
-<h1>Independent Farms in the USA</h1>
+<h1>SF Menu Sim</h1>
 <div id="tooltip-container"></div>
 
 <div>
   <div style="float: left;" id="canvas-svg"></div>
-  <div style="float: right;"  id="canvas-bar-svg"></div>
+  <div>
+    <div style="float: top;"  id="canvas-bar-svg"></div>
+    <div style="float: bottom;"  id="hood-list"></div>
+  </div>
+
 </div>
 
 <script type="text/javascript">
 
 var WIDTH = 1000, HEIGHT = 800;
-var COLOR_COUNTS = 9;
+var COLOR_COUNTS = 20;
 var SCALE = 0.7;
 var MAIN_CATEGORY = "Washington";
 var AVG_CATEGORY = "Nation Average";
@@ -234,8 +238,35 @@ var quantize = d3.scale.quantize()
 
 var path = d3.geo.path();
 
+function setColorMaps(hood, features) {
+  similar_hood = hood["sim"]["similar_hood"];
+  var colors_maps = {};
+  var styleIndex = colors.length-1;
+  for(var i = 0; i < similar_hood.length; i++) {
+    styleIndex = Math.max(styleIndex, 0);        
+    var color = colors[styleIndex-- % colors.length].getColors();
+    colors_maps[similar_hood[i]["REGIONID"]] = color;
+  }
+  return colors_maps;
+}
 
-function makeMap(uk) {
+function changeColors(hood, features) {
+  var colors_maps = setColorMaps(hood, features);
+  var paths = d3.selectAll("path")
+    .style("fill", function(d) {
+        var color ;
+        if (color == null ) {
+          color = colors[0].getColors();
+        } else{
+          color = colors_maps[d["properties"]["REGIONID"]];
+        }
+        return "rgb(" + color.r + "," + color.g +
+            "," + color.b + ")";
+        
+      })
+}
+
+function makeMap(hood, features) {
 
 var svg = d3.select("#canvas-svg").append("svg")
     .attr("width", width)
@@ -251,39 +282,28 @@ var projection = d3.geo.albers()
 var path = d3.geo.path()
     .projection(projection);
 
-var color = d3.scale.quantize()
-    .range(["rgb(237,248,233)","rgb(186,228,179)","rgb(116,196,118)","rgb(49,163,84)","rgb(0,109,44)"]);
-
-
-// svg.selectAll(".place-label")
-//   .data(uk.features)
-//   .enter().append("text")
-//   .attr("class", "place-label")
-//   .attr("transform", function(d) { return " translate(" + path.centroid(d) + ")"; })
-//   .attr("dy", ".35em")
-//   .text(function(d) { return d.properties.NAME; });
-
-
+ var colors_maps = setColorMaps(hood, features);
 
  svg
- 	// .append("path")
-  //     .datum(uk.features)
     .append("g")
-      .attr("class", "categories-choropleth")
+    .attr("class", "categories-choropleth")
     .selectAll("path")
-      .data(uk.features)
-    .enter().append("path")
-
-      .attr("transform", "scale(" + SCALE + ")")      
-      .style("fill", function(d) {
-          var i = 1;
-          var color = colors[i].getColors();
-          return "rgb(" + color.r + "," + color.g +
-              "," + color.b + ")";
+    .data(features)
+    .enter()
+    .append("path")
+    .attr("transform", "scale(" + SCALE + ")")      
+    .style("fill", function(d) {
+        var color = colors_maps[d["properties"]["REGIONID"]];
+        if (color == null ) {
+          color = colors[0].getColors();
+        }
+        return "rgb(" + color.r + "," + color.g +
+            "," + color.b + ")";
+        
       })
-      .attr("d", path)
+    .attr("d", path)
 
-      .on("mousemove", function(d) {
+    .on("mousemove", function(d) {
           var html = "";
 
           html += "<div class=\"tooltip_kv\">";
@@ -314,7 +334,7 @@ var color = d3.scale.quantize()
               .style("top", (d3.event.pageY + 15) + "px")
               .style("left", (d3.event.pageX - tooltip_width - 30) + "px");
           }
-          makeBarCharts(d);
+          makeBarCharts(d, features);
       })
       .on("mouseout", function() {
               $(this).attr("fill-opacity", "1.0");
@@ -329,10 +349,55 @@ var color = d3.scale.quantize()
  //      .attr("d", path);
 }
 
+function makeHoodList(us) {
+  d3.select("#hood-list").html("");
+  var svg = d3.select("#hood-list")
+   .append("svg")
+   .data(us.features)
+   .enter()
+   .append("div") 
+   .html(function(d) {
+        return "<a href='#'>" + d["properties"]["NAME"] + "</a>";
+    })
+    .on("mousemove", function(d) {
+        var html = "";
 
-function makeBarCharts(dataX){
+        html += "<div class=\"tooltip_kv\">";
+        html += "<span class=\"tooltip_key\">";
+        html += d["properties"]["NAME"] ;
+        html += "</span>";
+        html += "<span class=\"tooltip_value\">";
+        html += (valueById.get(d.properties.REGIONID) ? valueById.get(d.properties.REGIONID) : "");
+        html += "";
+        html += "</span>";
+        html += "</div>";
+        
+        $("#tooltip-container").html(html);
+        $(this).attr("fill-opacity", "0.8");
+        $("#tooltip-container").show();
+        
+        var coordinates = d3.mouse(this);
+        
+        var map_width = $('.categories-choropleth')[0].getBoundingClientRect().width;
+        
+        if (d3.event.pageX < map_width / 2) {
+          d3.select("#tooltip-container")
+            .style("top", (d3.event.pageY + 15) + "px")
+            .style("left", (d3.event.pageX + 15) + "px");
+        } else {
+          var tooltip_width = $("#tooltip-container").width();
+          d3.select("#tooltip-container")
+            .style("top", (d3.event.pageY + 15) + "px")
+            .style("left", (d3.event.pageX - tooltip_width - 30) + "px");
+        }
+        makeBarCharts(d, us.features);
+    });
+}
 
-  var similar_hood  = dataX["sim"]["similar_hood"];
+
+function makeBarCharts(d, features){
+  changeColors(d, features);
+  var similar_hood = d["sim"]["similar_hood"];
   var data = [];
   for (var i = 0 ; i < similar_hood.length ; i++) {
       var dataU = {};
@@ -417,9 +482,10 @@ for (var i = 0; i < us.features.length; i++) {
   id_name_map[hood["properties"]["REGIONID"]] = hood["properties"]["NAME"];
 }
 
-makeMap(us);
-var dataX  = us.features[0];
-makeBarCharts(dataX);
+makeHoodList(us);
+var selectedIndex = 0;
+makeMap(us.features[selectedIndex], us.features);
+makeBarCharts(us.features[selectedIndex], us.features);
 };
 
 </script>

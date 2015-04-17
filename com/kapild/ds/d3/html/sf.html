@@ -3,17 +3,19 @@
 <head>
  <meta charset="utf-8">
   <title> San Francisco neighborhood similarity by Menu data</title>
-  <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
- <script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script>
- <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="./scripts/d3.v3.min.js"></script>
+ <script type="text/javascript" src="./scripts/queue.v1.min.js"></script>
+ <script type="text/javascript" src="./scripts/topojson.v1.min.js"></script>
+<script src="./scripts/jquery-1.11.0.min.js"></script>
+<script src="./scripts/jquery-ui.min.js"></script>
  </head>
 <style>
 
 body {
   font: 10px sans-serif;
 }
+
+a {font-size: 15px}
 
 .bar rect {
   fill: steelblue;
@@ -164,7 +166,7 @@ div.tooltip {
 
 <div>
   <div style="float: left;" id="canvas-svg"></div>
-  <div>
+  <div style="float: right;">
     <div style="float: top;"  id="canvas-bar-svg"></div>
     <div style="float: bottom;"  id="hood-list"></div>
   </div>
@@ -238,7 +240,7 @@ var quantize = d3.scale.quantize()
 
 var path = d3.geo.path();
 
-function setColorMaps(hood, features) {
+function getColorMaps(hood, features) {
   similar_hood = hood["sim"]["similar_hood"];
   var colors_maps = {};
   var styleIndex = colors.length-1;
@@ -251,18 +253,21 @@ function setColorMaps(hood, features) {
 }
 
 function changeColors(hood, features) {
-  var colors_maps = setColorMaps(hood, features);
-  var paths = d3.selectAll("path")
+  var colors_maps = getColorMaps(hood, features);
+  var paths = d3
+  .select("#canvas-svg")
+  .selectAll("path")
     .style("fill", function(d) {
-        var color ;
+        console.log(d);
+        var color = null;
+        if ("properties" in d && d["properties"]["REGIONID"] in colors_maps) {
+            color = colors_maps[d["properties"]["REGIONID"]];
+        }
         if (color == null ) {
           color = colors[0].getColors();
-        } else{
-          color = colors_maps[d["properties"]["REGIONID"]];
-        }
+        } 
         return "rgb(" + color.r + "," + color.g +
             "," + color.b + ")";
-        
       })
 }
 
@@ -282,7 +287,7 @@ var projection = d3.geo.albers()
 var path = d3.geo.path()
     .projection(projection);
 
- var colors_maps = setColorMaps(hood, features);
+ var colors_maps = getColorMaps(hood, features);
 
  svg
     .append("g")
@@ -350,14 +355,17 @@ var path = d3.geo.path()
 }
 
 function makeHoodList(us) {
+
+
   d3.select("#hood-list").html("");
   var svg = d3.select("#hood-list")
+   .selectAll("div")  
    .append("svg")
    .data(us.features)
    .enter()
    .append("div") 
    .html(function(d) {
-        return "<a href='#'>" + d["properties"]["NAME"] + "</a>";
+        return "<a href='#'  sizes='16x16' >" + d["properties"]["NAME"] + "</a>";
     })
     .on("mousemove", function(d) {
         var html = "";

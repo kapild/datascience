@@ -355,7 +355,7 @@ var path = d3.geo.path()
     });
 }
 
-function setCloud(freq_list, features) {
+function setCloud(freq_list, div_id) {
   d3.layout.cloud()
   .size([900, 800])
       .words(freq_list
@@ -367,13 +367,15 @@ function setCloud(freq_list, features) {
       .padding(5)
       .font("Impact")
       .fontSize(function(d) { return d.size; })
-      .on("end", drawCloud)
+      .on("end", function(d) { 
+        drawCloud(d, div_id); 
+      })
       .start();
 }
 
-function drawCloud(words) {
-  d3.select("#cloud-svg").html("");
-  var svg = d3.select("#cloud-svg")
+function drawCloud(words, div_id) {
+  d3.select(div_id).html("");
+  var svg = d3.select(div_id)
   // d3.select("body")
     .append("svg")
       .attr("width", 950)
@@ -424,7 +426,7 @@ function makeHoodListPair(d) {
     })
     .on("click", function(d) {
         makeToolTip(d["name"], d, this);
-        // refreshPairUI(d, us.features);
+        refreshPairUI(d);
     });
 
 }
@@ -437,7 +439,7 @@ function makeToolTip(name, d, instance) {
     html += name;
     html += "</span>";
     html += "<span class=\"tooltip_value\">";
-    html += (valueById.get(d.properties.REGIONID) ? valueById.get(d.properties.REGIONID) : "");
+    // html += (valueById.get(d.properties.REGIONID) ? valueById.get(d.properties.REGIONID) : "");
     html += "";
     html += "</span>";
     html += "</div>";
@@ -466,14 +468,14 @@ function refreshUI(d, features){
   selectedHood = d;
   refreshMapColors(selectedHood, features);
   refreshBarCharts(selectedHood, features);
-  setCloud(selectedHood["sim"]["menu_items"], features);
+  setCloud(selectedHood["sim"]["menu_items"], "#cloud-svg");
   makeHoodListPair(d);
 }
 
-function refreshPairUI(d, features){
+function refreshPairUI(d){
   selectedRegionId = selectedHood["sim"]["REGIONID"];
-  pairRegionID = d["properties"]["REGIONID"]
-  setCloud(d, features)
+  pairRegionID = d["REGIONID"]
+  setCloud(d["menu_items"], "#cloud-svg_pair");
 }
 
 function refreshBarCharts(d, features) {

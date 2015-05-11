@@ -70,7 +70,7 @@ def set_similar_hoods(hood_menu_list):
         hood = hood_menu_list[index]
         print "Printing similar hood for: %s" % hood.get("name")
         hood_similar_items = get_similar_hood_items(hood_cosine_matrix, hood_menu_list, index, top_similar)
-        hood["similar_hood_name"] = hood_similar_items
+        hood["similar_hood"] = hood_similar_items
     return hood_menu_list
 
 
@@ -123,7 +123,9 @@ def get_city_level_menu_tfid_and_similarities(city_hood_level_menu_file):
     # get cloud data
     hood_sim_and_menu_items = set_menu_items_data(hood_menu_list_with_similar_hoods)
 
-    print_hood_common_top_items(hood_sim_and_menu_items)
+    # sets the pair wise menu items between hoods
+    set_sim_hood_common_top_menu_items(hood_sim_and_menu_items)
+
     # sets the hood similarity data in the geo data.
     set_sim_hood_data(hood_menu_data, hood_sim_and_menu_items)
 
@@ -155,20 +157,21 @@ def set_sim_hood_data(hood_menu_data, hood_menu_list):
 
     return hood_menu_data
 
-def print_hood_common_top_items(hood_sim_and_menu_items):
+def set_sim_hood_common_top_menu_items(hood_sim_and_menu_items):
     region_id_menu_item_map = dict()
     for hood in hood_sim_and_menu_items:
         region_id_menu_item_map[hood.get("REGIONID")] = hood
 
-    for hood_l in region_id_menu_item_map.keys():
-        hood_left = region_id_menu_item_map[hood_l]
-        for hood_r in region_id_menu_item_map.keys():
-            hood_right = region_id_menu_item_map[hood_r]
-            if hood_l != hood_r:
-                top_items = get_hood_common_top_menu_items(hood_left.get("menu_items"), hood_right.get("menu_items"))
-                # print "Between " + hood_left.get("name") + " and, " + hood_right.get("name")
-                for items in top_items:
-                    print items
+    for hood_l_key in region_id_menu_item_map.keys():
+        hood_left = region_id_menu_item_map[hood_l_key]
+        for hood_right in hood_left["similar_hood"]:
+            hood_r_key = hood_right["REGIONID"]
+            # if hood_l_key != hood_r_key:
+            top_items = get_hood_common_top_menu_items(hood_left.get("menu_items"), region_id_menu_item_map[hood_r_key]["menu_items"])
+            # print "Between " + hood_left.get("name") + " and, " + hood_right.get("name")
+            hood_right["menu_items"] = top_items
+            # for items in top_items:
+            #     print items
 
 
 def get_hood_name(hood):

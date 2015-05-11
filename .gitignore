@@ -1,2 +1,5 @@
-/Users/kdalwani/code/workspace/datascience/com/kapild/ds/foursquare/utils.py
 *.pyc
+data/*.*
+*/*.pyc
+.DS_Store
+com/**/*.pyc

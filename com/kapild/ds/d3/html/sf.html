@@ -9,6 +9,7 @@
     <script src="./scripts/jquery-1.11.0.min.js"></script>
     <script src="./scripts/jquery-ui.min.js"></script>
     <script src="./scripts/d3/d3.layout.cloud.js"></script>
+    <script src="./scripts/d3/biPartite.js"></script>    
 </head>
 <style>
 
@@ -178,6 +179,7 @@ div.tooltip {
     </div>
   </div>
   <div style="float: bottom;">
+    <div style="float: left;"  id="bigraph-svg"></div>      
     <div style="float: left;"  id="cloud-svg"></div>      
     <div style="float: right;"  id="cloud-svg_pair"></div>      
   </div>
@@ -257,23 +259,26 @@ var colorCloud = d3.scale.linear()
 var fillCloud = d3.scale.category20();
 
 var selectedHood;
+var features;
 
-function getColorMaps(hood, features) {
-  similar_hood = hood["sim"]["similar_hood"];
-  var colors_maps = {};
-  var styleIndex = colors.length-1;
-  // colors_maps[similar_hood[0]["REGIONID"]] = COLOR_GREEN;
+function getColorMaps(hood) {
+  if ("sim" in hood) {
+    similar_hood = hood["sim"]["similar_hood"];
+    var colors_maps = {};
+    var styleIndex = colors.length-1;
 
-  for(var i = 0; i < similar_hood.length; i++) {
-    styleIndex = Math.max(styleIndex, 0);        
-    var color = colors[styleIndex-- % colors.length].getColors();
-    colors_maps[similar_hood[i]["REGIONID"]] = color;
+    for(var i = 0; i < similar_hood.length; i++) {
+      styleIndex = Math.max(styleIndex, 0);        
+      var color = colors[styleIndex-- % colors.length].getColors();
+      colors_maps[similar_hood[i]["REGIONID"]] = color;
+    }
+  return colors_maps;    
   }
-  return colors_maps;
 }
 
-function refreshMapColors(hood, features) {
-  var colors_maps = getColorMaps(hood, features);
+function refreshMapColors(hood) {
+  var colors_maps = getColorMaps(hood);
+  if (colors_maps == null) {return;}
   var paths = d3
   .select("#canvas-svg")
   .selectAll("path")
@@ -290,7 +295,7 @@ function refreshMapColors(hood, features) {
       })
 }
 
-function showToolTipsForSimilarHoods(hood, features) {
+function showToolTipsForSimilarHoods(hood) {
   var paths = d3
     .select("#canvas-svg")
     .selectAll("path")
@@ -307,7 +312,7 @@ function showToolTipsForSimilarHoods(hood, features) {
       })
 }
 
-function makeMap(hood, features) {
+function makeMap(hood) {
 
 var svg = d3.select("#canvas-svg").append("svg")
     .attr("width", width)
@@ -323,7 +328,7 @@ var projection = d3.geo.albers()
 var path = d3.geo.path()
     .projection(projection);
 
- var colors_maps = getColorMaps(hood, features);
+ var colors_maps = getColorMaps(hood);
 
  svg
     .append("g")
@@ -346,7 +351,7 @@ var path = d3.geo.path()
 
     .on("mousemove", function(d) {
           makeToolTip(id_name_map[d.properties.REGIONID], d, this);
-          refreshUI(d, features);
+          refreshUI(d);
     })
     .on("mouseout", function() {
         $(this).attr("fill-opacity", "1.0");
@@ -396,12 +401,52 @@ function drawCloud(words, div_id) {
       .text(function(d) { return d.text; });
 }
 
-function makeHoodList(us) {
+function drawBiGraph(features) {
+
+  var biPartiteData=[];
+
+  for (var i = 0; i < features.length; i++) {
+    var hood = features[i];
+    var name = features[i]["properties"]["NAME"];
+    var regionId = features[i]["properties"]["REGIONID"];
+
+    if ("sim" in features[i] && "similar_hood" in features[i]["sim"]) {
+      var similar_hoods = features[i]["sim"]["similar_hood"];
+      for (var j = 0; j < similar_hoods.length && j < 10; j++) {
+        var similar_hood = similar_hoods[j];
+        var biPartiteRow = [];
+        biPartiteRow.push(name);
+        biPartiteRow.push(similar_hood["name"]);
+        biPartiteRow.push(similar_hood["value"].toFixed(2));
+        biPartiteRow.push(hood);
+        biPartiteRow.push(similar_hood);
+        biPartiteData.push(biPartiteRow);
+      }      
+    }
+  }
+
+  var width = 1000, height = 2500, margin ={b:0, t:100, l:200, r:150};
+
+  d3.select("#bigraph-svg").html("");
+
+  var svg = d3.select("#bigraph-svg")
+    .append("svg").attr('width',width).attr('height',(height+margin.b+margin.t))
+    .append("g").attr("transform","translate("+ margin.l+","+margin.t+")");
+
+  var data = [ 
+    {data:bP.partData(biPartiteData,2), id:'Neighborhood', header:["Hoods","Hoods", "Similar Neighborhoods"]},
+  ];
+
+  bP.draw(data, svg);
+}
+
+
+function makeHoodList(features) {
   d3.select("#hood-list").html("");
   var svg = d3.select("#hood-list")
    .selectAll("div")  
    .append("svg")
-   .data(us.features)
+   .data(features)
    .enter()
    .append("div") 
    .html(function(d) {
@@ -409,7 +454,7 @@ function makeHoodList(us) {
     })
     .on("click", function(d) {
         makeToolTip(d["properties"]["NAME"], d, this);
-        refreshUI(d, us.features);
+        refreshUI(d);
     });
 }
 
@@ -464,10 +509,11 @@ function makeToolTip(name, d, instance) {
     }
 }
 
-function refreshUI(d, features){
+function refreshUI(d){
+  if (("sim" in d) == false) {return;}
   selectedHood = d;
-  refreshMapColors(selectedHood, features);
-  refreshBarCharts(selectedHood, features);
+  refreshMapColors(selectedHood);
+  refreshBarCharts(selectedHood);
   setCloud(selectedHood["sim"]["menu_items"], "#cloud-svg");
   makeHoodListPair(d);
 }
@@ -478,70 +524,72 @@ function refreshPairUI(d){
   setCloud(d["menu_items"], "#cloud-svg_pair");
 }
 
-function refreshBarCharts(d, features) {
-  var similar_hood = d["sim"]["similar_hood"];
-  var data = [];
-  for (var i = 0 ; i < similar_hood.length ; i++) {
-      var dataU = {};
-      dataU["name"] = similar_hood[i].name;
-      dataU["value"] = similar_hood[i].value;
-      data.push(dataU);
+function refreshBarCharts(d) {
+  if ("sim" in d) {
+    var similar_hood = d["sim"]["similar_hood"];
+    var data = [];
+    for (var i = 0 ; i < similar_hood.length ; i++) {
+        var dataU = {};
+        dataU["name"] = similar_hood[i].name;
+        dataU["value"] = similar_hood[i].value;
+        data.push(dataU);
 
-  };
+    };
 
-  var m = [30, 10, 10, 30],
-      w = 560 - m[1] - m[3],
-      h = 270 - m[0] - m[2];
+    var m = [30, 10, 10, 30],
+        w = 560 - m[1] - m[3],
+        h = 270 - m[0] - m[2];
 
-  var format = d3.format(",.3f");
+    var format = d3.format(",.3f");
 
-  var x = d3.scale.linear().range([0, w]),
-      y = d3.scale.ordinal().rangeRoundBands([0, h], .1);
+    var x = d3.scale.linear().range([0, w]),
+        y = d3.scale.ordinal().rangeRoundBands([0, h], .1);
 
-  var xAxis = d3.svg.axis().scale(x).orient("top").tickSize(-h),
-      yAxis = d3.svg.axis().scale(y).orient("right").tickSize(0);
+    var xAxis = d3.svg.axis().scale(x).orient("top").tickSize(-h),
+        yAxis = d3.svg.axis().scale(y).orient("right").tickSize(0);
 
-  d3.select("#canvas-bar-svg").html("");
-  var svg = d3.select("#canvas-bar-svg").append("svg")
-      .attr("width", w + m[1] + m[3])
-      .attr("height", h + m[0] + m[2])
-    .append("g")
-      .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+    d3.select("#canvas-bar-svg").html("");
+    var svg = d3.select("#canvas-bar-svg").append("svg")
+        .attr("width", w + m[1] + m[3])
+        .attr("height", h + m[0] + m[2])
+      .append("g")
+        .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
 
-  // Parse numbers, and sort by value.
-  data.forEach(function(d) { d.value = +d.value; });
-  data.sort(function(a, b) { return b.value - a.value; });
+    // Parse numbers, and sort by value.
+    data.forEach(function(d) { d.value = +d.value; });
+    data.sort(function(a, b) { return b.value - a.value; });
 
-  // Set the scale domain.
-  x.domain([0, d3.max(data, function(d) { return d.value; })]);
-  y.domain(data.map(function(d) { return d.name; }));
+    // Set the scale domain.
+    x.domain([0, d3.max(data, function(d) { return d.value; })]);
+    y.domain(data.map(function(d) { return d.name; }));
 
-  var bar = svg.selectAll("g.bar")
-      .data(data)
-      .enter().append("g")
-      .attr("class", "bar")
-      .attr("transform", function(d) { return "translate(0," + y(d.name) + ")"; });
+    var bar = svg.selectAll("g.bar")
+        .data(data)
+        .enter().append("g")
+        .attr("class", "bar")
+        .attr("transform", function(d) { return "translate(0," + y(d.name) + ")"; });
 
-  bar.append("rect")
-      .attr("width", function(d) { return x(d.value); })
-      .attr("height", y.rangeBand());
+    bar.append("rect")
+        .attr("width", function(d) { return x(d.value); })
+        .attr("height", y.rangeBand());
 
-  bar.append("text")
-      .attr("class", "value")
-      .attr("x", function(d) { return x(d.value); })
-      .attr("y", y.rangeBand()/2)
-      .attr("dx", -3)
-      .attr("dy", ".31em")
-      .attr("text-anchor", "end")
-      .text(function(d) { return format(d.value); });
+    bar.append("text")
+        .attr("class", "value")
+        .attr("x", function(d) { return x(d.value); })
+        .attr("y", y.rangeBand()/2)
+        .attr("dx", -3)
+        .attr("dy", ".31em")
+        .attr("text-anchor", "end")
+        .text(function(d) { return format(d.value); });
 
-  svg.append("g")
-      .attr("class", "x axis")
-      .call(xAxis);
+    svg.append("g")
+        .attr("class", "x axis")
+        .call(xAxis);
 
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis);
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+  }
 }
 
 queue()
@@ -552,7 +600,6 @@ queue()
 function ready(error, us) {
  var pairRateWithId = {};
  var pairNameWithId = {};
-
   
 name_id_map = {};
 id_name_map = {};
@@ -563,10 +610,12 @@ for (var i = 0; i < us.features.length; i++) {
   id_name_map[hood["properties"]["REGIONID"]] = hood["properties"]["NAME"];
 }
 
-makeHoodList(us);
 var selectedIndex = 0;
-makeMap(us.features[selectedIndex], us.features);
-refreshUI(us.features[selectedIndex], us.features);
+features = us.features;
+makeHoodList(features);
+makeMap(us.features[selectedIndex]);
+refreshUI(us.features[selectedIndex]);
+drawBiGraph(features);
 };
 
 </script>

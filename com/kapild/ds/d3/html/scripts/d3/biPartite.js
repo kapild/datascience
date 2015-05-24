@@ -11,9 +11,26 @@
 		var sData={};
 		
 		sData.keys=[
-			d3.set(data.map(function(d){ return d[3].properties["REGIONID"];})).values().sort(function(a,b){ return ( a<b? -1 : a>b ? 1 : 0);}),
-			d3.set(data.map(function(d){ return d[4]["REGIONID"];})).values().sort(function(a,b){ return ( a<b? -1 : a>b ? 1 : 0);})		
+			d3.set(
+				data
+					.map(function(d){ 
+						return d[3].properties["REGIONID"];
+					}))
+					.values()
+					.sort(function(a,b){ 
+						return ( a<b? -1 : a>b ? 1 : 0);
+					}),
+			d3.set(
+				data
+					.map(function(d){ 
+						return d[4]["REGIONID"];
+					}))
+					.values()
+					.sort(function(a,b){ 
+						return ( a<b? -1 : a>b ? 1 : 0)
+					;})		
 		];
+		
 		var leftMap = {};
 		var rightMap = {};
 		for(var i = 0 ; i < data.length; i++) {
@@ -23,13 +40,23 @@
 		}
 		sData.mapIdName=[leftMap, rightMap];
 
-		sData.data = [	sData.keys[0].map( function(d){ return sData.keys[1].map( function(v){ return 0; }); }),
-						sData.keys[1].map( function(d){ return sData.keys[0].map( function(v){ return 0; }); }) 
-		];
+		sData.data = [	
+			sData.keys[0].map(function(d){ 
+				return sData.keys[1].map(function(v){ 
+					return 0; 
+				}); 
+			}),
+			sData.keys[1].map(function(d){
+				return sData.keys[0].map(function(v){
+					return 0; 
+			}); 
+		})];
 		
 		data.forEach(function(d){ 
-			sData.data[0][sData.keys[0].indexOf("" + d[3].properties["REGIONID"])][sData.keys[1].indexOf(""+ d[4]["REGIONID"])]=d[p];
-			sData.data[1][sData.keys[1].indexOf("" + d[4]["REGIONID"])][sData.keys[0].indexOf(""+ d[3].properties["REGIONID"])]=d[p]; 
+			sData.data[0][
+				sData.keys[0].indexOf("" + d[3].properties["REGIONID"])][sData.keys[1].indexOf(""+ d[4]["REGIONID"])] = d[p];
+			sData.data[1][
+			sData.keys[1].indexOf("" + d[4]["REGIONID"])][sData.keys[0].indexOf(""+ d[3].properties["REGIONID"])]= d[p]; 
 		});
 		
 		return sData;
@@ -113,7 +140,75 @@
 		};
 	}
 	
-	function drawPart(data, id, p){
+	function getTipText(data, col, index) {
+		if(!isAnySelected(prevDict)) {
+			if (col == 0) {
+				tipText = data.mapIdName[col][data.keys[col][index]].properties.NAME;
+				count = getSimCount(data, col, index, false);
+				return "Click to see top " + count + " similar neighborhoods of <span style='color:red'>" + tipText + ".</span>";				
+			} else {
+				tipText = data.mapIdName[col][data.keys[col][index]].name;
+				count = getSimCount(data, col, index, false);
+				return "Click to see all the " + count + " neighborhoods where <span style='color:red'>" + tipText + " </span> is in top 10.";				
+			}
+		}
+		// something was selected. 
+		if(isOnlyLeftSelected(prevDict)) {
+			// is prev selection same as current, reset.
+			if(isPrevLeftSameCurrent(prevDict, index, col)) {
+				return "Click to deselect all.";				
+			} else if (col == 0) {
+				tipText = data.mapIdName[col][data.keys[col][index]].properties.NAME;
+				count = getSimCount(data, col, index, false);
+				return "Click to see top " + count + " similar neighborhoods of <span style='color:red'>" + tipText + ".</span>";				
+			} else {
+				// both left and right selected.
+				var name1 = data.mapIdName[prevDict.prevLeftCol][data.keys[prevDict.prevLeftCol][prevDict.prevLeftIndex]].properties.NAME;
+				var name2 = data.mapIdName[col][data.keys[col][index]].name;
+
+				return "Click to select common menu items between <span style='color:red'>" + name1 + "</span> & "  +
+					"<span style='color:green'>" + name2 + ".</span>"  ;				
+			}
+		} else if (isOnlyRightSelected(prevDict)) {
+			// is prev selection same as current, reset.
+			if(isPrevRightSameCurrent(prevDict, index, col)) {
+				return "Click to deselect all.";				
+			} else if(col == 1) {
+				// another right selected, deselect prev, select new
+				tipText = data.mapIdName[col][data.keys[col][index]].name;
+				count = getSimCount(data, col, index, false);
+				return "Click to see all the " + count + " neighborhoods where <span style='color:red'>" + tipText + " </span> is in top 10.";				
+			} else {
+				// both left and right selected.
+				// both left and right selected.
+				var name2 = data.mapIdName[col][data.keys[col][index]].properties.NAME;
+				var name1 = data.mapIdName[prevDict.prevRightCol][data.keys[prevDict.prevRightCol][prevDict.prevRightIndex]].name;
+
+				return "Click to select <span style='color:red'>" + name1 + "</span> & "  +
+					"<span style='color:green'>" + name2 + ".</span>"  ;				
+			}
+		}
+		return "Click to deselect all.";							
+	}
+
+	function getSimCount(data, col, index, isBothSelected) {
+		return data.data[col][index]
+			.filter(function(d, i) {
+				if (isBothSelected) {
+					return (prevIndex ==i && y == s ? d : 0);
+				} else {
+					return (d > 0 ? 1 : 0);
+				}})
+			.length;
+	}
+
+	function drawPart(data, bpData, id, p){
+		var tip = d3.tip()
+  			.attr('class', 'd3-tip')
+  			.offset([-10, 0])
+  			.html(function(d, i) {
+  				return getTipText(bpData, p, i);
+  		})
 		d3.select("#"+id).append("g").attr("class","part"+p)
 			.attr("transform","translate("+( p*(bb+b))+",0)");
 		d3.select("#"+id).select(".part"+p).append("g").attr("class","subbars");
@@ -123,6 +218,7 @@
 			.selectAll(".mainbar").data(data.mainBars[p])
 			.enter().append("g").attr("class","mainbar");
 
+		mainbar.call(tip);
 		mainbar.append("rect").attr("class","mainrect")
 			.attr("x", 0).attr("y",function(d){ return d.middle-d.height/2; })
 			.attr("width",b).attr("height",function(d){ return d.height; })
@@ -135,6 +231,8 @@
 			.attr("x", c1[p]).attr("y",function(d){ return d.middle+5;})
 			.text(function(d,i){ if (p == 0) return data.mapIdName[p][data.keys[p][i]].properties.NAME;
 				else return data.mapIdName[1][data.keys[1][i]].name;})
+ 			.on('mouseover', tip.show)	
+			.on('mouseout', tip.hide)	
 			.attr("text-anchor","start" );
 			
 		mainbar.append("text").attr("class","barvalue")
@@ -175,7 +273,7 @@
 			h.append("text").text(header[d]).attr("x", (c1[d]-5))
 				.attr("y", -5).style("fill","grey");
 			
-			h.append("text").text("Count").attr("x", (c2[d]-10))
+			h.append("text").text("similarity sum").attr("x", (c2[d]-10))
 				.attr("y", -5).style("fill","grey");
 			
 			h.append("line").attr("x1",c1[d]-10).attr("y1", -2)
@@ -235,8 +333,8 @@
 				.attr("transform","translate("+ (550*s)+",0)");
 				
 			var visData = visualize(biP.data);
-			drawPart(visData, biP.id, 0);
-			drawPart(visData, biP.id, 1); 
+			drawPart(visData, biP.data, biP.id, 0);
+			drawPart(visData, biP.data, biP.id, 1); 
 			drawEdges(visData, biP.id);
 			drawHeader(biP.header, biP.id);
 			
@@ -252,56 +350,190 @@
 		});	
 	}
 
-	var prevCol, prevIndex;
+	var prevDict = {
+		prevLeftCol : -1,
+		prevLeftIndex : -1,
+		prevRightCol : -1,
+		prevRightIndex : -1
+	}
+
+
+	function isLeftSelected(prevDict) {
+		return prevDict.prevLeftCol != -1 && prevDict.prevLeftIndex != -1 ;
+	}
+
+	function isRightSelected(prevDict) {
+		return prevDict.prevRightCol != -1 && prevDict.prevRightIndex != -1 ;
+	}
+
+	function isOnlyLeftSelected(prevDict) {
+		return isLeftSelected(prevDict) && !isRightSelected(prevDict);
+	}
+
+	function isOnlyRightSelected(prevDict) {
+		return !isLeftSelected(prevDict) && isRightSelected(prevDict);
+	}
+
+	function isBothSelected(prevDict) {
+		return isLeftSelected(prevDict) && isRightSelected(prevDict);
+	}
+
+	function isAnySelected(prevDict) {
+		return isLeftSelected(prevDict) || isRightSelected(prevDict);
+	}
+
+	function setPrevLeft(prevDict, col, index) {
+		prevDict.prevLeftCol = col;
+		prevDict.prevLeftIndex = index;
+	}
+
+	function setPrevRight(prevDict, col, index) {
+		prevDict.prevRightCol = col;
+		prevDict.prevRightIndex = index;
+	}
+
+	function setPrevReset(prevDict) {
+		setPrevLeft(prevDict, -1, -1);
+		setPrevRight(prevDict, -1, -1);
+	}
+
+	function isPrevLeftSameCurrent(prevDict, index, col) {
+		return prevDict.prevLeftIndex == index && prevDict.prevLeftCol == col;
+	}
+
+	function isPrevRightSameCurrent(prevDict, index, col) {
+		return prevDict.prevRightIndex == index && prevDict.prevRightCol == col;
+	}
+
+	function setPrev(prevDict, col, index) {
+		if (col == 0) {
+			setPrevLeft(prevDict, col, index);
+		} else {
+			setPrevRight(prevDict, col, index);
+		}
+	}
+
+	function deselectPrev(prevDict, data, col, index) {
+		if (col == 0) {
+			bP.deSelectSegment(data, col, prevDict.prevLeftIndex);			
+		} else {
+			bP.deSelectSegment(data, col, prevDict.prevRightIndex);						
+		}
+	}
+
+	function selectSingle(data, col, index) {
+		bP.selectSegment(data, col, index, prevDict, false);			
+		if (col == 0) {
+			hood = data[0].data.mapIdName[col][data[0].data.keys[col][index]];
+			refreshUI(hood);
+		}
+	}
+
+	function selectBoth(data, prevIndex, col, index) {
+		bP.selectSegment(data, col, index, prevIndex, true);
+		if (col == 1) {
+			hood = data[0].data.mapIdName[col][data[0].data.keys[col][index]];
+			refreshPairUI(hood);		
+		}			
+	}
 
 	bP.mouseClick = function(data, col, index) {
 		hood = data[0].data.mapIdName[col][data[0].data.keys[col][index]];
-		if (prevCol == null && prevIndex == null) {
-			bP.selectSegment(data, col, index);		
-			if (col == 0)	
-				refreshUI(hood);
-			else 
-				refreshPairUI(hood);
-			prevCol = col;
-			prevIndex = index;
-			return;	
-		} else if (prevIndex == index && prevCol == col) {
-			bP.deSelectSegment(data, prevCol, prevIndex);			
-			prevCol = null;
-			prevIndex = null;
+
+		// nothing was selected earlier, first time.
+		if (!isAnySelected(prevDict)) {
+			selectSingle(data, col, index);
+			setPrev(prevDict, col, index);	
 			return;
-		} else {
-			bP.deSelectSegment(data, prevCol, prevIndex);			
-			bP.selectSegment(data, col, index);			
-			if (col == 0)	
-				refreshUI(hood);
-			else 
-				refreshPairUI(hood);
-			prevCol = col;
-			prevIndex = index;
 		}
+		// something was selected. 
+		if(isOnlyLeftSelected(prevDict)) {
+			// is prev selection same as current, reset.
+			if(isPrevLeftSameCurrent(prevDict, index, col)) {
+				bP.deSelectSegment(data, col, index);
+				setPrevReset(prevDict);
+				return;			
+			} else if (col == 0) {
+				// another left selected, deselect prev, select new
+				deselectPrev(prevDict, data, col, index);
+				selectSingle(data, col, index);
+			} else {
+				// both left and right selected.
+				selectBoth(data, prevDict.prevLeftIndex, col, index);
+			}
+		} else if (isOnlyRightSelected(prevDict)) {
+			// is prev selection same as current, reset.
+			if(isPrevRightSameCurrent(prevDict, index, col)) {
+				bP.deSelectSegment(data, col, index);
+				setPrevReset(prevDict);
+				return;			
+			} else if(col == 1) {
+				// another right selected, deselect prev, select new
+				deselectPrev(prevDict, data, col, index);
+				selectSingle(data, col, index);
+			} else {
+				// both left and right selected.
+				selectBoth(data, prevDict.prevRightIndex, col, index);
+			}
+		} else if(isBothSelected(prevDict)) {
+			bP.deSelectSegment(data, prevDict.prevLeftCol, prevDict.prevLeftIndex);
+			bP.deSelectSegment(data, prevDict.prevRightCol, prevDict.prevRightIndex);
+			setPrevReset(prevDict);
+			resetCloud();
+			return ;
+		}
+		setPrev(prevDict, col, index);
 	}
 	
-	bP.selectSegment = function(data, m, s){
+	bP.selectSegment = function(data, m, s, prevIndex, isBothSelected){
 		data.forEach(function(k){
 			var newdata =  {keys:[], data:[]};	
 				
 			newdata.keys = k.data.keys.map( function(d){ return d;});
-			
+			if (isBothSelected) {
+				m = m == 0 ? 1 : 0;
+			}
 			newdata.data[m] = k.data.data[m].map( function(d){ return d;});
 			
 			newdata.data[1-m] = k.data.data[1-m]
-				.map( function(v){ return v.map(function(d, i){ return (s==i ? d : 0);}); });
+				.map(function(v, y){ 
+					return v.map(function(d, i){ 
+							if (isBothSelected) {
+								return (prevIndex ==i && y == s ? d : 0);
+							} else {
+								return (s==i ? d : 0);
+							}
+					});
+				});
 			
 			transition(visualize(newdata), k.id);
-				
-			var selectedBar = d3.select("#"+k.id).select(".part"+m).select(".mainbars")
-				.selectAll(".mainbar").filter(function(d,i){ return (i==s);});
-			
+			var selectedBar = d3.select("#"+k.id).select(".part"+m)
+				.select(".mainbars")
+				.selectAll(".mainbar")
+				.filter(function(d,i){ 
+					if (isBothSelected) {
+						return i==prevIndex;
+					} else {
+						return i==s;						
+					}
+					;});
 			selectedBar.select(".mainrect").style("stroke-opacity",1);			
 			selectedBar.select(".barlabel").style('font-weight','bold');
 			selectedBar.select(".barvalue").style('font-weight','bold');
 			selectedBar.select(".barpercent").style('font-weight','bold');
+				
+	
+			if (isBothSelected) {	
+				m = m == 0 ? 1 : 0;
+				var selectedBar = d3.select("#"+k.id).select(".part"+m)
+					.select(".mainbars")
+					.selectAll(".mainbar")
+					.filter(function(d,i){ return (i==s);});				
+				selectedBar.select(".mainrect").style("stroke-opacity",1);			
+				selectedBar.select(".barlabel").style('font-weight','bold');
+				selectedBar.select(".barvalue").style('font-weight','bold');
+				selectedBar.select(".barpercent").style('font-weight','bold');
+			}
 		});
 	}	
 	

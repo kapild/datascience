@@ -10,6 +10,9 @@
     <script src="./scripts/jquery-ui.min.js"></script>
     <script src="./scripts/d3/d3.layout.cloud.js"></script>
     <script src="./scripts/d3/biPartite.js"></script>    
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="./scripts/d3/d3.tip.js"></script>    
+
 </head>
 <style>
 
@@ -42,6 +45,7 @@ a {font-size: 15px}
 
 .y.axis text {
   font: 10px sans-serif;
+  fill: white;
 }
 
 .x.axis line {
@@ -149,6 +153,34 @@ body {
   text-anchor: middle;
 }
 
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
 div.tooltip {
  position: absolute;
  text-align: center;
@@ -161,6 +193,49 @@ div.tooltip {
  border-radius: 8px;
  pointer-events: none;
 }
+#root_div{
+  width: 1600px;
+  height: 1800px;
+  border: 1px solid white;
+}
+#top_div{
+  width: 100%;
+  height: 50%;
+  border: 1px solid white;
+  float: top;
+}
+#top_left_div{
+  width: 50%;
+  height: 100%;
+  border: 1px solid white;
+  float: left;
+}
+#top_right_div{
+  width: 50%;
+  height: 100%;
+  border: 1px solid white;
+  float: right;
+}
+
+#bottom_div{
+  width: 100%;
+  height: 50%;
+  border: 1px solid white;
+  float: top;
+}
+#bottom_left_div{
+  width: 50%;
+  height: 100%;
+  border: 1px solid white;
+  float: left;
+}
+#bottom_right_div{
+  width: 50%;
+  height: 100%;
+  border: 1px solid white;
+  float: left;
+}
+
 </style>
 <body>
 <h1>SF Menu Sim</h1>
@@ -168,26 +243,29 @@ div.tooltip {
 
 <div>
   <div>
-    <div style="float: left;" id="canvas-svg"></div>
-    <div style="float: left;" id="canvas-svg-name"></div>    
-  </div>
-  <div style="float: right;">
-    <div style="float: top;"  id="canvas-bar-svg"></div>
-    <div>
-      <div style="float: left;"  id="hood-list"></div>
-      <div style="float: right;"  id="hood-list_pair"></div>
+    <div style="float: left;">
+      <div style="float: top;" id="canvas-svg"></div>
+      <div style="float: top;"  id="canvas-bar-svg"></div>
     </div>
-  </div>
-  <div style="float: bottom;">
     <div style="float: left;"  id="bigraph-svg"></div>      
-    <div style="float: left;"  id="cloud-svg"></div>      
-    <div style="float: right;"  id="cloud-svg_pair"></div>      
+  </div>
+  <br>
+  <br>
+  <div style="float: left;">
+    <div style="float: left;">
+      <div style="float: top; text-align: center;" id="cloud-svg_text"></div>
+      <div style="float: top;"  id="cloud-svg"></div>      
+    </div>
+    <div style="float: left;"> 
+      <div style="float: top; text-align: center;" id="cloud-svg_pair_text"></div>
+      <div style="float: top;"  id="cloud-svg_pair"></div>      
+    </div>
   </div>
 </div>
 
 <script type="text/javascript">
 
-var WIDTH = 1000, HEIGHT = 800;
+var WIDTH = 900, HEIGHT = 700;
 var COLOR_COUNTS = 20;
 var SCALE = 0.7;
 
@@ -315,15 +393,15 @@ function showToolTipsForSimilarHoods(hood) {
 function makeMap(hood) {
 
 var svg = d3.select("#canvas-svg").append("svg")
-    .attr("width", width)
-    .attr("height", height); 
+    .attr("width", 900)
+    .attr("height", 700); 
 
 var projection = d3.geo.albers()
     .rotate([122.483, 0])
     .center([0, 37.7750])
     .parallels([50, 60])
     .scale(470000)
-    .translate([width/1.6 , height/1.6 ]);
+    .translate([width/2.6, height/2 ]);
 
 var path = d3.geo.path()
     .projection(projection);
@@ -360,7 +438,7 @@ var path = d3.geo.path()
     });
 }
 
-function setCloud(freq_list, div_id) {
+function setCloud(freq_list, name, div_id) {
   d3.layout.cloud()
   .size([900, 800])
       .words(freq_list
@@ -373,21 +451,44 @@ function setCloud(freq_list, div_id) {
       .font("Impact")
       .fontSize(function(d) { return d.size; })
       .on("end", function(d) { 
-        drawCloud(d, div_id); 
+        drawCloud(d, name, div_id); 
       })
       .start();
 }
 
-function drawCloud(words, div_id) {
+function resetCloud() {
+    d3.select("#cloud-svg").html("");
+    d3.select("#cloud-svg_pair").html("");
+    d3.select("#cloud-svg_text").html("");
+    d3.select("#cloud-svg_pair_text").html("");
+}
+
+function drawCloud(words, name, div_id) {
+  div_id_text = div_id + "_text";
+  var header = "Menu item cloud for <span style='color:green'>" + name + "</span>";
+  if (div_id.indexOf("pair") > 0) {
+    header = "Common menu items between <span style='color:blue'>" + name + "</span>";
+  } else {
+    d3.select("#cloud-svg_pair_text").html("");
+    d3.select("#cloud-svg_pair").html("");
+  }
+  d3.select(div_id_text).html("");
+  d3.select(div_id_text)
+    .append("html")
+      .attr("x", 0)             
+      .attr("y", 0)
+      .attr("text-anchor", "middle")  
+      .style("font-size", "55px") 
+      // .style("text-decoration", "underline")  
+      .style("text-anchor", "middle")
+      .html("<h1>" + header);
   d3.select(div_id).html("");
-  var svg = d3.select(div_id)
-  // d3.select("body")
-    .append("svg")
-      .attr("width", 950)
-      .attr("height", 850)
+  d3.select(div_id).append("svg")
+      .attr("width", 700)
+      .attr("height", 750)
       .attr("class", "wordcloud")      
     .append("g")
-      .attr("transform", "translate(450,400)")
+      .attr("transform", "translate(350,350)")
     .selectAll("text")
       .data(words)
     .enter().append("text")
@@ -399,6 +500,8 @@ function drawCloud(words, div_id) {
         return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
       })
       .text(function(d) { return d.text; });
+
+
 }
 
 function drawBiGraph(features) {
@@ -425,7 +528,7 @@ function drawBiGraph(features) {
     }
   }
 
-  var width = 1000, height = 2500, margin ={b:0, t:100, l:200, r:150};
+  var width = 650, height = 1000, margin ={b:0, t:100, l:200, r:150};
 
   d3.select("#bigraph-svg").html("");
 
@@ -434,7 +537,7 @@ function drawBiGraph(features) {
     .append("g").attr("transform","translate("+ margin.l+","+margin.t+")");
 
   var data = [ 
-    {data:bP.partData(biPartiteData,2), id:'Neighborhood', header:["Hoods","Hoods", "Similar Neighborhoods"]},
+    {data:bP.partData(biPartiteData,2), id:'Neighborhood', header:["Neighborhoods","Top 10 Similar neighborhood", "Neighborhoods of S.F."]},
   ];
 
   bP.draw(data, svg);
@@ -514,14 +617,14 @@ function refreshUI(d){
   selectedHood = d;
   refreshMapColors(selectedHood);
   refreshBarCharts(selectedHood);
-  setCloud(selectedHood["sim"]["menu_items"], "#cloud-svg");
-  makeHoodListPair(d);
+  setCloud(selectedHood["sim"]["menu_items"], selectedHood.properties.NAME, "#cloud-svg");
+  // makeHoodListPair(d);
 }
 
 function refreshPairUI(d){
   selectedRegionId = selectedHood["sim"]["REGIONID"];
   pairRegionID = d["REGIONID"]
-  setCloud(d["menu_items"], "#cloud-svg_pair");
+  setCloud(d["menu_items"], selectedHood.properties.NAME + " and " + d.name , "#cloud-svg_pair");
 }
 
 function refreshBarCharts(d) {
@@ -536,6 +639,12 @@ function refreshBarCharts(d) {
 
     };
 
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(current) { 
+          return "similarity of <span style='color:green'> " + selectedHood.properties.NAME + " </span> with of <span style='color:orange'>"  +  current.name + ".</span>" 
+        })
     var m = [30, 10, 10, 30],
         w = 560 - m[1] - m[3],
         h = 270 - m[0] - m[2];
@@ -549,11 +658,14 @@ function refreshBarCharts(d) {
         yAxis = d3.svg.axis().scale(y).orient("right").tickSize(0);
 
     d3.select("#canvas-bar-svg").html("");
-    var svg = d3.select("#canvas-bar-svg").append("svg")
+    var svg = d3.select("#canvas-bar-svg")
+    .append("svg")
         .attr("width", w + m[1] + m[3])
         .attr("height", h + m[0] + m[2])
-      .append("g")
+    .append("g")
         .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+    svg.call(tip);
 
     // Parse numbers, and sort by value.
     data.forEach(function(d) { d.value = +d.value; });
@@ -567,7 +679,10 @@ function refreshBarCharts(d) {
         .data(data)
         .enter().append("g")
         .attr("class", "bar")
-        .attr("transform", function(d) { return "translate(0," + y(d.name) + ")"; });
+        .attr("transform", function(d) { return "translate(0," + y(d.name) + ")"; })
+        .on('mouseover', tip.show)  
+        .on('mouseout', tip.hide) ;
+
 
     bar.append("rect")
         .attr("width", function(d) { return x(d.value); })
@@ -582,6 +697,7 @@ function refreshBarCharts(d) {
         .attr("text-anchor", "end")
         .text(function(d) { return format(d.value); });
 
+
     svg.append("g")
         .attr("class", "x axis")
         .call(xAxis);
@@ -589,6 +705,13 @@ function refreshBarCharts(d) {
     svg.append("g")
         .attr("class", "y axis")
         .call(yAxis);
+    svg.append("text")
+      .attr("x", (w + m[1] + m[3]) / 2)             
+      .attr("y", 0)
+      .attr("text-anchor", "middle")  
+      .style("font-size", "16px") 
+      .style("text-decoration", "underline")  
+      .text("Top 10 similar hoods for " + d.properties.NAME)
   }
 }
 
@@ -612,7 +735,7 @@ for (var i = 0; i < us.features.length; i++) {
 
 var selectedIndex = 0;
 features = us.features;
-makeHoodList(features);
+// makeHoodList(features);
 makeMap(us.features[selectedIndex]);
 refreshUI(us.features[selectedIndex]);
 drawBiGraph(features);

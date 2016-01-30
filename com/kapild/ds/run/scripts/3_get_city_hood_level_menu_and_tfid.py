@@ -10,6 +10,8 @@ import numpy as np
 from sklearn import preprocessing
 import os
 from ds.foursquare.cities.cities_bounding_box import sf_bb, manhattan_bb, chicago_bb, austin_bb, atlanta_bb
+from ds.run.scripts import data_directory
+from ds.utils.str_utils import remove_space_lower_case
 
 base_dir = os.path.dirname(os.path.realpath(__file__))
 import json
@@ -87,7 +89,7 @@ def set_menu_items_data(hood_menu_list_with_similar_hoods):
     return hood_menu_list_with_similar_hoods
 
 
-def get_city_level_menu_tfid_and_similarities(city_hood_level_menu_file):
+def get_city_hood_level_menu_tfid_and_similarities(city_hood_level_menu_file):
     hood_menu_dict = json.load(open(city_hood_level_menu_file))
     hood_menu_data = hood_menu_dict["features"]
 
@@ -303,12 +305,10 @@ def print_top_n_features(vectorizer, indices, top_n = 20):
     print top_features
 
 if __name__ == "__main__":
-    city_bb = austin_bb
-    city_bb = atlanta_bb
+    # city_bb = austin_bb
+    # city_bb = atlanta_bb
     city_bb = sf_bb
 
     file_ext = ".json"
-    data_directory = "/Users/kdalwani/code/workspace/datascience/data/"
-
-    city_venue_menu_hood_input_file = data_directory + city_bb.name + "_hood" + file_ext
-    get_city_level_menu_tfid_and_similarities(city_venue_menu_hood_input_file)
+    city_venue_menu_hood_input_file = remove_space_lower_case(data_directory + city_bb.name + "_hood" + file_ext)
+    get_city_hood_level_menu_tfid_and_similarities(city_venue_menu_hood_input_file)

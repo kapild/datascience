@@ -1,5 +1,4 @@
 from ds.backend.redis.Redis import RedisStoreImpl
-from ds.foursquare.cities.cities import get_top_cities_ll
 from ds.foursquare.cities.cities_bounding_box import get_top_cities_bb, sf_bb, \
     chicago_bb, manhattan_bb, austin_bb, atlanta_bb
 from ds.foursquare.cities.geo_utils import get_bb_grid
@@ -21,12 +20,9 @@ redis_dict = {
     }
 }
 
-import json
 fs = Foursquare(redis_dict)
 redis = RedisStoreImpl(redis_dict)
 
-    # params['category_id'] = "4bf58dd8d48988d10f941735"
-    # params['loc'] = {"ll" : "37.7751,-122.41", "name": "SF"}
 
 # Does a bounding box search for a given location and list of al categories.
 def get_bb_box_venue_search(location, category_list):
@@ -46,7 +42,7 @@ def get_bb_box_venue_search(location, category_list):
             params['categoryId'] = category['id']
             params['name'] = location.name
             city_bb = location
-            for location_bb_tuple in get_bb_grid(city_bb.nw, city_bb.se, num=4):
+            for location_bb_tuple in get_bb_grid(city_bb.nw, city_bb.se, num=6):
                 params['num'] = location_bb_tuple[0]
                 params['ne'] = location_bb_tuple[1]
                 params['sw'] = location_bb_tuple[2]
@@ -98,5 +94,6 @@ def run_city(city_bb):
 
 if __name__ == "__main__":
 # gets the data from foursquare for a given a bounding box of a city and list of all categories.
-    run_austin()
-    run_atlanta()
+    run_san_francisco()
+    # run_austin()
+    # run_atlanta()

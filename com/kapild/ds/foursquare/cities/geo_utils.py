@@ -1,7 +1,7 @@
 
 
 
-def get_bb_grid(ne, sw, num=4):
+def get_bb_grid(ne, sw, num=8):
 
     ne_tuple = ne.split(",")
     sw_tuple = sw.split(",")
@@ -20,5 +20,5 @@ def get_bb_grid(ne, sw, num=4):
                 str(s_val + y_index * y_delta) + "," + str(w_val+x_index * x_delta)
 
 if __name__ == "__main__":
-    for bb in get_bb_grid("37.8324,-122.3553", "37.6040,-123.0137"):
+    for bb in get_bb_grid("37.811954,-122.363148", "37.705689,-122.528629"):
         print bb

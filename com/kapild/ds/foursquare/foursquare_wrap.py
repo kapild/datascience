@@ -93,7 +93,7 @@ class FourSquareWrap():
         attr=['name', 'hasMenu', 'id', 'location', 'categories', 'menu']
     ):
 
-        self.__Logger.info("Getting venue search for category_id: %s" % (params["categoryId"]))
+        self.__Logger.debug("Getting venue search for category_id: %s" % (params["categoryId"]))
         limit = 50
         has_more_results = True
         params = {

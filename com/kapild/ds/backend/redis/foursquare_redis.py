@@ -113,7 +113,7 @@ class FoursquareRedisBackend:
 
     def get_venue_search(self, category_id, city_name, attr=['id', 'location', 'name', 'hasMenu']):
 
-        self.__Logger.debug("Getting venue details for category_id:%s, city: from redis" % category_id, city_name)
+        self.__Logger.info("Getting venue details for category_id:%s, city:%s from redis" % (category_id, city_name))
         city_category_tuple = get_venue_location_categories(city_name, category_id)
         self.__Logger.debug("Checking hash: %s with category_id: %s" % (city_category_tuple[0], city_category_tuple[1]))
         venue_details = self.fsq_redis.get_hash_item(city_category_tuple[0], city_category_tuple[1])

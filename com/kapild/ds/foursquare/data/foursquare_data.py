@@ -210,9 +210,9 @@ class Foursquare:
             self.__Logger.debug("Getting venues search data from Foursquare API.")
             for venue in self.fsq_api.get_category_location_venue_search(kwargs):
                 venues_search.append(venue)
-            self.__Logger.debug("Redis Venue search adding data.")
+            self.__Logger.info("Redis Venue search adding data.")
             self.fsq_redis.add_venue_search(city_name, category_key, json.dumps(venues_search))
-        self.__Logger.debug("Returning venue search for category_id:%s, city_name=%s" %(category_key, city_name))
+        self.__Logger.info("Returning venue search for category_id:%s, city_name=%s" %(category_key, city_name))
         for venue in venues_search:
             yield venue
 

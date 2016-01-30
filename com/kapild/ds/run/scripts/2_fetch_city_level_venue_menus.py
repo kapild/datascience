@@ -3,7 +3,9 @@ from ds.GeoJson.shapely_utils import get_contained_shape
 from ds.backend.redis.Redis import RedisStoreImpl
 from shapely.geometry import shape, Point
 from ds.foursquare.cities.cities_bounding_box import sf_bb, chicago_bb, manhattan_bb, atlanta_bb, austin_bb
-import foursquare
+from ds.run.scripts import data_directory
+from ds.utils.str_utils import remove_space_lower_case
+
 from ds.foursquare.data.foursquare_data import Foursquare
 import time
 import numpy as np
@@ -28,11 +30,12 @@ redis = RedisStoreImpl(redis_dict)
     # params['loc'] = {"ll" : "37.7751,-122.41", "name": "SF"}
 
 
-def dump_city_neighborhood_level_menu_data(city_shp_json, city_venue_menu_file, city_venue_menu_hood_output_file):
-    city_shp = json.load(open(city_shp_json))
-    city_venues_menu = json.load(open(city_venue_menu_file))
+def dump_city_neighborhood_level_menu_data(input_city_shp_json, input_city_venue_menu_file,
+                                           output_city_venue_menu_hood_file):
+    city_shp = json.load(open(input_city_shp_json))
+    city_venues_menu = json.load(open(input_city_venue_menu_file))
 
-    f_write = open(city_venue_menu_hood_output_file, "w")
+    f_write = open(output_city_venue_menu_hood_file, "w")
     for venue in city_venues_menu:
         lng = venue["location"]["lng"]
         lat = venue["location"]["lat"]
@@ -45,12 +48,12 @@ def dump_city_neighborhood_level_menu_data(city_shp_json, city_venue_menu_file, 
         hood_shape['menu'].append(venue["menus_list"])
         print "Adding venue %s to neighborhood:%s" %(venue["name"], hood_shape["properties"]["NAME"])
 
-    print "writing to file:" + city_venue_menu_hood_output_file
+    print "writing to file:" + output_city_venue_menu_hood_file
 
     f_write.write(json.dumps(city_shp, sort_keys=False, indent=4, separators=(',', ': ') ))
     f_write.close()
 
-def get_city_level_menu_api(city_bb, city_menu_file_output, dump_attr=["name", "location", "menus_list", "categories"]):
+def load_dump_city_level_menu_api(city_bb, city_menu_file_output, dump_attr=["name", "location", "menus_list", "categories"]):
 
     index = 0
     is_complete = False
@@ -89,8 +92,6 @@ def get_fsq_categories():
         yield categroies
 
 
-data_directory = "/Users/kdalwani/code/workspace/datascience/data/"
-
 def run_chicago():
     run_city(
         chicago_bb,
@@ -121,18 +122,19 @@ def run_atlanta():
          "/Users/kdalwani/code/workspace/datascience/com/kapild/ds/GeoJson/atlanta.json"
     )
 
-def run_city(city_bb, city_geojson_file):
+def run_city(city_bb, input_city_geojson_file):
     file_ext = ".json"
-    city_menu_file_output = data_directory + city_bb.name + "_menu" + file_ext
+    city_menu_file_output = (remove_space_lower_case(data_directory + city_bb.name + "_menu" + file_ext))
 
-    # fetches and dumps menus for all the venues in a city from foursquare
-    get_city_level_menu_api(city_bb, city_menu_file_output)
+    # 1. fetches and dumps menus for all the venues in a city from foursquare
+    load_dump_city_level_menu_api(city_bb, (city_menu_file_output))
 
+    # 2.
     city_venue_menu_hood_output_file = data_directory + city_bb.name + "_hood" + file_ext
     dump_city_neighborhood_level_menu_data(
-         city_geojson_file,
+         input_city_geojson_file,
          city_menu_file_output,
-         city_venue_menu_hood_output_file
+         remove_space_lower_case(city_venue_menu_hood_output_file)
     )
 
 if __name__ == "__main__":

@@ -1,3 +1,5 @@
+from ds.foursquare import MoreThanMaxResultsExceptions
+
 __author__ = 'kdalwani'
 
 import logging
@@ -111,6 +113,8 @@ class FourSquareWrap():
                 venues_items = search_venues['venues']
                 count = len(venues_items)
                 self.__Logger.info("Total venues %s" % count)
+                if count > 49:
+                    raise MoreThanMaxResultsExceptions
                 for venue in venues_items:
                     venues_dict = {}
                     for key in attr:

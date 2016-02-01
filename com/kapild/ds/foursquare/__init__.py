@@ -1,1 +1,3 @@
-__author__ = 'kdalwani'
+class DsFoursquareException(Exception): pass
+
+class MoreThanMaxResultsExceptions(DsFoursquareException): pass

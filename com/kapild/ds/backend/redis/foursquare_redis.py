@@ -197,3 +197,6 @@ class FoursquareRedisBackend:
         status_code = self.fsq_redis.put_hash_item(fsq_category_tuple[0], fsq_category_tuple[1], json.dumps(
             categories_list))
         self.__Logger.debug("Adding all venue categories status code %s" % status_code)
+
+    def delete(self, hash_key):
+        self.fsq_redis.delete_key(hash_key)

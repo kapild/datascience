@@ -7,6 +7,7 @@ from ds.foursquare.foursquare_wrap import FourSquareWrap
 import json
 import logging
 from ds.foursquare.utils import my_log
+from ds.utils.str_utils import remove_space_lower_case
 
 
 class Foursquare:
@@ -201,11 +202,12 @@ class Foursquare:
         venues_search = None
         category_id = kwargs.get("categoryId")
         city_name = kwargs.get("name")
-        category_key = category_id + "_" + kwargs["num"]
+        cat_name = kwargs.get('cat_name')
+        category_key = remove_space_lower_case(cat_name) + "_" +  category_id + "_" + kwargs["num"]
         if not is_fresh:
             venues_search = self.fsq_redis.get_venue_search(category_key, city_name)
         if venues_search is None:
-            self.__Logger.debug("No venues search from Redis for: " + category_key + "," + city_name)
+            self.__Logger.debug("No venues search from Redis for: " + category_key + "," + cat_name + "," + city_name)
             venues_search = []
             self.__Logger.debug("Getting venues search data from Foursquare API.")
             for venue in self.fsq_api.get_category_location_venue_search(kwargs):
@@ -217,6 +219,12 @@ class Foursquare:
             yield venue
 
 
+    def delete_venues_search(self, kwargs):
+        category_id = kwargs.get("categoryId")
+        cat_name = kwargs.get('cat_name')
+        category_key = remove_space_lower_case(cat_name) + "_" +  category_id + "_" + kwargs["num"]
+        self.fsq_redis.delete(category_key)
+
     def get_city_bb_level_venue_hash_keys(self, city):
         city_name = city.name
         city_hash_name = get_fsq_city_name(city_name)
@@ -225,7 +233,6 @@ class Foursquare:
             yield hash_key
 
     def get_child_category_first(self, category_tree, cat_list):
-
         if 'categories' in category_tree and len(category_tree['categories']) == 0:
             cat_list.append(self._get_cat_dict(category_tree))
             return

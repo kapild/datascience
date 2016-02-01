@@ -380,7 +380,6 @@ class FourSquareWrap():
 
     def get_new_api_client_or_sleep(self):
         loop_true = True
-        time_start = time.time()
         while loop_true:
             api_new = get_foursquare_client()
             if api_new is None:

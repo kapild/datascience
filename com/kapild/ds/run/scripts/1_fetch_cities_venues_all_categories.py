@@ -25,6 +25,7 @@ redis_dict = {
 fs = Foursquare(redis_dict)
 redis = RedisStoreImpl(redis_dict)
 
+category_more_results = ['4bf58dd8d48988d14e941735', '4bf58dd8d48988d145941735', '4bf58dd8d48988d142941735']
 
 # Does a bounding box search for a given location and list of al categories.
 def get_bb_box_venue_search(location, category_list):
@@ -35,43 +36,49 @@ def get_bb_box_venue_search(location, category_list):
     is_time_out_error = False
     total_venus = 0
     print "running for:" + location.name + " bounding box:" + str(location.nw) + ", " + str(location.se)
-    while is_complete == False:
-        for category in category_list:
-            index += 1
-            print location.name + ", " + (category["name"])
-            params = dict()
-            params['is_fresh'] = False
-            params['categoryId'] = category['id']
-            params['name'] = location.name
-            params['cat_name'] = category["name"]
-            city_bb = location
-            num_num = 8
-            if category['id'] == '4bf58dd8d48988d14e941735' or category['id'] == '4bf58dd8d48988d145941735'\
-                    or category['id'] == '4bf58dd8d48988d142941735':
-                num_num = 12
-            for location_bb_tuple in get_bb_grid(city_bb.nw, city_bb.se, num=num_num):
-                params['num'] = location_bb_tuple[0]
-                params['ne'] = location_bb_tuple[1]
-                params['sw'] = location_bb_tuple[2]
-                try:
-                    for venue in fs.get_venues_search(params):
-                        total_venus += 1
-                        continue
-                    # print location["name"] + "," + category["name"] + "," + venue['name']
-                except MoreThanMaxResultsExceptions:
-                    delete_venue_search_key(category["name"], category["id"], num_num, city_bb)
-                except foursquare.RateLimitExceeded:
-                    is_time_out_error = True
-                    print "Sleeping due to rate"
-                    print "done:" + str(index) + ", total:" + str(cat_length)
-                    time.sleep(60 * 10)
-                print "total venus so far:" + str(total_venus)
-        if is_time_out_error == False:
-            is_complete = True
+    for category in category_list:
+        run_category_venue_search(location, category)
 
     print "total venu for the city:" + location.name +  "is :" + str(total_venus)
 
+def run_category_venue_search(location, category):
+    if category['id'] in category_more_results:
+        num_num = 12
+    try:
+        run_category_bb_venue_search(location, category, num_num)
+    except foursquare.RateLimitExceeded:
+        print "Sleeping due to rate"
+        time.sleep(60 * 10)
+        print "Recursive calling run_category_venue_search"
+        run_category_venue_search(location, category)
+
+def run_category_bb_venue_search(location, category, num_num):
+    total_venue = 0
+    print location.name + ", " + (category["name"])
+    params = dict()
+    params['is_fresh'] = False
+    params['categoryId'] = category['id']
+    params['name'] = location.name
+    params['cat_name'] = category["name"]
+    for location_bb_tuple in get_bb_grid(location.nw, location.se, num=num_num):
+        params['num'] = location_bb_tuple[0]
+        params['ne'] = location_bb_tuple[1]
+        params['sw'] = location_bb_tuple[2]
+        try:
+            for venue in fs.get_venues_search(params):
+                total_venue += 1
+            print "total venus so far:" + str(total_venue)
+        except MoreThanMaxResultsExceptions:
+            delete_venue_search_key(category["name"], category["id"], num_num, location)
+            run_category_bb_venue_search(location, category, num_num + 2)
+        except foursquare.RateLimitExceeded:
+            print "Sleeping due to rate"
+            time.sleep(60 * 10)
+            print "Recursive calling run_category_bb_venue_search"
+            run_category_bb_venue_search(location, category, num_num)
+
 def delete_venue_search_key(cat_name, category_id, num_num, city_bb):
+    print "Deleting key for category:" + category_id + ",num:" + str(num_num) + ",city" + city_bb.name
     params = dict()
     params['categoryId'] = category_id
     params['cat_name'] = cat_name

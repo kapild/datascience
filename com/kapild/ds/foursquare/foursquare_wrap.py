@@ -47,7 +47,7 @@ class FourSquareWrap():
                 self.__Logger.info("Total menus %s" % len_menu)
                 for menu_item in menu_items:
                     venues_dict = {}
-                    name = menu_item["name"]
+                    heading_name = menu_item["name"]
                     if "entries" not in menu_item:
                         continue
                     sub_sec = menu_item["entries"]
@@ -55,7 +55,7 @@ class FourSquareWrap():
                         continue
                     sub_sec_items_list = sub_sec["items"]
                     for sub_sec_items in sub_sec_items_list:
-                        name = sub_sec_items["name"]
+                        sub_heading_name = sub_sec_items["name"]
                         if "entries" not in sub_sec_items or "items" not in sub_sec_items["entries"]:
                             continue
                         menu_items_sub = sub_sec_items["entries"]["items"]
@@ -66,6 +66,8 @@ class FourSquareWrap():
                             # if "price" in menu_sub:
                             #     print_str+=menu_sub["price"]
                             # print print_str
+                            menu_sub["heading_name"] = heading_name
+                            menu_sub["sub_heading_name"] = sub_heading_name
                             yield  menu_sub
                     # yield venues_dict
                 has_more_results = False
@@ -113,7 +115,7 @@ class FourSquareWrap():
                 venues_items = search_venues['venues']
                 count = len(venues_items)
                 self.__Logger.info("Total venues %s" % count)
-                if count > 49:
+                if count >= 49:
                     raise MoreThanMaxResultsExceptions
                 for venue in venues_items:
                     venues_dict = {}

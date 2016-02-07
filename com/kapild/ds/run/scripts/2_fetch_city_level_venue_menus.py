@@ -29,12 +29,16 @@ redis = RedisStoreImpl(redis_dict)
     # params['category_id'] = "4bf58dd8d48988d10f941735"
     # params['loc'] = {"ll" : "37.7751,-122.41", "name": "SF"}
 
-
+total_venues = 0
+total_menus_items = 0
+venue_id_set = dict()
+venue_id_set_with_menus = dict()
 def dump_city_neighborhood_level_menu_data(input_city_shp_json, input_city_venue_menu_file,
                                            output_city_venue_menu_hood_file):
     city_shp = json.load(open(input_city_shp_json))
     city_venues_menu = json.load(open(input_city_venue_menu_file))
-
+    venue_hood_count = dict()
+    menu_count = dict()
     f_write = open(output_city_venue_menu_hood_file, "w")
     for venue in city_venues_menu:
         lng = venue["location"]["lng"]
@@ -47,14 +51,23 @@ def dump_city_neighborhood_level_menu_data(input_city_shp_json, input_city_venue
             hood_shape['menu'] = []
         hood_shape['menu'].append(venue["menus_list"])
         print "Adding venue %s to neighborhood:%s" %(venue["name"], hood_shape["properties"]["NAME"])
+        key = hood_shape["properties"]["NAME"]
+        count = menu_count.get(key, 0)
+        venue_count = venue_hood_count.get(key, 0)
+        venue_hood_count[key] = venue_count + 1
+        menu_count[key] = count + len(venue["menus_list"])
 
+    print "Hood:" + str(venue_hood_count)
+    print "Menus" + str(menu_count)
     print "writing to file:" + output_city_venue_menu_hood_file
 
     f_write.write(json.dumps(city_shp, sort_keys=False, indent=4, separators=(',', ': ') ))
     f_write.close()
 
 def load_dump_city_level_menu_api(city_bb, city_menu_file_output, dump_attr=["name", "location", "menus_list", "categories"]):
-
+    global total_venues
+    global total_menus_items
+    global venue_id_set
     index = 0
     is_complete = False
     f_write = open(city_menu_file_output, mode='w')
@@ -63,21 +76,31 @@ def load_dump_city_level_menu_api(city_bb, city_menu_file_output, dump_attr=["na
     city_venues_menu = []
     while not is_complete:
         for venue in fs.get_city_level_venues(city_bb):
-            venue_menu_list = []
-            for venue_menu in fs.get_menu_for_venue(venue, params):
-                venue_menu_list.append(venue_menu)
-            if len(venue_menu_list) == 0:
-                continue
-            print "%s:Getting menu for:%s" % (index, venue["name"])
-            index += 1
-            venue["menus_list"] = venue_menu_list
-            is_complete = True
-            venue_dict = {}
-            for key in dump_attr:
-                if key in venue:
-                    venue_dict[key] = venue[key]
-            city_venues_menu.append(venue_dict)
+            total_venues += 1
+            if venue['id'] not in venue_id_set:
+                venue_id_set[venue["id"]] = 1
+                venue_menu_list = []
+                for venue_menu in fs.get_menu_for_venue(venue, params):
+                    venue_menu_list.append(venue_menu)
+                total_menus_items += len(venue_menu_list)
+                if len(venue_menu_list) == 0:
+                    continue
+                # print "%s:Got menu for:%s" % (index, venue["name"])
+                # print "Total menus so far:" + str(total_menus_items)
+                index += 1
+                venue_id_set_with_menus[venue["id"]] = 1
+                venue["menus_list"] = venue_menu_list
+                is_complete = True
+                venue_dict = {}
+                for key in dump_attr:
+                    if key in venue:
+                        venue_dict[key] = venue[key]
+                city_venues_menu.append(venue_dict)
 
+    print "venue total: " + str(total_venues)
+    print "unique venue total: " + str(len(venue_id_set))
+    print "unique venue total with one menu: " + str(len(venue_id_set_with_menus))
+    print "menus total: " + str(total_menus_items)
     print "writing to file:" + city_menu_file_output
 
     f_write.write(json.dumps(city_venues_menu))

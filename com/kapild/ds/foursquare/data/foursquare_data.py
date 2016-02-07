@@ -197,13 +197,11 @@ class Foursquare:
             yield menu
 
     def get_venues_search(self, kwargs):
-        # my_log(self.__Logger, logging.INFO, kwargs)
         is_fresh = kwargs.get("is_fresh", False)
         venues_search = None
-        category_id = kwargs.get("categoryId")
-        city_name = kwargs.get("name")
+        city_name = kwargs.get("loc_name")
         cat_name = kwargs.get('cat_name')
-        category_key = remove_space_lower_case(cat_name) + "_" +  category_id + "_" + kwargs["num"]
+        category_key = kwargs.get('key')
         if not is_fresh:
             venues_search = self.fsq_redis.get_venue_search(category_key, city_name)
         if venues_search is None:
@@ -220,9 +218,8 @@ class Foursquare:
 
 
     def delete_venues_search(self, kwargs):
-        category_id = kwargs.get("categoryId")
-        cat_name = kwargs.get('cat_name')
-        category_key = remove_space_lower_case(cat_name) + "_" +  category_id + "_" + kwargs["num"]
+        category_key = kwargs.get("key")
+        self.__Logger.info("Deleting key:" + category_key)
         self.fsq_redis.delete(category_key)
 
     def get_city_bb_level_venue_hash_keys(self, city):

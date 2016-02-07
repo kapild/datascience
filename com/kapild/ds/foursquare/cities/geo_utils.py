@@ -16,7 +16,7 @@ def get_bb_grid(ne, sw, num=8):
 
     for y_index in range(0, num):
         for x_index in range(0, num):
-            yield str(y_index) + "," + str(x_index),  str(s_val + (y_index+1) * y_delta) + "," + str(w_val + (x_index + 1) * x_delta), \
+            yield str(y_index) + "_" + str(x_index) + "_" + str(num),  str(s_val + (y_index+1) * y_delta) + "," + str(w_val + (x_index + 1) * x_delta), \
                 str(s_val + y_index * y_delta) + "," + str(w_val+x_index * x_delta)
 
 if __name__ == "__main__":

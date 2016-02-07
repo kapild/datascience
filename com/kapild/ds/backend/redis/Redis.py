@@ -72,4 +72,4 @@ class RedisStoreImpl(IRedisApiBase):
         return self.__reader.hkeys(hash_key)
 
     def delete_key(self, hash_key):
-        return self.__writer.delete(hash_key)
+        self.__writer.delete(hash_key)

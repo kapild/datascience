@@ -246,49 +246,52 @@ div.tooltip {
 <section class="page-header">
       <h1 class="project-name">San Francisco(S.F.) similarity using Menu data</h1>
       <h2 class="project-tagline">There are about 32 neighborhoods in San Francisco(S.F.)</h2>
-<section class="page-header-hoods">
-<h2 class="project-tagline">How to use this page.</h2>
-      <h3>
-          <ol>
-              <li>
-                  <ol>Neighborhood Map:
-                        <li>Hover on the neighborhood map of your choice. This will give you the score of its
-                            top 10 neighborhood in the similarity bar.
-                        </li>
-          <br>
-                        <li>It will change the Menu item cloud for this neighborhood.
-                        </li>
-          <br>
-                   </ol>
-              </li>
-          <br>
-          <br>
-              <li>
-                  <ol>Bigraph:
-                        <li>You can click the neighborhood either on the left side of the bi-graph or right side.
-                        Clicking in the left will show its top 10 neighborhood, menu item similarity graph.
-                        </li>
-                        <li>By clicking on any of the top 10 next, will give you the common menu item cloud.
-                            These represent the top 50 common menu items in both the neighborhood.
-                        </li>
-          <br>
-                        <li> Start by selecting on right. By doing this you can see in what all neighborhoods
-                            this neighborhood is in its top list. Sort of reverse mapping.
-                        </li>
-                   </ol>
-              </li>
-        </ol>
-      </h3>
 
+    <div id="instructions" >
+        <section class="page-header-hoods">
+        <h2 class="project-tagline">How to use this page.</h2>
+              <h3>
+                  <ol>
+                      <li>
+                          <ol>Neighborhood Map:
+                      <br>
+                                <li>Hover on the neighborhood map of your choice. This will give you the score of its
+                                    top 10 neighborhood in the similarity bar.
+                                </li>
+                      <br>
+                                <li>It will change the Menu item cloud for this neighborhood.
+                                </li>
+                  <br>
+                           </ol>
+                      </li>
+                  <br>
+                  <br>
+                      <li>
+                          <ol>Bigraph:
+                      <br>
+                                <li>You can click the neighborhood either on the left side of the bi-graph or right side.
+                                Clicking in the left will show its top 10 neighborhood, menu item similarity graph.
+                                </li>
+                      <br>
+                                <li>By clicking on any of the top 10 next, will give you the common menu item cloud.
+                                    These represent the top 50 common menu items in both the neighborhood.
+                                </li>
+                      <br>
+                                <li> Start by selecting on right. By doing this you can see in what all neighborhoods
+                                    this neighborhood is in its top list. Sort of reverse mapping.
+                                </li>
+                           </ol>
+                      </li>
+                </ol>
+              </h3>
+
+        </section>
+</div>
+<a style="color: rgb(255,255,255)" href="#" onclick="hideInstructionSection();">Hide this section</a>
 </section>
-
-</section>
-
-<section class="main-content">
 
 <div id="tooltip-container"></div>
 
-<div>
   <div>
     <div style="float: left;">
       <div style="float: top;" id="canvas-svg"></div>
@@ -399,6 +402,14 @@ function getColorMaps(hood) {
     }
   return colors_maps;    
   }
+}
+
+function hideInstructionSection() {
+    var e = document.getElementById("instructions");
+    if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
 }
 
 function refreshMapColors(hood) {

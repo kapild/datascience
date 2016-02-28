@@ -12,6 +12,11 @@
     <script src="./scripts/d3/biPartite.js"></script>    
     <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
     <script src="./scripts/d3/d3.tip.js"></script>    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/github-light.css" media="screen">
 
 </head>
 <style>
@@ -238,19 +243,48 @@ div.tooltip {
 
 </style>
 <body>
-<h1>San Francisco(S.F.) similarity using Menu data</h1>
+<section class="page-header">
+      <h1 class="project-name">San Francisco(S.F.) similarity using Menu data</h1>
+      <h2 class="project-tagline">There are about 32 neighborhoods in San Francisco(S.F.)</h2>
+<section class="page-header-hoods">
+<h2 class="project-tagline">How to use this page.</h2>
+      <h3>
+          <ol>
+              <li>
+                  <ol>Neighborhood Map:
+                        <li>Hover on the neighborhood map of your choice. This will give you the score of its
+                            top 10 neighborhood in the similarity bar.
+                        </li>
+          <br>
+                        <li>It will change the Menu item cloud for this neighborhood.
+                        </li>
+          <br>
+                   </ol>
+              </li>
+          <br>
+          <br>
+              <li>
+                  <ol>Bigraph:
+                        <li>You can click the neighborhood either on the left side of the bi-graph or right side.
+                        Clicking in the left will show its top 10 neighborhood, menu item similarity graph.
+                        </li>
+                        <li>By clicking on any of the top 10 next, will give you the common menu item cloud.
+                            These represent the top 50 common menu items in both the neighborhood.
+                        </li>
+          <br>
+                        <li> Start by selecting on right. By doing this you can see in what all neighborhoods
+                            this neighborhood is in its top list. Sort of reverse mapping.
+                        </li>
+                   </ol>
+              </li>
+        </ol>
+      </h3>
 
-<h3>There are about 32 neighborhoods in San Francisco(S.F).</h3>
-<h3>You can play with this page as following...</h3>
-<ol>
-    <li> Hover on the neighborhood of your choice on the S.F. map. This will give you the score of its
-       top 10 neighborhood in the similarity bar. Also, it will change the Menu item cloud for this neighborhood.
-    </li>
-    <li>Bi-graph: You can either click on the left to select a neighborhood and see its top 10 neighborhood on the right.
-        Clicking any of the 10 neighborhoods will give you their common menu items cloud.
-    </li>
+</section>
 
-</ol>
+</section>
+
+<section class="main-content">
 
 <div id="tooltip-container"></div>
 
@@ -275,7 +309,7 @@ div.tooltip {
     </div>
   </div>
 </div>
-
+</section>
 <script type="text/javascript">
 
 var WIDTH = 900, HEIGHT = 700;

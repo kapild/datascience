@@ -162,6 +162,6 @@ def run_city(city_bb, input_city_geojson_file):
 
 if __name__ == "__main__":
     # run_atlanta()
-    # run_austin()
-    run_sf()
+    run_austin()
+    # run_sf()
 

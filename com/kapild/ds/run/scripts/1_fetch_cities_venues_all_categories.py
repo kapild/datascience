@@ -148,6 +148,6 @@ def run_city(city_bb):
 
 if __name__ == "__main__":
 # gets the data from foursquare for a given a bounding box of a city and list of all categories.
-    run_san_francisco()
-    # run_austin()
+#     run_san_francisco()
+    run_austin()
     # run_atlanta()

@@ -32,7 +32,7 @@ chicago_bb = CityBB({
 
 austin_bb = CityBB({
     "name" : "austin",
-    "bb" : [ "30.549983,-97.527908", "30.114697,-97.928427"]
+    "bb" : [ "30.516805,-97.5612", "30.098668,-97.938787"]
 })
 
 atlanta_bb = CityBB({

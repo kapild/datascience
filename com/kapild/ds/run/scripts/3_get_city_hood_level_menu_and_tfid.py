@@ -169,9 +169,11 @@ def set_sim_hood_common_top_menu_items(hood_sim_and_menu_items):
         for hood_right in hood_left["similar_hood"]:
             hood_r_key = hood_right["REGIONID"]
             # if hood_l_key != hood_r_key:
-            top_items = get_hood_common_top_menu_items(hood_left.get("menu_items"), region_id_menu_item_map[hood_r_key]["menu_items"])
+            top_items, top_distinct_items = get_hood_common_top_menu_items(
+                hood_left.get("menu_items"), region_id_menu_item_map[hood_r_key]["menu_items"])
             # print "Between " + hood_left.get("name") + " and, " + hood_right.get("name")
             hood_right["menu_items"] = top_items
+            hood_right["menu_items_distinct"] = top_distinct_items
             # for items in top_items:
             #     print items
 
@@ -284,11 +286,27 @@ def get_hood_common_top_menu_items(menu_items_this, menu_items_that, top=50):
     for menu_item in menu_items_right:
         menu_items_right_set.add(menu_item["menu_item"])
 
+    menu_items_left_set = set()
+    for menu_item in menu_items_left:
+        menu_items_left_set.add(menu_item["menu_item"])
+
+    u = menu_items_right_set & menu_items_left_set
+    d = menu_items_left_set - menu_items_right_set
     common_top_menu_items = []
+    distinct_top_menu_items = []
     for menu_item in menu_items_left:
         if menu_item["menu_item"] in menu_items_right_set:
             common_top_menu_items.append(menu_item)
-    return common_top_menu_items
+        else:
+            distinct_top_menu_items.append(menu_item)
+
+    # for menu_item in menu_items_right:
+    #     if menu_item["menu_item"] in menu_items_left_set:
+    #         pass
+    #     else:
+    #         distinct_top_menu_items.append(menu_item)
+
+    return common_top_menu_items, distinct_top_menu_items
 
 def lower_and_remove_space(text):
     return string.lower(text).replace(" ", "_")

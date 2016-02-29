@@ -79,13 +79,26 @@ def set_similar_hoods(hood_menu_list):
 def set_menu_items_data(hood_menu_list_with_similar_hoods):
     vocab, menu_count_list = get_menu_items_vocab(hood_menu_list_with_similar_hoods)
     # assert menu_count_list.length() hood_menu_list.length()
-    top_n_items = 100
+    top_n_items = -1
     is_normalize = True
     for hood_index in range(0, len(hood_menu_list_with_similar_hoods)):
         hood = hood_menu_list_with_similar_hoods[hood_index]
         print "Printing for hood:%s" % hood.get("name")
         hood_top_menu_items = get_hood_top_menu_items(hood_index, is_normalize, menu_count_list, top_n_items, vocab)
         hood["menu_items"] = hood_top_menu_items
+
+    # sets the pair wise menu items between hoods
+    set_sim_hood_common_top_menu_items(hood_menu_list_with_similar_hoods)
+
+    # filter data
+    top_n_items = 100
+    for hood_index in range(0, len(hood_menu_list_with_similar_hoods)):
+        hood = hood_menu_list_with_similar_hoods[hood_index]
+        print "Filter top %s items for hood:%s" % (top_n_items, hood.get("name"))
+        hood["menu_items"] = hood["menu_items"][:top_n_items]
+
+    print "done common."
+
     return hood_menu_list_with_similar_hoods
 
 
@@ -125,13 +138,11 @@ def get_city_hood_level_menu_tfid_and_similarities(city_hood_level_menu_file):
     # get cloud data
     hood_sim_and_menu_items = set_menu_items_data(hood_menu_list_with_similar_hoods)
 
-    # sets the pair wise menu items between hoods
-    set_sim_hood_common_top_menu_items(hood_sim_and_menu_items)
-
     # sets the hood similarity data in the geo data.
     set_sim_hood_data(hood_menu_data, hood_sim_and_menu_items)
 
     sim_out_file = city_hood_level_menu_file + "_sim"
+    print "Writing to file...."
     f_write = open(sim_out_file, "w")
     f_write.write(json.dumps(hood_menu_dict, sort_keys=False, indent=4, separators=(',', ': ')))
     f_write.close()
@@ -164,10 +175,13 @@ def set_sim_hood_common_top_menu_items(hood_sim_and_menu_items):
     for hood in hood_sim_and_menu_items:
         region_id_menu_item_map[hood.get("REGIONID")] = hood
 
+
     for hood_l_key in region_id_menu_item_map.keys():
+        print "Printing common for hood:%s" % hood_l_key
         hood_left = region_id_menu_item_map[hood_l_key]
         for hood_right in hood_left["similar_hood"]:
-            hood_r_key = hood_right["REGIONID"]
+            hood_r_key\
+                = hood_right["REGIONID"]
             # if hood_l_key != hood_r_key:
             top_items, top_distinct_items = get_hood_common_top_menu_items(
                 hood_left.get("menu_items"), region_id_menu_item_map[hood_r_key]["menu_items"])
@@ -278,7 +292,7 @@ def get_hood_menu_items(sorted_indix, vocab_array, vocab):
         # print "\t" + str(vocab[top_index]) + " " + str(vocab_array[top_index])
     return hood_top_menu_items
 
-def get_hood_common_top_menu_items(menu_items_this, menu_items_that, top=50):
+def get_hood_common_top_menu_items(menu_items_this, menu_items_that, top=10000):
     menu_items_left = menu_items_this[:top]
     menu_items_right = menu_items_that[:top]
 
@@ -306,7 +320,7 @@ def get_hood_common_top_menu_items(menu_items_this, menu_items_that, top=50):
     #     else:
     #         distinct_top_menu_items.append(menu_item)
 
-    return common_top_menu_items, distinct_top_menu_items
+    return common_top_menu_items[:50], distinct_top_menu_items[:20]
 
 def lower_and_remove_space(text):
     return string.lower(text).replace(" ", "_")

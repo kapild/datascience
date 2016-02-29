@@ -310,6 +310,11 @@ div.tooltip {
       <div style="float: top; text-align: center;" id="cloud-svg_pair_text"></div>
       <div style="float: top;"  id="cloud-svg_pair"></div>      
     </div>
+    <div style="float: left;">
+      <div style="float: top; text-align: center;" id="cloud-svg_pair_diff_text"></div>
+      <div style="float: top;"  id="cloud-svg_pair_diff"></div>
+    </div>
+
   </div>
 </div>
 </section>
@@ -516,16 +521,22 @@ function setCloud(freq_list, name, div_id) {
 
 function resetCloud() {
     d3.select("#cloud-svg").html("");
-    d3.select("#cloud-svg_pair").html("");
     d3.select("#cloud-svg_text").html("");
+    d3.select("#cloud-svg_pair").html("");
     d3.select("#cloud-svg_pair_text").html("");
+    d3.select("#cloud-svg_pair_diff").html("");
+    d3.select("#cloud-svg_pair_diff_text").html("");
 }
 
 function drawCloud(words, name, div_id) {
   div_id_text = div_id + "_text";
   var header = "Menu item cloud for <span style='color:green'>" + name + "</span>";
   if (div_id.indexOf("pair") > 0) {
-    header = "Common menu items between <span style='color:blue'>" + name + "</span>";
+    if (div_id.indexOf("diff") > 0) {
+        header = "Distinct menu items between <span style='color:blue'>" + name + "</span>";
+    } else {
+        header = "Common menu items between <span style='color:blue'>" + name + "</span>";
+    }
   } else {
     d3.select("#cloud-svg_pair_text").html("");
     d3.select("#cloud-svg_pair").html("");
@@ -683,6 +694,7 @@ function refreshPairUI(d){
   selectedRegionId = selectedHood["sim"]["REGIONID"];
   pairRegionID = d["REGIONID"]
   setCloud(d["menu_items"], selectedHood.properties.NAME + " and " + d.name , "#cloud-svg_pair");
+  setCloud(d["menu_items_distinct"], selectedHood.properties.NAME + " and " + d.name , "#cloud-svg_pair_diff");
 }
 
 function refreshBarCharts(d) {

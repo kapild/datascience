@@ -506,15 +506,15 @@ function setCloud(freq_list, name, div_id) {
   .size([900, 800])
       .words(freq_list
         .map(function(d) {
-          return {text: d["menu_item"], size: 10  + d["value"] * 100};
+          return {text: d["menu_item"], size: 5 + d["value"] * 50};
 //        return {text: d[0], size: 10 + Math.random() * 50};
         }))
       .rotate(function() { return ~~(Math.random() * 0) * 90; })
       .padding(5)
       .font("Impact")
       .fontSize(function(d) { return d.size; })
-      .on("end", function(d) { 
-        drawCloud(d, name, div_id); 
+      .on("end", function(d) {
+        drawCloud(d, name, div_id);
       })
       .start();
 }

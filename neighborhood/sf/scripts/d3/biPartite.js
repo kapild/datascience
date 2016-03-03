@@ -35,8 +35,13 @@
 		var rightMap = {};
 		for(var i = 0 ; i < data.length; i++) {
 			d = data[i];
-			leftMap[d[3].properties["REGIONID"]] = d[3];	
-			rightMap[d[4]["REGIONID"]] = d[4];	
+			leftKey = d[3].properties["REGIONID"];
+			leftMap[leftKey] = d[3];
+			rightKey = d[4]["REGIONID"];
+			var firstEntry = leftKey in rightMap;
+			if (firstEntry == false)
+			    rightMap[leftKey] = {}
+            rightMap[leftKey][rightKey] = d[4];
 		}
 		sData.mapIdName=[leftMap, rightMap];
 
@@ -230,7 +235,7 @@
 		mainbar.append("text").attr("class","barlabel")
 			.attr("x", c1[p]).attr("y",function(d){ return d.middle+5;})
 			.text(function(d,i){ if (p == 0) return data.mapIdName[p][data.keys[p][i]].properties.NAME;
-				else return data.mapIdName[1][data.keys[1][i]].name;})
+				else return data.mapIdName[1][data.keys[1][i]][data.keys[1][i]].name;})
  			.on('mouseover', tip.show)	
 			.on('mouseout', tip.hide)	
 			.attr("text-anchor","start" );
@@ -432,8 +437,8 @@
 	function selectBoth(data, prevIndex, col, index) {
 		bP.selectSegment(data, col, index, prevIndex, true);
 		if (col == 1) {
-			hood = data[0].data.mapIdName[col][data[0].data.keys[col][index]];
-			refreshPairUI(hood);		
+		    hood = data[0].data.mapIdName[col][data[0].data.keys[col][prevIndex]][data[0].data.keys[col][index]]
+			refreshPairUI(hood);
 		}			
 	}
 

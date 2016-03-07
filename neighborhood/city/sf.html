@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+  <title> San Francisco neighborhood similarity by Menu data</title>
+    <script type="text/javascript" src="./scripts/d3.v3.min.js"></script>
+    <script type="text/javascript" src="./scripts/queue.v1.min.js"></script>
+    <script type="text/javascript" src="./scripts/topojson.v1.min.js"></script>
+    <script src="./scripts/jquery-1.11.0.min.js"></script>
+    <script src="./scripts/jquery-ui.min.js"></script>
+    <script src="./scripts/d3/d3.layout.cloud.js"></script>
+    <script src="./scripts/d3/biPartite.js"></script>    
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="./scripts/d3/d3.tip.js"></script>    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/github-light.css" media="screen">
+
+</head>
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+a {font-size: 15px}
+
+.bar rect {
+  fill: steelblue;
+}
+
+.bar text.value {
+  fill: white;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.axis path {
+  fill: none;
+}
+
+.x.axis text {
+  font: 20px sans-serif;
+  fill: none;
+}
+
+.y.axis text {
+  font: 10px sans-serif;
+  fill: white;
+}
+
+.x.axis line {
+  stroke: #fff;
+  stroke-opacity: .8;
+}
+
+.y.axis path {
+  stroke: black;
+} 
+
+path {
+ stroke:white;
+ stroke-width: 1px;
+}
+.categories {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+
+.categories-choropleth {
+  fill: #ccc;
+}
+
+#tooltip-container {
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  border: 1px solid;
+  display: none;
+}
+
+#canvas svg {
+  border: 0px;
+}
+
+.tooltip_key {
+  font-weight: bold;
+}
+
+.tooltip_value {
+  margin-left: 20px;
+  float: right;
+}
+
+.x-axis {
+  fill: #000;
+}
+
+.chart {
+  background: #fff;
+  margin: 5px;
+}
+ 
+.chart .category-bar {
+  stroke: white;
+  fill: steelblue;
+}
+ 
+.chart .score {
+  fill: white;
+}
+ 
+.chart text.name {
+  fill: #000;
+  font: 10px sans-serif;
+}
+ 
+.chart line {
+  stroke: #c1c1c1;
+}
+ 
+.chart .rule {
+  fill: #000;
+}
+
+.main-category-text {
+  fill: #FF4A4A;
+}
+
+.main-category-bar {
+  stroke: #FF4A4A;
+  stroke-width: 2px;
+} 
+body {
+ font-family: Arial, sans-serif;
+}
+ 
+.city {
+ font: 10px sans-serif;
+ font-weight: bold;
+}
+ 
+.legend {
+ font-size: 12px;
+}
+ 
+.place-label {
+  fill: #777;
+  fill-opacity: .5;
+  font-size: 20px;
+  font-weight: 300;
+  text-anchor: middle;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+div.tooltip {
+ position: absolute;
+ text-align: center;
+ width: 150px;
+ height: 25px;
+ padding: 2px;
+ font-size: 10px;
+ background: #FFFFE0;
+ border: 1px;
+ border-radius: 8px;
+ pointer-events: none;
+}
+#root_div{
+  width: 1600px;
+  height: 1800px;
+  border: 1px solid white;
+}
+#top_div{
+  width: 100%;
+  height: 50%;
+  border: 1px solid white;
+  float: top;
+}
+#top_left_div{
+  width: 50%;
+  height: 100%;
+  border: 1px solid white;
+  float: left;
+}
+#top_right_div{
+  width: 50%;
+  height: 100%;
+  border: 1px solid white;
+  float: right;
+}
+
+#bottom_div{
+  width: 100%;
+  height: 50%;
+  border: 1px solid white;
+  float: top;
+}
+#bottom_left_div{
+  width: 50%;
+  height: 100%;
+  border: 1px solid white;
+  float: left;
+}
+#bottom_right_div{
+  width: 50%;
+  height: 100%;
+  border: 1px solid white;
+  float: left;
+}
+
+</style>
+<body>
+<section class="page-header">
+      <h1 class="project-name">San Francisco(S.F.) similarity using Menu data</h1>
+      <h2 class="project-tagline">There are about 32 neighborhoods in San Francisco(S.F.)</h2>
+
+    <div id="instructions" >
+        <section class="page-header-hoods">
+        <h2 class="project-tagline">How to use this page.</h2>
+              <h3>
+                  <ol>
+                      <li>
+                          <ol>Neighborhood Map:
+                      <br>
+                                <li>Hover on the neighborhood map of your choice. This will give you the score of its
+                                    top 10 neighborhood in the similarity bar.
+                                </li>
+                      <br>
+                                <li>It will change the Menu item cloud for this neighborhood.
+                                </li>
+                  <br>
+                           </ol>
+                      </li>
+                  <br>
+                  <br>
+                      <li>
+                          <ol>Bigraph:
+                      <br>
+                                <li>You can click the neighborhood either on the left side of the bi-graph or right side.
+                                Clicking in the left will show its top 10 neighborhood, menu item similarity graph.
+                                </li>
+                      <br>
+                                <li>By clicking on any of the top 10 next, will give you the common menu item cloud.
+                                    These represent the top 50 common menu items in both the neighborhood.
+                                </li>
+                      <br>
+                                <li> Start by selecting on right. By doing this you can see in what all neighborhoods
+                                    this neighborhood is in its top list. Sort of reverse mapping.
+                                </li>
+                           </ol>
+                      </li>
+                </ol>
+              </h3>
+
+        </section>
+</div>
+<a style="color: rgb(255,255,255)" href="#" onclick="hideInstructionSection();">Hide this section</a>
+</section>
+
+<div id="tooltip-container"></div>
+
+  <div>
+    <div style="float: left;">
+      <div style="float: top;" id="canvas-svg"></div>
+      <div style="float: top;"  id="canvas-bar-svg"></div>
+    </div>
+    <div style="float: left;"  id="bigraph-svg"></div>      
+  </div>
+  <br>
+  <br>
+  <div style="float: left;">
+    <div style="float: left;">
+      <div style="float: top; text-align: center;" id="cloud-svg_text"></div>
+      <div style="float: top;"  id="cloud-svg"></div>      
+    </div>
+    <div style="float: left;"> 
+      <div style="float: top; text-align: center;" id="cloud-svg_pair_text"></div>
+      <div style="float: top;"  id="cloud-svg_pair"></div>      
+    </div>
+    <div style="float: left;">
+      <div style="float: top; text-align: center;" id="cloud-svg_pair_diff_text"></div>
+      <div style="float: top;"  id="cloud-svg_pair_diff"></div>
+    </div>
+
+  </div>
+</div>
+</section>
+<script type="text/javascript">
+
+var WIDTH = 900, HEIGHT = 700;
+var COLOR_COUNTS = 20;
+var SCALE = 0.7;
+
+function Interpolate(start, end, steps, count) {
+    var s = start,
+        e = end,
+        final = s + (((e - s) / steps) * count);
+    return Math.floor(final);
+}
+
+function Color(_r, _g, _b) {
+    var r, g, b;
+    var setColors = function(_r, _g, _b) {
+        r = _r;
+        g = _g;
+        b = _b;
+    };
+    setColors(_r, _g, _b);
+    this.getColors = function() {
+        var colors = {
+            r: r,
+            g: g,
+            b: b
+        };
+        return colors;
+    };
+}
+
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+var COLOR_FIRST = "c3e2ff", COLOR_LAST = "08306B";
+var COLOR_GREEN = "008080";
+
+var rgb = hexToRgb(COLOR_FIRST);
+var COLOR_START = new Color(rgb.r, rgb.g, rgb.b);
+rgb = hexToRgb(COLOR_LAST);
+var COLOR_END = new Color(rgb.r, rgb.g, rgb.b);
+var width = WIDTH,
+    height = HEIGHT;
+var valueById = d3.map();
+var startColors = COLOR_START.getColors(),
+    endColors = COLOR_END.getColors();
+var colors = [];
+
+for (var i = 0; i < COLOR_COUNTS; i++) {
+  var r = Interpolate(startColors.r, endColors.r, COLOR_COUNTS, i);
+  var g = Interpolate(startColors.g, endColors.g, COLOR_COUNTS, i);
+  var b = Interpolate(startColors.b, endColors.b, COLOR_COUNTS, i);
+  colors.push(new Color(r, g, b));
+}
+
+var quantize = d3.scale.quantize()
+    .domain([0, 1.0])
+    .range(d3.range(COLOR_COUNTS).map(function(i) { return i }));
+
+var path = d3.geo.path();
+
+var colorCloud = d3.scale.linear()
+            .domain([0,1,2,3,4,5,6,10,15,20,100])
+            .range(["#ddd", "#ccc", "#bbb", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
+
+var fillCloud = d3.scale.category20();
+
+var selectedHood;
+var features;
+
+function getColorMaps(hood) {
+  if ("sim" in hood) {
+    similar_hood = hood["sim"]["similar_hood"];
+    var colors_maps = {};
+    var styleIndex = colors.length-1;
+
+    for(var i = 0; i < similar_hood.length; i++) {
+      styleIndex = Math.max(styleIndex, 0);        
+      var color = colors[styleIndex-- % colors.length].getColors();
+      colors_maps[similar_hood[i]["REGIONID"]] = color;
+    }
+  return colors_maps;    
+  }
+}
+
+function hideInstructionSection() {
+    var e = document.getElementById("instructions");
+    if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+}
+
+function refreshMapColors(hood) {
+  var colors_maps = getColorMaps(hood);
+  if (colors_maps == null) {return;}
+  var paths = d3
+  .select("#canvas-svg")
+  .selectAll("path")
+    .style("fill", function(d) {
+        var color = null;
+        if ("properties" in d && d["properties"]["REGIONID"] in colors_maps) {
+            color = colors_maps[d["properties"]["REGIONID"]];
+        }
+        if (color == null ) {
+          color = colors[0].getColors();
+        } 
+        return "rgb(" + color.r + "," + color.g +
+            "," + color.b + ")";
+      })
+}
+
+function showToolTipsForSimilarHoods(hood) {
+  var paths = d3
+    .select("#canvas-svg")
+    .selectAll("path")
+    .style("fill", function(d) {
+        var color = null;
+        if ("properties" in d && d["properties"]["REGIONID"] in colors_maps) {
+            color = colors_maps[d["properties"]["REGIONID"]];
+        }
+        if (color == null ) {
+          color = colors[0].getColors();
+        } 
+        return "rgb(" + color.r + "," + color.g +
+            "," + color.b + ")";
+      })
+}
+
+function makeMap(hood) {
+
+var svg = d3.select("#canvas-svg").append("svg")
+    .attr("width", 900)
+    .attr("height", 700); 
+
+var projection = d3.geo.albers()
+    .rotate([122.483, 0])
+    .center([0, 37.7750])
+    .parallels([50, 60])
+    .scale(470000)
+    .translate([width/2.6, height/2 ]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+ var colors_maps = getColorMaps(hood);
+
+ svg
+    .append("g")
+    .attr("class", "categories-choropleth")
+    .selectAll("path")
+    .data(features)
+    .enter()
+    .append("path")
+    .attr("transform", "scale(" + SCALE + ")")      
+    .style("fill", function(d) {
+        var color = colors_maps[d["properties"]["REGIONID"]];
+        if (color == null ) {
+          color = colors[0].getColors();
+        }
+        return "rgb(" + color.r + "," + color.g +
+            "," + color.b + ")";
+        
+    })
+    .attr("d", path)
+
+    .on("mousemove", function(d) {
+          makeToolTip(id_name_map[d.properties.REGIONID], d, this);
+          refreshUI(d);
+    })
+    .on("mouseout", function() {
+        $(this).attr("fill-opacity", "1.0");
+        $("#tooltip-container").hide();
+
+    });
+}
+
+function setCloud(freq_list, name, div_id) {
+  d3.layout.cloud()
+  .size([900, 800])
+      .words(freq_list
+        .map(function(d) {
+          return {text: d["menu_item"], size: 5 + d["value"] * 50};
+//        return {text: d[0], size: 10 + Math.random() * 50};
+        }))
+      .rotate(function() { return ~~(Math.random() * 0) * 90; })
+      .padding(5)
+      .font("Impact")
+      .fontSize(function(d) { return d.size; })
+      .on("end", function(d) {
+        drawCloud(d, name, div_id);
+      })
+      .start();
+}
+
+function resetCloud() {
+    d3.select("#cloud-svg").html("");
+    d3.select("#cloud-svg_text").html("");
+    d3.select("#cloud-svg_pair").html("");
+    d3.select("#cloud-svg_pair_text").html("");
+    d3.select("#cloud-svg_pair_diff").html("");
+    d3.select("#cloud-svg_pair_diff_text").html("");
+}
+
+function drawCloud(words, name, div_id) {
+  div_id_text = div_id + "_text";
+  var header = "Menu item cloud for <span style='color:green'>" + name + "</span>";
+  if (div_id.indexOf("pair") > 0) {
+    if (div_id.indexOf("diff") > 0) {
+        header = "Distinct menu items between <span style='color:blue'>" + name + "</span>";
+    } else {
+        header = "Common menu items between <span style='color:blue'>" + name + "</span>";
+    }
+  } else {
+    d3.select("#cloud-svg_pair_text").html("");
+    d3.select("#cloud-svg_pair").html("");
+  }
+  d3.select(div_id_text).html("");
+  d3.select(div_id_text)
+    .append("html")
+      .attr("x", 0)             
+      .attr("y", 0)
+      .attr("text-anchor", "middle")  
+      .style("font-size", "55px") 
+      // .style("text-decoration", "underline")  
+      .style("text-anchor", "middle")
+      .html("<h1>" + header);
+  d3.select(div_id).html("");
+  d3.select(div_id).append("svg")
+      .attr("width", 700)
+      .attr("height", 750)
+      .attr("class", "wordcloud")      
+    .append("g")
+      .attr("transform", "translate(350,350)")
+    .selectAll("text")
+      .data(words)
+    .enter().append("text")
+      .style("font-size", function(d) { return d.size + "px"; })
+      .style("font-family", "Impact")
+      .style("fill", function(d, i) { return fillCloud(i); })
+      .attr("text-anchor", "middle")
+      .attr("transform", function(d) {
+        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+      })
+      .text(function(d) { return d.text; });
+
+
+}
+
+function drawBiGraph(features) {
+
+  var biPartiteData=[];
+
+  for (var i = 0; i < features.length; i++) {
+    var hood = features[i];
+    var name = features[i]["properties"]["NAME"];
+    var regionId = features[i]["properties"]["REGIONID"];
+
+    if ("sim" in features[i] && "similar_hood" in features[i]["sim"]) {
+      var similar_hoods = features[i]["sim"]["similar_hood"];
+      for (var j = 0; j < similar_hoods.length && j < 10; j++) {
+        var similar_hood = similar_hoods[j];
+        var biPartiteRow = [];
+        biPartiteRow.push(name);
+        biPartiteRow.push(similar_hood["name"]);
+        biPartiteRow.push(similar_hood["value"].toFixed(2));
+        biPartiteRow.push(hood);
+        biPartiteRow.push(similar_hood);
+        biPartiteData.push(biPartiteRow);
+      }      
+    }
+  }
+
+  var width = 650, height = 1000, margin ={b:0, t:100, l:200, r:150};
+
+  d3.select("#bigraph-svg").html("");
+
+  var svg = d3.select("#bigraph-svg")
+    .append("svg").attr('width',width).attr('height',(height+margin.b+margin.t))
+    .append("g").attr("transform","translate("+ margin.l+","+margin.t+")");
+
+  var data = [ 
+    {data:bP.partData(biPartiteData,2), id:'Neighborhood', header:["Neighborhoods","Top 10 Similar neighborhood", "Neighborhoods of S.F."]},
+  ];
+
+  bP.draw(data, svg);
+}
+
+
+function makeHoodList(features) {
+  d3.select("#hood-list").html("");
+  var svg = d3.select("#hood-list")
+   .selectAll("div")  
+   .append("svg")
+   .data(features)
+   .enter()
+   .append("div") 
+   .html(function(d) {
+        return "<a href='#'  sizes='16x16' >" + d["properties"]["NAME"] + "</a>";
+    })
+    .on("click", function(d) {
+        makeToolTip(d["properties"]["NAME"], d, this);
+        refreshUI(d);
+    });
+}
+
+function makeHoodListPair(d) {
+  d3.select("#hood-list_pair").html("");
+  var svg = d3.select("#hood-list_pair")
+   .selectAll("div")  
+   .append("svg")
+   .data(d["sim"]["similar_hood"])
+   .enter()
+   .append("div") 
+   .html(function(d) {
+        return "<a href='#'  sizes='16x16' >" + d["name"] + "</a>";
+    })
+    .on("click", function(d) {
+        makeToolTip(d["name"], d, this);
+        refreshPairUI(d);
+    });
+
+}
+
+function makeToolTip(name, d, instance) {
+    var html = "";
+
+    html += "<div class=\"tooltip_kv\">";
+    html += "<span class=\"tooltip_key\">";
+    html += name;
+    html += "</span>";
+    html += "<span class=\"tooltip_value\">";
+    // html += (valueById.get(d.properties.REGIONID) ? valueById.get(d.properties.REGIONID) : "");
+    html += "";
+    html += "</span>";
+    html += "</div>";
+    
+    $("#tooltip-container").html(html);
+    $(this).attr("fill-opacity", "0.8");
+    $("#tooltip-container").show();
+    
+    var coordinates = d3.mouse(instance);
+    
+    var map_width = $('.categories-choropleth')[0].getBoundingClientRect().width;
+    
+    if (d3.event.pageX < map_width / 2) {
+      d3.select("#tooltip-container")
+        .style("top", (d3.event.pageY + 15) + "px")
+        .style("left", (d3.event.pageX + 15) + "px");
+    } else {
+      var tooltip_width = $("#tooltip-container").width();
+      d3.select("#tooltip-container")
+        .style("top", (d3.event.pageY + 15) + "px")
+        .style("left", (d3.event.pageX - tooltip_width - 30) + "px");
+    }
+}
+
+function refreshUI(d){
+  if (("sim" in d) == false) {return;}
+  selectedHood = d;
+  refreshMapColors(selectedHood);
+  refreshBarCharts(selectedHood);
+  setCloud(selectedHood["sim"]["menu_items"], selectedHood.properties.NAME, "#cloud-svg");
+  // makeHoodListPair(d);
+}
+
+function refreshPairUI(d){
+  selectedRegionId = selectedHood["sim"]["REGIONID"];
+  pairRegionID = d["REGIONID"]
+  setCloud(d["menu_items"], selectedHood.properties.NAME + " and " + d.name , "#cloud-svg_pair");
+  setCloud(d["menu_items_distinct"], selectedHood.properties.NAME + " and " + d.name , "#cloud-svg_pair_diff");
+}
+
+function refreshBarCharts(d) {
+  if ("sim" in d) {
+    var similar_hood = d["sim"]["similar_hood"];
+    var data = [];
+    for (var i = 0 ; i < similar_hood.length ; i++) {
+        var dataU = {};
+        dataU["name"] = similar_hood[i].name;
+        dataU["value"] = similar_hood[i].value;
+        data.push(dataU);
+
+    };
+
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(current) { 
+          return "similarity of <span style='color:green'> " + selectedHood.properties.NAME + " </span> with of <span style='color:orange'>"  +  current.name + ".</span>" 
+        })
+    var m = [30, 10, 10, 30],
+        w = 560 - m[1] - m[3],
+        h = 270 - m[0] - m[2];
+
+    var format = d3.format(",.3f");
+
+    var x = d3.scale.linear().range([0, w]),
+        y = d3.scale.ordinal().rangeRoundBands([0, h], .1);
+
+    var xAxis = d3.svg.axis().scale(x).orient("top").tickSize(-h),
+        yAxis = d3.svg.axis().scale(y).orient("right").tickSize(0);
+
+    d3.select("#canvas-bar-svg").html("");
+    var svg = d3.select("#canvas-bar-svg")
+    .append("svg")
+        .attr("width", w + m[1] + m[3])
+        .attr("height", h + m[0] + m[2])
+    .append("g")
+        .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+    svg.call(tip);
+
+    // Parse numbers, and sort by value.
+    data.forEach(function(d) { d.value = +d.value; });
+    data.sort(function(a, b) { return b.value - a.value; });
+
+    // Set the scale domain.
+    x.domain([0, d3.max(data, function(d) { return d.value; })]);
+    y.domain(data.map(function(d) { return d.name; }));
+
+    var bar = svg.selectAll("g.bar")
+        .data(data)
+        .enter().append("g")
+        .attr("class", "bar")
+        .attr("transform", function(d) { return "translate(0," + y(d.name) + ")"; })
+        .on('mouseover', tip.show)  
+        .on('mouseout', tip.hide) ;
+
+
+    bar.append("rect")
+        .attr("width", function(d) { return x(d.value); })
+        .attr("height", y.rangeBand());
+
+    bar.append("text")
+        .attr("class", "value")
+        .attr("x", function(d) { return x(d.value); })
+        .attr("y", y.rangeBand()/2)
+        .attr("dx", -3)
+        .attr("dy", ".31em")
+        .attr("text-anchor", "end")
+        .text(function(d) { return format(d.value); });
+
+
+    svg.append("g")
+        .attr("class", "x axis")
+        .call(xAxis);
+
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+    svg.append("text")
+      .attr("x", (w + m[1] + m[3]) / 2)             
+      .attr("y", 0)
+      .attr("text-anchor", "middle")  
+      .style("font-size", "16px") 
+      .style("text-decoration", "underline")  
+      .text("Top 10 similar hoods for " + d.properties.NAME)
+  }
+}
+
+queue()
+ .defer(d3.json, "./data/sf_feb_28.sim")
+
+ .await(ready);
+ 
+function ready(error, us) {
+ var pairRateWithId = {};
+ var pairNameWithId = {};
+  
+name_id_map = {};
+id_name_map = {};
+
+for (var i = 0; i < us.features.length; i++) {
+  var hood = us.features[i];
+  name_id_map[hood["properties"]["NAME"]] = hood["properties"]["REGIONID"];
+  id_name_map[hood["properties"]["REGIONID"]] = hood["properties"]["NAME"];
+}
+
+var selectedIndex = 0;
+features = us.features;
+// makeHoodList(features);
+makeMap(us.features[selectedIndex]);
+refreshUI(us.features[selectedIndex]);
+drawBiGraph(features);
+};
+
+</script>
+</body>
+</html>

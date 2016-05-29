@@ -65,8 +65,27 @@ def get_hood_top_menu_items(hood_index, is_normalize, menu_count_list, top_n_ite
     return get_hood_menu_items(sorted_indix, vocab_array, vocab)
 
 
-def set_similar_hoods(hood_menu_list):
+def set_similar_hoods(hood_menu_list, hood_menu_data):
     hood_cosine_matrix = get_similarity_matrix(hood_menu_list)
+    import matplotlib.pyplot as plt
+    from matplotlib import cm as cm
+
+    labels = []
+    for hood in hood_menu_data:
+        labels.append(hood["properties"]['NAME'])
+
+    fig, ax = plt.subplots(figsize=(20,20))
+    cmap = cm.get_cmap('Greens')
+    cmap = cm.get_cmap('YlGnBu')
+    cmap = cm.get_cmap('RdYlGn')
+    cax = ax.matshow(hood_cosine_matrix, interpolation='nearest', cmap=cmap)
+    ax.grid(True)
+    plt.title('San Francisco Similarity matrix')
+    plt.xticks(range(33), labels,  rotation=90);
+    plt.yticks(range(33), labels);
+    fig.colorbar(cax, use_gridspec=True, ticks=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, .75,.8,.85,.90,.95,1])
+    plt.show()
+
     top_similar = 10
     for index in range(0, len(hood_menu_list)):
         hood = hood_menu_list[index]
@@ -133,7 +152,7 @@ def get_city_hood_level_menu_tfid_and_similarities(city_hood_level_menu_file):
     print "Total hoods %s:, total loaded:%s" % (len(hood_menu_list), len(hood_menu_data))
 
     # get similarity matrix
-    hood_menu_list_with_similar_hoods = set_similar_hoods(hood_menu_list)
+    hood_menu_list_with_similar_hoods = set_similar_hoods(hood_menu_list, hood_menu_data)
 
     # get cloud data
     hood_sim_and_menu_items = set_menu_items_data(hood_menu_list_with_similar_hoods)

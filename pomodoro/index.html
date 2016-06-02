@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <title>Pomodoro tasks on D3 Calendar view</title>
+
+    <script type="text/javascript"  src="//code.jquery.com/jquery-1.10.2.js"></script>
+	
+    <link href="scripts/bootstrap.css" rel="stylesheet" /> 
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="scripts/d3/d3.v3.min.js"></script>
+    <style>
+	.calender-map {
+      font: 10px sans-serif;
+      shape-rendering: crispEdges;
+    }
+    .day {
+      stroke: #666;
+    }
+    .month {
+      fill: none;
+      stroke: #000;
+      stroke-width: 2px;
+    }
+
+      /*.RdYlGn .q0-11{fill:rgb(247,252,245)}*/
+      .RdYlGn .q0-11{fill:rgb(229,245,224)}
+      /*.RdYlGn .q1-11{fill:rgb(199,233,192)}*/
+      .RdYlGn .q1-11{fill:rgb(161,217,155)}
+      .RdYlGn .q2-11{fill:rgb(116,196,118)}
+      .RdYlGn .q3-11{fill:rgb(65,171,93)}
+      .RdYlGn .q4-11{fill:rgb(35,139,69)}
+      .RdYlGn .q5-11{fill:rgb(0,109,44)}
+      .RdYlGn .q6-11{fill:rgb(0,68,27)}
+      .RdYlGn .q7-11{fill:rgb(0,68,27)}
+      .RdYlGn .q8-11{fill:rgb(0,68,27)}
+      .RdYlGn .q9-11{fill:rgb(0,68,27)}
+      .RdYlGn .q10-11{fill:rgb(0,68,27)}
+      .RdYlGn .q11-11{fill:rgb(0,68,27)}
+    </style>
+</head>
+<body>
+<div style="float: center;">
+  <div style="float: center; text-align: center;" id="select-option"></div>      
+  <div style="float: center; text-align: center;" id="pomodoro-option"></div>      
+</div>
+
+<div style="float: center;">
+  <div style="float: center; text-align: center;" id="chart-text"></div>      
+  <div class="calender-map"></div>
+</div>
+
+<div style="float: center;">
+  <div style="float: center; text-align: center;" id="chart-text-weeks"></div>      
+  <div class="calender-map-weeks"></div>
+</div>
+
+<script type="text/javascript" src="./scripts/queue.v1.min.js"></script>
+
+<script type="text/javascript" src="calendermap2.js"></script>
+</body></html>

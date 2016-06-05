@@ -50,7 +50,7 @@ def dump_city_neighborhood_level_menu_data(input_city_shp_json, input_city_venue
         if 'menu' not in hood_shape:
             hood_shape['menu'] = []
         hood_shape['menu'].append(venue["menus_list"])
-        print "Adding venue %s to neighborhood:%s" %(venue["name"], hood_shape["properties"]["NAME"])
+        # print "Adding venue %s to neighborhood:%s" %(venue["name"], hood_shape["properties"]["NAME"])
         key = hood_shape["properties"]["NAME"]
         count = menu_count.get(key, 0)
         venue_count = venue_hood_count.get(key, 0)

@@ -80,9 +80,9 @@ def set_similar_hoods(hood_menu_list, hood_menu_data):
     cmap = cm.get_cmap('RdYlGn')
     cax = ax.matshow(hood_cosine_matrix, interpolation='nearest', cmap=cmap)
     ax.grid(True)
-    plt.title('San Francisco Similarity matrix')
-    plt.xticks(range(33), labels,  rotation=90);
-    plt.yticks(range(33), labels);
+    plt.title('Austin Similarity matrix')
+    plt.xticks(range(61), labels,  rotation=90);
+    plt.yticks(range(61), labels);
     fig.colorbar(cax, use_gridspec=True, ticks=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, .75,.8,.85,.90,.95,1])
     plt.show()
 
@@ -356,9 +356,9 @@ def print_top_n_features(vectorizer, indices, top_n = 20):
     print top_features
 
 if __name__ == "__main__":
-    # city_bb = austin_bb
+    city_bb = austin_bb
     # city_bb = atlanta_bb
-    city_bb = sf_bb
+    # city_bb = sf_bb
 
     file_ext = ".json"
     city_venue_menu_hood_input_file = remove_space_lower_case(data_directory + city_bb.name + "_hood" + file_ext)

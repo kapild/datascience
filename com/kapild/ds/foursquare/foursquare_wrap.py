@@ -55,7 +55,7 @@ class FourSquareWrap():
                         continue
                     sub_sec_items_list = sub_sec["items"]
                     for sub_sec_items in sub_sec_items_list:
-                        sub_heading_name = sub_sec_items["name"]
+                        sub_heading_name = sub_sec_items["name"] if "name" in sub_sec_items else ""
                         if "entries" not in sub_sec_items or "items" not in sub_sec_items["entries"]:
                             continue
                         menu_items_sub = sub_sec_items["entries"]["items"]

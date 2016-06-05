@@ -444,9 +444,9 @@ function generate_pomodoro_level_drop_down(div_id, project_text, nested_data) {
     });
     
     var tasks = d3.keys(nested_data);
-
     d3.keys(nested_data)
       .map(function (key) {
+        nested_data[key].Count = 0;
         nested_data[key].Count = d3.sum(d3.values(nested_data[key]));
       })
 

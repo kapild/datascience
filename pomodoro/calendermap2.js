@@ -3,7 +3,7 @@ var width = 900,
     cellSize = 12; // cell size
     week_days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
     month = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-	
+  
 var ALL_TASKS = "all";
 var csv_data, csv_data_all, csv_data_pomodoro, csv_data_weeks;
 var task_name ; 
@@ -19,16 +19,15 @@ var day = d3.time.format("%w"),
     month_format = d3.time.format("%m"),
     percent = d3.format(".1%"),
     formatWeeks =  d3.time.format("%Y-%U"),
-	format = d3.time.format("%Y-%m-%d");
-
-	parseDate = d3.time.format("%Y%m%d").parse;
-		
+    format = d3.time.format("%Y-%m-%d");
+    parseDate = d3.time.format("%Y%m%d").parse;
+    
 var color = d3.scale.quantize()
     .domain([0, 11])
     .range(d3.range(11)
-.map(function(d) {
-     return "q" + d + "-11"; 
-   }));
+    .map(function(d) {
+       return "q" + d + "-11"; 
+    }));
     
     //  Tooltip Object
 var tooltip = d3.select("body")
@@ -39,6 +38,7 @@ var tooltip = d3.select("body")
   .text("a simple tooltip");
 
 function generateDailyCalendar() {
+   d3.select(".calender-map").html("");
   svg = d3.select(".calender-map").selectAll("svg")
       .data(d3.range(2015, 2017))
     .enter().append("svg")
@@ -63,21 +63,9 @@ function generateDailyCalendar() {
       .text(function(d) { return week_days[i]; }); 
    }
 
-  // rect = svg.selectAll(".day")
-  //     .data(function(d) { return d3.time.days(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
-  //   .enter()
-  // 	.append("rect")
-  //     .attr("class", "day")
-  //     .attr("width", cellSize)
-  //     .attr("height", cellSize)
-  //     .attr("x", function(d) { return week(d) * cellSize; })
-  //     .attr("y", function(d) { return day(d) * cellSize; })
-  //     .attr("fill",'#fff')
-  //     .datum(format);
-
   var legend = svg.selectAll(".legend")
         .data(month)
-      .enter().append("g")
+        .enter().append("g")
         .attr("class", "legend")
         .attr("transform", function(d, i) { return "translate(" + (((i+1) * 50)+8) + ",0)"; });
 
@@ -87,12 +75,27 @@ function generateDailyCalendar() {
      .attr("dy", "-.25em")
      .text(function(d,i){ return month[i] });
    
-  svg.selectAll(".month")
+  
+  rect = svg.selectAll(".day")
+      .data(function(d) { return d3.time.days(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
+    .enter()
+    .append("rect")
+      .attr("class", "day")
+      .attr("width", cellSize)
+      .attr("height", cellSize)
+      .attr("x", function(d) { return week(d) * cellSize; })
+      .attr("y", function(d) { return day(d) * cellSize; })
+      .attr("fill",'#fff')
+      .datum(format);
+
+svg.selectAll(".month")
       .data(function(d) { return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
     .enter().append("path")
       .attr("class", "month")
       .attr("id", function(d,i){ return month[i] })
       .attr("d", monthPath);
+
+
 }
 
 function generateSvgForWeeksView(div_id) {
@@ -113,18 +116,6 @@ svgWeek.append("text")
     .text(function(d) { return d; });
  
 
-// var rect = svg.selectAll(".day")
-//     .data(function(d) { return d3.time.days(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
-//   .enter()
-//   .append("rect")
-//     .attr("class", "day")
-//     .attr("width", cellSize)
-//     .attr("height", cellSize)
-//     .attr("x", function(d) { return week(d) * cellSize; })
-//     .attr("y", function(d) { return day(d) * cellSize; })
-//     .attr("fill",'#fff')
-//     .datum(format);
-
 rectWeeks = svgWeek.selectAll(".day")
     .data(function(d) { return d3.time.weeks(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
   .enter()
@@ -136,9 +127,6 @@ rectWeeks = svgWeek.selectAll(".day")
     .attr("y", function(d) { return 0;})
     .attr("fill",'#fff')
     .datum(formatWeeks);
-    // .datum(function(d) {
-    //     return formatWeeks(d);
-    // });
 
 var legend = svgWeek.selectAll(".legend")
       .data(d3.range(0,52))
@@ -188,19 +176,7 @@ function clear_yearly_data() {
 }
 
 function setCalendarForTask(task_data) {
-  clear_yearly_data()
-  rect = svg.selectAll(".day")
-      .data(function(d) { return d3.time.days(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
-    .enter()
-    .append("rect")
-      .attr("class", "day")
-      .attr("width", cellSize)
-      .attr("height", cellSize)
-      .attr("x", function(d) { return week(d) * cellSize; })
-      .attr("y", function(d) { return day(d) * cellSize; })
-      .attr("fill",'#fff')
-      .datum(format);
-
+  generateDailyCalendar();
 
   rect.filter(function(d) { return d in task_data; })
   .attr("class", function(d) { return "day " + color(task_data[d]); })
@@ -477,9 +453,8 @@ function ready(error, pomodoro_csv) {
   load_drop_down(pomodoro_csv, csv_data_all_dict["all_count"]["all"]);
   var url_params_string = window.location.search.substring(1);
   var task_name_text = getQueryVariable(task_name_param);
-  generateDailyCalendar();
-  generateSvgForWeeksView("calender-map-weeks");
   update_ui_with_project_name(task_name_text);
+  generateSvgForWeeksView("calender-map-weeks");
 };
 
 function update_ui_with_task_name (project_name, task_name_text) {

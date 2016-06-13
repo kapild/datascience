@@ -38,7 +38,7 @@ var tooltip = d3.select("body")
   .text("a simple tooltip");
 
 function generateDailyCalendar() {
-   d3.select(".calender-map").html("");
+  d3.select(".calender-map").html("");
   svg = d3.select(".calender-map").selectAll("svg")
       .data(d3.range(2015, 2017))
     .enter().append("svg")
@@ -94,7 +94,6 @@ svg.selectAll(".month")
       .attr("class", "month")
       .attr("id", function(d,i){ return month[i] })
       .attr("d", monthPath);
-
 
 }
 
@@ -183,6 +182,7 @@ function setCalendarForTask(task_data) {
   .attr("data-title", function(d) { 
           return d + " pomodoro : " + task_data[d]}
   );   
+  $("rect").tooltip({container: 'body', html: true, placement:'top'}); 
 
 }
 
@@ -419,12 +419,26 @@ function generate_pomodoro_level_drop_down(div_id, project_text, nested_data) {
         pomodoro_level_drop_selected(project_text, task_name);
     });
     
+    all_count = 0
+    d3.keys(nested_data)
+      .map(function (key) {
+        nested_data[key].Count = 0;
+        all_count += d3.sum(d3.values(nested_data[key]));
+      })
+
     var tasks = d3.keys(nested_data);
     d3.keys(nested_data)
       .map(function (key) {
         nested_data[key].Count = 0;
         nested_data[key].Count = d3.sum(d3.values(nested_data[key]));
       })
+
+    var all = {
+        "Count" : all_count
+    }
+
+    nested_data[ALL_TASKS] = all;
+    var tasks = d3.keys(nested_data);
 
     tasks.sort(function(a,b) {
       return parseFloat(nested_data[b].Count) - parseFloat(nested_data[a].Count); 
@@ -440,6 +454,9 @@ function generate_pomodoro_level_drop_down(div_id, project_text, nested_data) {
       .text(function (d) { 
           return  d + ", Pomodoro Count:" + nested_data[d].Count; 
       });
+
+      nested_data[ALL_TASKS] = {}
+
 }
 
 
@@ -454,7 +471,7 @@ function ready(error, pomodoro_csv) {
   var url_params_string = window.location.search.substring(1);
   var task_name_text = getQueryVariable(task_name_param);
   update_ui_with_project_name(task_name_text);
-  generateSvgForWeeksView("calender-map-weeks");
+  // generateSvgForWeeksView("calender-map-weeks");
 };
 
 function update_ui_with_task_name (project_name, task_name_text) {
@@ -482,6 +499,6 @@ function update_ui_with_project_name (task_name_text) {
 
 function update_ui_with_selection(task_name_text, filter_data, filter_data_weeks) {
   refresh_ui_for_days(filter_data, task_name);
-  refresh_ui_for_weeks(filter_data_weeks, task_name);
+  // refresh_ui_for_weeks(filter_data_weeks, task_name);
 }
 

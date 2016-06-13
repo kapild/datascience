@@ -3,15 +3,15 @@ Date,Pomodoro,Project,Count
 2015-09-04,3 most imp. task for today(last change),iPhone Calendar Event,1.0
 2015-09-05,Thich Nhat ,Reading books ,2.0
 2015-09-05,K means understanding ,Machine learning,3.0
-2015-09-06,24 hour fitness ,Exercises ,2.0
 2015-09-06,K-means blogging ,Machine learning,2.0
-2015-09-06,No Asshole rule ,Reading books ,1.0
 2015-09-06,K means understanding ,Machine learning,3.0
+2015-09-06,24 hour fitness ,Exercises ,2.0
+2015-09-06,No Asshole rule ,Reading books ,1.0
 2015-09-08,Hotfix,Work Apple,1.0
 2015-09-08,Siri work,Work Apple,6.0
 2015-09-09,Siri work,Work Apple,3.0
-2015-09-10,En Category default ,Work Apple,2.0
 2015-09-10,No Asshole rule ,Reading books ,2.0
+2015-09-10,En Category default ,Work Apple,2.0
 2015-09-11,Bin definitive issue ,Work Apple,2.0
 2015-09-11,Grand canyon planning ,Default Project,1.0
 2015-09-11,En Category default ,Work Apple,5.0
@@ -21,8 +21,8 @@ Date,Pomodoro,Project,Count
 2015-09-15,Japan prune Name,Work Apple,3.0
 2015-09-16,"Emails, Call, run online errands",iPhone Calendar Event,3.0
 2015-09-16,Japan prune Name,Work Apple,1.0
-2015-09-16,Siri radar verify ,Work Apple,1.0
 2015-09-16,Code review ,Work Apple,1.0
+2015-09-16,Siri radar verify ,Work Apple,1.0
 2015-09-17,Japan prune Name,Work Apple,3.0
 2015-09-17,24 hour fitness ,Exercises ,1.0
 2015-09-18,Meditation ,Exercises ,6.0
@@ -30,8 +30,8 @@ Date,Pomodoro,Project,Count
 2015-09-20,Meditation ,Exercises ,5.0
 2015-09-20,No Asshole rule ,Reading books ,1.0
 2015-09-21,"Emails, Call, run online errands",iPhone Calendar Event,3.0
-2015-09-21,Code review ,Work Apple,1.0
 2015-09-21,Siri radar verify ,Work Apple,3.0
+2015-09-21,Code review ,Work Apple,1.0
 2015-09-22,Code review ,Work Apple,1.0
 2015-09-22,Siri radar verify ,Work Apple,5.0
 2015-09-22,Siri/Maps API Requirements,iPhone Calendar Event,3.0
@@ -70,15 +70,15 @@ Date,Pomodoro,Project,Count
 2015-11-08,Blog Medium,Online work,6.0
 2015-11-08,K-means Cluster,Machine learning,12.0
 2015-11-10,Current location,Work Apple,12.0
-2015-11-10,K-means Cluster,Machine learning,6.0
 2015-11-10,"Emails, Call, run online errands",iPhone Calendar Event,3.0
+2015-11-10,K-means Cluster,Machine learning,6.0
 2015-11-11,Effective engineer,Reading books ,9.0
 2015-11-12,One intentional life,Podcast ,1.0
 2015-11-14,Yoga,Exercises ,2.0
 2015-11-14,One intentional life,Podcast ,1.0
 2015-11-14,House clean,Default Project,6.0
-2015-11-15,One intentional life,Podcast ,4.0
 2015-11-15,Bills Errands,Online work,2.0
+2015-11-15,One intentional life,Podcast ,4.0
 2015-11-16,Note to Self,Podcast ,1.0
 2015-11-16,Bills Errands,Online work,1.0
 2015-11-20,Effective engineer,Reading books ,3.0
@@ -87,8 +87,8 @@ Date,Pomodoro,Project,Count
 2015-12-01,Effective engineer,Reading books ,2.0
 2015-12-04,Gym,Exercises ,3.0
 2015-12-06,One intentional life,Podcast ,1.0
-2015-12-07,Gym,Exercises ,3.0
 2015-12-07,K-means Cluster,Machine learning,2.0
+2015-12-07,Gym,Exercises ,3.0
 2015-12-07,One intentional life,Podcast ,3.0
 2015-12-08,Effective engineer,Reading books ,3.0
 2015-12-08,One intentional life,Podcast ,1.0
@@ -110,60 +110,60 @@ Date,Pomodoro,Project,Count
 2016-01-16,Meditation,Habbit,2.0
 2016-01-16,Yoga,Habbit,1.0
 2016-01-16,Weekly review every week,Habbit,1.0
-2016-01-16,Chain MM match A/B,Work Apple,2.0
 2016-01-16,Clean house,Habbit,1.0
+2016-01-16,Chain MM match A/B,Work Apple,2.0
 2016-01-16,Remove definitive,Work Apple,3.0
 2016-01-17,Pay Hemal rent,Sat 16th,2.0
 2016-01-17,But running shoes,Sun 17th Jan,1.0
 2016-01-18,Gym thrice a week,Habbit,3.0
-2016-01-18,Mining massive data set,ML related,4.0
 2016-01-18,K-means blog,Machine learning,5.0
+2016-01-18,Mining massive data set,ML related,4.0
 2016-01-19,Read Bhagavad Gita,Reading,1.0
 2016-01-19,MM Chain category subsume name,A/B projects,7.0
-2016-01-20,MM Chain category subsume name,A/B projects,1.0
 2016-01-20,Design doc,SATR,3.0
+2016-01-20,MM Chain category subsume name,A/B projects,1.0
 2016-01-20,Planning,SATR,2.0
 2016-01-21,Gym thrice a week,Habbit,9.0
-2016-01-23,Meditation,Habbit,3.0
-2016-01-23,Clean house,Habbit,6.0
 2016-01-23,Yoga,Habbit,3.0
+2016-01-23,Clean house,Habbit,6.0
+2016-01-23,Meditation,Habbit,3.0
 2016-01-25,Gym thrice a week,Habbit,2.0
 2016-01-28,Bills Errands,Online work,1.0
 2016-01-28,Poi chrome plugin,Apple Projects,9.0
 2016-01-29,Poi chrome plugin,Apple Projects,3.0
 2016-01-30,Weekly review every week,Habbit,1.0
-2016-01-30,300 miles run,Health goal,1.0
-2016-01-30,House clean,Default Project,2.0
 2016-01-30,Foursquare Coding,ML related,1.0
+2016-01-30,House clean,Default Project,2.0
+2016-01-30,300 miles run,Health goal,1.0
 2016-01-31,House clean,Default Project,5.0
 2016-01-31,Foursquare Coding,ML related,1.0
-2016-02-01,300 miles run,Health goal,1.0
-2016-02-01,One Intentional life Morning routines Ep 10,Podcast ,2.0
-2016-02-01,Read Bhagavad Gita,Reading,1.0
 2016-02-01,Debug Satr,SATR,5.0
+2016-02-01,One Intentional life Morning routines Ep 10,Podcast ,2.0
+2016-02-01,300 miles run,Health goal,1.0
+2016-02-01,Read Bhagavad Gita,Reading,1.0
 2016-02-02,Pref name first IBE,A/B projects,7.0
 2016-02-03,HIIT,Health goal,2.0
 2016-02-03,Read Bhagavad Gita,Reading,1.0
 2016-02-03,One Intentional life Morning routines Ep 10,Podcast ,1.0
 2016-02-04,Pref name first IBE,A/B projects,4.0
-2016-02-05,Foursquare Coding,ML related,2.0
+2016-02-05,Arms day,Habbit,1.0
 2016-02-05,"Emails, Call, run online errands",iPhone Calendar Event,1.0
 2016-02-05,HIIT,Health goal,1.0
 2016-02-05,Pref name first IBE,A/B projects,1.0
-2016-02-05,Arms day,Habbit,1.0
-2016-02-06,Weekly review every week,Habbit,1.0
-2016-02-06,Foursquare blogging,ML related,4.0
-2016-02-06,Daily Review,Habbit,2.0
+2016-02-05,Foursquare Coding,ML related,2.0
 2016-02-06,300 miles run,Health goal,2.0
 2016-02-06,Foursquare Coding,ML related,2.0
+2016-02-06,Daily Review,Habbit,2.0
+2016-02-06,Weekly review every week,Habbit,1.0
+2016-02-06,Foursquare blogging,ML related,4.0
 2016-02-07,Pref name first IBE,A/B projects,12.0
-2016-02-08,Legs day,Habbit,1.0
 2016-02-08,HIIT,Health goal,1.0
+2016-02-08,Legs day,Habbit,1.0
 2016-02-10,HIIT,Health goal,1.0
-2016-02-13,Meditation,Habbit,1.0
 2016-02-13,300 miles run,Health goal,2.0
-2016-02-16,HIIT,Health goal,1.0
+2016-02-13,Meditation,Habbit,1.0
 2016-02-16,Chest,Habbit,1.0
+2016-02-16,HIIT,Health goal,1.0
 2016-02-16,Pref name first IBE,A/B projects,6.0
 2016-02-17,Pref name first IBE,A/B projects,6.0
 2016-02-18,Pref name first IBE,A/B projects,4.0
@@ -188,11 +188,11 @@ Date,Pomodoro,Project,Count
 2016-02-29,One Intentional life Speed reading Ep 14,Podcast ,1.0
 2016-02-29,Mining massive data set,ML related,4.0
 2016-03-01,Collect notes,Siri API work,3.0
-2016-03-02,Foursquare blogging,ML related,6.0
-2016-03-02,Pref name first IBE,A/B projects,1.0
-2016-03-02,3 most imp. task for tomorrow,iPhone Calendar Event,1.0
-2016-03-02,Collect notes,Siri API work,5.0
 2016-03-02,300 miles run,Health goal,1.0
+2016-03-02,3 most imp. task for tomorrow,iPhone Calendar Event,1.0
+2016-03-02,Pref name first IBE,A/B projects,1.0
+2016-03-02,Collect notes,Siri API work,5.0
+2016-03-02,Foursquare blogging,ML related,6.0
 2016-03-03,Pref name first IBE,A/B projects,2.0
 2016-03-03,Collect notes,Siri API work,1.0
 2016-03-03,Code review 2,Work Apple,2.0
@@ -202,9 +202,9 @@ Date,Pomodoro,Project,Count
 2016-03-05,Meditation,Habbit,2.0
 2016-03-05,"Errands, Email, calls",Habbit,3.0
 2016-03-06,"Errands, Email, calls",Habbit,2.0
-2016-03-06,Sort Pocket Read It later,Habbit,1.0
-2016-03-06,One Intentional life Speed reading Ep 14,Podcast ,1.0
 2016-03-06,Weekly review every week,Habbit,1.0
+2016-03-06,One Intentional life Speed reading Ep 14,Podcast ,1.0
+2016-03-06,Sort Pocket Read It later,Habbit,1.0
 2016-03-06,Mining massive data set,ML related,7.0
 2016-03-06,Foursquare blogging,ML related,1.0
 2016-03-07,ADHD experts podcast,Podcast,2.0
@@ -215,8 +215,8 @@ Date,Pomodoro,Project,Count
 2016-03-07,Protocol changes,Siri API work,3.0
 2016-03-07,ADHD re-wired,Podcast,2.0
 2016-03-08,Pomodoro Coding,ML related,6.0
-2016-03-08,Pref name first IBE,A/B projects,4.0
 2016-03-08,HIIT,Health goal,1.0
+2016-03-08,Pref name first IBE,A/B projects,4.0
 2016-03-08,Collect notes,Siri API work,1.0
 2016-03-09,Pref name first IBE,A/B projects,2.0
 2016-03-10,Figure out library D3,ML related,1.0
@@ -224,12 +224,12 @@ Date,Pomodoro,Project,Count
 2016-03-11,ADHD re-wired,Podcast,1.0
 2016-03-11,Medium Blogging,Habbit,2.0
 2016-03-11,Pomodoro Coding,ML related,4.0
-2016-03-12,Clean house,Habbit,2.0
-2016-03-12,Meditation,Habbit,1.0
 2016-03-12,Pomodoro Coding,ML related,4.0
-2016-03-12,ADHD re-wired,Podcast,1.0
-2016-03-12,"Errands, Email, calls",Habbit,5.0
 2016-03-12,300 miles run,Health goal,2.0
+2016-03-12,Clean house,Habbit,2.0
+2016-03-12,ADHD re-wired,Podcast,1.0
+2016-03-12,Meditation,Habbit,1.0
+2016-03-12,"Errands, Email, calls",Habbit,5.0
 2016-03-13,Pomodoro Coding,ML related,1.0
 2016-03-13,ADHD re-wired,Podcast,1.0
 2016-03-13,Mining massive data set,ML related,5.0
@@ -239,11 +239,11 @@ Date,Pomodoro,Project,Count
 2016-03-14,300 miles run,Health goal,1.0
 2016-03-15,Weekly review every week,Habbit,1.0
 2016-03-15,Collect notes,Siri API work,1.0
-2016-03-16,Pomodoro Coding,ML related,3.0
 2016-03-16,Clean house,Habbit,1.0
+2016-03-16,Pomodoro Coding,ML related,3.0
 2016-03-16,300 miles run,Health goal,1.0
-2016-03-16,Meditation,Habbit,2.0
 2016-03-16,Collect notes,Siri API work,2.0
+2016-03-16,Meditation,Habbit,2.0
 2016-03-21,Protocol changes,Siri API work,4.0
 2016-03-21,300 miles run,Health goal,1.0
 2016-03-22,ADHD re-wired,Podcast,1.0
@@ -255,8 +255,8 @@ Date,Pomodoro,Project,Count
 2016-03-24,Meditation,Habbit,1.0
 2016-03-25,ADHD re-wired,Podcast,2.0
 2016-03-27,300 miles run,Health goal,1.0
-2016-03-29,ADHD re-wired,Podcast,2.0
 2016-03-29,300 miles run,Health goal,1.0
+2016-03-29,ADHD re-wired,Podcast,2.0
 2016-03-29,NAME Global Results,A/B projects,7.0
 2016-03-30,"Errands, Email, calls",Habbit,2.0
 2016-03-30,Clean house,Habbit,1.0
@@ -280,8 +280,8 @@ Date,Pomodoro,Project,Count
 2016-04-09,Clean house,Habbit,1.0
 2016-04-09,"Errands, Email, calls",Habbit,5.0
 2016-04-10,Clean house,Habbit,3.0
-2016-04-10,Yoga,Habbit,2.0
 2016-04-10,SciPy 2013 part1,ML related,4.0
+2016-04-10,Yoga,Habbit,2.0
 2016-04-10,SciPy 2013 part2,ML related,4.0
 2016-04-10,Meditation,Habbit,1.0
 2016-04-11,NAME Global Results,A/B projects,5.0
@@ -296,8 +296,8 @@ Date,Pomodoro,Project,Count
 2016-04-16,Clean house,Habbit,1.0
 2016-04-16,Yoga,Habbit,1.0
 2016-04-16,SFE Navigation type aware results,Siri API work,8.0
-2016-04-17,"Errands, Email, calls",Habbit,5.0
 2016-04-17,Core strength,Habbit,2.0
+2016-04-17,"Errands, Email, calls",Habbit,5.0
 2016-04-18,Sort Pocket Read It later,Habbit,1.0
 2016-04-18,SFE Navigation type aware results,Siri API work,8.0
 2016-04-19,Core strength,Habbit,1.0
@@ -348,19 +348,19 @@ Date,Pomodoro,Project,Count
 2016-05-06,Panda SciPy worksheet,ML related,2.0
 2016-05-07,Clean house,Habbit,2.0
 2016-05-08,Panda SciPy worksheet,ML related,6.0
-2016-05-08,500 miles bike,Health goal,3.0
 2016-05-08,Beyond Todo list,Podcast,1.0
+2016-05-08,500 miles bike,Health goal,3.0
 2016-05-08,Beyond ToDoist podcast,Podcast ,1.0
-2016-05-09,"Errands, Email, calls",Habbit,1.0
-2016-05-09,Analysis,32 A/B: Viewport expansion,6.0
 2016-05-09,Pref name first IBE,A/B projects,1.0
+2016-05-09,Analysis,32 A/B: Viewport expansion,6.0
+2016-05-09,"Errands, Email, calls",Habbit,1.0
 2016-05-10,Analysis,32 A/B: Viewport expansion,7.0
 2016-05-10,Biking stationary,Habbit,1.0
 2016-05-10,Pref name first IBE,A/B projects,4.0
 2016-05-10,Getting ready for first Pomodoro,Bad habbits,2.0
 2016-05-10,Chest,Habbit,2.0
-2016-05-11,Analysis,32 A/B: Viewport expansion,2.0
 2016-05-11,Weekly review every week,Habbit,2.0
+2016-05-11,Analysis,32 A/B: Viewport expansion,2.0
 2016-05-11,Pref name first IBE,A/B projects,5.0
 2016-05-11,Getting ready for first Pomodoro,Bad habbits,2.0
 2016-05-11,Cooking,Habbit,1.0
@@ -373,15 +373,15 @@ Date,Pomodoro,Project,Count
 2016-05-15,Legs day,Habbit,1.0
 2016-05-15,Biking stationary,Habbit,1.0
 2016-05-15,Meditation,Habbit,1.0
-2016-05-15,Sort Pocket Read It later,Habbit,1.0
 2016-05-15,Yoga,Habbit,1.0
 2016-05-15,"Model building 45,C",Name ranking 45,1.0
+2016-05-15,Sort Pocket Read It later,Habbit,1.0
 2016-05-15,Arms day,Habbit,1.0
 2016-05-16,Weekly review every week,Habbit,1.0
 2016-05-16,"Model building 45,C",Name ranking 45,4.0
 2016-05-16,"Errands, Email, calls",Habbit,1.0
-2016-05-17,"Model building 45,C",Name ranking 45,7.0
 2016-05-17,Biking stationary,Habbit,1.0
+2016-05-17,"Model building 45,C",Name ranking 45,7.0
 2016-05-17,Getting ready for first Pomodoro,Bad habbits,2.0
 2016-05-17,Meditation,Habbit,1.0
 2016-05-17,Chest,Habbit,1.0
@@ -395,8 +395,8 @@ Date,Pomodoro,Project,Count
 2016-05-20,NAME Global Results,A/B projects,3.0
 2016-05-22,Arms day,Habbit,1.0
 2016-05-23,"Errands, Email, calls",Habbit,2.0
-2016-05-24,Cooking,Habbit,1.0
 2016-05-24,Biking stationary,Habbit,1.0
+2016-05-24,Cooking,Habbit,1.0
 2016-05-24,Gym treadmill run,Habbit,1.0
 2016-05-26,Daily Review,Habbit,1.0
 2016-05-27,"Errands, Email, calls",Habbit,3.0
@@ -404,8 +404,41 @@ Date,Pomodoro,Project,Count
 2016-05-28,Sort Pocket Read It later,Habbit,2.0
 2016-05-28,Arms day,Habbit,1.0
 2016-05-28,Core strength,Habbit,1.0
-2016-05-29,Foursquare Coding,ML related,2.0
+2016-05-29,Foursquare blogging,ML related,3.0
 2016-05-29,Gym treadmill run,Habbit,1.0
 2016-05-29,Cooking,Habbit,3.0
 2016-05-29,Co-occurence matrix,ML related,3.0
-2016-05-29,Foursquare blogging,ML related,3.0
+2016-05-29,Foursquare Coding,ML related,2.0
+2016-05-30,Cooking,Habbit,1.0
+2016-05-30,Pomodoro Coding,ML related,13.0
+2016-05-31,Beyond ToDoist podcast,Podcast ,1.0
+2016-05-31,Pomodoro Coding,ML related,1.0
+2016-06-01,Presentation and design,32 A/B: Viewport expansion,1.0
+2016-06-01,MM Chain category subsume name,A/B projects,2.0
+2016-06-01,Analysis,32 A/B: Viewport expansion,3.0
+2016-06-01,One intentional life,Podcast ,1.0
+2016-06-01,Arms day,Habbit,2.0
+2016-06-02,Presentation and design,32 A/B: Viewport expansion,4.0
+2016-06-02,Analysis,32 A/B: Viewport expansion,1.0
+2016-06-03,Code Model Loader,32 A/B: Viewport expansion,6.0
+2016-06-03,Legs day,Habbit,2.0
+2016-06-04,Cooking,Habbit,2.0
+2016-06-04,Foursquare blogging,ML related,2.0
+2016-06-05,Cooking,Habbit,3.0
+2016-06-05,Foursquare blogging,ML related,2.0
+2016-06-05,Pomodoro Coding,ML related,4.0
+2016-06-06,Code Model Loader,32 A/B: Viewport expansion,4.0
+2016-06-06,Chest,Habbit,2.0
+2016-06-06,Biking stationary,Habbit,1.0
+2016-06-07,Code Model Loader,32 A/B: Viewport expansion,5.0
+2016-06-08,Code Model Loader,32 A/B: Viewport expansion,15.0
+2016-06-09,Presentation and design,32 A/B: Viewport expansion,11.0
+2016-06-09,Code Model Loader,32 A/B: Viewport expansion,3.0
+2016-06-10,Arms day,Habbit,1.0
+2016-06-10,Weekly review every week,Habbit,1.0
+2016-06-10,Code Model Loader,32 A/B: Viewport expansion,3.0
+2016-06-12,Pomodoro Coding,ML related,2.0
+2016-06-12,Gym treadmill run,Habbit,1.0
+2016-06-12,Cooking,Habbit,1.0
+2016-06-12,Core strength,Habbit,1.0
+2016-06-12,"Errands, Email, calls",Habbit,5.0

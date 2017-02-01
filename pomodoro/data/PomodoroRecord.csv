@@ -1,25 +1,23 @@
 Date,Pomodoro,Project,Count
-2015-09-04,3 most imp. task for today(last change),iPhone Calendar Event,1.0
 2015-09-04,Grand canyon planning ,Default Project,1.0
 2015-09-05,Thich Nhat ,Reading books ,2.0
 2015-09-05,K means understanding ,Machine learning,3.0
-2015-09-06,24 hour fitness ,Exercises ,2.0
 2015-09-06,K-means blogging ,Machine learning,2.0
 2015-09-06,K means understanding ,Machine learning,3.0
+2015-09-06,24 hour fitness ,Exercises ,2.0
 2015-09-06,No Asshole rule ,Reading books ,1.0
 2015-09-08,Hotfix,Work Apple,1.0
 2015-09-08,Siri work,Work Apple,6.0
 2015-09-09,Siri work,Work Apple,3.0
-2015-09-10,En Category default ,Work Apple,2.0
 2015-09-10,No Asshole rule ,Reading books ,2.0
+2015-09-10,En Category default ,Work Apple,2.0
 2015-09-11,Bin definitive issue ,Work Apple,2.0
 2015-09-11,Grand canyon planning ,Default Project,1.0
 2015-09-11,En Category default ,Work Apple,5.0
 2015-09-13,Linear Digression ,Podcast ,2.0
-2015-09-14,ResourceFactory discussion,iPhone Calendar Event,1.0
 2015-09-14,Japan prune Name,Work Apple,6.0
+2015-09-14,ResourceFactory discussion,iPhone Calendar Event,1.0
 2015-09-15,Japan prune Name,Work Apple,3.0
-2015-09-16,"Emails, Call, run online errands",iPhone Calendar Event,3.0
 2015-09-16,Japan prune Name,Work Apple,1.0
 2015-09-16,Siri radar verify ,Work Apple,1.0
 2015-09-16,Code review ,Work Apple,1.0
@@ -29,17 +27,14 @@ Date,Pomodoro,Project,Count
 2015-09-19,Meditation ,Exercises ,10.0
 2015-09-20,Meditation ,Exercises ,5.0
 2015-09-20,No Asshole rule ,Reading books ,1.0
-2015-09-21,"Emails, Call, run online errands",iPhone Calendar Event,3.0
 2015-09-21,Code review ,Work Apple,1.0
 2015-09-21,Siri radar verify ,Work Apple,3.0
 2015-09-22,Siri/Maps API Requirements,iPhone Calendar Event,3.0
 2015-09-22,Code review ,Work Apple,1.0
 2015-09-22,Siri radar verify ,Work Apple,5.0
-2015-09-23,"Emails, Call, run online errands",iPhone Calendar Event,1.0
 2015-09-23,RS strict name feature ,Work Apple,2.0
 2015-09-23,No Asshole rule ,Reading books ,1.0
 2015-09-24,Siri work,Work Apple,1.0
-2015-09-26,Check calendar and Reminders,iPhone Calendar Event,1.0
 2015-09-26,House clean,Default Project,5.0
 2015-09-27,House clean,Default Project,4.0
 2015-09-29,RS strict name feature ,Work Apple,2.0
@@ -69,14 +64,14 @@ Date,Pomodoro,Project,Count
 2015-11-08,Blog Medium,Online work,6.0
 2015-11-08,One intentional life,Podcast ,6.0
 2015-11-08,K-means Cluster,Machine learning,12.0
-2015-11-10,Current location,Work Apple,12.0
 2015-11-10,K-means Cluster,Machine learning,6.0
 2015-11-10,"Emails, Call, run online errands",iPhone Calendar Event,3.0
+2015-11-10,Current location,Work Apple,12.0
 2015-11-11,Effective engineer,Reading books ,9.0
 2015-11-12,One intentional life,Podcast ,1.0
 2015-11-14,Yoga,Exercises ,2.0
-2015-11-14,One intentional life,Podcast ,1.0
 2015-11-14,House clean,Default Project,6.0
+2015-11-14,One intentional life,Podcast ,1.0
 2015-11-15,Bills Errands,Online work,2.0
 2015-11-15,One intentional life,Podcast ,4.0
 2015-11-16,Note to Self,Podcast ,1.0
@@ -106,59 +101,46 @@ Date,Pomodoro,Project,Count
 2016-01-14,2016 goal planning,Tentative 2016 goals,2.0
 2016-01-14,Bullet journal,Tentative 2016 goals,1.0
 2016-01-15,Send email on POI plugin,Work,3.0
-2016-01-16,300 miles run,Health goal,1.0
-2016-01-16,Meditation,Habbit,2.0
 2016-01-16,Yoga,Habbit,1.0
-2016-01-16,Weekly review every week,Habbit,1.0
-2016-01-16,Clean house,Habbit,1.0
 2016-01-16,Chain MM match A/B,Work Apple,2.0
 2016-01-16,Remove definitive,Work Apple,3.0
-2016-01-17,Pay Hemal rent,Sat 16th,2.0
+2016-01-17,Pay Hemal rent,Sat 16th,1.0
 2016-01-17,But running shoes,Sun 17th Jan,1.0
-2016-01-18,Gym thrice a week,Habbit,3.0
-2016-01-18,K-means blog,Machine learning,5.0
 2016-01-18,Mining massive data set,ML related,4.0
+2016-01-18,K-means blog,Machine learning,5.0
 2016-01-19,Read Bhagavad Gita,Reading,1.0
 2016-01-19,MM Chain category subsume name,A/B projects,7.0
-2016-01-20,Design doc,SATR,3.0
-2016-01-20,MM Chain category subsume name,A/B projects,1.0
 2016-01-20,Planning,SATR,2.0
-2016-01-21,Gym thrice a week,Habbit,9.0
+2016-01-20,MM Chain category subsume name,A/B projects,1.0
+2016-01-20,Design doc,SATR,3.0
 2016-01-23,Yoga,Habbit,3.0
-2016-01-23,Clean house,Habbit,6.0
-2016-01-23,Meditation,Habbit,3.0
-2016-01-25,Gym thrice a week,Habbit,2.0
 2016-01-28,Bills Errands,Online work,1.0
 2016-01-28,Poi chrome plugin,Apple Projects,9.0
-2016-01-29,Poi chrome plugin,Apple Projects,3.0
-2016-01-30,Weekly review every week,Habbit,1.0
-2016-01-30,300 miles run,Health goal,1.0
-2016-01-30,House clean,Default Project,2.0
 2016-01-30,Foursquare Coding,ML related,1.0
+2016-01-30,Weekly review every week,Habbit,1.0
+2016-01-30,House clean,Default Project,2.0
+2016-01-30,300 miles run,Health goal,1.0
 2016-01-31,House clean,Default Project,5.0
 2016-01-31,Foursquare Coding,ML related,1.0
-2016-02-01,Read Bhagavad Gita,Reading,1.0
 2016-02-01,Debug Satr,SATR,5.0
 2016-02-01,One Intentional life Morning routines Ep 10,Podcast ,2.0
 2016-02-01,300 miles run,Health goal,1.0
 2016-02-02,Pref name first IBE,A/B projects,7.0
 2016-02-03,HIIT,Health goal,2.0
-2016-02-03,Read Bhagavad Gita,Reading,1.0
 2016-02-03,One Intentional life Morning routines Ep 10,Podcast ,1.0
 2016-02-04,Pref name first IBE,A/B projects,4.0
-2016-02-05,Arms day,Habbit,1.0
-2016-02-05,"Emails, Call, run online errands",iPhone Calendar Event,1.0
+2016-02-05,Foursquare Coding,ML related,2.0
 2016-02-05,HIIT,Health goal,1.0
 2016-02-05,Pref name first IBE,A/B projects,1.0
-2016-02-05,Foursquare Coding,ML related,2.0
-2016-02-06,Foursquare Coding,ML related,2.0
-2016-02-06,Weekly review every week,Habbit,1.0
-2016-02-06,Daily Review,Habbit,2.0
+2016-02-05,Arms day,Habbit,1.0
 2016-02-06,300 miles run,Health goal,2.0
+2016-02-06,Foursquare Coding,ML related,2.0
+2016-02-06,Daily Review,Habbit,2.0
+2016-02-06,Weekly review every week,Habbit,1.0
 2016-02-06,Foursquare blogging,ML related,4.0
 2016-02-07,Pref name first IBE,A/B projects,12.0
-2016-02-08,Legs day,Habbit,1.0
 2016-02-08,HIIT,Health goal,1.0
+2016-02-08,Legs day,Habbit,1.0
 2016-02-10,HIIT,Health goal,1.0
 2016-02-13,Meditation,Habbit,1.0
 2016-02-13,300 miles run,Health goal,2.0
@@ -188,24 +170,24 @@ Date,Pomodoro,Project,Count
 2016-02-29,One Intentional life Speed reading Ep 14,Podcast ,1.0
 2016-02-29,Mining massive data set,ML related,4.0
 2016-03-01,Collect notes,Siri API work,3.0
-2016-03-02,300 miles run,Health goal,1.0
+2016-03-02,Foursquare blogging,ML related,6.0
 2016-03-02,Pref name first IBE,A/B projects,1.0
 2016-03-02,3 most imp. task for tomorrow,iPhone Calendar Event,1.0
 2016-03-02,Collect notes,Siri API work,5.0
-2016-03-02,Foursquare blogging,ML related,6.0
-2016-03-03,Pref name first IBE,A/B projects,2.0
-2016-03-03,Collect notes,Siri API work,1.0
+2016-03-02,300 miles run,Health goal,1.0
 2016-03-03,Code review 2,Work Apple,2.0
+2016-03-03,Collect notes,Siri API work,1.0
+2016-03-03,Pref name first IBE,A/B projects,2.0
 2016-03-04,Foursquare blogging,ML related,2.0
 2016-03-05,Clean house,Habbit,1.0
 2016-03-05,HIIT,Health goal,1.0
-2016-03-05,Meditation,Habbit,2.0
 2016-03-05,"Errands, Email, calls",Habbit,3.0
-2016-03-06,Mining massive data set,ML related,7.0
-2016-03-06,Weekly review every week,Habbit,1.0
-2016-03-06,One Intentional life Speed reading Ep 14,Podcast ,1.0
-2016-03-06,Sort Pocket Read It later,Habbit,1.0
+2016-03-05,Meditation,Habbit,2.0
 2016-03-06,"Errands, Email, calls",Habbit,2.0
+2016-03-06,Sort Pocket Read It later,Habbit,1.0
+2016-03-06,One Intentional life Speed reading Ep 14,Podcast ,1.0
+2016-03-06,Weekly review every week,Habbit,1.0
+2016-03-06,Mining massive data set,ML related,7.0
 2016-03-06,Foursquare blogging,ML related,1.0
 2016-03-07,ADHD experts podcast,Podcast,2.0
 2016-03-07,Figure out library D3,ML related,2.0
@@ -224,26 +206,26 @@ Date,Pomodoro,Project,Count
 2016-03-11,ADHD re-wired,Podcast,1.0
 2016-03-11,Medium Blogging,Habbit,2.0
 2016-03-11,Pomodoro Coding,ML related,4.0
-2016-03-12,Pomodoro Coding,ML related,4.0
 2016-03-12,Clean house,Habbit,2.0
+2016-03-12,Pomodoro Coding,ML related,4.0
 2016-03-12,Meditation,Habbit,1.0
 2016-03-12,ADHD re-wired,Podcast,1.0
 2016-03-12,"Errands, Email, calls",Habbit,5.0
 2016-03-12,300 miles run,Health goal,2.0
 2016-03-13,Pomodoro Coding,ML related,1.0
 2016-03-13,ADHD re-wired,Podcast,1.0
-2016-03-13,"Errands, Email, calls",Habbit,1.0
 2016-03-13,Mining massive data set,ML related,5.0
-2016-03-14,ADHD re-wired,Podcast,1.0
+2016-03-13,"Errands, Email, calls",Habbit,1.0
 2016-03-14,One Intentional life Speed reading Ep 14,Podcast ,1.0
+2016-03-14,ADHD re-wired,Podcast,1.0
 2016-03-14,300 miles run,Health goal,1.0
 2016-03-15,Weekly review every week,Habbit,1.0
 2016-03-15,Collect notes,Siri API work,1.0
+2016-03-16,Clean house,Habbit,1.0
 2016-03-16,Pomodoro Coding,ML related,3.0
 2016-03-16,300 miles run,Health goal,1.0
-2016-03-16,Clean house,Habbit,1.0
-2016-03-16,Collect notes,Siri API work,2.0
 2016-03-16,Meditation,Habbit,2.0
+2016-03-16,Collect notes,Siri API work,2.0
 2016-03-21,Protocol changes,Siri API work,4.0
 2016-03-21,300 miles run,Health goal,1.0
 2016-03-22,ADHD re-wired,Podcast,1.0
@@ -255,8 +237,8 @@ Date,Pomodoro,Project,Count
 2016-03-24,Meditation,Habbit,1.0
 2016-03-25,ADHD re-wired,Podcast,2.0
 2016-03-27,300 miles run,Health goal,1.0
-2016-03-29,ADHD re-wired,Podcast,2.0
 2016-03-29,300 miles run,Health goal,1.0
+2016-03-29,ADHD re-wired,Podcast,2.0
 2016-03-29,NAME Global Results,A/B projects,7.0
 2016-03-30,NAME Global Results,A/B projects,3.0
 2016-03-30,Clean house,Habbit,1.0
@@ -281,7 +263,6 @@ Date,Pomodoro,Project,Count
 2016-04-09,"Errands, Email, calls",Habbit,5.0
 2016-04-10,Yoga,Habbit,2.0
 2016-04-10,SciPy 2013 part1,ML related,4.0
-2016-04-10,Clean house,Habbit,3.0
 2016-04-10,SciPy 2013 part2,ML related,4.0
 2016-04-10,Meditation,Habbit,1.0
 2016-04-11,NAME Global Results,A/B projects,5.0
@@ -292,18 +273,18 @@ Date,Pomodoro,Project,Count
 2016-04-12,NAME Global Results,A/B projects,3.0
 2016-04-14,Arms day,Habbit,1.0
 2016-04-14,Biking stationary,Habbit,1.0
-2016-04-16,Yoga,Habbit,1.0
 2016-04-16,Biking stationary,Habbit,1.0
 2016-04-16,Clean house,Habbit,1.0
+2016-04-16,Yoga,Habbit,1.0
 2016-04-16,SFE Navigation type aware results,Siri API work,8.0
-2016-04-17,"Errands, Email, calls",Habbit,5.0
 2016-04-17,Core strength,Habbit,2.0
+2016-04-17,"Errands, Email, calls",Habbit,5.0
 2016-04-18,Sort Pocket Read It later,Habbit,1.0
 2016-04-18,SFE Navigation type aware results,Siri API work,8.0
 2016-04-19,Meditation,Habbit,1.0
-2016-04-19,Core strength,Habbit,1.0
-2016-04-19,SFE Navigation type aware results,Siri API work,4.0
 2016-04-19,Code review 2,Work Apple,2.0
+2016-04-19,SFE Navigation type aware results,Siri API work,4.0
+2016-04-19,Core strength,Habbit,1.0
 2016-04-21,HIIT,Health goal,1.0
 2016-04-21,Core strength,Habbit,1.0
 2016-04-23,Core strength,Habbit,1.0
@@ -312,8 +293,8 @@ Date,Pomodoro,Project,Count
 2016-04-24,Udacity,ML related,5.0
 2016-04-24,[Assignment 2 ](https://www.udacity.com/cours...,ML related,2.0
 2016-04-24,Cooking,Habbit,3.0
-2016-04-24,SFE Navigation type aware results,Siri API work,2.0
 2016-04-24,"Errands, Email, calls",Habbit,1.0
+2016-04-24,SFE Navigation type aware results,Siri API work,2.0
 2016-04-25,HBR: Guide to manage up and across,Reading,2.0
 2016-04-26,HIIT,Health goal,1.0
 2016-04-26,Arms day,Habbit,1.0
@@ -333,12 +314,12 @@ Date,Pomodoro,Project,Count
 2016-05-01,SciPy 2013 part3,ML related,1.0
 2016-05-01,Panda SciPy worksheet,ML related,2.0
 2016-05-02,Weekly review every week,Habbit,1.0
-2016-05-03,Pref name first IBE,A/B projects,4.0
-2016-05-03,Panda SciPy worksheet,ML related,1.0
 2016-05-03,And query radar,Work Apple,3.0
+2016-05-03,Panda SciPy worksheet,ML related,1.0
+2016-05-03,Pref name first IBE,A/B projects,4.0
 2016-05-03,"Errands, Email, calls",Habbit,1.0
-2016-05-04,Clean house,Habbit,1.0
 2016-05-04,Analysis,32 A/B: Viewport expansion,2.0
+2016-05-04,Clean house,Habbit,1.0
 2016-05-04,Panda SciPy worksheet,ML related,4.0
 2016-05-05,Analysis,32 A/B: Viewport expansion,9.0
 2016-05-05,Panda SciPy worksheet,ML related,2.0
@@ -348,12 +329,12 @@ Date,Pomodoro,Project,Count
 2016-05-06,Panda SciPy worksheet,ML related,2.0
 2016-05-07,Clean house,Habbit,2.0
 2016-05-08,Panda SciPy worksheet,ML related,6.0
+2016-05-08,Beyond Todo list,Podcast,1.0
 2016-05-08,500 miles bike,Health goal,3.0
 2016-05-08,Beyond ToDoist podcast,Podcast ,1.0
-2016-05-08,Beyond Todo list,Podcast,1.0
-2016-05-09,"Errands, Email, calls",Habbit,1.0
-2016-05-09,Analysis,32 A/B: Viewport expansion,6.0
 2016-05-09,Pref name first IBE,A/B projects,1.0
+2016-05-09,Analysis,32 A/B: Viewport expansion,6.0
+2016-05-09,"Errands, Email, calls",Habbit,1.0
 2016-05-10,Analysis,32 A/B: Viewport expansion,7.0
 2016-05-10,Biking stationary,Habbit,1.0
 2016-05-10,Pref name first IBE,A/B projects,4.0
@@ -372,11 +353,11 @@ Date,Pomodoro,Project,Count
 2016-05-14,"Errands, Email, calls",Habbit,4.0
 2016-05-15,Legs day,Habbit,1.0
 2016-05-15,Biking stationary,Habbit,1.0
-2016-05-15,Meditation,Habbit,1.0
-2016-05-15,Sort Pocket Read It later,Habbit,1.0
-2016-05-15,Yoga,Habbit,1.0
-2016-05-15,"Model building 45,C",Name ranking 45,1.0
 2016-05-15,Arms day,Habbit,1.0
+2016-05-15,Meditation,Habbit,1.0
+2016-05-15,"Model building 45,C",Name ranking 45,1.0
+2016-05-15,Yoga,Habbit,1.0
+2016-05-15,Sort Pocket Read It later,Habbit,1.0
 2016-05-16,Weekly review every week,Habbit,1.0
 2016-05-16,"Model building 45,C",Name ranking 45,4.0
 2016-05-16,"Errands, Email, calls",Habbit,1.0
@@ -395,53 +376,53 @@ Date,Pomodoro,Project,Count
 2016-05-20,NAME Global Results,A/B projects,3.0
 2016-05-22,Arms day,Habbit,1.0
 2016-05-23,"Errands, Email, calls",Habbit,2.0
+2016-05-24,Biking stationary,Habbit,1.0
 2016-05-24,Cooking,Habbit,1.0
 2016-05-24,Gym treadmill run,Habbit,1.0
-2016-05-24,Biking stationary,Habbit,1.0
 2016-05-26,Daily Review,Habbit,1.0
 2016-05-27,Daily Review,Habbit,1.0
 2016-05-27,"Errands, Email, calls",Habbit,3.0
-2016-05-28,Arms day,Habbit,1.0
 2016-05-28,Sort Pocket Read It later,Habbit,2.0
+2016-05-28,Arms day,Habbit,1.0
 2016-05-28,Core strength,Habbit,1.0
 2016-05-29,Foursquare Coding,ML related,2.0
-2016-05-29,Co-occurence matrix,ML related,3.0
-2016-05-29,Cooking,Habbit,3.0
 2016-05-29,Gym treadmill run,Habbit,1.0
+2016-05-29,Cooking,Habbit,3.0
+2016-05-29,Co-occurence matrix,ML related,3.0
 2016-05-29,Foursquare blogging,ML related,3.0
 2016-05-30,Cooking,Habbit,1.0
 2016-05-30,Pomodoro Coding,ML related,13.0
 2016-05-31,Beyond ToDoist podcast,Podcast ,1.0
 2016-05-31,Pomodoro Coding,ML related,1.0
 2016-06-01,Analysis,32 A/B: Viewport expansion,3.0
-2016-06-01,Arms day,Habbit,2.0
 2016-06-01,Presentation and design,32 A/B: Viewport expansion,1.0
-2016-06-01,One intentional life,Podcast ,1.0
 2016-06-01,MM Chain category subsume name,A/B projects,2.0
+2016-06-01,One intentional life,Podcast ,1.0
+2016-06-01,Arms day,Habbit,2.0
 2016-06-02,Presentation and design,32 A/B: Viewport expansion,4.0
 2016-06-02,Analysis,32 A/B: Viewport expansion,1.0
-2016-06-03,Legs day,Habbit,2.0
 2016-06-03,Code Model Loader,32 A/B: Viewport expansion,6.0
+2016-06-03,Legs day,Habbit,2.0
 2016-06-04,Cooking,Habbit,2.0
 2016-06-04,Foursquare blogging,ML related,2.0
 2016-06-05,Cooking,Habbit,3.0
 2016-06-05,Pomodoro Coding,ML related,4.0
 2016-06-05,Foursquare blogging,ML related,2.0
-2016-06-06,Code Model Loader,32 A/B: Viewport expansion,4.0
 2016-06-06,Chest,Habbit,2.0
+2016-06-06,Code Model Loader,32 A/B: Viewport expansion,4.0
 2016-06-06,Biking stationary,Habbit,1.0
 2016-06-07,Code Model Loader,32 A/B: Viewport expansion,5.0
 2016-06-08,Code Model Loader,32 A/B: Viewport expansion,15.0
 2016-06-09,Presentation and design,32 A/B: Viewport expansion,11.0
 2016-06-09,Code Model Loader,32 A/B: Viewport expansion,3.0
 2016-06-10,Code Model Loader,32 A/B: Viewport expansion,3.0
-2016-06-10,Arms day,Habbit,1.0
 2016-06-10,Weekly review every week,Habbit,1.0
+2016-06-10,Arms day,Habbit,1.0
 2016-06-12,Pomodoro Coding,ML related,2.0
-2016-06-12,Gym treadmill run,Habbit,1.0
-2016-06-12,Cooking,Habbit,1.0
-2016-06-12,"Errands, Email, calls",Habbit,5.0
 2016-06-12,Core strength,Habbit,1.0
+2016-06-12,Cooking,Habbit,1.0
+2016-06-12,Gym treadmill run,Habbit,1.0
+2016-06-12,"Errands, Email, calls",Habbit,5.0
 2016-06-13,Competitive analysis,Other work projects,9.0
 2016-06-13,Pomodoro Coding,ML related,1.0
 2016-06-14,Competitive analysis,Other work projects,14.0
@@ -476,8 +457,8 @@ Date,Pomodoro,Project,Count
 2016-06-29,Getting ready for first Pomodoro,Bad habbits,1.0
 2016-06-29,Device expansion strategy,32 A/B: Viewport expansion,2.0
 2016-07-01,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-07-03,Beyond ToDoist podcast,Podcast ,1.0
 2016-07-03,Lean in by Sheryl,Reading books ,4.0
+2016-07-03,Beyond ToDoist podcast,Podcast ,1.0
 2016-07-10,Cooking,Habbit,1.0
 2016-07-10,Pomodoro Coding,ML related,1.0
 2016-07-11,Cooking,Habbit,1.0
@@ -499,9 +480,9 @@ Date,Pomodoro,Project,Count
 2016-08-07,Yoga,Habbit,2.0
 2016-08-08,Arms day,Habbit,1.0
 2016-08-10,Lecture 5,Neural Networks Machine Learning,2.0
-2016-08-11,Legs day,Habbit,1.0
-2016-08-11,Learning Spark,Reading,2.0
 2016-08-11,Chest,Habbit,1.0
+2016-08-11,Learning Spark,Reading,2.0
+2016-08-11,Legs day,Habbit,1.0
 2016-08-12,"Lecture 9 improve generalization, Full Bayesi...",Neural Networks Machine Learning,1.0
 2016-08-12,Lecture 6 Mini Batch,Neural Networks Machine Learning,2.0
 2016-08-12,"Lecture 7 Model Seq, RNN, LTSM",Neural Networks Machine Learning,5.0
@@ -511,17 +492,17 @@ Date,Pomodoro,Project,Count
 2016-08-13,Cooking,Habbit,2.0
 2016-08-13,Recap all,Neural Networks Machine Learning,1.0
 2016-08-14,One intentional life,Podcast ,1.0
-2016-08-15,Lecture 1: Introduction,Convolutional NN for Visual Recognition,2.0
 2016-08-15,Gym treadmill run,Habbit,1.0
-2016-08-15,Planning,Deep Learning,2.0
+2016-08-15,Lecture 1: Introduction,Convolutional NN for Visual Recognition,2.0
 2016-08-15,Core strength,Habbit,1.0
+2016-08-15,Planning,Deep Learning,2.0
 2016-08-15,Lecture 2: Image classification KNN etc,Convolutional NN for Visual Recognition,2.0
 2016-08-16,"Lecture 3: Linear classification, Loss functi...",Convolutional NN for Visual Recognition,3.0
 2016-08-16,"Lecture 4: Backprop, Neural N/W 1",Convolutional NN for Visual Recognition,2.0
 2016-08-16,Getting ready for first Pomodoro,Bad habbits,1.0
 2016-08-16,Gym treadmill run,Habbit,1.0
-2016-08-17,"Lecture 4: Backprop, Neural N/W 1",Convolutional NN for Visual Recognition,3.0
 2016-08-17,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,2.0
+2016-08-17,"Lecture 4: Backprop, Neural N/W 1",Convolutional NN for Visual Recognition,3.0
 2016-08-18,Arms day,Habbit,1.0
 2016-08-20,Lean in by Sheryl,Reading books ,1.0
 2016-08-21,HIIT,Health goal,1.0
@@ -532,39 +513,39 @@ Date,Pomodoro,Project,Count
 2016-08-22,Gym treadmill run,Habbit,1.0
 2016-08-23,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,2.0
 2016-08-23,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,5.0
-2016-08-24,Gym treadmill run,Habbit,1.0
 2016-08-24,Legs day,Habbit,1.0
+2016-08-24,Gym treadmill run,Habbit,1.0
 2016-08-24,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,4.0
 2016-08-25,Biking stationary,Habbit,1.0
 2016-08-26,HIIT,Health goal,1.0
 2016-08-26,Meditation,Habbit,1.0
 2016-08-27,Cooking,Habbit,1.0
 2016-08-27,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,14.0
-2016-08-29,Gym treadmill run,Habbit,1.0
 2016-08-29,Yoga,Habbit,1.0
+2016-08-29,Gym treadmill run,Habbit,1.0
 2016-08-29,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,2.0
 2016-08-31,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,4.0
 2016-08-31,Gym treadmill run,Habbit,1.0
 2016-08-31,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-09-01,Legs day,Habbit,1.0
 2016-09-01,Gym treadmill run,Habbit,1.0
+2016-09-01,Legs day,Habbit,1.0
 2016-09-01,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,3.0
 2016-09-02,Lean in by Sheryl,Reading books ,3.0
 2016-09-02,Assignment 1 Neural network,Convolutional NN for Visual Recognition,3.0
 2016-09-02,HIIT,Health goal,1.0
 2016-09-05,Lean in by Sheryl,Reading books ,3.0
-2016-09-08,Assignment 1 Neural network,Convolutional NN for Visual Recognition,1.0
 2016-09-08,Gym treadmill run,Habbit,1.0
 2016-09-08,Core strength,Habbit,1.0
+2016-09-08,Assignment 1 Neural network,Convolutional NN for Visual Recognition,1.0
 2016-09-09,Assignment 1 Neural network,Convolutional NN for Visual Recognition,3.0
 2016-09-11,Meditation ,Exercises ,1.0
 2016-09-11,HIIT,Health goal,1.0
 2016-09-11,Cooking,Habbit,3.0
 2016-09-11,Assignment 1 Neural network,Convolutional NN for Visual Recognition,2.0
 2016-09-12,Assignment 1 Neural network,Convolutional NN for Visual Recognition,4.0
-2016-09-13,Assignment 1 Neural network,Convolutional NN for Visual Recognition,4.0
 2016-09-13,Biking stationary,Habbit,1.0
 2016-09-13,Core strength,Habbit,1.0
+2016-09-13,Assignment 1 Neural network,Convolutional NN for Visual Recognition,4.0
 2016-09-14,Lecture 6 Neural Nets and Intro. to Cov Nets,Convolutional NN for Visual Recognition,4.0
 2016-09-15,Lecture 7 : Convolutional Neural Networks,Convolutional NN for Visual Recognition,4.0
 2016-09-15,Cooking,Habbit,3.0
@@ -580,8 +561,8 @@ Date,Pomodoro,Project,Count
 2016-09-21,Recap,Convolutional NN for Visual Recognition,2.0
 2016-09-22,Assignment 2: Fully-connected Neural Network,Convolutional NN for Visual Recognition,13.0
 2016-09-22,Cooking,Habbit,3.0
-2016-09-25,Assignment 2: Fully-connected Neural Network,Convolutional NN for Visual Recognition,3.0
 2016-09-25,Lecture 6 Neural Nets and Intro. to Cov Nets,Convolutional NN for Visual Recognition,1.0
+2016-09-25,Assignment 2: Fully-connected Neural Network,Convolutional NN for Visual Recognition,3.0
 2016-09-26,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,2.0
 2016-09-26,Gym treadmill run,Habbit,1.0
 2016-09-27,Biking stationary,Habbit,1.0
@@ -594,33 +575,33 @@ Date,Pomodoro,Project,Count
 2016-09-30,Assignment 2: Dropout,Convolutional NN for Visual Recognition,4.0
 2016-10-05,Getting ready for first Pomodoro,Bad habbits,2.0
 2016-10-05,Core strength,Habbit,1.0
-2016-10-05,Gym treadmill run,Habbit,1.0
 2016-10-05,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,5.0
+2016-10-05,Gym treadmill run,Habbit,1.0
 2016-10-06,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,15.0
 2016-10-06,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-10-07,Yoga,Habbit,1.0
 2016-10-07,Core strength,Habbit,1.0
+2016-10-07,Yoga,Habbit,1.0
 2016-10-07,Biking stationary,Habbit,1.0
-2016-10-10,Core strength,Habbit,1.0
-2016-10-10,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,2.0
 2016-10-10,Gym treadmill run,Habbit,1.0
-2016-10-11,Getting ready for first Pomodoro,Bad habbits,2.0
+2016-10-10,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,2.0
+2016-10-10,Core strength,Habbit,1.0
 2016-10-11,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,5.0
 2016-10-11,Sleep on time,Habbit,1.0
-2016-10-12,Gym treadmill run,Habbit,1.0
-2016-10-12,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,6.0
+2016-10-11,Getting ready for first Pomodoro,Bad habbits,2.0
 2016-10-12,Getting ready for first Pomodoro,Bad habbits,1.0
+2016-10-12,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,6.0
+2016-10-12,Gym treadmill run,Habbit,1.0
 2016-10-13,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,6.0
-2016-10-14,Biking stationary,Habbit,1.0
 2016-10-14,Core strength,Habbit,1.0
+2016-10-14,Biking stationary,Habbit,1.0
 2016-10-15,Lean in by Sheryl,Reading books ,3.0
 2016-10-17,Biking stationary,Habbit,1.0
 2016-10-20,"Lecture 10 :- Recurrent Neural Networks, Imag...",Convolutional NN for Visual Recognition,2.0
 2016-10-20,Getting ready for first Pomodoro,Bad habbits,2.0
 2016-10-20,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,6.0
 2016-10-20,Core strength,Habbit,1.0
-2016-10-21,Gym treadmill run,Habbit,1.0
 2016-10-21,Core strength,Habbit,1.0
+2016-10-21,Gym treadmill run,Habbit,1.0
 2016-10-24,Lean in by Sheryl,Reading books ,2.0
 2016-10-26,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,6.0
 2016-10-26,Getting ready for first Pomodoro,Bad habbits,2.0
@@ -628,11 +609,92 @@ Date,Pomodoro,Project,Count
 2016-10-27,Core strength,Habbit,1.0
 2016-10-28,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,1.0
 2016-10-28,Getting ready for first Pomodoro,Bad habbits,3.0
-2016-11-02,Yoga,Habbit,1.0
 2016-11-02,Biking stationary,Habbit,1.0
+2016-11-02,Yoga,Habbit,1.0
 2016-11-03,Weekly review every week,Habbit,1.0
 2016-11-03,Blog CS213N Assignment 1 and 2,Convolutional NN for Visual Recognition,4.0
 2016-11-03,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,6.0
 2016-11-03,Getting ready for first Pomodoro,Bad habbits,2.0
 2016-11-04,Gym treadmill run,Habbit,1.0
+2016-11-06,Cooking,Habbit,4.0
 2016-11-06,"Lecture 10 :- Recurrent Neural Networks, Imag...",Convolutional NN for Visual Recognition,5.0
+2016-11-07,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,1.0
+2016-11-09,Arms day,Habbit,1.0
+2016-11-09,Gym treadmill run,Habbit,1.0
+2016-11-10,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,1.0
+2016-11-10,Getting ready for first Pomodoro,Bad habbits,2.0
+2016-11-11,Arms day,Habbit,1.0
+2016-11-11,Gym treadmill run,Habbit,1.0
+2016-11-12,Meditation ,Exercises ,1.0
+2016-12-09,Core strength,Habbit,1.0
+2016-12-12,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,5.0
+2016-12-12,Getting ready for first Pomodoro,Bad habbits,2.0
+2016-12-13,Core strength,Habbit,1.0
+2016-12-14,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,4.0
+2016-12-14,Getting ready for first Pomodoro,Bad habbits,3.0
+2016-12-15,Gym treadmill run,Habbit,1.0
+2016-12-15,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,5.0
+2016-12-15,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,11.0
+2016-12-16,Core strength,Habbit,1.0
+2016-12-19,Core strength,Habbit,2.0
+2016-12-20,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,7.0
+2016-12-20,Core strength,Habbit,2.0
+2016-12-21,Weekly review every week,Habbit,1.0
+2016-12-22,Lecture 7 : Convolutional Neural Networks,Convolutional NN for Visual Recognition,4.0
+2017-01-05,Blog assignment 3,Convolutional NN for Visual Recognition,3.0
+2017-01-05,Core strength,Habbit,1.0
+2017-01-08,The Higher Taste,2017 Books,2.0
+2017-01-09,Core strength,Habbit,1.0
+2017-01-09,4-Hour Body Tim Ferris,2017 Podcast,2.0
+2017-01-09,Gym treadmill run,Habbit,1.0
+2017-01-10,4-Hour Body Tim Ferris,2017 Podcast,3.0
+2017-01-11,Lecture 8 - Localization and Detection,Convolutional NN for Visual Recognition,1.0
+2017-01-11,Recap,Convolutional NN for Visual Recognition,6.0
+2017-01-12,4-Hour Body Tim Ferris,2017 Podcast,1.0
+2017-01-12,Gym treadmill run,Habbit,1.0
+2017-01-14,Cooking,Habbit,4.0
+2017-01-14,Recap,Convolutional NN for Visual Recognition,3.0
+2017-01-15,Recap,Convolutional NN for Visual Recognition,7.0
+2017-01-15,The Art of Procastination,2017 Books,2.0
+2017-01-16,Recap,Convolutional NN for Visual Recognition,8.0
+2017-01-16,Algo recap,2017 Job change,6.0
+2017-01-16,Gym treadmill run,Habbit,1.0
+2017-01-20,4-Hour Body Tim Ferris,2017 Podcast,1.0
+2017-01-20,Core strength,Habbit,1.0
+2017-01-20,Gym treadmill run,Habbit,1.0
+2017-01-20,Sort Pocket Read It later,Habbit,2.0
+2017-01-21,Weekly review every week,Habbit,1.0
+2017-01-21,Assignment 3: Image Generation,Convolutional NN for Visual Recognition,5.0
+2017-01-21,Assignment 3: Image Gradients,Convolutional NN for Visual Recognition,5.0
+2017-01-21,Daily Review,Habbit,1.0
+2017-01-21,Sort Pocket Read It later,Habbit,1.0
+2017-01-22,Assignment 3: Image Generation,Convolutional NN for Visual Recognition,1.0
+2017-01-22,The Art of Procastination,2017 Books,2.0
+2017-01-23,Core strength,Habbit,2.0
+2017-01-24,Core strength,Habbit,2.0
+2017-01-24,Getting ready for first Pomodoro,Bad habbits,2.0
+2017-01-24,Recap,Convolutional NN for Visual Recognition,1.0
+2017-01-24,"Lecture 9 : Visualization, Deep Dream, Neural...",Convolutional NN for Visual Recognition,4.0
+2017-01-24,Blog kapild,Convolutional NN for Visual Recognition,1.0
+2017-01-25,4-Hour Body Tim Ferris,2017 Podcast,3.0
+2017-01-25,Blog kapild,Convolutional NN for Visual Recognition,5.0
+2017-01-26,Lecture 12: Deep learning library,Convolutional NN for Visual Recognition,3.0
+2017-01-26,Getting ready for first Pomodoro,Bad habbits,2.0
+2017-01-26,Blog kapild,Convolutional NN for Visual Recognition,7.0
+2017-01-27,Lecture 1: From ML to Deep learning,Google Udacity Deep learning,1.0
+2017-01-27,Getting ready for first Pomodoro,Bad habbits,4.0
+2017-01-29,Convolutional Neural Networks,Google Udacity Deep learning,1.0
+2017-01-29,Getting ready for first Pomodoro,Bad habbits,2.0
+2017-01-29,Lecture 1: From ML to Deep learning,Google Udacity Deep learning,4.0
+2017-01-29,Lecture 2: Deep neural networks,Google Udacity Deep learning,9.0
+2017-01-29,Assignment 4: Convolutional Models,Google Udacity Deep learning,4.0
+2017-01-30,Assignment 4: Convolutional Models,Google Udacity Deep learning,4.0
+2017-01-30,Core strength,Habbit,2.0
+2017-01-30,Getting ready for first Pomodoro,Bad habbits,2.0
+2017-01-30,4-Hour Body Tim Ferris,2017 Podcast,2.0
+2017-01-31,Core strength,Habbit,1.0
+2017-01-31,Getting ready for first Pomodoro,Bad habbits,3.0
+2017-01-31,Planning,Deep Learning,4.0
+2017-01-31,Stair climb,Health goal,1.0
+2017-01-31,Assignment 4: Convolutional Models,Google Udacity Deep learning,2.0
+2017-02-01,Getting ready for first Pomodoro,Bad habbits,3.0

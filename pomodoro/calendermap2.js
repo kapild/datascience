@@ -40,7 +40,7 @@ var tooltip = d3.select("body")
 function generateDailyCalendar() {
   d3.select(".calender-map").html("");
   svg = d3.select(".calender-map").selectAll("svg")
-      .data(d3.range(2015, 2017))
+      .data(d3.range(2015, 2018))
     .enter().append("svg")
       .attr("width", '100%')
       .attr("data-height", '0.5678')

@@ -1,700 +1,1008 @@
 Date,Pomodoro,Project,Count
-2015-09-04,Grand canyon planning ,Default Project,1.0
-2015-09-05,Thich Nhat ,Reading books ,2.0
-2015-09-05,K means understanding ,Machine learning,3.0
-2015-09-06,K-means blogging ,Machine learning,2.0
-2015-09-06,K means understanding ,Machine learning,3.0
-2015-09-06,24 hour fitness ,Exercises ,2.0
-2015-09-06,No Asshole rule ,Reading books ,1.0
-2015-09-08,Hotfix,Work Apple,1.0
-2015-09-08,Siri work,Work Apple,6.0
-2015-09-09,Siri work,Work Apple,3.0
-2015-09-10,No Asshole rule ,Reading books ,2.0
-2015-09-10,En Category default ,Work Apple,2.0
-2015-09-11,Bin definitive issue ,Work Apple,2.0
-2015-09-11,Grand canyon planning ,Default Project,1.0
-2015-09-11,En Category default ,Work Apple,5.0
-2015-09-13,Linear Digression ,Podcast ,2.0
-2015-09-14,Japan prune Name,Work Apple,6.0
-2015-09-14,ResourceFactory discussion,iPhone Calendar Event,1.0
-2015-09-15,Japan prune Name,Work Apple,3.0
-2015-09-16,Japan prune Name,Work Apple,1.0
-2015-09-16,Siri radar verify ,Work Apple,1.0
-2015-09-16,Code review ,Work Apple,1.0
-2015-09-17,Japan prune Name,Work Apple,3.0
-2015-09-17,24 hour fitness ,Exercises ,1.0
-2015-09-18,Meditation ,Exercises ,6.0
-2015-09-19,Meditation ,Exercises ,10.0
-2015-09-20,Meditation ,Exercises ,5.0
-2015-09-20,No Asshole rule ,Reading books ,1.0
-2015-09-21,Code review ,Work Apple,1.0
-2015-09-21,Siri radar verify ,Work Apple,3.0
-2015-09-22,Siri/Maps API Requirements,iPhone Calendar Event,3.0
-2015-09-22,Code review ,Work Apple,1.0
-2015-09-22,Siri radar verify ,Work Apple,5.0
-2015-09-23,RS strict name feature ,Work Apple,2.0
-2015-09-23,No Asshole rule ,Reading books ,1.0
-2015-09-24,Siri work,Work Apple,1.0
-2015-09-26,House clean,Default Project,5.0
-2015-09-27,House clean,Default Project,4.0
-2015-09-29,RS strict name feature ,Work Apple,2.0
-2015-09-30,Awk blog,Machine learning,2.0
-2015-09-30,Siri radar verify ,Work Apple,2.0
-2015-10-01,"13,C",Work Apple,9.0
-2015-10-06,"13,C",Work Apple,2.0
-2015-10-07,"13,C",Work Apple,2.0
-2015-10-09,Siri Japan Cfer,Work Apple,3.0
-2015-10-11,"13,D",Work Apple,3.0
-2015-10-12,"13,D",Work Apple,1.0
-2015-10-13,"13,D",Work Apple,1.0
-2015-10-14,"13,D",Work Apple,2.0
-2015-10-18,RS strict name feature ,Work Apple,4.0
-2015-10-19,No Asshole rule ,Reading books ,2.0
-2015-10-31,Grand Canyon,Online work,2.0
-2015-11-01,K-means Cluster,Machine learning,2.0
-2015-11-01,Blog Medium,Online work,1.0
-2015-11-02,Effective engineer,Reading books ,2.0
-2015-11-02,One intentional life,Podcast ,1.0
-2015-11-03,Effective engineer,Reading books ,1.0
-2015-11-03,Blog Medium,Online work,1.0
-2015-11-04,Current location,Work Apple,3.0
-2015-11-06,Current location,Work Apple,1.0
-2015-11-07,Photography,Online work,3.0
-2015-11-08,Effective engineer,Reading books ,6.0
-2015-11-08,Blog Medium,Online work,6.0
-2015-11-08,One intentional life,Podcast ,6.0
-2015-11-08,K-means Cluster,Machine learning,12.0
-2015-11-10,K-means Cluster,Machine learning,6.0
-2015-11-10,"Emails, Call, run online errands",iPhone Calendar Event,3.0
-2015-11-10,Current location,Work Apple,12.0
-2015-11-11,Effective engineer,Reading books ,9.0
-2015-11-12,One intentional life,Podcast ,1.0
-2015-11-14,Yoga,Exercises ,2.0
-2015-11-14,House clean,Default Project,6.0
-2015-11-14,One intentional life,Podcast ,1.0
-2015-11-15,Bills Errands,Online work,2.0
-2015-11-15,One intentional life,Podcast ,4.0
-2015-11-16,Note to Self,Podcast ,1.0
-2015-11-16,Bills Errands,Online work,1.0
-2015-11-20,Effective engineer,Reading books ,3.0
-2015-11-21,One intentional life,Podcast ,2.0
-2015-11-30,Effective engineer,Reading books ,1.0
-2015-12-01,Effective engineer,Reading books ,2.0
-2015-12-04,Gym,Exercises ,3.0
-2015-12-06,One intentional life,Podcast ,1.0
-2015-12-07,Gym,Exercises ,3.0
-2015-12-07,K-means Cluster,Machine learning,2.0
-2015-12-07,One intentional life,Podcast ,3.0
-2015-12-08,Effective engineer,Reading books ,3.0
-2015-12-08,One intentional life,Podcast ,1.0
-2015-12-09,One intentional life,Podcast ,2.0
-2015-12-10,Gym,Exercises ,3.0
-2015-12-11,Effective engineer,Reading books ,1.0
-2015-12-13,Effective engineer,Reading books ,2.0
-2015-12-15,Gym,Exercises ,3.0
-2016-01-06,Test,Work Apple,2.0
-2016-01-12,One Intentional life Calendar,Podcast ,1.0
-2016-01-12,One Intentional Life Pomodoro Ep 9,Podcast ,1.0
-2016-01-12,One Intentional life Morning routines Ep 10,Podcast ,1.0
-2016-01-14,iPhone watch issue,Work,1.0
-2016-01-14,One Intentional life Morning routines Ep 10,Podcast ,1.0
-2016-01-14,2016 goal planning,Tentative 2016 goals,2.0
-2016-01-14,Bullet journal,Tentative 2016 goals,1.0
-2016-01-15,Send email on POI plugin,Work,3.0
-2016-01-16,Yoga,Habbit,1.0
-2016-01-16,Chain MM match A/B,Work Apple,2.0
-2016-01-16,Remove definitive,Work Apple,3.0
-2016-01-17,Pay Hemal rent,Sat 16th,1.0
-2016-01-17,But running shoes,Sun 17th Jan,1.0
-2016-01-18,Mining massive data set,ML related,4.0
-2016-01-18,K-means blog,Machine learning,5.0
-2016-01-19,Read Bhagavad Gita,Reading,1.0
-2016-01-19,MM Chain category subsume name,A/B projects,7.0
-2016-01-20,Planning,SATR,2.0
-2016-01-20,MM Chain category subsume name,A/B projects,1.0
-2016-01-20,Design doc,SATR,3.0
-2016-01-23,Yoga,Habbit,3.0
-2016-01-28,Bills Errands,Online work,1.0
-2016-01-28,Poi chrome plugin,Apple Projects,9.0
-2016-01-30,Foursquare Coding,ML related,1.0
-2016-01-30,Weekly review every week,Habbit,1.0
-2016-01-30,House clean,Default Project,2.0
-2016-01-30,300 miles run,Health goal,1.0
-2016-01-31,House clean,Default Project,5.0
-2016-01-31,Foursquare Coding,ML related,1.0
-2016-02-01,Debug Satr,SATR,5.0
-2016-02-01,One Intentional life Morning routines Ep 10,Podcast ,2.0
-2016-02-01,300 miles run,Health goal,1.0
-2016-02-02,Pref name first IBE,A/B projects,7.0
-2016-02-03,HIIT,Health goal,2.0
-2016-02-03,One Intentional life Morning routines Ep 10,Podcast ,1.0
-2016-02-04,Pref name first IBE,A/B projects,4.0
-2016-02-05,Foursquare Coding,ML related,2.0
-2016-02-05,HIIT,Health goal,1.0
-2016-02-05,Pref name first IBE,A/B projects,1.0
-2016-02-05,Arms day,Habbit,1.0
-2016-02-06,300 miles run,Health goal,2.0
-2016-02-06,Foursquare Coding,ML related,2.0
-2016-02-06,Daily Review,Habbit,2.0
-2016-02-06,Weekly review every week,Habbit,1.0
-2016-02-06,Foursquare blogging,ML related,4.0
-2016-02-07,Pref name first IBE,A/B projects,12.0
-2016-02-08,HIIT,Health goal,1.0
-2016-02-08,Legs day,Habbit,1.0
-2016-02-10,HIIT,Health goal,1.0
-2016-02-13,Meditation,Habbit,1.0
-2016-02-13,300 miles run,Health goal,2.0
-2016-02-16,Chest,Habbit,1.0
-2016-02-16,HIIT,Health goal,1.0
-2016-02-16,Pref name first IBE,A/B projects,6.0
-2016-02-17,Pref name first IBE,A/B projects,6.0
-2016-02-18,Pref name first IBE,A/B projects,4.0
-2016-02-19,Daily Review,Habbit,1.0
-2016-02-20,One intentional life Read it Later Ep 11,Podcast ,1.0
-2016-02-20,Clean house,Habbit,2.0
-2016-02-20,300 miles run,Health goal,2.0
-2016-02-21,One intentional life Read it Later Ep 11,Podcast ,2.0
-2016-02-22,One Intentional life Speed reading Ep 14,Podcast ,3.0
-2016-02-22,Pref name first IBE,A/B projects,5.0
-2016-02-23,Map fresh viewport,A/B projects,3.0
-2016-02-23,Pref name first IBE,A/B projects,2.0
-2016-02-24,Pref name first IBE,A/B projects,2.0
-2016-02-25,Pref name first IBE,A/B projects,5.0
-2016-02-26,Pref name first IBE,A/B projects,4.0
-2016-02-27,300 miles run,Health goal,2.0
-2016-02-28,Weekly review every week,Habbit,1.0
-2016-02-28,One Intentional life Speed reading Ep 14,Podcast ,2.0
-2016-02-28,Mining massive data set,ML related,2.0
-2016-02-28,Foursquare blogging,ML related,8.0
-2016-02-29,Foursquare blogging,ML related,1.0
-2016-02-29,One Intentional life Speed reading Ep 14,Podcast ,1.0
-2016-02-29,Mining massive data set,ML related,4.0
-2016-03-01,Collect notes,Siri API work,3.0
-2016-03-02,Foursquare blogging,ML related,6.0
-2016-03-02,Pref name first IBE,A/B projects,1.0
-2016-03-02,3 most imp. task for tomorrow,iPhone Calendar Event,1.0
-2016-03-02,Collect notes,Siri API work,5.0
-2016-03-02,300 miles run,Health goal,1.0
-2016-03-03,Code review 2,Work Apple,2.0
-2016-03-03,Collect notes,Siri API work,1.0
-2016-03-03,Pref name first IBE,A/B projects,2.0
-2016-03-04,Foursquare blogging,ML related,2.0
-2016-03-05,Clean house,Habbit,1.0
-2016-03-05,HIIT,Health goal,1.0
-2016-03-05,"Errands, Email, calls",Habbit,3.0
-2016-03-05,Meditation,Habbit,2.0
-2016-03-06,"Errands, Email, calls",Habbit,2.0
-2016-03-06,Sort Pocket Read It later,Habbit,1.0
-2016-03-06,One Intentional life Speed reading Ep 14,Podcast ,1.0
-2016-03-06,Weekly review every week,Habbit,1.0
-2016-03-06,Mining massive data set,ML related,7.0
-2016-03-06,Foursquare blogging,ML related,1.0
-2016-03-07,ADHD experts podcast,Podcast,2.0
-2016-03-07,Figure out library D3,ML related,2.0
-2016-03-07,Pref name first IBE,A/B projects,3.0
-2016-03-07,Pomodoro Coding,ML related,2.0
-2016-03-07,Collect notes,Siri API work,1.0
-2016-03-07,Protocol changes,Siri API work,3.0
-2016-03-07,ADHD re-wired,Podcast,2.0
-2016-03-08,Pomodoro Coding,ML related,6.0
-2016-03-08,Pref name first IBE,A/B projects,4.0
-2016-03-08,HIIT,Health goal,1.0
-2016-03-08,Collect notes,Siri API work,1.0
-2016-03-09,Pref name first IBE,A/B projects,2.0
-2016-03-10,Figure out library D3,ML related,1.0
-2016-03-10,Pomodoro Coding,ML related,2.0
-2016-03-11,ADHD re-wired,Podcast,1.0
-2016-03-11,Medium Blogging,Habbit,2.0
-2016-03-11,Pomodoro Coding,ML related,4.0
-2016-03-12,Clean house,Habbit,2.0
-2016-03-12,Pomodoro Coding,ML related,4.0
-2016-03-12,Meditation,Habbit,1.0
-2016-03-12,ADHD re-wired,Podcast,1.0
-2016-03-12,"Errands, Email, calls",Habbit,5.0
-2016-03-12,300 miles run,Health goal,2.0
-2016-03-13,Pomodoro Coding,ML related,1.0
-2016-03-13,ADHD re-wired,Podcast,1.0
-2016-03-13,Mining massive data set,ML related,5.0
-2016-03-13,"Errands, Email, calls",Habbit,1.0
-2016-03-14,One Intentional life Speed reading Ep 14,Podcast ,1.0
-2016-03-14,ADHD re-wired,Podcast,1.0
-2016-03-14,300 miles run,Health goal,1.0
-2016-03-15,Weekly review every week,Habbit,1.0
-2016-03-15,Collect notes,Siri API work,1.0
-2016-03-16,Clean house,Habbit,1.0
-2016-03-16,Pomodoro Coding,ML related,3.0
-2016-03-16,300 miles run,Health goal,1.0
-2016-03-16,Meditation,Habbit,2.0
-2016-03-16,Collect notes,Siri API work,2.0
-2016-03-21,Protocol changes,Siri API work,4.0
-2016-03-21,300 miles run,Health goal,1.0
-2016-03-22,ADHD re-wired,Podcast,1.0
-2016-03-22,Protocol changes,Siri API work,3.0
-2016-03-23,Protocol changes,Siri API work,1.0
-2016-03-23,"Errands, Email, calls",Habbit,1.0
-2016-03-24,HIIT,Health goal,1.0
-2016-03-24,Protocol changes,Siri API work,1.0
-2016-03-24,Meditation,Habbit,1.0
-2016-03-25,ADHD re-wired,Podcast,2.0
-2016-03-27,300 miles run,Health goal,1.0
-2016-03-29,300 miles run,Health goal,1.0
-2016-03-29,ADHD re-wired,Podcast,2.0
-2016-03-29,NAME Global Results,A/B projects,7.0
-2016-03-30,NAME Global Results,A/B projects,3.0
-2016-03-30,Clean house,Habbit,1.0
-2016-03-30,"Errands, Email, calls",Habbit,2.0
-2016-03-31,Protocol changes,Siri API work,1.0
-2016-03-31,NAME Global Results,A/B projects,2.0
-2016-04-01,NAME Global Results,A/B projects,3.0
-2016-04-02,Clean house,Habbit,1.0
-2016-04-03,ADHD re-wired,Podcast,1.0
-2016-04-03,NY restaurant Coding,ML related,1.0
-2016-04-04,SFE changes,Siri API work,3.0
-2016-04-04,NAME Global Results,A/B projects,3.0
-2016-04-05,SFE changes,Siri API work,3.0
-2016-04-05,NAME Global Results,A/B projects,5.0
-2016-04-06,SFE changes,Siri API work,5.0
-2016-04-06,300 miles run,Health goal,1.0
-2016-04-06,NAME Global Results,A/B projects,4.0
-2016-04-07,NAME Global Results,A/B projects,9.0
-2016-04-08,"Errands, Email, calls",Habbit,3.0
-2016-04-09,Weekly review every week,Habbit,1.0
-2016-04-09,Clean house,Habbit,1.0
-2016-04-09,"Errands, Email, calls",Habbit,5.0
-2016-04-10,Yoga,Habbit,2.0
-2016-04-10,SciPy 2013 part1,ML related,4.0
-2016-04-10,SciPy 2013 part2,ML related,4.0
-2016-04-10,Meditation,Habbit,1.0
-2016-04-11,NAME Global Results,A/B projects,5.0
-2016-04-11,Protocol changes,Siri API work,1.0
-2016-04-11,SFE changes,Siri API work,2.0
-2016-04-11,Legs day,Habbit,1.0
-2016-04-11,Biking,Exercises ,1.0
-2016-04-12,NAME Global Results,A/B projects,3.0
-2016-04-14,Arms day,Habbit,1.0
-2016-04-14,Biking stationary,Habbit,1.0
-2016-04-16,Biking stationary,Habbit,1.0
-2016-04-16,Clean house,Habbit,1.0
-2016-04-16,Yoga,Habbit,1.0
-2016-04-16,SFE Navigation type aware results,Siri API work,8.0
-2016-04-17,Core strength,Habbit,2.0
-2016-04-17,"Errands, Email, calls",Habbit,5.0
-2016-04-18,Sort Pocket Read It later,Habbit,1.0
-2016-04-18,SFE Navigation type aware results,Siri API work,8.0
-2016-04-19,Meditation,Habbit,1.0
-2016-04-19,Code review 2,Work Apple,2.0
-2016-04-19,SFE Navigation type aware results,Siri API work,4.0
-2016-04-19,Core strength,Habbit,1.0
-2016-04-21,HIIT,Health goal,1.0
-2016-04-21,Core strength,Habbit,1.0
-2016-04-23,Core strength,Habbit,1.0
-2016-04-23,Gym treadmill run,Habbit,1.0
-2016-04-24,Weekly review every week,Habbit,2.0
-2016-04-24,Udacity,ML related,5.0
-2016-04-24,[Assignment 2 ](https://www.udacity.com/cours...,ML related,2.0
-2016-04-24,Cooking,Habbit,3.0
-2016-04-24,"Errands, Email, calls",Habbit,1.0
-2016-04-24,SFE Navigation type aware results,Siri API work,2.0
-2016-04-25,HBR: Guide to manage up and across,Reading,2.0
-2016-04-26,HIIT,Health goal,1.0
-2016-04-26,Arms day,Habbit,1.0
-2016-04-26,Pref name first IBE,A/B projects,4.0
-2016-04-27,Pref name first IBE,A/B projects,14.0
-2016-04-28,Pref name first IBE,A/B projects,5.0
-2016-04-28,Core strength,Habbit,2.0
-2016-04-28,"Errands, Email, calls",Habbit,2.0
-2016-04-28,HBR: Guide to manage up and across,Reading,1.0
-2016-04-29,HBR: Guide to manage up and across,Reading,1.0
-2016-04-29,[MNIST for Beginners],Deep Learning,1.0
-2016-04-30,HIIT,Health goal,2.0
-2016-04-30,The Yoga Face,Reading,2.0
-2016-04-30,SciPy 2013 part2,ML related,1.0
-2016-04-30,"Errands, Email, calls",Habbit,1.0
-2016-05-01,SciPy 2013 part4,ML related,3.0
-2016-05-01,SciPy 2013 part3,ML related,1.0
-2016-05-01,Panda SciPy worksheet,ML related,2.0
-2016-05-02,Weekly review every week,Habbit,1.0
-2016-05-03,And query radar,Work Apple,3.0
-2016-05-03,Panda SciPy worksheet,ML related,1.0
-2016-05-03,Pref name first IBE,A/B projects,4.0
-2016-05-03,"Errands, Email, calls",Habbit,1.0
-2016-05-04,Analysis,32 A/B: Viewport expansion,2.0
-2016-05-04,Clean house,Habbit,1.0
-2016-05-04,Panda SciPy worksheet,ML related,4.0
-2016-05-05,Analysis,32 A/B: Viewport expansion,9.0
-2016-05-05,Panda SciPy worksheet,ML related,2.0
-2016-05-05,"Errands, Email, calls",Habbit,1.0
-2016-05-05,Arms day,Habbit,2.0
-2016-05-06,Analysis,32 A/B: Viewport expansion,5.0
-2016-05-06,Panda SciPy worksheet,ML related,2.0
-2016-05-07,Clean house,Habbit,2.0
-2016-05-08,Panda SciPy worksheet,ML related,6.0
-2016-05-08,Beyond Todo list,Podcast,1.0
-2016-05-08,500 miles bike,Health goal,3.0
-2016-05-08,Beyond ToDoist podcast,Podcast ,1.0
-2016-05-09,Pref name first IBE,A/B projects,1.0
-2016-05-09,Analysis,32 A/B: Viewport expansion,6.0
-2016-05-09,"Errands, Email, calls",Habbit,1.0
-2016-05-10,Analysis,32 A/B: Viewport expansion,7.0
-2016-05-10,Biking stationary,Habbit,1.0
-2016-05-10,Pref name first IBE,A/B projects,4.0
-2016-05-10,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-05-10,Chest,Habbit,2.0
-2016-05-11,Weekly review every week,Habbit,2.0
-2016-05-11,Analysis,32 A/B: Viewport expansion,2.0
-2016-05-11,Pref name first IBE,A/B projects,5.0
-2016-05-11,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-05-11,Cooking,Habbit,1.0
-2016-05-12,Analysis,32 A/B: Viewport expansion,9.0
-2016-05-12,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-05-12,"Errands, Email, calls",Habbit,1.0
-2016-05-12,Presentation and design,32 A/B: Viewport expansion,4.0
-2016-05-14,Clean house,Habbit,3.0
-2016-05-14,"Errands, Email, calls",Habbit,4.0
-2016-05-15,Legs day,Habbit,1.0
-2016-05-15,Biking stationary,Habbit,1.0
-2016-05-15,Arms day,Habbit,1.0
-2016-05-15,Meditation,Habbit,1.0
-2016-05-15,"Model building 45,C",Name ranking 45,1.0
-2016-05-15,Yoga,Habbit,1.0
-2016-05-15,Sort Pocket Read It later,Habbit,1.0
-2016-05-16,Weekly review every week,Habbit,1.0
-2016-05-16,"Model building 45,C",Name ranking 45,4.0
-2016-05-16,"Errands, Email, calls",Habbit,1.0
-2016-05-17,"Model building 45,C",Name ranking 45,7.0
-2016-05-17,Biking stationary,Habbit,1.0
-2016-05-17,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-05-17,Meditation,Habbit,1.0
-2016-05-17,Chest,Habbit,1.0
-2016-05-18,"Model building 45,C",Name ranking 45,1.0
-2016-05-18,Beyond ToDoist podcast,Podcast ,1.0
-2016-05-18,"Errands, Email, calls",Habbit,1.0
-2016-05-18,Presentation and design,32 A/B: Viewport expansion,10.0
-2016-05-19,Meditation,Habbit,1.0
-2016-05-19,NAME Global Results,A/B projects,7.0
-2016-05-20,Pref name first IBE,A/B projects,1.0
-2016-05-20,NAME Global Results,A/B projects,3.0
-2016-05-22,Arms day,Habbit,1.0
-2016-05-23,"Errands, Email, calls",Habbit,2.0
-2016-05-24,Biking stationary,Habbit,1.0
-2016-05-24,Cooking,Habbit,1.0
-2016-05-24,Gym treadmill run,Habbit,1.0
-2016-05-26,Daily Review,Habbit,1.0
-2016-05-27,Daily Review,Habbit,1.0
-2016-05-27,"Errands, Email, calls",Habbit,3.0
-2016-05-28,Sort Pocket Read It later,Habbit,2.0
-2016-05-28,Arms day,Habbit,1.0
-2016-05-28,Core strength,Habbit,1.0
-2016-05-29,Foursquare Coding,ML related,2.0
-2016-05-29,Gym treadmill run,Habbit,1.0
-2016-05-29,Cooking,Habbit,3.0
-2016-05-29,Co-occurence matrix,ML related,3.0
-2016-05-29,Foursquare blogging,ML related,3.0
-2016-05-30,Cooking,Habbit,1.0
-2016-05-30,Pomodoro Coding,ML related,13.0
-2016-05-31,Beyond ToDoist podcast,Podcast ,1.0
-2016-05-31,Pomodoro Coding,ML related,1.0
-2016-06-01,Analysis,32 A/B: Viewport expansion,3.0
-2016-06-01,Presentation and design,32 A/B: Viewport expansion,1.0
-2016-06-01,MM Chain category subsume name,A/B projects,2.0
-2016-06-01,One intentional life,Podcast ,1.0
-2016-06-01,Arms day,Habbit,2.0
-2016-06-02,Presentation and design,32 A/B: Viewport expansion,4.0
-2016-06-02,Analysis,32 A/B: Viewport expansion,1.0
-2016-06-03,Code Model Loader,32 A/B: Viewport expansion,6.0
-2016-06-03,Legs day,Habbit,2.0
-2016-06-04,Cooking,Habbit,2.0
-2016-06-04,Foursquare blogging,ML related,2.0
-2016-06-05,Cooking,Habbit,3.0
-2016-06-05,Pomodoro Coding,ML related,4.0
-2016-06-05,Foursquare blogging,ML related,2.0
-2016-06-06,Chest,Habbit,2.0
-2016-06-06,Code Model Loader,32 A/B: Viewport expansion,4.0
-2016-06-06,Biking stationary,Habbit,1.0
-2016-06-07,Code Model Loader,32 A/B: Viewport expansion,5.0
-2016-06-08,Code Model Loader,32 A/B: Viewport expansion,15.0
-2016-06-09,Presentation and design,32 A/B: Viewport expansion,11.0
-2016-06-09,Code Model Loader,32 A/B: Viewport expansion,3.0
-2016-06-10,Code Model Loader,32 A/B: Viewport expansion,3.0
-2016-06-10,Weekly review every week,Habbit,1.0
-2016-06-10,Arms day,Habbit,1.0
-2016-06-12,Pomodoro Coding,ML related,2.0
-2016-06-12,Core strength,Habbit,1.0
-2016-06-12,Cooking,Habbit,1.0
-2016-06-12,Gym treadmill run,Habbit,1.0
-2016-06-12,"Errands, Email, calls",Habbit,5.0
-2016-06-13,Competitive analysis,Other work projects,9.0
-2016-06-13,Pomodoro Coding,ML related,1.0
-2016-06-14,Competitive analysis,Other work projects,14.0
-2016-06-14,Core strength,Habbit,1.0
-2016-06-15,Code Model Loader,32 A/B: Viewport expansion,2.0
-2016-06-15,Competitive analysis,Other work projects,1.0
-2016-06-16,Code Model Loader,32 A/B: Viewport expansion,6.0
-2016-06-17,Code Model Loader,32 A/B: Viewport expansion,3.0
-2016-06-17,Core strength,Habbit,1.0
-2016-06-17,Gym treadmill run,Habbit,1.0
-2016-06-19,Hike,Health goal,2.0
-2016-06-19,One intentional life,Podcast ,1.0
-2016-06-20,Weekly review every week,Habbit,1.0
-2016-06-20,Code Pick scope strategy,32 A/B: Viewport expansion,2.0
-2016-06-20,Code Model Loader,32 A/B: Viewport expansion,1.0
-2016-06-21,Code Pick scope strategy,32 A/B: Viewport expansion,7.0
-2016-06-22,Biking stationary,Habbit,1.0
-2016-06-22,Chest,Habbit,1.0
-2016-06-22,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-06-22,Cooking,Habbit,1.0
-2016-06-22,Code Pick scope strategy,32 A/B: Viewport expansion,13.0
-2016-06-22,"Errands, Email, calls",Habbit,1.0
-2016-06-23,Code Pick scope strategy,32 A/B: Viewport expansion,16.0
-2016-06-26,Hike,Health goal,7.0
-2016-06-26,Cooking,Habbit,1.0
-2016-06-26,One intentional life,Podcast ,2.0
-2016-06-27,Weekly review every week,Habbit,1.0
-2016-06-27,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-06-27,"Errands, Email, calls",Habbit,3.0
-2016-06-28,Pocket Health,Reading,1.0
-2016-06-28,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-06-29,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-06-29,Device expansion strategy,32 A/B: Viewport expansion,2.0
-2016-07-01,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-07-03,Lean in by Sheryl,Reading books ,4.0
-2016-07-03,Beyond ToDoist podcast,Podcast ,1.0
-2016-07-10,Cooking,Habbit,1.0
-2016-07-10,Pomodoro Coding,ML related,1.0
-2016-07-11,Cooking,Habbit,1.0
-2016-07-18,One intentional life,Podcast ,1.0
-2016-07-22,Gym treadmill run,Habbit,3.0
-2016-07-29,Arms day,Habbit,2.0
-2016-07-29,Biking stationary,Habbit,1.0
-2016-07-30,Clean house,Habbit,3.0
-2016-08-01,Gym treadmill run,Habbit,1.0
-2016-08-04,Chest,Habbit,1.0
-2016-08-04,Biking stationary,Habbit,1.0
-2016-08-06,Lecture 2,Neural Networks Machine Learning,3.0
-2016-08-06,Sort Pocket Read It later,Habbit,1.0
-2016-08-06,Lecture 3,Neural Networks Machine Learning,7.0
-2016-08-06,Lecture 4,Neural Networks Machine Learning,1.0
-2016-08-06,Learning Spark,Reading,2.0
-2016-08-06,Lecture 1,Neural Networks Machine Learning,2.0
-2016-08-07,Meditation ,Exercises ,1.0
-2016-08-07,Yoga,Habbit,2.0
-2016-08-08,Arms day,Habbit,1.0
-2016-08-10,Lecture 5,Neural Networks Machine Learning,2.0
-2016-08-11,Chest,Habbit,1.0
-2016-08-11,Learning Spark,Reading,2.0
-2016-08-11,Legs day,Habbit,1.0
-2016-08-12,"Lecture 9 improve generalization, Full Bayesi...",Neural Networks Machine Learning,1.0
-2016-08-12,Lecture 6 Mini Batch,Neural Networks Machine Learning,2.0
-2016-08-12,"Lecture 7 Model Seq, RNN, LTSM",Neural Networks Machine Learning,5.0
-2016-08-12,Lecture 5,Neural Networks Machine Learning,1.0
-2016-08-13,"Lecture 9 improve generalization, Full Bayesi...",Neural Networks Machine Learning,3.0
-2016-08-13,"Lecture 10 Mixture of models, Bayesian learni...",Neural Networks Machine Learning,2.0
-2016-08-13,Cooking,Habbit,2.0
-2016-08-13,Recap all,Neural Networks Machine Learning,1.0
-2016-08-14,One intentional life,Podcast ,1.0
-2016-08-15,Gym treadmill run,Habbit,1.0
-2016-08-15,Lecture 1: Introduction,Convolutional NN for Visual Recognition,2.0
-2016-08-15,Core strength,Habbit,1.0
-2016-08-15,Planning,Deep Learning,2.0
-2016-08-15,Lecture 2: Image classification KNN etc,Convolutional NN for Visual Recognition,2.0
-2016-08-16,"Lecture 3: Linear classification, Loss functi...",Convolutional NN for Visual Recognition,3.0
-2016-08-16,"Lecture 4: Backprop, Neural N/W 1",Convolutional NN for Visual Recognition,2.0
-2016-08-16,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-08-16,Gym treadmill run,Habbit,1.0
-2016-08-17,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,2.0
-2016-08-17,"Lecture 4: Backprop, Neural N/W 1",Convolutional NN for Visual Recognition,3.0
-2016-08-18,Arms day,Habbit,1.0
-2016-08-20,Lean in by Sheryl,Reading books ,1.0
-2016-08-21,HIIT,Health goal,1.0
-2016-08-21,Beyond ToDoist podcast,Podcast ,1.0
-2016-08-21,Lean in by Sheryl,Reading books ,3.0
-2016-08-22,Core strength,Habbit,1.0
-2016-08-22,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,1.0
-2016-08-22,Gym treadmill run,Habbit,1.0
-2016-08-23,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,2.0
-2016-08-23,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,5.0
-2016-08-24,Legs day,Habbit,1.0
-2016-08-24,Gym treadmill run,Habbit,1.0
-2016-08-24,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,4.0
-2016-08-25,Biking stationary,Habbit,1.0
-2016-08-26,HIIT,Health goal,1.0
-2016-08-26,Meditation,Habbit,1.0
-2016-08-27,Cooking,Habbit,1.0
-2016-08-27,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,14.0
-2016-08-29,Yoga,Habbit,1.0
-2016-08-29,Gym treadmill run,Habbit,1.0
-2016-08-29,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,2.0
-2016-08-31,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,4.0
-2016-08-31,Gym treadmill run,Habbit,1.0
-2016-08-31,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-09-01,Gym treadmill run,Habbit,1.0
-2016-09-01,Legs day,Habbit,1.0
-2016-09-01,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,3.0
-2016-09-02,Lean in by Sheryl,Reading books ,3.0
-2016-09-02,Assignment 1 Neural network,Convolutional NN for Visual Recognition,3.0
-2016-09-02,HIIT,Health goal,1.0
-2016-09-05,Lean in by Sheryl,Reading books ,3.0
-2016-09-08,Gym treadmill run,Habbit,1.0
-2016-09-08,Core strength,Habbit,1.0
-2016-09-08,Assignment 1 Neural network,Convolutional NN for Visual Recognition,1.0
-2016-09-09,Assignment 1 Neural network,Convolutional NN for Visual Recognition,3.0
-2016-09-11,Meditation ,Exercises ,1.0
-2016-09-11,HIIT,Health goal,1.0
-2016-09-11,Cooking,Habbit,3.0
-2016-09-11,Assignment 1 Neural network,Convolutional NN for Visual Recognition,2.0
-2016-09-12,Assignment 1 Neural network,Convolutional NN for Visual Recognition,4.0
-2016-09-13,Biking stationary,Habbit,1.0
-2016-09-13,Core strength,Habbit,1.0
-2016-09-13,Assignment 1 Neural network,Convolutional NN for Visual Recognition,4.0
-2016-09-14,Lecture 6 Neural Nets and Intro. to Cov Nets,Convolutional NN for Visual Recognition,4.0
-2016-09-15,Lecture 7 : Convolutional Neural Networks,Convolutional NN for Visual Recognition,4.0
-2016-09-15,Cooking,Habbit,3.0
-2016-09-15,Lecture 8 - Localization and Detection,Convolutional NN for Visual Recognition,3.0
-2016-09-15,Assignment 1 Neural network,Convolutional NN for Visual Recognition,6.0
-2016-09-16,Arms day,Habbit,1.0
-2016-09-16,Gym treadmill run,Habbit,1.0
-2016-09-18,Lean in by Sheryl,Reading books ,2.0
-2016-09-18,"Lecture 9 : Visualization, Deep Dream, Neural...",Convolutional NN for Visual Recognition,2.0
-2016-09-20,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-09-20,"Lecture 10 :- Recurrent Neural Networks, Imag...",Convolutional NN for Visual Recognition,3.0
-2016-09-20,Gym treadmill run,Habbit,1.0
-2016-09-21,Recap,Convolutional NN for Visual Recognition,2.0
-2016-09-22,Assignment 2: Fully-connected Neural Network,Convolutional NN for Visual Recognition,13.0
-2016-09-22,Cooking,Habbit,3.0
-2016-09-25,Lecture 6 Neural Nets and Intro. to Cov Nets,Convolutional NN for Visual Recognition,1.0
-2016-09-25,Assignment 2: Fully-connected Neural Network,Convolutional NN for Visual Recognition,3.0
-2016-09-26,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,2.0
-2016-09-26,Gym treadmill run,Habbit,1.0
-2016-09-27,Biking stationary,Habbit,1.0
-2016-09-27,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-09-27,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,3.0
-2016-09-27,Assignment 2: Batch Normalization,Convolutional NN for Visual Recognition,5.0
-2016-09-29,Arms day,Habbit,1.0
-2016-09-29,Gym treadmill run,Habbit,1.0
-2016-09-30,Assignment 2: Batch Normalization,Convolutional NN for Visual Recognition,5.0
-2016-09-30,Assignment 2: Dropout,Convolutional NN for Visual Recognition,4.0
-2016-10-05,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-10-05,Core strength,Habbit,1.0
-2016-10-05,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,5.0
-2016-10-05,Gym treadmill run,Habbit,1.0
-2016-10-06,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,15.0
-2016-10-06,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-10-07,Core strength,Habbit,1.0
-2016-10-07,Yoga,Habbit,1.0
-2016-10-07,Biking stationary,Habbit,1.0
-2016-10-10,Gym treadmill run,Habbit,1.0
-2016-10-10,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,2.0
-2016-10-10,Core strength,Habbit,1.0
-2016-10-11,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,5.0
-2016-10-11,Sleep on time,Habbit,1.0
-2016-10-11,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-10-12,Getting ready for first Pomodoro,Bad habbits,1.0
-2016-10-12,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,6.0
-2016-10-12,Gym treadmill run,Habbit,1.0
-2016-10-13,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,6.0
-2016-10-14,Core strength,Habbit,1.0
-2016-10-14,Biking stationary,Habbit,1.0
-2016-10-15,Lean in by Sheryl,Reading books ,3.0
-2016-10-17,Biking stationary,Habbit,1.0
-2016-10-20,"Lecture 10 :- Recurrent Neural Networks, Imag...",Convolutional NN for Visual Recognition,2.0
-2016-10-20,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-10-20,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,6.0
-2016-10-20,Core strength,Habbit,1.0
-2016-10-21,Core strength,Habbit,1.0
-2016-10-21,Gym treadmill run,Habbit,1.0
-2016-10-24,Lean in by Sheryl,Reading books ,2.0
-2016-10-26,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,6.0
-2016-10-26,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-10-27,Gym treadmill run,Habbit,1.0
-2016-10-27,Core strength,Habbit,1.0
-2016-10-28,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,1.0
-2016-10-28,Getting ready for first Pomodoro,Bad habbits,3.0
-2016-11-02,Biking stationary,Habbit,1.0
-2016-11-02,Yoga,Habbit,1.0
-2016-11-03,Weekly review every week,Habbit,1.0
-2016-11-03,Blog CS213N Assignment 1 and 2,Convolutional NN for Visual Recognition,4.0
-2016-11-03,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,6.0
-2016-11-03,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-11-04,Gym treadmill run,Habbit,1.0
-2016-11-06,Cooking,Habbit,4.0
-2016-11-06,"Lecture 10 :- Recurrent Neural Networks, Imag...",Convolutional NN for Visual Recognition,5.0
-2016-11-07,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,1.0
-2016-11-09,Arms day,Habbit,1.0
-2016-11-09,Gym treadmill run,Habbit,1.0
-2016-11-10,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,1.0
-2016-11-10,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-11-11,Arms day,Habbit,1.0
-2016-11-11,Gym treadmill run,Habbit,1.0
-2016-11-12,Meditation ,Exercises ,1.0
-2016-12-09,Core strength,Habbit,1.0
-2016-12-12,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,5.0
-2016-12-12,Getting ready for first Pomodoro,Bad habbits,2.0
-2016-12-13,Core strength,Habbit,1.0
-2016-12-14,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,4.0
-2016-12-14,Getting ready for first Pomodoro,Bad habbits,3.0
-2016-12-15,Gym treadmill run,Habbit,1.0
-2016-12-15,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,5.0
-2016-12-15,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,11.0
-2016-12-16,Core strength,Habbit,1.0
-2016-12-19,Core strength,Habbit,2.0
-2016-12-20,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,7.0
-2016-12-20,Core strength,Habbit,2.0
-2016-12-21,Weekly review every week,Habbit,1.0
-2016-12-22,Lecture 7 : Convolutional Neural Networks,Convolutional NN for Visual Recognition,4.0
-2017-01-05,Blog assignment 3,Convolutional NN for Visual Recognition,3.0
-2017-01-05,Core strength,Habbit,1.0
-2017-01-08,The Higher Taste,2017 Books,2.0
-2017-01-09,Core strength,Habbit,1.0
-2017-01-09,4-Hour Body Tim Ferris,2017 Podcast,2.0
-2017-01-09,Gym treadmill run,Habbit,1.0
-2017-01-10,4-Hour Body Tim Ferris,2017 Podcast,3.0
-2017-01-11,Lecture 8 - Localization and Detection,Convolutional NN for Visual Recognition,1.0
-2017-01-11,Recap,Convolutional NN for Visual Recognition,6.0
-2017-01-12,4-Hour Body Tim Ferris,2017 Podcast,1.0
-2017-01-12,Gym treadmill run,Habbit,1.0
-2017-01-14,Cooking,Habbit,4.0
-2017-01-14,Recap,Convolutional NN for Visual Recognition,3.0
-2017-01-15,Recap,Convolutional NN for Visual Recognition,7.0
-2017-01-15,The Art of Procastination,2017 Books,2.0
-2017-01-16,Recap,Convolutional NN for Visual Recognition,8.0
-2017-01-16,Algo recap,2017 Job change,6.0
-2017-01-16,Gym treadmill run,Habbit,1.0
-2017-01-20,4-Hour Body Tim Ferris,2017 Podcast,1.0
-2017-01-20,Core strength,Habbit,1.0
-2017-01-20,Gym treadmill run,Habbit,1.0
-2017-01-20,Sort Pocket Read It later,Habbit,2.0
-2017-01-21,Weekly review every week,Habbit,1.0
-2017-01-21,Assignment 3: Image Generation,Convolutional NN for Visual Recognition,5.0
-2017-01-21,Assignment 3: Image Gradients,Convolutional NN for Visual Recognition,5.0
-2017-01-21,Daily Review,Habbit,1.0
-2017-01-21,Sort Pocket Read It later,Habbit,1.0
-2017-01-22,Assignment 3: Image Generation,Convolutional NN for Visual Recognition,1.0
-2017-01-22,The Art of Procastination,2017 Books,2.0
-2017-01-23,Core strength,Habbit,2.0
-2017-01-24,Core strength,Habbit,2.0
-2017-01-24,Getting ready for first Pomodoro,Bad habbits,2.0
-2017-01-24,Recap,Convolutional NN for Visual Recognition,1.0
-2017-01-24,"Lecture 9 : Visualization, Deep Dream, Neural...",Convolutional NN for Visual Recognition,4.0
-2017-01-24,Blog kapild,Convolutional NN for Visual Recognition,1.0
-2017-01-25,4-Hour Body Tim Ferris,2017 Podcast,3.0
-2017-01-25,Blog kapild,Convolutional NN for Visual Recognition,5.0
-2017-01-26,Lecture 12: Deep learning library,Convolutional NN for Visual Recognition,3.0
-2017-01-26,Getting ready for first Pomodoro,Bad habbits,2.0
-2017-01-26,Blog kapild,Convolutional NN for Visual Recognition,7.0
-2017-01-27,Lecture 1: From ML to Deep learning,Google Udacity Deep learning,1.0
-2017-01-27,Getting ready for first Pomodoro,Bad habbits,4.0
-2017-01-29,Convolutional Neural Networks,Google Udacity Deep learning,1.0
-2017-01-29,Getting ready for first Pomodoro,Bad habbits,2.0
-2017-01-29,Lecture 1: From ML to Deep learning,Google Udacity Deep learning,4.0
-2017-01-29,Lecture 2: Deep neural networks,Google Udacity Deep learning,9.0
-2017-01-29,Assignment 4: Convolutional Models,Google Udacity Deep learning,4.0
-2017-01-30,Assignment 4: Convolutional Models,Google Udacity Deep learning,4.0
-2017-01-30,Core strength,Habbit,2.0
-2017-01-30,Getting ready for first Pomodoro,Bad habbits,2.0
-2017-01-30,4-Hour Body Tim Ferris,2017 Podcast,2.0
-2017-01-31,Core strength,Habbit,1.0
-2017-01-31,Getting ready for first Pomodoro,Bad habbits,3.0
-2017-01-31,Planning,Deep Learning,4.0
-2017-01-31,Stair climb,Health goal,1.0
-2017-01-31,Assignment 4: Convolutional Models,Google Udacity Deep learning,2.0
-2017-02-01,Getting ready for first Pomodoro,Bad habbits,3.0
+2015-10-01,"13,C",Work Apple,9
+2015-10-06,"13,C",Work Apple,3
+2015-10-07,"13,C",Work Apple,1
+2015-10-11,"13,D",Work Apple,3
+2015-10-12,"13,D",Work Apple,1
+2015-10-13,"13,D",Work Apple,1
+2015-10-14,"13,D",Work Apple,2
+2016-01-14,2016 goal planning,Tentative 2016 goals,2
+2015-09-06,24 hour fitness ,Exercises ,2
+2015-09-17,24 hour fitness ,Exercises ,1
+2016-03-02,3 most imp. task for tomorrow,iPhone Calendar Event,1
+2016-01-30,300 miles run,Health goal,1
+2016-02-01,300 miles run,Health goal,1
+2016-02-06,300 miles run,Health goal,2
+2016-02-13,300 miles run,Health goal,2
+2016-02-20,300 miles run,Health goal,2
+2016-02-27,300 miles run,Health goal,2
+2016-03-02,300 miles run,Health goal,1
+2016-03-12,300 miles run,Health goal,2
+2016-03-14,300 miles run,Health goal,1
+2016-03-16,300 miles run,Health goal,1
+2016-03-21,300 miles run,Health goal,1
+2016-03-27,300 miles run,Health goal,1
+2016-03-29,300 miles run,Health goal,1
+2016-04-06,300 miles run,Health goal,1
+2017-01-09,4-Hour Body Tim Ferris,2017 Podcast,2
+2017-01-10,4-Hour Body Tim Ferris,2017 Podcast,3
+2017-01-12,4-Hour Body Tim Ferris,2017 Podcast,1
+2017-01-20,4-Hour Body Tim Ferris,2017 Podcast,1
+2017-01-25,4-Hour Body Tim Ferris,2017 Podcast,3
+2017-01-30,4-Hour Body Tim Ferris,2017 Podcast,2
+2016-05-08,500 miles bike,Health goal,3
+2016-03-07,ADHD experts podcast,Podcast,2
+2016-03-07,ADHD re-wired,Podcast,2
+2016-03-11,ADHD re-wired,Podcast,1
+2016-03-12,ADHD re-wired,Podcast,1
+2016-03-13,ADHD re-wired,Podcast,2
+2016-03-22,ADHD re-wired,Podcast,1
+2016-03-25,ADHD re-wired,Podcast,2
+2016-03-29,ADHD re-wired,Podcast,2
+2016-04-02,ADHD re-wired,Podcast,1
+2017-01-16,Algo recap,2017 Job change,6
+2017-02-16,Algo recap,2017 Job change,8
+2017-02-18,Algo recap,2017 Job change,13
+2017-02-19,Algo recap,2017 Job change,18
+2017-02-20,Algo recap,2017 Job change,4
+2017-02-21,Algo recap,2017 Job change,6
+2017-06-07,Algo recap,2017 Job change,4
+2017-06-11,Algo recap,2017 Job change,12
+2017-06-12,Algo recap,2017 Job change,3
+2017-06-13,Algo recap,2017 Job change,4
+2017-06-14,Algo recap,2017 Job change,13
+2017-06-19,Algo recap,2017 Job change,7
+2017-06-20,Algo recap,2017 Job change,6
+2017-06-27,Algo recap,2017 Job change,9
+2017-07-04,Algo recap,2017 Job change,12
+2017-07-06,Algo recap,2017 Job change,5
+2017-07-09,Algo recap,2017 Job change,14
+2017-07-10,Algo recap,2017 Job change,7
+2017-07-12,Algo recap,2017 Job change,9
+2017-07-16,Algo recap,2017 Job change,23
+2017-07-18,Algo recap,2017 Job change,10
+2017-07-19,Algo recap,2017 Job change,1
+2017-07-20,Algo recap,2017 Job change,1
+2017-07-21,Algo recap,2017 Job change,13
+2017-07-23,Algo recap,2017 Job change,4
+2017-07-24,Algo recap,2017 Job change,4
+2017-07-25,Algo recap,2017 Job change,2
+2017-07-26,Algo recap,2017 Job change,7
+2017-08-06,Algo recap,2017 Job change,20
+2017-11-21,Algo recap,2017 Job change,18
+2017-11-22,Algo recap,2017 Job change,18
+2017-12-02,Algo recap,2017 Job change,26
+2017-12-03,Algo recap,2017 Job change,25
+2017-12-04,Algo recap,2017 Job change,8
+2017-12-05,Algo recap,2017 Job change,21
+2017-12-06,Algo recap,2017 Job change,24
+2017-12-09,Algo recap,2017 Job change,18
+2017-12-10,Algo recap,2017 Job change,24
+2017-12-13,Algo recap,2017 Job change,22
+2017-12-14,Algo recap,2017 Job change,6
+2018-01-09,Algo recap,2017 Job change,14
+2018-01-10,Algo recap,2017 Job change,3
+2018-01-11,Algo recap,2017 Job change,5
+2018-01-15,Algo recap,2017 Job change,22
+2018-01-20,Algo recap,2017 Job change,13
+2018-02-19,Algo recap,2017 Job change,2
+2018-03-02,Algo recap,2017 Job change,6
+2016-05-04,Analysis,32 A/B: Viewport expansion,2
+2016-05-05,Analysis,32 A/B: Viewport expansion,9
+2016-05-06,Analysis,32 A/B: Viewport expansion,5
+2016-05-09,Analysis,32 A/B: Viewport expansion,6
+2016-05-10,Analysis,32 A/B: Viewport expansion,7
+2016-05-11,Analysis,32 A/B: Viewport expansion,2
+2016-05-12,Analysis,32 A/B: Viewport expansion,9
+2016-06-01,Analysis,32 A/B: Viewport expansion,3
+2016-06-02,Analysis,32 A/B: Viewport expansion,1
+2016-05-03,And query radar,Work Apple,3
+2016-02-05,Arms day,Habbit,1
+2016-04-14,Arms day,Habbit,1
+2016-04-26,Arms day,Habbit,1
+2016-05-05,Arms day,Habbit,2
+2016-05-15,Arms day,Habbit,1
+2016-05-22,Arms day,Habbit,1
+2016-05-28,Arms day,Habbit,1
+2016-06-01,Arms day,Habbit,2
+2016-06-10,Arms day,Habbit,1
+2016-07-29,Arms day,Habbit,2
+2016-08-08,Arms day,Habbit,1
+2016-08-18,Arms day,Habbit,1
+2016-09-16,Arms day,Habbit,1
+2016-09-29,Arms day,Habbit,1
+2016-11-09,Arms day,Habbit,1
+2016-11-11,Arms day,Habbit,1
+2017-02-04,Arms day,Habbit,1
+2017-03-20,Arms day,Habbit,1
+2017-03-21,Arms day,Habbit,1
+2017-03-24,Arms day,Habbit,1
+2017-04-06,Arms day,Habbit,1
+2017-04-07,Arms day,Habbit,1
+2017-04-13,Arms day,Habbit,2
+2017-04-19,Arms day,Habbit,1
+2017-04-26,Arms day,Habbit,1
+2017-04-28,Arms day,Habbit,1
+2017-05-09,Arms day,Habbit,1
+2017-06-01,Arms day,Habbit,1
+2016-09-02,Assignment 1 Neural network,Convolutional NN for Visual Recognition,3
+2016-09-08,Assignment 1 Neural network,Convolutional NN for Visual Recognition,1
+2016-09-09,Assignment 1 Neural network,Convolutional NN for Visual Recognition,3
+2016-09-11,Assignment 1 Neural network,Convolutional NN for Visual Recognition,2
+2016-09-12,Assignment 1 Neural network,Convolutional NN for Visual Recognition,4
+2016-09-13,Assignment 1 Neural network,Convolutional NN for Visual Recognition,4
+2016-09-15,Assignment 1 Neural network,Convolutional NN for Visual Recognition,6
+2016-08-23,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,5
+2016-08-24,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,4
+2016-08-27,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,14
+2016-08-29,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,2
+2016-08-31,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,4
+2016-09-01,"Assignment 1: SVM, Neural net",Convolutional NN for Visual Recognition,3
+2017-03-05,Assignment 2 Finding Lanes Lines,Udacity Self Driving cars,19
+2016-09-27,Assignment 2: Batch Normalization,Convolutional NN for Visual Recognition,5
+2016-09-30,Assignment 2: Batch Normalization,Convolutional NN for Visual Recognition,5
+2016-10-05,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,5
+2016-10-06,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,15
+2016-10-10,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,2
+2016-10-11,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,5
+2016-10-12,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,6
+2016-10-13,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,6
+2016-12-15,Assignment 2: Convolution Network,Convolutional NN for Visual Recognition,11
+2016-09-30,Assignment 2: Dropout,Convolutional NN for Visual Recognition,4
+2017-05-04,Assignment 2: Finding lanes re-work,Udacity Self Driving cars,8
+2017-05-05,Assignment 2: Finding lanes re-work,Udacity Self Driving cars,1
+2016-09-22,Assignment 2: Fully-connected Neural Network,Convolutional NN for Visual Recognition,13
+2016-09-25,Assignment 2: Fully-connected Neural Network,Convolutional NN for Visual Recognition,3
+2016-10-20,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,6
+2016-10-26,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,6
+2016-10-28,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,1
+2016-11-03,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,6
+2016-11-07,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,1
+2016-11-10,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,1
+2016-12-12,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,5
+2016-12-14,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,4
+2016-12-15,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,5
+2016-12-20,Assignment 3: Image Captioning with RNN,Convolutional NN for Visual Recognition,7
+2017-01-21,Assignment 3: Image Generation,Convolutional NN for Visual Recognition,5
+2017-01-22,Assignment 3: Image Generation,Convolutional NN for Visual Recognition,1
+2017-01-21,Assignment 3: Image Gradients,Convolutional NN for Visual Recognition,5
+2017-03-24,Assignment 3: Traffic Sign Classifier Advance...,Udacity Self Driving cars,6
+2017-03-28,Assignment 3: Traffic Sign Classifier Advance...,Udacity Self Driving cars,5
+2017-03-29,Assignment 3: Traffic Sign Classifier Advance...,Udacity Self Driving cars,15
+2017-03-31,Assignment 3: Traffic Sign Classifier Advance...,Udacity Self Driving cars,8
+2017-04-04,Assignment 3: Traffic Sign Classifier Advance...,Udacity Self Driving cars,6
+2017-04-07,Assignment 3: Traffic Sign Classifier Advance...,Udacity Self Driving cars,7
+2017-04-09,Assignment 3: Traffic Sign Classifier Advance...,Udacity Self Driving cars,14
+2017-04-10,Assignment 3: Traffic Sign Classifier Advance...,Udacity Self Driving cars,2
+2017-04-13,Assignment 4: Behavior Cloning,Udacity Self Driving cars,2
+2017-04-14,Assignment 4: Behavior Cloning,Udacity Self Driving cars,14
+2017-04-25,Assignment 4: Behavior Cloning,Udacity Self Driving cars,6
+2017-04-26,Assignment 4: Behavior Cloning,Udacity Self Driving cars,17
+2017-04-27,Assignment 4: Behavior Cloning,Udacity Self Driving cars,21
+2017-01-29,Assignment 4: Convolutional Models,Google Udacity Deep learning,4
+2017-01-30,Assignment 4: Convolutional Models,Google Udacity Deep learning,4
+2017-01-31,Assignment 4: Convolutional Models,Google Udacity Deep learning,2
+2017-02-01,Assignment 4: Convolutional Models,Google Udacity Deep learning,5
+2017-05-21,Assignment 5 : Vehicle Detection,Udacity Self Driving cars,1
+2017-05-22,Assignment 5 : Vehicle Detection,Udacity Self Driving cars,3
+2017-05-23,Assignment 5 : Vehicle Detection,Udacity Self Driving cars,4
+2017-05-24,Assignment 5 : Vehicle Detection,Udacity Self Driving cars,7
+2017-05-25,Assignment 5 : Vehicle Detection,Udacity Self Driving cars,3
+2017-05-26,Assignment 5 : Vehicle Detection,Udacity Self Driving cars,1
+2017-05-28,Assignment 5 : Vehicle Detection,Udacity Self Driving cars,11
+2017-05-29,Assignment 5 : Vehicle Detection,Udacity Self Driving cars,14
+2017-05-05,Assignment 5: Advance Lane Finding,Udacity Self Driving cars,14
+2017-05-06,Assignment 5: Advance Lane Finding,Udacity Self Driving cars,6
+2017-05-09,Assignment 5: Advance Lane Finding,Udacity Self Driving cars,6
+2017-05-10,Assignment 5: Advance Lane Finding,Udacity Self Driving cars,4
+2017-05-11,Assignment 5: Advance Lane Finding,Udacity Self Driving cars,10
+2017-05-12,Assignment 5: Advance Lane Finding,Udacity Self Driving cars,10
+2017-05-16,Assignment 5: Advance Lane Finding,Udacity Self Driving cars,7
+2017-05-17,Assignment 5: Advance Lane Finding,Udacity Self Driving cars,2
+2017-05-18,Assignment 5: Advance Lane Finding,Udacity Self Driving cars,7
+2017-05-19,Assignment 5: Advance Lane Finding,Udacity Self Driving cars,6
+2017-06-02,Assignment 5: Word2Vec CBOW,Google Udacity Deep learning,18
+2017-02-01,Assignment 5: Word2Vec Skip grams,Google Udacity Deep learning,4
+2017-02-05,Assignment 5: Word2Vec Skip grams,Google Udacity Deep learning,7
+2017-02-06,Assignment 5: Word2Vec Skip grams,Google Udacity Deep learning,2
+2017-02-08,Assignment 6: LSTM,Google Udacity Deep learning,6
+2017-02-10,Assignment 6: LSTM,Google Udacity Deep learning,3
+2015-09-30,Awk blog,Machine learning,2
+2018-02-17,Behavioral,2017 Job change,3
+2018-02-18,Behavioral,2017 Job change,1
+2016-05-08,Beyond ToDoist podcast,Podcast ,1
+2016-05-18,Beyond ToDoist podcast,Podcast ,1
+2016-05-31,Beyond ToDoist podcast,Podcast ,1
+2016-07-03,Beyond ToDoist podcast,Podcast ,1
+2016-08-21,Beyond ToDoist podcast,Podcast ,1
+2016-05-08,Beyond Todo list,Podcast,1
+2016-04-11,Biking,Exercises ,1
+2016-04-14,Biking stationary,Habbit,1
+2016-04-16,Biking stationary,Habbit,1
+2016-05-10,Biking stationary,Habbit,1
+2016-05-15,Biking stationary,Habbit,1
+2016-05-17,Biking stationary,Habbit,1
+2016-05-24,Biking stationary,Habbit,1
+2016-06-06,Biking stationary,Habbit,1
+2016-06-22,Biking stationary,Habbit,1
+2016-07-29,Biking stationary,Habbit,1
+2016-08-04,Biking stationary,Habbit,1
+2016-08-25,Biking stationary,Habbit,1
+2016-09-13,Biking stationary,Habbit,1
+2016-09-27,Biking stationary,Habbit,1
+2016-10-07,Biking stationary,Habbit,1
+2016-10-14,Biking stationary,Habbit,1
+2016-10-17,Biking stationary,Habbit,1
+2016-11-02,Biking stationary,Habbit,1
+2015-11-15,Bills Errands,Online work,2
+2015-11-16,Bills Errands,Online work,1
+2016-01-28,Bills Errands,Online work,1
+2015-09-11,Bin definitive issue ,Work Apple,2
+2016-11-03,Blog CS213N Assignment 1 and 2,Convolutional NN for Visual Recognition,4
+2015-11-01,Blog Medium,Online work,1
+2015-11-03,Blog Medium,Online work,1
+2015-11-08,Blog Medium,Online work,6
+2017-06-02,Blog Word2Vec Skip gram,ML related,1
+2017-01-05,Blog assignment 3,Convolutional NN for Visual Recognition,3
+2017-01-24,Blog kapild,Convolutional NN for Visual Recognition,1
+2017-01-25,Blog kapild,Convolutional NN for Visual Recognition,5
+2017-01-26,Blog kapild,Convolutional NN for Visual Recognition,7
+2016-01-14,Bullet journal,Tentative 2016 goals,1
+2016-01-17,But running shoes,Sun 17th Jan,1
+2017-02-12,Capstone Project: Detecting Images from Stree...,Google Udacity Deep learning,1
+2016-01-16,Chain MM match A/B,Work Apple,2
+2016-02-16,Chest,Habbit,1
+2016-05-10,Chest,Habbit,2
+2016-05-17,Chest,Habbit,1
+2016-06-06,Chest,Habbit,2
+2016-06-22,Chest,Habbit,1
+2016-08-04,Chest,Habbit,1
+2016-08-11,Chest,Habbit,1
+2016-02-20,Clean house,Habbit,2
+2016-03-05,Clean house,Habbit,1
+2016-03-12,Clean house,Habbit,2
+2016-03-16,Clean house,Habbit,1
+2016-03-30,Clean house,Habbit,1
+2016-04-02,Clean house,Habbit,1
+2016-04-09,Clean house,Habbit,1
+2016-04-16,Clean house,Habbit,1
+2016-05-04,Clean house,Habbit,1
+2016-05-07,Clean house,Habbit,2
+2016-05-14,Clean house,Habbit,3
+2016-07-30,Clean house,Habbit,3
+2016-05-29,Co-occurence matrix,ML related,3
+2016-06-03,Code Model Loader,32 A/B: Viewport expansion,6
+2016-06-06,Code Model Loader,32 A/B: Viewport expansion,4
+2016-06-07,Code Model Loader,32 A/B: Viewport expansion,5
+2016-06-08,Code Model Loader,32 A/B: Viewport expansion,15
+2016-06-09,Code Model Loader,32 A/B: Viewport expansion,3
+2016-06-10,Code Model Loader,32 A/B: Viewport expansion,3
+2016-06-15,Code Model Loader,32 A/B: Viewport expansion,2
+2016-06-16,Code Model Loader,32 A/B: Viewport expansion,6
+2016-06-17,Code Model Loader,32 A/B: Viewport expansion,3
+2016-06-20,Code Model Loader,32 A/B: Viewport expansion,1
+2016-06-20,Code Pick scope strategy,32 A/B: Viewport expansion,2
+2016-06-21,Code Pick scope strategy,32 A/B: Viewport expansion,7
+2016-06-22,Code Pick scope strategy,32 A/B: Viewport expansion,13
+2016-06-23,Code Pick scope strategy,32 A/B: Viewport expansion,16
+2015-09-16,Code review ,Work Apple,1
+2015-09-21,Code review ,Work Apple,1
+2015-09-22,Code review ,Work Apple,1
+2016-03-03,Code review 2,Work Apple,2
+2016-04-19,Code review 2,Work Apple,2
+2017-03-22,Coding On Website,2017 Job change,2
+2016-03-01,Collect notes,Siri API work,3
+2016-03-02,Collect notes,Siri API work,5
+2016-03-03,Collect notes,Siri API work,1
+2016-03-07,Collect notes,Siri API work,1
+2016-03-08,Collect notes,Siri API work,1
+2016-03-15,Collect notes,Siri API work,1
+2016-03-16,Collect notes,Siri API work,2
+2016-06-13,Competitive analysis,Other work projects,9
+2016-06-14,Competitive analysis,Other work projects,14
+2016-06-15,Competitive analysis,Other work projects,1
+2018-02-02,Computer vision/Deep Learning,2017 Job change,4
+2018-02-03,Computer vision/Deep Learning,2017 Job change,19
+2018-02-04,Computer vision/Deep Learning,2017 Job change,19
+2018-02-05,Computer vision/Deep Learning,2017 Job change,1
+2018-02-25,Computer vision/Deep Learning,2017 Job change,5
+2018-02-26,Computer vision/Deep Learning,2017 Job change,15
+2018-02-27,Computer vision/Deep Learning,2017 Job change,14
+2018-02-28,Computer vision/Deep Learning,2017 Job change,14
+2017-01-29,Convolutional Neural Networks,Google Udacity Deep learning,1
+2016-04-24,Cooking,Habbit,3
+2016-05-11,Cooking,Habbit,1
+2016-05-24,Cooking,Habbit,1
+2016-05-29,Cooking,Habbit,3
+2016-05-30,Cooking,Habbit,1
+2016-06-04,Cooking,Habbit,2
+2016-06-05,Cooking,Habbit,3
+2016-06-12,Cooking,Habbit,1
+2016-06-22,Cooking,Habbit,1
+2016-06-26,Cooking,Habbit,1
+2016-07-10,Cooking,Habbit,1
+2016-07-11,Cooking,Habbit,1
+2016-08-13,Cooking,Habbit,2
+2016-08-27,Cooking,Habbit,1
+2016-09-11,Cooking,Habbit,3
+2016-09-15,Cooking,Habbit,3
+2016-09-22,Cooking,Habbit,3
+2016-11-06,Cooking,Habbit,4
+2017-01-14,Cooking,Habbit,4
+2017-02-01,Cooking,iPhone Calendar Event,2
+2016-04-17,Core strength,Habbit,2
+2016-04-19,Core strength,Habbit,1
+2016-04-21,Core strength,Habbit,1
+2016-04-23,Core strength,Habbit,1
+2016-04-28,Core strength,Habbit,2
+2016-05-28,Core strength,Habbit,1
+2016-06-12,Core strength,Habbit,1
+2016-06-14,Core strength,Habbit,1
+2016-06-17,Core strength,Habbit,1
+2016-08-15,Core strength,Habbit,1
+2016-08-22,Core strength,Habbit,1
+2016-09-08,Core strength,Habbit,1
+2016-09-13,Core strength,Habbit,1
+2016-10-05,Core strength,Habbit,1
+2016-10-07,Core strength,Habbit,1
+2016-10-10,Core strength,Habbit,1
+2016-10-14,Core strength,Habbit,1
+2016-10-20,Core strength,Habbit,1
+2016-10-21,Core strength,Habbit,1
+2016-10-27,Core strength,Habbit,1
+2016-12-09,Core strength,Habbit,1
+2016-12-13,Core strength,Habbit,1
+2016-12-16,Core strength,Habbit,1
+2016-12-19,Core strength,Habbit,2
+2016-12-20,Core strength,Habbit,2
+2017-01-05,Core strength,Habbit,1
+2017-01-09,Core strength,Habbit,1
+2017-01-20,Core strength,Habbit,1
+2017-01-23,Core strength,Habbit,2
+2017-01-24,Core strength,Habbit,2
+2017-01-30,Core strength,Habbit,2
+2017-01-31,Core strength,Habbit,1
+2017-02-09,Core strength,Habbit,1
+2017-03-01,Core strength,Habbit,1
+2017-03-15,Core strength,Habbit,1
+2017-04-04,Core strength,Habbit,1
+2017-05-17,Core strength,Habbit,1
+2015-11-04,Current location,Work Apple,3
+2015-11-06,Current location,Work Apple,1
+2015-11-10,Current location,Work Apple,12
+2016-02-06,Daily Review,Habbit,2
+2016-02-19,Daily Review,Habbit,1
+2016-05-26,Daily Review,Habbit,1
+2016-05-27,Daily Review,Habbit,1
+2017-01-21,Daily Review,Habbit,1
+2016-02-01,Debug Satr,SATR,5
+2016-01-20,Design doc,SATR,3
+2016-06-29,Device expansion strategy,32 A/B: Viewport expansion,2
+2018-01-20,Eat that Frog : Brian Tracy,Reading,4
+2018-01-23,Eat that Frog : Brian Tracy,Reading,1
+2018-01-24,Eat that Frog : Brian Tracy,Reading,1
+2018-02-01,Eat that Frog : Brian Tracy,Reading,1
+2018-02-16,Eat that Frog : Brian Tracy,Reading,3
+2015-11-02,Effective engineer,Reading books ,2
+2015-11-03,Effective engineer,Reading books ,1
+2015-11-08,Effective engineer,Reading books ,6
+2015-11-11,Effective engineer,Reading books ,9
+2015-11-20,Effective engineer,Reading books ,3
+2015-12-01,Effective engineer,Reading books ,3
+2015-12-08,Effective engineer,Reading books ,3
+2015-12-11,Effective engineer,Reading books ,1
+2015-12-13,Effective engineer,Reading books ,2
+2015-11-10,"Emails, Call, run online errands",iPhone Calendar Event,3
+2015-09-10,En Category default ,Work Apple,2
+2015-09-11,En Category default ,Work Apple,5
+2016-03-05,"Errands, Email, calls",Habbit,3
+2016-03-06,"Errands, Email, calls",Habbit,2
+2016-03-12,"Errands, Email, calls",Habbit,5
+2016-03-13,"Errands, Email, calls",Habbit,1
+2016-03-23,"Errands, Email, calls",Habbit,1
+2016-03-30,"Errands, Email, calls",Habbit,2
+2016-04-08,"Errands, Email, calls",Habbit,3
+2016-04-09,"Errands, Email, calls",Habbit,5
+2016-04-17,"Errands, Email, calls",Habbit,5
+2016-04-24,"Errands, Email, calls",Habbit,1
+2016-04-28,"Errands, Email, calls",Habbit,2
+2016-04-30,"Errands, Email, calls",Habbit,1
+2016-05-03,"Errands, Email, calls",Habbit,1
+2016-05-05,"Errands, Email, calls",Habbit,1
+2016-05-09,"Errands, Email, calls",Habbit,1
+2016-05-12,"Errands, Email, calls",Habbit,1
+2016-05-14,"Errands, Email, calls",Habbit,4
+2016-05-16,"Errands, Email, calls",Habbit,1
+2016-05-18,"Errands, Email, calls",Habbit,1
+2016-05-23,"Errands, Email, calls",Habbit,2
+2016-05-27,"Errands, Email, calls",Habbit,3
+2016-06-12,"Errands, Email, calls",Habbit,5
+2016-06-22,"Errands, Email, calls",Habbit,1
+2016-06-27,"Errands, Email, calls",Habbit,3
+2017-02-25,"Errands, Email, calls",Habbit,3
+2018-02-10,"Errands, Email, calls",Habbit,2
+2016-03-07,Figure out library D3,ML related,2
+2016-03-10,Figure out library D3,ML related,1
+2016-01-30,Foursquare Coding,ML related,1
+2016-01-31,Foursquare Coding,ML related,1
+2016-02-05,Foursquare Coding,ML related,3
+2016-02-06,Foursquare Coding,ML related,1
+2016-05-29,Foursquare Coding,ML related,2
+2016-02-06,Foursquare blogging,ML related,4
+2016-02-28,Foursquare blogging,ML related,8
+2016-02-29,Foursquare blogging,ML related,1
+2016-03-02,Foursquare blogging,ML related,6
+2016-03-03,Foursquare blogging,ML related,1
+2016-03-04,Foursquare blogging,ML related,1
+2016-03-06,Foursquare blogging,ML related,1
+2016-05-29,Foursquare blogging,ML related,3
+2016-06-04,Foursquare blogging,ML related,2
+2016-06-05,Foursquare blogging,ML related,2
+2016-05-10,Getting ready for first Pomodoro,Bad habbits,2
+2016-05-11,Getting ready for first Pomodoro,Bad habbits,2
+2016-05-12,Getting ready for first Pomodoro,Bad habbits,1
+2016-05-17,Getting ready for first Pomodoro,Bad habbits,2
+2016-06-22,Getting ready for first Pomodoro,Bad habbits,1
+2016-06-27,Getting ready for first Pomodoro,Bad habbits,1
+2016-06-28,Getting ready for first Pomodoro,Bad habbits,1
+2016-06-29,Getting ready for first Pomodoro,Bad habbits,1
+2016-07-01,Getting ready for first Pomodoro,Bad habbits,1
+2016-08-16,Getting ready for first Pomodoro,Bad habbits,1
+2016-08-31,Getting ready for first Pomodoro,Bad habbits,1
+2016-09-20,Getting ready for first Pomodoro,Bad habbits,1
+2016-09-27,Getting ready for first Pomodoro,Bad habbits,2
+2016-10-05,Getting ready for first Pomodoro,Bad habbits,2
+2016-10-06,Getting ready for first Pomodoro,Bad habbits,2
+2016-10-11,Getting ready for first Pomodoro,Bad habbits,2
+2016-10-12,Getting ready for first Pomodoro,Bad habbits,1
+2016-10-20,Getting ready for first Pomodoro,Bad habbits,2
+2016-10-26,Getting ready for first Pomodoro,Bad habbits,2
+2016-10-28,Getting ready for first Pomodoro,Bad habbits,3
+2016-11-03,Getting ready for first Pomodoro,Bad habbits,2
+2016-11-10,Getting ready for first Pomodoro,Bad habbits,2
+2016-12-12,Getting ready for first Pomodoro,Bad habbits,2
+2016-12-14,Getting ready for first Pomodoro,Bad habbits,3
+2017-01-24,Getting ready for first Pomodoro,Bad habbits,2
+2017-01-26,Getting ready for first Pomodoro,Bad habbits,2
+2017-01-27,Getting ready for first Pomodoro,Bad habbits,4
+2017-01-29,Getting ready for first Pomodoro,Bad habbits,2
+2017-01-30,Getting ready for first Pomodoro,Bad habbits,2
+2017-01-31,Getting ready for first Pomodoro,Bad habbits,3
+2017-02-01,Getting ready for first Pomodoro,Bad habbits,3
+2017-02-02,Getting ready for first Pomodoro,Bad habbits,2
+2017-02-05,Getting ready for first Pomodoro,Bad habbits,3
+2017-02-07,Getting ready for first Pomodoro,Bad habbits,2
+2017-02-08,Getting ready for first Pomodoro,Bad habbits,2
+2017-02-10,Getting ready for first Pomodoro,Bad habbits,2
+2017-02-12,Getting ready for first Pomodoro,Bad habbits,2
+2017-02-14,Getting ready for first Pomodoro,Bad habbits,2
+2017-02-15,Getting ready for first Pomodoro,Bad habbits,2
+2017-02-16,Getting ready for first Pomodoro,Bad habbits,1
+2017-02-17,Getting ready for first Pomodoro,Bad habbits,2
+2017-02-20,Getting ready for first Pomodoro,Bad habbits,1
+2017-02-21,Getting ready for first Pomodoro,Bad habbits,2
+2017-02-26,Getting ready for first Pomodoro,Bad habbits,2
+2017-03-05,Getting ready for first Pomodoro,Bad habbits,1
+2017-03-08,Getting ready for first Pomodoro,Bad habbits,1
+2017-03-10,Getting ready for first Pomodoro,Bad habbits,2
+2017-03-17,Getting ready for first Pomodoro,Bad habbits,2
+2017-03-21,Getting ready for first Pomodoro,Bad habbits,2
+2017-03-22,Getting ready for first Pomodoro,Bad habbits,2
+2017-03-24,Getting ready for first Pomodoro,Bad habbits,2
+2017-03-28,Getting ready for first Pomodoro,Bad habbits,2
+2017-03-29,Getting ready for first Pomodoro,Bad habbits,2
+2017-04-05,Getting ready for first Pomodoro,Bad habbits,2
+2017-04-07,Getting ready for first Pomodoro,Bad habbits,1
+2017-04-09,Getting ready for first Pomodoro,Bad habbits,4
+2017-04-10,Getting ready for first Pomodoro,Bad habbits,1
+2017-04-13,Getting ready for first Pomodoro,Bad habbits,2
+2017-04-26,Getting ready for first Pomodoro,Bad habbits,2
+2017-04-27,Getting ready for first Pomodoro,Bad habbits,3
+2017-04-29,Getting ready for first Pomodoro,Bad habbits,3
+2017-05-04,Getting ready for first Pomodoro,Bad habbits,2
+2017-05-05,Getting ready for first Pomodoro,Bad habbits,2
+2017-05-09,Getting ready for first Pomodoro,Bad habbits,2
+2017-05-10,Getting ready for first Pomodoro,Bad habbits,1
+2017-05-11,Getting ready for first Pomodoro,Bad habbits,2
+2017-05-16,Getting ready for first Pomodoro,Bad habbits,2
+2017-05-18,Getting ready for first Pomodoro,Bad habbits,2
+2017-05-19,Getting ready for first Pomodoro,Bad habbits,2
+2017-05-23,Getting ready for first Pomodoro,Bad habbits,2
+2017-11-21,Getting ready for first Pomodoro,Bad habbits,1
+2018-01-11,Getting ready for first Pomodoro,Bad habbits,1
+2018-02-02,Getting ready for first Pomodoro,Bad habbits,2
+2018-02-06,Getting ready for first Pomodoro,Bad habbits,1
+2018-02-16,Getting ready for first Pomodoro,Bad habbits,2
+2015-10-31,Grand Canyon,Online work,2
+2015-09-04,Grand canyon planning ,Default Project,1
+2015-09-11,Grand canyon planning ,Default Project,1
+2015-12-04,Gym,Exercises ,3
+2015-12-07,Gym,Exercises ,3
+2015-12-10,Gym,Exercises ,3
+2015-12-15,Gym,Exercises ,3
+2016-04-23,Gym treadmill run,Habbit,1
+2016-05-24,Gym treadmill run,Habbit,1
+2016-05-29,Gym treadmill run,Habbit,1
+2016-06-12,Gym treadmill run,Habbit,1
+2016-06-17,Gym treadmill run,Habbit,1
+2016-07-22,Gym treadmill run,Habbit,3
+2016-08-01,Gym treadmill run,Habbit,1
+2016-08-15,Gym treadmill run,Habbit,1
+2016-08-16,Gym treadmill run,Habbit,1
+2016-08-22,Gym treadmill run,Habbit,1
+2016-08-24,Gym treadmill run,Habbit,1
+2016-08-29,Gym treadmill run,Habbit,1
+2016-08-31,Gym treadmill run,Habbit,1
+2016-09-01,Gym treadmill run,Habbit,1
+2016-09-08,Gym treadmill run,Habbit,1
+2016-09-16,Gym treadmill run,Habbit,1
+2016-09-20,Gym treadmill run,Habbit,1
+2016-09-26,Gym treadmill run,Habbit,1
+2016-09-29,Gym treadmill run,Habbit,1
+2016-10-05,Gym treadmill run,Habbit,1
+2016-10-10,Gym treadmill run,Habbit,1
+2016-10-12,Gym treadmill run,Habbit,1
+2016-10-21,Gym treadmill run,Habbit,1
+2016-10-27,Gym treadmill run,Habbit,1
+2016-11-04,Gym treadmill run,Habbit,1
+2016-11-09,Gym treadmill run,Habbit,1
+2016-11-11,Gym treadmill run,Habbit,1
+2016-12-15,Gym treadmill run,Habbit,1
+2017-01-09,Gym treadmill run,Habbit,1
+2017-01-12,Gym treadmill run,Habbit,1
+2017-01-16,Gym treadmill run,Habbit,1
+2017-01-20,Gym treadmill run,Habbit,1
+2017-02-03,Gym treadmill run,Habbit,1
+2017-02-04,Gym treadmill run,Habbit,1
+2017-02-20,Gym treadmill run,Habbit,1
+2017-03-01,Gym treadmill run,Habbit,1
+2017-03-16,Gym treadmill run,Habbit,1
+2017-03-20,Gym treadmill run,Habbit,1
+2017-03-21,Gym treadmill run,Habbit,1
+2017-03-24,Gym treadmill run,Habbit,1
+2017-03-30,Gym treadmill run,Habbit,1
+2017-03-31,Gym treadmill run,Habbit,1
+2017-04-07,Gym treadmill run,Habbit,1
+2017-04-10,Gym treadmill run,Habbit,1
+2017-04-12,Gym treadmill run,Habbit,1
+2017-04-13,Gym treadmill run,Habbit,1
+2017-04-19,Gym treadmill run,Habbit,1
+2017-04-24,Gym treadmill run,Habbit,1
+2017-04-26,Gym treadmill run,Habbit,1
+2017-05-03,Gym treadmill run,Habbit,1
+2017-05-09,Gym treadmill run,Habbit,1
+2017-05-11,Gym treadmill run,Habbit,1
+2017-05-17,Gym treadmill run,Habbit,1
+2016-04-25,HBR: Guide to manage up and across,Reading,2
+2016-04-28,HBR: Guide to manage up and across,Reading,1
+2016-04-29,HBR: Guide to manage up and across,Reading,1
+2016-02-03,HIIT,Health goal,2
+2016-02-05,HIIT,Health goal,1
+2016-02-08,HIIT,Health goal,1
+2016-02-10,HIIT,Health goal,1
+2016-02-16,HIIT,Health goal,1
+2016-03-05,HIIT,Health goal,1
+2016-03-08,HIIT,Health goal,1
+2016-03-24,HIIT,Health goal,1
+2016-04-21,HIIT,Health goal,1
+2016-04-26,HIIT,Health goal,1
+2016-04-30,HIIT,Health goal,2
+2016-08-21,HIIT,Health goal,1
+2016-08-26,HIIT,Health goal,1
+2016-09-03,HIIT,Health goal,1
+2016-09-11,HIIT,Health goal,1
+2016-06-19,Hike,Health goal,2
+2016-06-26,Hike,Health goal,7
+2015-09-08,Hotfix,Work Apple,1
+2015-09-26,House clean,Default Project,5
+2015-09-27,House clean,Default Project,4
+2015-11-14,House clean,Default Project,6
+2016-01-30,House clean,Default Project,2
+2016-01-31,House clean,Default Project,5
+2017-07-03,It Starts with Food by Mellisa,2017 Books,2
+2017-07-04,It Starts with Food by Mellisa,2017 Books,1
+2017-07-05,It Starts with Food by Mellisa,2017 Books,1
+2017-07-08,It Starts with Food by Mellisa,2017 Books,2
+2017-07-14,It Starts with Food by Mellisa,2017 Books,1
+2015-09-14,Japan prune Name,Work Apple,6
+2015-09-15,Japan prune Name,Work Apple,3
+2015-09-16,Japan prune Name,Work Apple,1
+2015-09-17,Japan prune Name,Work Apple,3
+2015-09-05,K means understanding ,Machine learning,4
+2015-09-06,K means understanding ,Machine learning,2
+2015-11-01,K-means Cluster,Machine learning,2
+2015-11-07,K-means Cluster,Machine learning,3
+2015-11-08,K-means Cluster,Machine learning,9
+2015-11-10,K-means Cluster,Machine learning,6
+2015-12-07,K-means Cluster,Machine learning,2
+2016-01-18,K-means blog,Machine learning,5
+2015-09-06,K-means blogging ,Machine learning,2
+2017-02-12,Keras Tutorials,Deep Learning Tutorials,3
+2017-02-14,Keras Tutorials,Deep Learning Tutorials,7
+2017-02-15,Keras Tutorials,Deep Learning Tutorials,2
+2017-04-13,Lab Transfer Learning,Udacity Self Driving cars,3
+2017-03-17,LeNet Arch Lab,Udacity Self Driving cars,3
+2016-07-03,Lean in by Sheryl,Reading books ,4
+2016-08-20,Lean in by Sheryl,Reading books ,1
+2016-08-21,Lean in by Sheryl,Reading books ,3
+2016-09-02,Lean in by Sheryl,Reading books ,3
+2016-09-06,Lean in by Sheryl,Reading books ,3
+2016-09-18,Lean in by Sheryl,Reading books ,2
+2016-10-15,Lean in by Sheryl,Reading books ,3
+2016-10-24,Lean in by Sheryl,Reading books ,2
+2016-08-06,Learning Spark,Reading,2
+2016-08-11,Learning Spark,Reading,2
+2016-08-06,Lecture 1,Neural Networks Machine Learning,2
+2017-03-08,Lecture 1 Estimation,Course Udacity Inferential Statistics,5
+2017-03-10,Lecture 1 Estimation,Course Udacity Inferential Statistics,4
+2016-09-20,"Lecture 10 :- Recurrent Neural Networks, Imag...",Convolutional NN for Visual Recognition,3
+2016-10-20,"Lecture 10 :- Recurrent Neural Networks, Imag...",Convolutional NN for Visual Recognition,2
+2016-11-06,"Lecture 10 :- Recurrent Neural Networks, Imag...",Convolutional NN for Visual Recognition,5
+2016-08-13,"Lecture 10 Mixture of models, Bayesian learni...",Neural Networks Machine Learning,2
+2017-04-11,Lecture 10: Keras,Udacity Self Driving cars,1
+2017-04-11,Lecture 11: Transfer learning,Udacity Self Driving cars,2
+2017-05-19,Lecture 12 Machine Learning for Detection,Udacity Self Driving cars,2
+2017-05-21,Lecture 12 Machine Learning for Detection,Udacity Self Driving cars,3
+2017-01-26,Lecture 12: Deep learning library,Convolutional NN for Visual Recognition,3
+2017-02-05,"Lecture 13 - Segmentation, soft attention, sp...",Convolutional NN for Visual Recognition,3
+2017-02-05,"Lecture 14: Videos, Autoencoders, Generative ...",Convolutional NN for Visual Recognition,4
+2017-01-27,Lecture 1: From ML to Deep learning,Google Udacity Deep learning,1
+2017-01-29,Lecture 1: From ML to Deep learning,Google Udacity Deep learning,4
+2016-08-15,Lecture 1: Introduction,Convolutional NN for Visual Recognition,2
+2016-08-06,Lecture 2,Neural Networks Machine Learning,3
+2017-02-26,Lecture 2 Finding Lanes Lines,Udacity Self Driving cars,14
+2017-03-10,Lecture 2 Hypothesis Testing,Course Udacity Inferential Statistics,5
+2017-01-29,Lecture 2: Deep neural networks,Google Udacity Deep learning,9
+2016-08-15,Lecture 2: Image classification KNN etc,Convolutional NN for Visual Recognition,2
+2016-08-06,Lecture 3,Neural Networks Machine Learning,7
+2017-03-10,Lecture 3 t-Tests,Course Udacity Inferential Statistics,3
+2017-03-22,Lecture 3 t-Tests Part 2,Course Udacity Inferential Statistics,2
+2017-03-23,Lecture 3 t-Tests Part 2,Course Udacity Inferential Statistics,1
+2016-08-16,"Lecture 3: Linear classification, Loss functi...",Convolutional NN for Visual Recognition,3
+2016-08-06,Lecture 4,Neural Networks Machine Learning,1
+2016-08-16,"Lecture 4: Backprop, Neural N/W 1",Convolutional NN for Visual Recognition,2
+2016-08-17,"Lecture 4: Backprop, Neural N/W 1",Convolutional NN for Visual Recognition,3
+2017-02-01,Lecture 4: Deep models for Text and Sequences,Google Udacity Deep learning,8
+2017-02-07,Lecture 4: Deep models for Text and Sequences,Google Udacity Deep learning,3
+2017-03-12,Lecture 4: Introduction to Deep Learning Modu...,Udacity Self Driving cars,3
+2016-08-10,Lecture 5,Neural Networks Machine Learning,2
+2016-08-12,Lecture 5,Neural Networks Machine Learning,1
+2017-03-12,Lecture 5: Mini Flow,Udacity Self Driving cars,3
+2016-08-17,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,2
+2016-08-22,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,1
+2016-08-23,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,2
+2016-09-26,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,2
+2016-09-27,"Lecture 5: Training Neural net, activation fu...",Convolutional NN for Visual Recognition,3
+2016-08-12,Lecture 6 Mini Batch,Neural Networks Machine Learning,2
+2016-09-14,Lecture 6 Neural Nets and Intro. to Cov Nets,Convolutional NN for Visual Recognition,4
+2016-09-25,Lecture 6 Neural Nets and Intro. to Cov Nets,Convolutional NN for Visual Recognition,1
+2017-03-12,Lecture 6: Introduction to Tensor flow,Udacity Self Driving cars,3
+2016-09-15,Lecture 7 : Convolutional Neural Networks,Convolutional NN for Visual Recognition,4
+2016-12-22,Lecture 7 : Convolutional Neural Networks,Convolutional NN for Visual Recognition,4
+2016-08-12,"Lecture 7 Model Seq, RNN, LTSM",Neural Networks Machine Learning,5
+2016-09-15,Lecture 8 - Localization and Detection,Convolutional NN for Visual Recognition,3
+2017-01-11,Lecture 8 - Localization and Detection,Convolutional NN for Visual Recognition,1
+2017-03-15,Lecture 8: Convolutional Neural Networks,Udacity Self Driving cars,3
+2017-02-02,"Lecture 8: Localization, Detection, Segmentat...",Convolutional NN for Visual Recognition,3
+2017-02-05,"Lecture 8: Localization, Detection, Segmentat...",Convolutional NN for Visual Recognition,2
+2016-09-18,"Lecture 9 : Visualization, Deep Dream, Neural...",Convolutional NN for Visual Recognition,2
+2017-01-24,"Lecture 9 : Visualization, Deep Dream, Neural...",Convolutional NN for Visual Recognition,4
+2016-08-12,"Lecture 9 improve generalization, Full Bayesi...",Neural Networks Machine Learning,1
+2016-08-13,"Lecture 9 improve generalization, Full Bayesi...",Neural Networks Machine Learning,3
+2017-03-19,Lecture 9: Traffic Sign Classifier,Udacity Self Driving cars,1
+2017-02-23,Lectures Introduction,Udacity Self Driving cars,4
+2016-02-08,Legs day,Habbit,1
+2016-04-11,Legs day,Habbit,1
+2016-05-15,Legs day,Habbit,1
+2016-06-03,Legs day,Habbit,2
+2016-08-11,Legs day,Habbit,1
+2016-08-24,Legs day,Habbit,1
+2016-09-01,Legs day,Habbit,1
+2017-03-14,Leture 7 : Deep Neural Networks,Udacity Self Driving cars,2
+2015-09-13,Linear Digression ,Podcast ,2
+2017-03-21,M3 Completion Model,AC work,5
+2017-04-06,M3 Completion Model,AC work,3
+2017-04-07,M3 Completion Model,AC work,1
+2016-01-19,MM Chain category subsume name,A/B projects,7
+2016-01-20,MM Chain category subsume name,A/B projects,1
+2016-06-01,MM Chain category subsume name,A/B projects,2
+2016-02-23,Map fresh viewport,A/B projects,3
+2018-02-15,Master your time: Brian Tracy,Reading,1
+2016-02-13,Meditation,Habbit,1
+2016-03-05,Meditation,Habbit,2
+2016-03-12,Meditation,Habbit,1
+2016-03-16,Meditation,Habbit,2
+2016-03-24,Meditation,Habbit,1
+2016-04-10,Meditation,Habbit,1
+2016-04-19,Meditation,Habbit,1
+2016-05-15,Meditation,Habbit,1
+2016-05-17,Meditation,Habbit,1
+2016-05-19,Meditation,Habbit,1
+2016-08-26,Meditation,Habbit,1
+2018-01-15,Meditation,Habbit,1
+2018-02-02,Meditation,Habbit,1
+2015-09-18,Meditation ,Exercises ,6
+2015-09-19,Meditation ,Exercises ,10
+2015-09-20,Meditation ,Exercises ,5
+2016-08-07,Meditation ,Exercises ,1
+2016-09-11,Meditation ,Exercises ,1
+2016-11-12,Meditation ,Exercises ,1
+2018-01-11,Meditation ,Exercises ,1
+2016-03-11,Medium Blogging,Habbit,2
+2016-01-18,Mining massive data set,ML related,4
+2016-02-28,Mining massive data set,ML related,2
+2016-02-29,Mining massive data set,ML related,4
+2016-03-06,Mining massive data set,ML related,7
+2016-03-13,Mining massive data set,ML related,5
+2016-05-14,"Model building 45,C",Name ranking 45,1
+2016-05-16,"Model building 45,C",Name ranking 45,4
+2016-05-17,"Model building 45,C",Name ranking 45,7
+2016-05-18,"Model building 45,C",Name ranking 45,1
+2016-03-29,NAME Global Results,A/B projects,7
+2016-03-30,NAME Global Results,A/B projects,3
+2016-03-31,NAME Global Results,A/B projects,2
+2016-04-01,NAME Global Results,A/B projects,3
+2016-04-04,NAME Global Results,A/B projects,3
+2016-04-05,NAME Global Results,A/B projects,5
+2016-04-06,NAME Global Results,A/B projects,4
+2016-04-07,NAME Global Results,A/B projects,9
+2016-04-11,NAME Global Results,A/B projects,5
+2016-04-12,NAME Global Results,A/B projects,3
+2016-05-19,NAME Global Results,A/B projects,7
+2016-05-20,NAME Global Results,A/B projects,3
+2017-02-12,NLP tutorial,Deep Learning Tutorials,2
+2016-04-03,NY restaurant Coding,ML related,1
+2015-09-06,No Asshole rule ,Reading books ,1
+2015-09-10,No Asshole rule ,Reading books ,2
+2015-09-20,No Asshole rule ,Reading books ,1
+2015-09-23,No Asshole rule ,Reading books ,1
+2015-10-19,No Asshole rule ,Reading books ,2
+2015-11-16,Note to Self,Podcast ,1
+2016-01-13,One Intentional Life Pomodoro Ep 9,Podcast ,1
+2016-01-13,One Intentional life Calendar,Podcast ,1
+2016-01-13,One Intentional life Morning routines Ep 10,Podcast ,1
+2016-01-14,One Intentional life Morning routines Ep 10,Podcast ,1
+2016-02-01,One Intentional life Morning routines Ep 10,Podcast ,2
+2016-02-03,One Intentional life Morning routines Ep 10,Podcast ,1
+2016-02-22,One Intentional life Speed reading Ep 14,Podcast ,3
+2016-02-28,One Intentional life Speed reading Ep 14,Podcast ,2
+2016-02-29,One Intentional life Speed reading Ep 14,Podcast ,1
+2016-03-06,One Intentional life Speed reading Ep 14,Podcast ,1
+2016-03-14,One Intentional life Speed reading Ep 14,Podcast ,1
+2015-11-01,One intentional life,Podcast ,1
+2015-11-08,One intentional life,Podcast ,6
+2015-11-11,One intentional life,Podcast ,1
+2015-11-14,One intentional life,Podcast ,1
+2015-11-15,One intentional life,Podcast ,4
+2015-11-22,One intentional life,Podcast ,2
+2015-12-06,One intentional life,Podcast ,2
+2015-12-07,One intentional life,Podcast ,2
+2015-12-08,One intentional life,Podcast ,1
+2015-12-09,One intentional life,Podcast ,2
+2016-06-01,One intentional life,Podcast ,1
+2016-06-19,One intentional life,Podcast ,1
+2016-06-26,One intentional life,Podcast ,2
+2016-07-17,One intentional life,Podcast ,1
+2016-08-14,One intentional life,Podcast ,1
+2016-02-20,One intentional life Read it Later Ep 11,Podcast ,1
+2016-02-21,One intentional life Read it Later Ep 11,Podcast ,2
+2017-02-14,Open CV project audacity,Google Udacity Deep learning,1
+2016-05-01,Panda SciPy worksheet,ML related,2
+2016-05-03,Panda SciPy worksheet,ML related,1
+2016-05-04,Panda SciPy worksheet,ML related,4
+2016-05-05,Panda SciPy worksheet,ML related,2
+2016-05-06,Panda SciPy worksheet,ML related,2
+2016-05-08,Panda SciPy worksheet,ML related,6
+2016-01-17,Pay Hemal rent,Sat 16th,1
+2015-11-07,Photography,Online work,3
+2016-08-15,Planning,Deep Learning,2
+2017-01-31,Planning,Deep Learning,4
+2016-01-20,Planning,SATR,2
+2016-06-28,Pocket Health,Reading,1
+2016-01-28,Poi chrome plugin,Apple Projects,9
+2016-03-07,Pomodoro Coding,ML related,2
+2016-03-08,Pomodoro Coding,ML related,6
+2016-03-10,Pomodoro Coding,ML related,2
+2016-03-11,Pomodoro Coding,ML related,4
+2016-03-12,Pomodoro Coding,ML related,5
+2016-03-16,Pomodoro Coding,ML related,3
+2016-05-30,Pomodoro Coding,ML related,13
+2016-05-31,Pomodoro Coding,ML related,1
+2016-06-05,Pomodoro Coding,ML related,4
+2016-06-12,Pomodoro Coding,ML related,3
+2016-07-10,Pomodoro Coding,ML related,1
+2016-02-02,Pref name first IBE,A/B projects,7
+2016-02-04,Pref name first IBE,A/B projects,4
+2016-02-05,Pref name first IBE,A/B projects,1
+2016-02-07,Pref name first IBE,A/B projects,12
+2016-02-16,Pref name first IBE,A/B projects,6
+2016-02-17,Pref name first IBE,A/B projects,6
+2016-02-18,Pref name first IBE,A/B projects,4
+2016-02-22,Pref name first IBE,A/B projects,5
+2016-02-23,Pref name first IBE,A/B projects,2
+2016-02-24,Pref name first IBE,A/B projects,2
+2016-02-25,Pref name first IBE,A/B projects,5
+2016-02-26,Pref name first IBE,A/B projects,4
+2016-03-02,Pref name first IBE,A/B projects,1
+2016-03-03,Pref name first IBE,A/B projects,2
+2016-03-07,Pref name first IBE,A/B projects,3
+2016-03-08,Pref name first IBE,A/B projects,4
+2016-03-09,Pref name first IBE,A/B projects,2
+2016-04-26,Pref name first IBE,A/B projects,4
+2016-04-27,Pref name first IBE,A/B projects,14
+2016-04-28,Pref name first IBE,A/B projects,5
+2016-05-03,Pref name first IBE,A/B projects,4
+2016-05-09,Pref name first IBE,A/B projects,1
+2016-05-10,Pref name first IBE,A/B projects,4
+2016-05-11,Pref name first IBE,A/B projects,5
+2016-05-20,Pref name first IBE,A/B projects,1
+2016-05-12,Presentation and design,32 A/B: Viewport expansion,4
+2016-05-18,Presentation and design,32 A/B: Viewport expansion,10
+2016-06-01,Presentation and design,32 A/B: Viewport expansion,1
+2016-06-02,Presentation and design,32 A/B: Viewport expansion,4
+2016-06-09,Presentation and design,32 A/B: Viewport expansion,11
+2017-03-23,Problem Lecture 3 t-Test Part 2,Course Udacity Inferential Statistics,1
+2018-01-14,Productivity/ Self help reading,Reading,4
+2016-03-07,Protocol changes,Siri API work,3
+2016-03-21,Protocol changes,Siri API work,4
+2016-03-22,Protocol changes,Siri API work,3
+2016-03-23,Protocol changes,Siri API work,1
+2016-03-24,Protocol changes,Siri API work,1
+2016-03-31,Protocol changes,Siri API work,1
+2016-04-11,Protocol changes,Siri API work,1
+2015-09-23,RS strict name feature ,Work Apple,2
+2015-09-29,RS strict name feature ,Work Apple,2
+2015-10-18,RS strict name feature ,Work Apple,4
+2016-01-19,Read Bhagavad Gita,Reading,1
+2017-12-25,Reading,Default Project,2
+2016-09-21,Recap,Convolutional NN for Visual Recognition,2
+2017-01-11,Recap,Convolutional NN for Visual Recognition,6
+2017-01-14,Recap,Convolutional NN for Visual Recognition,3
+2017-01-15,Recap,Convolutional NN for Visual Recognition,7
+2017-01-16,Recap,Convolutional NN for Visual Recognition,8
+2017-01-24,Recap,Convolutional NN for Visual Recognition,1
+2016-08-13,Recap all,Neural Networks Machine Learning,1
+2016-01-16,Remove definitive,Work Apple,3
+2015-09-14,ResourceFactory discussion,iPhone Calendar Event,1
+2016-04-16,SFE Navigation type aware results,Siri API work,8
+2016-04-18,SFE Navigation type aware results,Siri API work,8
+2016-04-19,SFE Navigation type aware results,Siri API work,4
+2016-04-24,SFE Navigation type aware results,Siri API work,2
+2016-04-04,SFE changes,Siri API work,3
+2016-04-05,SFE changes,Siri API work,3
+2016-04-06,SFE changes,Siri API work,5
+2016-04-11,SFE changes,Siri API work,2
+2016-04-09,SciPy 2013 part1,ML related,1
+2016-04-10,SciPy 2013 part1,ML related,3
+2016-04-10,SciPy 2013 part2,ML related,4
+2016-04-30,SciPy 2013 part2,ML related,1
+2016-04-30,SciPy 2013 part3,ML related,1
+2016-05-01,SciPy 2013 part4,ML related,3
+2017-03-10,Science recap,2017 Job change,2
+2017-04-05,Science recap,2017 Job change,7
+2017-04-29,Science recap,2017 Job change,17
+2017-04-30,Science recap,2017 Job change,8
+2017-11-25,Science recap,2017 Job change,20
+2017-11-26,Science recap,2017 Job change,10
+2017-11-29,Science recap,2017 Job change,8
+2017-11-30,Science recap,2017 Job change,3
+2017-12-01,Science recap,2017 Job change,1
+2017-12-04,Science recap,2017 Job change,5
+2017-12-07,Science recap,2017 Job change,25
+2017-12-08,Science recap,2017 Job change,17
+2017-12-15,Science recap,2017 Job change,6
+2017-12-17,Science recap,2017 Job change,5
+2017-12-21,Science recap,2017 Job change,16
+2018-02-07,Science recap,2017 Job change,2
+2018-02-08,Science recap,2017 Job change,10
+2018-02-10,Science recap,2017 Job change,5
+2018-02-11,Science recap,2017 Job change,21
+2018-02-12,Science recap,2017 Job change,5
+2018-02-13,Science recap,2017 Job change,12
+2018-02-15,Science recap,2017 Job change,6
+2018-02-16,Science recap,2017 Job change,4
+2018-02-17,Science recap,2017 Job change,7
+2018-02-18,Science recap,2017 Job change,14
+2018-02-19,Science recap,2017 Job change,10
+2018-02-20,Science recap,2017 Job change,11
+2018-02-21,Science recap,2017 Job change,8
+2018-02-22,Science recap,2017 Job change,11
+2018-02-23,Science recap,2017 Job change,3
+2018-02-24,Science recap,2017 Job change,25
+2018-02-25,Science recap,2017 Job change,13
+2016-01-15,Send email on POI plugin,Apple Work,3
+2017-03-17,Setup AWS (Udacity),Udacity Self Driving cars,1
+2015-10-09,Siri Japan Cfer,Work Apple,3
+2015-09-16,Siri radar verify ,Work Apple,1
+2015-09-21,Siri radar verify ,Work Apple,3
+2015-09-22,Siri radar verify ,Work Apple,5
+2015-09-30,Siri radar verify ,Work Apple,2
+2015-09-08,Siri work,Work Apple,6
+2015-09-09,Siri work,Work Apple,3
+2015-09-24,Siri work,Work Apple,1
+2015-09-22,Siri/Maps API Requirements,iPhone Calendar Event,3
+2016-10-11,Sleep on time,Habbit,1
+2016-03-06,Sort Pocket Read It later,Habbit,1
+2016-04-18,Sort Pocket Read It later,Habbit,1
+2016-05-15,Sort Pocket Read It later,Habbit,1
+2016-05-28,Sort Pocket Read It later,Habbit,2
+2016-08-06,Sort Pocket Read It later,Habbit,1
+2017-01-20,Sort Pocket Read It later,Habbit,2
+2017-01-21,Sort Pocket Read It later,Habbit,1
+2017-01-31,Stair climb,Health goal,1
+2017-02-09,Stair climb,Health goal,1
+2017-02-16,Stair climb,Health goal,1
+2017-02-21,Stair climb,Health goal,1
+2017-02-24,Stair climb,Health goal,1
+2017-03-15,Stair climb,Health goal,1
+2017-03-28,Stair climb,Health goal,1
+2017-04-04,Stair climb,Health goal,1
+2017-04-17,Stair climb,Health goal,1
+2017-04-28,Stair climb,Health goal,1
+2017-02-06,Stair climb,iPhone Calendar Event,1
+2017-11-23,System design papers,2017 Job change,7
+2017-11-24,System design papers,2017 Job change,10
+2017-11-25,System design papers,2017 Job change,3
+2017-11-26,System design papers,2017 Job change,7
+2017-12-03,System design papers,2017 Job change,1
+2018-01-13,System design papers,2017 Job change,16
+2018-01-14,System design papers,2017 Job change,7
+2018-01-23,System design papers,2017 Job change,10
+2018-01-24,System design papers,2017 Job change,9
+2018-01-25,System design papers,2017 Job change,3
+2018-01-27,System design papers,2017 Job change,17
+2018-01-28,System design papers,2017 Job change,15
+2018-01-29,System design papers,2017 Job change,6
+2018-01-30,System design papers,2017 Job change,15
+2018-01-31,System design papers,2017 Job change,1
+2018-02-01,System design papers,2017 Job change,5
+2018-02-06,System design papers,2017 Job change,12
+2018-02-07,System design papers,2017 Job change,5
+2017-03-17,Tensor Board,Deep Learning Tutorials,5
+2017-02-05,TensorFlow Tutorial Hvass Laboratories,Deep Learning,3
+2016-01-07,Test,Work Apple,2
+2017-01-15,The Art of Procastination,2017 Books,2
+2017-01-22,The Art of Procastination,2017 Books,2
+2017-01-08,The Higher Taste,2017 Books,2
+2016-04-30,The Yoga Face,Reading,2
+2015-09-05,Thich Nhat ,Reading books ,2
+2016-04-24,Udacity,ML related,5
+2016-01-30,Weekly review every week,Habbit,1
+2016-02-06,Weekly review every week,Habbit,1
+2016-02-28,Weekly review every week,Habbit,1
+2016-03-06,Weekly review every week,Habbit,1
+2016-03-15,Weekly review every week,Habbit,1
+2016-04-09,Weekly review every week,Habbit,1
+2016-04-24,Weekly review every week,Habbit,2
+2016-05-02,Weekly review every week,Habbit,1
+2016-05-11,Weekly review every week,Habbit,2
+2016-05-16,Weekly review every week,Habbit,1
+2016-06-10,Weekly review every week,Habbit,1
+2016-06-20,Weekly review every week,Habbit,1
+2016-06-27,Weekly review every week,Habbit,1
+2016-11-03,Weekly review every week,Habbit,1
+2016-12-21,Weekly review every week,Habbit,1
+2017-01-21,Weekly review every week,Habbit,1
+2017-02-01,Weekly review every week,Habbit,1
+2017-02-25,Weekly review every week,Habbit,1
+2017-03-04,Weekly review every week,Habbit,1
+2017-03-20,Weekly review every week,Habbit,1
+2017-04-09,Weekly review every week,Habbit,1
+2017-06-18,Weekly review every week,Habbit,1
+2017-02-12,Word2Vec,Deep Learning Tutorials,1
+2015-11-14,Yoga,Exercises ,2
+2018-01-11,Yoga,Exercises ,1
+2016-01-16,Yoga,Habbit,1
+2016-01-23,Yoga,Habbit,3
+2016-04-10,Yoga,Habbit,2
+2016-04-16,Yoga,Habbit,1
+2016-05-15,Yoga,Habbit,1
+2016-08-07,Yoga,Habbit,2
+2016-08-29,Yoga,Habbit,1
+2016-10-07,Yoga,Habbit,1
+2016-11-02,Yoga,Habbit,1
+2017-02-12,Yolo: Object detection,Convolutional NN for Visual Recognition,1
+2016-04-24,[Assignment 2 ](https://www.udacity.com/cours...,ML related,2
+2017-02-12,[Faster R-CNN: Towards Real-Time Object Detec...,Convolutional NN for Visual Recognition,12
+2016-04-29,[MNIST for Beginners],Deep Learning,1
+2016-01-14,iPhone watch issue,Apple Work,1
